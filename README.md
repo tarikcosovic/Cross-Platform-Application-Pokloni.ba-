@@ -13,11 +13,14 @@ The application is a university project, a solution for local giftshop businesse
 - Backend - asp.net core api with C#
 - Frontend - Xamarin / XAML
 
-```sh
-3rd Party plugins:
-```
-- Entity Framework as an object-relational mapper
+Web Api Commands
 
+| Command | Description |
+| --- | --- |
+| `POST` | *The post method will attempt to add a new element to the corresponding table* |
+| `GET` | *The get method will attempt to return a list of all table elements* |
+| `PUT` | *The put method will attempt to edit and update an element |
+| `DELETE` | *The delete method will attempt to delete an element permanently* |
 
 ## Meta
 
