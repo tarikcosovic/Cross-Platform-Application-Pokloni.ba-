@@ -12,3 +12,6 @@ C:\Users\tarik\source\repos\Pokloni.ba\Pokloni.ba.WebAPI\obj\Debug\netcoreapp2.2
 C:\Users\tarik\source\repos\Pokloni.ba\Pokloni.ba.WebAPI\obj\Debug\netcoreapp2.2\Pokloni.ba.WebAPI.RazorTargetAssemblyInfo.cache
 C:\Users\tarik\source\repos\Pokloni.ba\Pokloni.ba.WebAPI\obj\Debug\netcoreapp2.2\Pokloni.ba.WebAPI.dll
 C:\Users\tarik\source\repos\Pokloni.ba\Pokloni.ba.WebAPI\obj\Debug\netcoreapp2.2\Pokloni.ba.WebAPI.pdb
+C:\Users\tarik\source\repos\Pokloni.ba\Pokloni.ba.WebAPI\bin\Debug\netcoreapp2.2\Pokloni.ba.Model.dll
+C:\Users\tarik\source\repos\Pokloni.ba\Pokloni.ba.WebAPI\bin\Debug\netcoreapp2.2\Pokloni.ba.Model.pdb
+C:\Users\tarik\source\repos\Pokloni.ba\Pokloni.ba.WebAPI\obj\Debug\netcoreapp2.2\Pokloni.ba.WebAPI.csproj.CopyComplete
