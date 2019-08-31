@@ -9,6 +9,8 @@ namespace Pokloni.ba.WebAPI.Mappers
             CreateMap<Database.Korisnik, Model.Korisnik>();
 
             CreateMap<Model.Requests.KorisniciInsertRequest, Database.Korisnik>();
+
+            CreateMap<Model.Requests.KorisniciUpdateRequest, Database.Korisnik>();
         }
     }
 }

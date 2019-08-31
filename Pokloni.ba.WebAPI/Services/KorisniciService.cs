@@ -2,6 +2,7 @@
 using Pokloni.ba.Model;
 using Pokloni.ba.Model.Requests;
 using Pokloni.ba.WebAPI.Database;
+using Pokloni.ba.WebAPI.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,15 +27,27 @@ namespace Pokloni.ba.WebAPI.Services
             return _mapper.Map<IEnumerable<Model.Korisnik>>(list);
         }
 
+        public Model.Korisnik GetById(int id)
+        {
+            var user = _db.Korisnik.Find(id);
+            if (user == null) throw new Exception();
+
+            var temp = _mapper.Map<Model.Korisnik>(user);
+
+            return temp;
+        }
+
         public Model.Korisnik Insert(KorisniciInsertRequest request)
         {
+            if (request.Password != request.PasswordConfirmation) throw new UserException("Passwordi nisu jednaki!");
+
             var temp = _mapper.Map<Database.Korisnik>(request);
 
             var korisnikDetails = new KorisnikDetails();
             _db.KorisnikDetails.Add(korisnikDetails);
             _db.SaveChanges();
-
             temp.UlogaId = 2;
+
 
             temp.KorisnikDetailsId = korisnikDetails.KorisnikDetailsId;
             temp.LozinkaHash = "test";
@@ -44,6 +57,26 @@ namespace Pokloni.ba.WebAPI.Services
             _db.SaveChanges();
 
             return _mapper.Map<Model.Korisnik>(temp);
+        }
+
+        public Model.Korisnik Update(KorisniciUpdateRequest request, int id)
+        {
+            if (request.Password != request.PasswordConfirmation) throw new UserException("Passwordi nisu jednaki!");
+
+            var x = _db.Korisnik.Where(s => s.KorisnikId == id).FirstOrDefault()??throw new Exception();
+            _mapper.Map(request, x);
+
+            _db.Update(x);
+            _db.SaveChanges();
+
+            return _mapper.Map<Model.Korisnik>(x);
+        }
+
+        public void Delete(int id)
+        {
+            var temp = _db.Korisnik.Find(id) ?? throw new Exception();
+            _db.Korisnik.Remove(temp);
+            _db.SaveChanges();
         }
     }
 }

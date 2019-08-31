@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using Pokloni.ba.WebAPI.Database;
+using Pokloni.ba.WebAPI.Filters;
 using Pokloni.ba.WebAPI.Services;
 
 namespace Pokloni.ba.WebAPI
@@ -23,7 +24,7 @@ namespace Pokloni.ba.WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc(x => x.Filters.Add<ErrorFilter>()).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddAutoMapper(typeof(Startup));
 
 

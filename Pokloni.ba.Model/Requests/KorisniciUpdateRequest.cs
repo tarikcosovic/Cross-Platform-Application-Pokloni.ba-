@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Pokloni.ba.Model.Requests
 {
-    public class KorisniciInsertRequest
+    public class KorisniciUpdateRequest
     {
         [Required]
         [MinLength(3), MaxLength(50)]

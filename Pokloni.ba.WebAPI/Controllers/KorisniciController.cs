@@ -28,10 +28,29 @@ namespace Pokloni.ba.WebAPI.Controllers
             return Ok(korisnici);
         }
 
+        [HttpGet("{id}")]
+        public ActionResult<Model.Korisnik> GetById(int id)
+        {
+            return _service.GetById(id);
+        }
+
         [HttpPost]
         public Model.Korisnik Insert(Model.Requests.KorisniciInsertRequest request)
         {
             return _service.Insert(request);
+        }
+
+        [HttpPut("{id}")]
+        public Model.Korisnik Update(Model.Requests.KorisniciUpdateRequest request, int id)
+        {
+            return _service.Update(request, id);
+        }
+
+        [HttpDelete("{id}")]
+        public ActionResult Delete(int id)
+        {
+            _service.Delete(id);
+            return NoContent();
         }
     }
 }
