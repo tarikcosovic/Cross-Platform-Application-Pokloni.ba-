@@ -1,12 +1,10 @@
 ﻿using AutoMapper;
-using Pokloni.ba.Model;
 using Pokloni.ba.Model.Requests;
 using Pokloni.ba.WebAPI.Database;
 using Pokloni.ba.WebAPI.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Pokloni.ba.WebAPI.Services
 {
@@ -46,8 +44,8 @@ namespace Pokloni.ba.WebAPI.Services
             var korisnikDetails = new KorisnikDetails();
             _db.KorisnikDetails.Add(korisnikDetails);
             _db.SaveChanges();
-            temp.UlogaId = 2;
 
+            temp.UlogaId = _db.Uloga.Where(x => x.Naziv == Roles.User).Select(y => y.UlogaId).FirstOrDefault();
 
             temp.KorisnikDetailsId = korisnikDetails.KorisnikDetailsId;
             temp.LozinkaHash = "test";
@@ -75,7 +73,11 @@ namespace Pokloni.ba.WebAPI.Services
         public void Delete(int id)
         {
             var temp = _db.Korisnik.Find(id) ?? throw new Exception();
+            var details = _db.KorisnikDetails.Find(temp.KorisnikDetailsId);
+
             _db.Korisnik.Remove(temp);
+            _db.KorisnikDetails.Remove(details);
+
             _db.SaveChanges();
         }
     }

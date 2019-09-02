@@ -37,6 +37,7 @@ namespace Pokloni.ba.WebAPI
             });
 
             services.AddScoped<IKorisniciService, KorisniciService>();
+            services.AddScoped<IKorisniciDetailsService, KorisniciDetailsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
