@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Pokloni.ba.Model.Requests;
+using System.Collections.Generic;
 
 namespace Pokloni.ba.WebAPI.Services
 {
@@ -8,9 +9,9 @@ namespace Pokloni.ba.WebAPI.Services
 
         Model.Korisnik GetById(int id);
 
-        Model.Korisnik Insert(Model.Requests.KorisniciInsertRequest request);
+        Model.Korisnik Insert(KorisniciInsertRequest request);
 
-        Model.Korisnik Update(Model.Requests.KorisniciUpdateRequest request, int id);
+        Model.Korisnik Update(KorisniciUpdateRequest request, int id);
 
         void Delete(int id);
     }
