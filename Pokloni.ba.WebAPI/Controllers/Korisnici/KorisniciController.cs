@@ -34,6 +34,12 @@ namespace Pokloni.ba.WebAPI.Controllers
             return _service.GetById(id);
         }
 
+        [HttpGet("[action]/{username}")]
+        public ActionResult<Model.Korisnik> GetByUsername(string username)
+        {
+            return _service.GetByUsername(username);
+        }
+
         [HttpPost]
         public Model.Korisnik Insert(Model.Requests.KorisniciInsertRequest request)
         {

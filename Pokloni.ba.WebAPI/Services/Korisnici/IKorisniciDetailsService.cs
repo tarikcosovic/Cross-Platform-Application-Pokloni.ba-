@@ -4,8 +4,8 @@ namespace Pokloni.ba.WebAPI.Services
 {
     public interface IKorisniciDetailsService
     {
-        IEnumerable<Model.KorisniciDetailsGetRequest> Get();
+        IEnumerable<Model.Requests.Korisnici.KorisniciDetailsGetRequest> Get();
 
-        Model.KorisniciDetailsGetRequest GetById(int id);
+        Model.Requests.Korisnici.KorisniciDetailsGetRequest GetById(int id);
     }
 }

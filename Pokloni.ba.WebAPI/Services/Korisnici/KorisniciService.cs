@@ -35,6 +35,16 @@ namespace Pokloni.ba.WebAPI.Services
             return temp;
         }
 
+        public Model.Korisnik GetByUsername(string username)
+        {
+            var user = _db.Korisnik.Where(k => k.Username == username || k.Email == username).FirstOrDefault();
+            if (user == null) throw new Exception();
+
+            var temp = _mapper.Map<Model.Korisnik>(user);
+
+            return temp;
+        }
+
         public Model.Korisnik Insert(KorisniciInsertRequest request)
         {
             if (request.Password != request.PasswordConfirmation) throw new UserException("Passwordi nisu jednaki!");

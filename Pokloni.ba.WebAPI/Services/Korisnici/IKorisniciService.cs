@@ -9,6 +9,8 @@ namespace Pokloni.ba.WebAPI.Services
 
         Model.Korisnik GetById(int id);
 
+        Model.Korisnik GetByUsername(string username);
+
         Model.Korisnik Insert(KorisniciInsertRequest request);
 
         Model.Korisnik Update(KorisniciUpdateRequest request, int id);

@@ -13,7 +13,7 @@ namespace Pokloni.ba.WebAPI.Mappers
 
             CreateMap<Model.Requests.KorisniciUpdateRequest, Database.Korisnik>();
 
-            CreateMap<Model.KorisniciDetailsGetRequest, Database.KorisnikDetails>().ReverseMap();
+            CreateMap<Model.Requests.Korisnici.KorisniciDetailsGetRequest, Database.KorisnikDetails>().ReverseMap();
 
             CreateMap<Model.Requests.Korisnici.Uloga, Database.Uloga>().ReverseMap();
             #endregion

@@ -20,7 +20,7 @@ namespace Pokloni.ba.WebAPI.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerator<Model.KorisniciDetailsGetRequest>> Get()
+        public ActionResult<IEnumerator<Model.Requests.Korisnici.KorisniciDetailsGetRequest>> Get()
         {
             var korisniciDetails = _service.Get();
 
@@ -28,7 +28,7 @@ namespace Pokloni.ba.WebAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Model.KorisniciDetailsGetRequest> GetById(int id)
+        public ActionResult<Model.Requests.Korisnici.KorisniciDetailsGetRequest> GetById(int id)
         {
             return Ok(_service.GetById(id));
         }
