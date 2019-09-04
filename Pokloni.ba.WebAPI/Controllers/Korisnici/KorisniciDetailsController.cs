@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNet.OData;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Pokloni.ba.WebAPI.Services;
@@ -20,6 +21,7 @@ namespace Pokloni.ba.WebAPI.Controllers
         }
 
         [HttpGet]
+        [EnableQuery]
         public ActionResult<IEnumerator<Model.Requests.Korisnici.KorisniciDetailsGetRequest>> Get()
         {
             var korisniciDetails = _service.Get();
@@ -32,5 +34,11 @@ namespace Pokloni.ba.WebAPI.Controllers
         {
             return Ok(_service.GetById(id));
         }
+
+        [HttpPut("{id}")]
+        public Model.Requests.Korisnici.KorisniciDetailsGetRequest Update(Model.Requests.Korisnici.KorisniciDetailsGetRequest request, int id)
+        {
+            return _service.Update(request, id);
+        }
     }
-}
+} 

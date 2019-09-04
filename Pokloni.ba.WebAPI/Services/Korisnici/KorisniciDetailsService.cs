@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
 using Pokloni.ba.Model.Requests.Korisnici;
@@ -29,6 +30,18 @@ namespace Pokloni.ba.WebAPI.Services
             var temp = _db.KorisnikDetails.Find(id);
 
             return _mapper.Map<KorisniciDetailsGetRequest>(temp);
+        }
+
+        public KorisniciDetailsGetRequest Update(KorisniciDetailsGetRequest request, int id)
+        {
+            var model = _db.KorisnikDetails.Find(id) ?? throw new Exception();
+
+            _mapper.Map(request, model);
+
+            _db.Update(model);
+            _db.SaveChanges();
+
+            return request;
         }
     }
 }

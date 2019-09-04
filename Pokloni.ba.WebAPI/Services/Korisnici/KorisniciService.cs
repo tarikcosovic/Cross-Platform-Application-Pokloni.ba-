@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Microsoft.AspNet.OData;
+using Pokloni.ba.Model;
 using Pokloni.ba.Model.Requests;
 using Pokloni.ba.WebAPI.Database;
 using Pokloni.ba.WebAPI.Exceptions;
@@ -90,5 +92,6 @@ namespace Pokloni.ba.WebAPI.Services
 
             _db.SaveChanges();
         }
+
     }
 }

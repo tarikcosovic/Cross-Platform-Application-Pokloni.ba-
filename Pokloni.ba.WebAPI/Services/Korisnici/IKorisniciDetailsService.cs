@@ -7,5 +7,7 @@ namespace Pokloni.ba.WebAPI.Services
         IEnumerable<Model.Requests.Korisnici.KorisniciDetailsGetRequest> Get();
 
         Model.Requests.Korisnici.KorisniciDetailsGetRequest GetById(int id);
+
+        Model.Requests.Korisnici.KorisniciDetailsGetRequest Update(Model.Requests.Korisnici.KorisniciDetailsGetRequest request, int id);
     }
 }

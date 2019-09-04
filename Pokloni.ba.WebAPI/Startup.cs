@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNet.OData.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -27,6 +28,7 @@ namespace Pokloni.ba.WebAPI
         {
             services.AddMvc(x => x.Filters.Add<ErrorFilter>()).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddAutoMapper(typeof(Startup));
+            services.AddOData();
 
 
             var connection = @"Server=.;Database=Pokloni;Trusted_Connection=True;ConnectRetryCount=0";
@@ -56,7 +58,12 @@ namespace Pokloni.ba.WebAPI
             }
 
             app.UseHttpsRedirection();
-            app.UseMvc();
+            app.UseMvc(routeBuilder => 
+            {
+                routeBuilder.EnableDependencyInjection();
+                //Funkcionalnosi OData koje zelimo  koristiti
+                routeBuilder.Expand().Select().Count().OrderBy().Filter();
+            });
 
             app.UseSwagger();
             app.UseSwaggerUI(c =>

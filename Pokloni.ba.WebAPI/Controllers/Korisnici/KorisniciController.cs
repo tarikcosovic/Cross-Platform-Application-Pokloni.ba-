@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNet.OData;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Pokloni.ba.WebAPI.Database;
@@ -21,6 +22,7 @@ namespace Pokloni.ba.WebAPI.Controllers
         }
 
         [HttpGet]
+        [EnableQuery]
         public ActionResult<IEnumerator<Model.Korisnik>> Get()
         {
             var korisnici = _service.Get();
