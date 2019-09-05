@@ -11,6 +11,7 @@ using Pokloni.ba.WebAPI.Database;
 using Pokloni.ba.WebAPI.Filters;
 using Pokloni.ba.WebAPI.Services;
 using Pokloni.ba.WebAPI.Services.Korisnici;
+using Pokloni.ba.WebAPI.Services.Proizvodi;
 
 namespace Pokloni.ba.WebAPI
 {
@@ -42,6 +43,7 @@ namespace Pokloni.ba.WebAPI
             services.AddScoped<IKorisniciService, KorisniciService>();
             services.AddScoped<IKorisniciDetailsService, KorisniciDetailsService>();
             services.AddScoped<IUlogeService, UlogeService>();
+            services.AddScoped<IProizvodacPoklonaService, ProizvodacPoklonaService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

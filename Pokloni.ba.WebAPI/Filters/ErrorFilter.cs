@@ -15,8 +15,13 @@ namespace Pokloni.ba.WebAPI.Filters
         {
             if(context.Exception is UserException)
             {
-                context.ModelState.AddModelError("ERROR", context.Exception.Message);
+                context.ModelState.AddModelError("USER ERROR", context.Exception.Message);
                 context.HttpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
+            }
+            else if(context.Exception is ServerException)
+            {
+                context.ModelState.AddModelError("SERVER ERROR", context.Exception.Message);
+                context.HttpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
             }
             else
             {

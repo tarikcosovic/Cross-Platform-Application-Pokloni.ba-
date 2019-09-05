@@ -4,6 +4,7 @@ using System.Linq;
 using AutoMapper;
 using Pokloni.ba.Model.Requests.Korisnici;
 using Pokloni.ba.WebAPI.Database;
+using Pokloni.ba.WebAPI.Exceptions;
 
 namespace Pokloni.ba.WebAPI.Services
 {
@@ -27,14 +28,14 @@ namespace Pokloni.ba.WebAPI.Services
 
         public KorisniciDetailsGetRequest GetById(int id)
         {
-            var temp = _db.KorisnikDetails.Find(id);
+            var temp = _db.KorisnikDetails.Find(id)??throw new ServerException(Constants.NotFoundErrorMessage + id);
 
             return _mapper.Map<KorisniciDetailsGetRequest>(temp);
         }
 
         public KorisniciDetailsGetRequest Update(KorisniciDetailsGetRequest request, int id)
         {
-            var model = _db.KorisnikDetails.Find(id) ?? throw new Exception();
+            var model = _db.KorisnikDetails.Find(id) ?? throw new ServerException(Constants.NotFoundErrorMessage + id);
 
             _mapper.Map(request, model);
 

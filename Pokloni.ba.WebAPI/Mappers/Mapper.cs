@@ -17,6 +17,12 @@ namespace Pokloni.ba.WebAPI.Mappers
 
             CreateMap<Model.Requests.Korisnici.Uloga, Database.Uloga>().ReverseMap();
             #endregion
+
+            #region Proizvodi
+            CreateMap<Database.ProizvodacPoklona, Model.Requests.Proizvodi.ProizvodacPoklona>().ReverseMap();
+
+
+            #endregion
         }
     }
 }

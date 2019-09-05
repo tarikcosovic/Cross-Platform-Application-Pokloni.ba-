@@ -30,7 +30,7 @@ namespace Pokloni.ba.WebAPI.Services
         public Model.Korisnik GetById(int id)
         {
             var user = _db.Korisnik.Find(id);
-            if (user == null) throw new Exception();
+            if (user == null) throw new ServerException(Constants.NotFoundErrorMessage + id);
 
             var temp = _mapper.Map<Model.Korisnik>(user);
 
@@ -40,7 +40,7 @@ namespace Pokloni.ba.WebAPI.Services
         public Model.Korisnik GetByUsername(string username)
         {
             var user = _db.Korisnik.Where(k => k.Username == username || k.Email == username).FirstOrDefault();
-            if (user == null) throw new Exception();
+            if (user == null) throw new ServerException(Constants.NotFoundErrorMessage + username);
 
             var temp = _mapper.Map<Model.Korisnik>(user);
 
@@ -73,7 +73,7 @@ namespace Pokloni.ba.WebAPI.Services
         {
             if (request.Password != request.PasswordConfirmation) throw new UserException("Passwordi nisu jednaki!");
 
-            var x = _db.Korisnik.Where(s => s.KorisnikId == id).FirstOrDefault()??throw new Exception();
+            var x = _db.Korisnik.Where(s => s.KorisnikId == id).FirstOrDefault()??throw new Exception(Constants.NotFoundErrorMessage + id);
             _mapper.Map(request, x);
 
             _db.Update(x);
@@ -84,7 +84,7 @@ namespace Pokloni.ba.WebAPI.Services
 
         public void Delete(int id)
         {
-            var temp = _db.Korisnik.Find(id) ?? throw new Exception();
+            var temp = _db.Korisnik.Find(id) ?? throw new ServerException(Constants.NotFoundErrorMessage + id);
             var details = _db.KorisnikDetails.Find(temp.KorisnikDetailsId);
 
             _db.Korisnik.Remove(temp);

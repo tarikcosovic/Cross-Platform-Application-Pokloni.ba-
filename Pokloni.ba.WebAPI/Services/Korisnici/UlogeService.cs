@@ -26,7 +26,7 @@ namespace Pokloni.ba.WebAPI.Services.Korisnici
 
         public Uloga GetById(int id)
         {
-            var temp = _db.Uloga.Find(id)??throw new Exception();
+            var temp = _db.Uloga.Find(id)?? throw new ServerException(Constants.NotFoundErrorMessage + id);
 
             return _mapper.Map<Uloga>(temp);
         }
@@ -43,7 +43,7 @@ namespace Pokloni.ba.WebAPI.Services.Korisnici
 
         public Uloga Update(Uloga request, int id)
         {
-            var temp = _db.Uloga.Find(id)??throw new Exception();
+            var temp = _db.Uloga.Find(id)?? throw new ServerException(Constants.NotFoundErrorMessage + id);
 
             _mapper.Map(request, temp);
 
@@ -55,7 +55,7 @@ namespace Pokloni.ba.WebAPI.Services.Korisnici
 
         public void Delete(int id)
         {
-            var temp = _db.Uloga.Find(id)??throw new Exception();
+            var temp = _db.Uloga.Find(id)??throw new ServerException(Constants.NotFoundErrorMessage + id);
             var adminCounter = _db.Uloga.Where(x => x.Naziv == Roles.Admin).Count();
 
             if (adminCounter <= 1 && temp.Naziv == Roles.Admin) throw new UserException("Nije dozvoljeno brisati jedinog preostalog admina");
