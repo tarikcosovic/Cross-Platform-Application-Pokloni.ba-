@@ -9,36 +9,11 @@ using Pokloni.ba.WebAPI.Services;
 
 namespace Pokloni.ba.WebAPI.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class KorisniciDetailsController : ControllerBase
+    public class KorisniciDetailsController : BaseController<IKorisniciDetailsService, Model.Requests.Korisnici.KorisniciDetailsGetRequest>
     {
-        private readonly IKorisniciDetailsService _service;
-
-        public KorisniciDetailsController(IKorisniciDetailsService service)
+        public KorisniciDetailsController(IKorisniciDetailsService service) :base(service)
         {
-            _service = service;
-        }
 
-        [HttpGet]
-        [EnableQuery]
-        public ActionResult<IEnumerator<Model.Requests.Korisnici.KorisniciDetailsGetRequest>> Get()
-        {
-            var korisniciDetails = _service.Get();
-
-            return Ok(korisniciDetails);
-        }
-
-        [HttpGet("{id}")]
-        public ActionResult<Model.Requests.Korisnici.KorisniciDetailsGetRequest> GetById(int id)
-        {
-            return Ok(_service.GetById(id));
-        }
-
-        [HttpPut("{id}")]
-        public Model.Requests.Korisnici.KorisniciDetailsGetRequest Update(Model.Requests.Korisnici.KorisniciDetailsGetRequest request, int id)
-        {
-            return _service.Update(request, id);
         }
     }
 } 

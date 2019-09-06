@@ -55,7 +55,7 @@ namespace Pokloni.ba.WebAPI.Services.Korisnici
 
         public void Delete(int id)
         {
-            var temp = _db.Uloga.Find(id)??throw new ServerException(Constants.NotFoundErrorMessage + id);
+             var temp = _db.Uloga.Find(id)??throw new ServerException(Constants.NotFoundErrorMessage + id);
             var adminCounter = _db.Uloga.Where(x => x.Naziv == Roles.Admin).Count();
 
             if (adminCounter <= 1 && temp.Naziv == Roles.Admin) throw new UserException("Nije dozvoljeno brisati jedinog preostalog admina");

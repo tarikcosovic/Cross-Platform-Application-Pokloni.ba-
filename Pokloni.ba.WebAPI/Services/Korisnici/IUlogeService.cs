@@ -3,19 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Pokloni.ba.Model.Requests.Korisnici;
+using Pokloni.ba.WebAPI.Controllers;
 
 namespace Pokloni.ba.WebAPI.Services.Korisnici
 {
-    public interface IUlogeService
+    public interface IUlogeService : IBaseInterface<Uloga>
     {
-        IEnumerable<Uloga> Get();
-
-        Uloga GetById(int id);
-
-        Uloga Insert(Uloga request);
-
-        Uloga Update(Uloga request, int id);
-
-        void Delete(int id);
     }
 }

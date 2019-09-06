@@ -1,13 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using Pokloni.ba.WebAPI.Controllers;
+using System.Collections.Generic;
 
 namespace Pokloni.ba.WebAPI.Services
 {
-    public interface IKorisniciDetailsService
+    public interface IKorisniciDetailsService : IBaseInterface<Model.Requests.Korisnici.KorisniciDetailsGetRequest>
     {
-        IEnumerable<Model.Requests.Korisnici.KorisniciDetailsGetRequest> Get();
-
-        Model.Requests.Korisnici.KorisniciDetailsGetRequest GetById(int id);
-
-        Model.Requests.Korisnici.KorisniciDetailsGetRequest Update(Model.Requests.Korisnici.KorisniciDetailsGetRequest request, int id);
     }
 }

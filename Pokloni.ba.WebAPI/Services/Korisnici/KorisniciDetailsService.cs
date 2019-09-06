@@ -33,6 +33,11 @@ namespace Pokloni.ba.WebAPI.Services
             return _mapper.Map<KorisniciDetailsGetRequest>(temp);
         }
 
+        public KorisniciDetailsGetRequest Insert(KorisniciDetailsGetRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
         public KorisniciDetailsGetRequest Update(KorisniciDetailsGetRequest request, int id)
         {
             var model = _db.KorisnikDetails.Find(id) ?? throw new ServerException(Constants.NotFoundErrorMessage + id);
@@ -44,5 +49,11 @@ namespace Pokloni.ba.WebAPI.Services
 
             return request;
         }
+
+        public void Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }
