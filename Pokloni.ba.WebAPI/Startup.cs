@@ -10,7 +10,9 @@ using Microsoft.OpenApi.Models;
 using Pokloni.ba.WebAPI.Database;
 using Pokloni.ba.WebAPI.Filters;
 using Pokloni.ba.WebAPI.Services;
+using Pokloni.ba.WebAPI.Services.Dostava;
 using Pokloni.ba.WebAPI.Services.Korisnici;
+using Pokloni.ba.WebAPI.Services.Narudzbe;
 using Pokloni.ba.WebAPI.Services.Proizvodi;
 
 namespace Pokloni.ba.WebAPI
@@ -44,6 +46,13 @@ namespace Pokloni.ba.WebAPI
             services.AddScoped<IKorisniciDetailsService, KorisniciDetailsService>();
             services.AddScoped<IUlogeService, UlogeService>();
             services.AddScoped<IProizvodacPoklonaService, ProizvodacPoklonaService>();
+            services.AddScoped<IKategorijeService, KategorijeService>();
+            services.AddScoped<IProizvodiService, ProizvodiService>();
+            services.AddScoped<IDostavaService, DostavaService>();
+            services.AddScoped<IOcjenaService, OcjenaService>();
+            services.AddScoped<IRacunService, RacunService>();
+            services.AddScoped<INarudzbaService, NarudzbaService>();
+            services.AddScoped<INarudzbaDetailsService, NarudzbaDetailsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

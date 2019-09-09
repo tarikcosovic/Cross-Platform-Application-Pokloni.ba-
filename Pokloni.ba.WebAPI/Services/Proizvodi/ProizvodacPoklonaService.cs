@@ -35,10 +35,14 @@ namespace Pokloni.ba.WebAPI.Services.Proizvodi
 
         public ProizvodacPoklona Insert(ProizvodacPoklona request)
         {
+            var validation1 = _db.ProizvodacPoklona.Where(x => x.Naziv == request.Naziv).FirstOrDefault();
+            if (validation1 != null)
+                throw new UserException(Constants.AlreadyExistsErrorMessag + request.Naziv);
+
             var temp = _mapper.Map<Database.ProizvodacPoklona>(request);
 
             _db.ProizvodacPoklona.Add(temp);
-            _db.SaveChangesAsync();
+            _db.SaveChanges();
 
             return request;
         }
