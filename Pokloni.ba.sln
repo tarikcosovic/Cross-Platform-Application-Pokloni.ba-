@@ -5,7 +5,11 @@ VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pokloni.ba.WebAPI", "Pokloni.ba.WebAPI\Pokloni.ba.WebAPI.csproj", "{DC37C1A8-9E33-4FFD-ADF1-D8901AD75930}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pokloni.ba.Model", "Pokloni.ba.Model\Pokloni.ba.Model.csproj", "{58E2095D-7A8F-4E8D-A437-32D456D01FD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pokloni.ba.Model", "Pokloni.ba.Model\Pokloni.ba.Model.csproj", "{58E2095D-7A8F-4E8D-A437-32D456D01FD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pokloni.ba.WinUI", "Pokloni.ba.WinUI\Pokloni.ba.WinUI.csproj", "{EBC4CB5D-B00D-42FC-8F70-B95949BC93D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{998CB094-0052-468C-858B-DCEF3DB86443}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +25,16 @@ Global
 		{58E2095D-7A8F-4E8D-A437-32D456D01FD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58E2095D-7A8F-4E8D-A437-32D456D01FD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58E2095D-7A8F-4E8D-A437-32D456D01FD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBC4CB5D-B00D-42FC-8F70-B95949BC93D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBC4CB5D-B00D-42FC-8F70-B95949BC93D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBC4CB5D-B00D-42FC-8F70-B95949BC93D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBC4CB5D-B00D-42FC-8F70-B95949BC93D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EBC4CB5D-B00D-42FC-8F70-B95949BC93D5} = {998CB094-0052-468C-858B-DCEF3DB86443}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {96FA0417-5392-4C6E-BBDA-EDE4EADD5CFE}
