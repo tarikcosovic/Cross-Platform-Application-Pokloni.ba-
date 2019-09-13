@@ -14,28 +14,22 @@ namespace Pokloni.ba.WinUI.Korisnici
             InitializeComponent();
         }
 
-        private void GroupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private async void Button1_Click(object sender, EventArgs e)
         {
             var queries = txtPretraga.Text;
 
             var result = await _apiService.Get<IEnumerable<Model.Korisnik>>(queries);
       
+            dgvKorisnici.AutoGenerateColumns = false;
             dgvKorisnici.DataSource = result;
         }
 
-        private void TxtPretraga_TextChanged(object sender, EventArgs e)
+        private void DgvKorisnici_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            var id = dgvKorisnici.SelectedRows[0].Cells[1].Value;
 
+            frmKorisniciDetalji frm = new frmKorisniciDetalji((int)id);
+            frm.Show();
         }
     }
 }

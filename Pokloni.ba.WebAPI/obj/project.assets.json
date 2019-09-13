@@ -13240,11 +13240,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tarik\\source\\repos\\Pokloni.ba\\Pokloni.ba.WebAPI\\Pokloni.ba.WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\tarik\\source\\repos\\Pokloni.ba-Cross-platform-application\\Pokloni.ba.WebAPI\\Pokloni.ba.WebAPI.csproj",
       "projectName": "Pokloni.ba.WebAPI",
-      "projectPath": "C:\\Users\\tarik\\source\\repos\\Pokloni.ba\\Pokloni.ba.WebAPI\\Pokloni.ba.WebAPI.csproj",
+      "projectPath": "C:\\Users\\tarik\\source\\repos\\Pokloni.ba-Cross-platform-application\\Pokloni.ba.WebAPI\\Pokloni.ba.WebAPI.csproj",
       "packagesPath": "C:\\Users\\tarik\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tarik\\source\\repos\\Pokloni.ba\\Pokloni.ba.WebAPI\\obj\\",
+      "outputPath": "C:\\Users\\tarik\\source\\repos\\Pokloni.ba-Cross-platform-application\\Pokloni.ba.WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -13265,8 +13265,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\tarik\\source\\repos\\Pokloni.ba\\Pokloni.ba.Model\\Pokloni.ba.Model.csproj": {
-              "projectPath": "C:\\Users\\tarik\\source\\repos\\Pokloni.ba\\Pokloni.ba.Model\\Pokloni.ba.Model.csproj"
+            "C:\\Users\\tarik\\source\\repos\\Pokloni.ba-Cross-platform-application\\Pokloni.ba.Model\\Pokloni.ba.Model.csproj": {
+              "projectPath": "C:\\Users\\tarik\\source\\repos\\Pokloni.ba-Cross-platform-application\\Pokloni.ba.Model\\Pokloni.ba.Model.csproj"
             }
           }
         }
