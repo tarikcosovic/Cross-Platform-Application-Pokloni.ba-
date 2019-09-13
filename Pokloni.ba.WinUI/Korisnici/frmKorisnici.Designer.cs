@@ -48,7 +48,7 @@
             // 
             this.txtPretraga.Depth = 0;
             this.txtPretraga.Hint = "";
-            this.txtPretraga.Location = new System.Drawing.Point(16, 102);
+            this.txtPretraga.Location = new System.Drawing.Point(91, 101);
             this.txtPretraga.MaxLength = 32767;
             this.txtPretraga.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtPretraga.Name = "txtPretraga";
@@ -67,7 +67,7 @@
             this.btnPrikazi.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnPrikazi.Depth = 0;
             this.btnPrikazi.Icon = null;
-            this.btnPrikazi.Location = new System.Drawing.Point(493, 89);
+            this.btnPrikazi.Location = new System.Drawing.Point(568, 88);
             this.btnPrikazi.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnPrikazi.Name = "btnPrikazi";
             this.btnPrikazi.Primary = true;
@@ -91,12 +91,12 @@
             this.listaKorisnika.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.listaKorisnika.FullRowSelect = true;
             this.listaKorisnika.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listaKorisnika.Location = new System.Drawing.Point(16, 149);
+            this.listaKorisnika.Location = new System.Drawing.Point(91, 148);
             this.listaKorisnika.MouseLocation = new System.Drawing.Point(-1, -1);
             this.listaKorisnika.MouseState = MaterialSkin.MouseState.OUT;
             this.listaKorisnika.Name = "listaKorisnika";
             this.listaKorisnika.OwnerDraw = true;
-            this.listaKorisnika.Size = new System.Drawing.Size(454, 331);
+            this.listaKorisnika.Size = new System.Drawing.Size(454, 182);
             this.listaKorisnika.TabIndex = 3;
             this.listaKorisnika.UseCompatibleStateImageBehavior = false;
             this.listaKorisnika.View = System.Windows.Forms.View.Details;
@@ -125,14 +125,21 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1070, 518);
+            this.AutoScroll = true;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.ClientSize = new System.Drawing.Size(721, 413);
+            this.ControlBox = false;
             this.Controls.Add(this.listaKorisnika);
             this.Controls.Add(this.btnPrikazi);
             this.Controls.Add(this.txtPretraga);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmKorisnici";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmKorisnici";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Korisnički Panel";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();
 

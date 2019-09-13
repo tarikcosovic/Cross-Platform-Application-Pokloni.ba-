@@ -11,21 +11,34 @@ using System.Windows.Forms;
 
 namespace Pokloni.ba.WinUI
 {
-    public partial class frmIndex : MyMaterialForm
+    public partial class frmIndex : Form
     {
         public frmIndex()
         {
             InitializeComponent();
 
-            InitialiseMyMaterialDesign(this);
+            //InitialiseMyMaterialDesign(this);
         }
 
         private void PretragaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmKorisnici frm = new frmKorisnici();
+            if ((Application.OpenForms["frmKorisnici"] as frmKorisnici) != null)
+            {
+                //Forma otvorena
+            }
+            else
+            {
+                foreach (Form fr in this.MdiChildren)
+                {
+                    fr.Dispose();
+                    fr.Close();
+                }
 
-           // frm.MdiParent = this;
-            frm.Show();
+                frmKorisnici frm = new frmKorisnici();
+                frm.MdiParent = this;
+                frm.Dock = DockStyle.Fill;
+                frm.Show();
+            }
         }
 
         private void NoviKorisnikToolStripMenuItem_Click(object sender, EventArgs e)

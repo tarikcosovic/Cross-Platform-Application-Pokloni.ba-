@@ -16,7 +16,6 @@ namespace Pokloni.ba.WinUI.Korisnici
             InitialiseMyMaterialDesign(this);
         }
 
-
         private async void BtnPrikazi_Click(object sender, EventArgs e)
         {
             var queries = txtPretraga.Text;
