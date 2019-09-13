@@ -28,143 +28,123 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvKorisnici = new System.Windows.Forms.DataGridView();
-            this.btnPrikazi = new System.Windows.Forms.Button();
-            this.txtPretraga = new System.Windows.Forms.TextBox();
-            this.KorisnikID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KorisnikDetailsID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UlogaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKorisnici)).BeginInit();
+            System.Windows.Forms.ColumnHeader Dummy;
+            this.txtPretraga = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.btnPrikazi = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.listaKorisnika = new MaterialSkin.Controls.MaterialListView();
+            this.UserDetailsID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.test1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.test2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.test3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            Dummy = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
-            // groupBox1
+            // Dummy
             // 
-            this.groupBox1.Controls.Add(this.dgvKorisnici);
-            this.groupBox1.Location = new System.Drawing.Point(13, 107);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(775, 331);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Korisnici";
-            // 
-            // dgvKorisnici
-            // 
-            this.dgvKorisnici.AllowUserToAddRows = false;
-            this.dgvKorisnici.AllowUserToDeleteRows = false;
-            this.dgvKorisnici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKorisnici.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.KorisnikID,
-            this.KorisnikDetailsID,
-            this.UlogaID,
-            this.username,
-            this.Email,
-            this.Status});
-            this.dgvKorisnici.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvKorisnici.Location = new System.Drawing.Point(3, 16);
-            this.dgvKorisnici.Name = "dgvKorisnici";
-            this.dgvKorisnici.ReadOnly = true;
-            this.dgvKorisnici.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvKorisnici.Size = new System.Drawing.Size(769, 312);
-            this.dgvKorisnici.TabIndex = 0;
-            this.dgvKorisnici.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DgvKorisnici_MouseDoubleClick);
-            // 
-            // btnPrikazi
-            // 
-            this.btnPrikazi.Location = new System.Drawing.Point(533, 69);
-            this.btnPrikazi.Name = "btnPrikazi";
-            this.btnPrikazi.Size = new System.Drawing.Size(78, 32);
-            this.btnPrikazi.TabIndex = 1;
-            this.btnPrikazi.Text = "Prikaži";
-            this.btnPrikazi.UseVisualStyleBackColor = true;
-            this.btnPrikazi.Click += new System.EventHandler(this.Button1_Click);
+            Dummy.Text = "DummyCollumn";
+            Dummy.Width = 0;
             // 
             // txtPretraga
             // 
-            this.txtPretraga.Location = new System.Drawing.Point(16, 76);
+            this.txtPretraga.Depth = 0;
+            this.txtPretraga.Hint = "";
+            this.txtPretraga.Location = new System.Drawing.Point(16, 102);
+            this.txtPretraga.MaxLength = 32767;
+            this.txtPretraga.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtPretraga.Name = "txtPretraga";
-            this.txtPretraga.Size = new System.Drawing.Size(468, 20);
-            this.txtPretraga.TabIndex = 2;
+            this.txtPretraga.PasswordChar = '\0';
+            this.txtPretraga.SelectedText = "";
+            this.txtPretraga.SelectionLength = 0;
+            this.txtPretraga.SelectionStart = 0;
+            this.txtPretraga.Size = new System.Drawing.Size(454, 23);
+            this.txtPretraga.TabIndex = 1;
+            this.txtPretraga.TabStop = false;
+            this.txtPretraga.UseSystemPasswordChar = false;
             // 
-            // KorisnikID
+            // btnPrikazi
             // 
-            this.KorisnikID.DataPropertyName = "KorisnikID";
-            this.KorisnikID.HeaderText = "KorisnikID";
-            this.KorisnikID.Name = "KorisnikID";
-            this.KorisnikID.ReadOnly = true;
-            this.KorisnikID.Visible = false;
+            this.btnPrikazi.AutoSize = true;
+            this.btnPrikazi.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnPrikazi.Depth = 0;
+            this.btnPrikazi.Icon = null;
+            this.btnPrikazi.Location = new System.Drawing.Point(493, 89);
+            this.btnPrikazi.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnPrikazi.Name = "btnPrikazi";
+            this.btnPrikazi.Primary = true;
+            this.btnPrikazi.Size = new System.Drawing.Size(84, 36);
+            this.btnPrikazi.TabIndex = 2;
+            this.btnPrikazi.Text = "Pretraži";
+            this.btnPrikazi.UseVisualStyleBackColor = true;
+            this.btnPrikazi.Click += new System.EventHandler(this.BtnPrikazi_Click);
             // 
-            // KorisnikDetailsID
+            // listaKorisnika
             // 
-            this.KorisnikDetailsID.DataPropertyName = "KorisnikDetailsID";
-            this.KorisnikDetailsID.HeaderText = "KorisnikDetailsID";
-            this.KorisnikDetailsID.Name = "KorisnikDetailsID";
-            this.KorisnikDetailsID.ReadOnly = true;
-            this.KorisnikDetailsID.Visible = false;
+            this.listaKorisnika.Activation = System.Windows.Forms.ItemActivation.TwoClick;
+            this.listaKorisnika.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listaKorisnika.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            Dummy,
+            this.UserDetailsID,
+            this.test1,
+            this.test2,
+            this.test3});
+            this.listaKorisnika.Depth = 0;
+            this.listaKorisnika.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.listaKorisnika.FullRowSelect = true;
+            this.listaKorisnika.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listaKorisnika.Location = new System.Drawing.Point(16, 149);
+            this.listaKorisnika.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.listaKorisnika.MouseState = MaterialSkin.MouseState.OUT;
+            this.listaKorisnika.Name = "listaKorisnika";
+            this.listaKorisnika.OwnerDraw = true;
+            this.listaKorisnika.Size = new System.Drawing.Size(454, 331);
+            this.listaKorisnika.TabIndex = 3;
+            this.listaKorisnika.UseCompatibleStateImageBehavior = false;
+            this.listaKorisnika.View = System.Windows.Forms.View.Details;
+            this.listaKorisnika.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ListaKorisnika_MouseDoubleClick);
             // 
-            // UlogaID
+            // UserDetailsID
             // 
-            this.UlogaID.DataPropertyName = "UlogaID";
-            this.UlogaID.HeaderText = "UlogaID";
-            this.UlogaID.Name = "UlogaID";
-            this.UlogaID.ReadOnly = true;
-            this.UlogaID.Visible = false;
+            this.UserDetailsID.Width = 0;
             // 
-            // username
+            // test1
             // 
-            this.username.DataPropertyName = "Username";
-            this.username.HeaderText = "Username";
-            this.username.Name = "username";
-            this.username.ReadOnly = true;
+            this.test1.Text = "Username";
+            this.test1.Width = 120;
             // 
-            // Email
+            // test2
             // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
+            this.test2.Text = "E-mail";
+            this.test2.Width = 150;
             // 
-            // Status
+            // test3
             // 
-            this.Status.DataPropertyName = "Status";
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
+            this.test3.Text = "Status";
+            this.test3.Width = 100;
             // 
             // frmKorisnici
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.txtPretraga);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(1070, 518);
+            this.Controls.Add(this.listaKorisnika);
             this.Controls.Add(this.btnPrikazi);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.txtPretraga);
             this.Name = "frmKorisnici";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmKorisnici";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKorisnici)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dgvKorisnici;
-        private System.Windows.Forms.Button btnPrikazi;
-        private System.Windows.Forms.TextBox txtPretraga;
-        private System.Windows.Forms.DataGridViewTextBoxColumn KorisnikID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn KorisnikDetailsID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UlogaID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn username;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private MaterialSkin.Controls.MaterialRaisedButton btnPrikazi;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtPretraga;
+        private MaterialSkin.Controls.MaterialListView listaKorisnika;
+        private System.Windows.Forms.ColumnHeader test1;
+        private System.Windows.Forms.ColumnHeader test2;
+        private System.Windows.Forms.ColumnHeader test3;
+        private System.Windows.Forms.ColumnHeader UserDetailsID;
     }
 }
