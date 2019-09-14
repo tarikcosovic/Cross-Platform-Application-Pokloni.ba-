@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
+using MaterialSkin.Controls;
 
 namespace Pokloni.ba.WinUI.Korisnici
 {
-    public partial class frmKorisniciDetalji : Form
+    public partial class frmKorisniciDetalji : MyMaterialForm
     {
         private readonly APIService _apiService = new APIService("KorisniciDetails");
         private readonly int? _id = null;
@@ -18,6 +13,8 @@ namespace Pokloni.ba.WinUI.Korisnici
         {
             _id = korisnikId;
             InitializeComponent();
+
+            InitialiseMyMaterialDesign(this);
         }
 
         private async void FrmKorisniciDetalji_Load(object sender, EventArgs e)
@@ -35,9 +32,10 @@ namespace Pokloni.ba.WinUI.Korisnici
                 BrojTelefona.Text = korisnik.BrojTelefona;
             }
         }
-        private async void Button1_Click(object sender, EventArgs e)
+
+        private async void MaterialRaisedButton1_Click(object sender, EventArgs e)
         {
-            TextBox[] temp = new TextBox[7] { Ime, Prezime, Drzava, Grad, ZipCode, Adresa, BrojTelefona };
+            MaterialSingleLineTextField[] temp = new MaterialSingleLineTextField[7] { Ime, Prezime, Drzava, Grad, ZipCode, Adresa, BrojTelefona };
 
             if (ValidationHelper.ValidateTextBoxes(temp, errorProvider))
             {
@@ -60,6 +58,5 @@ namespace Pokloni.ba.WinUI.Korisnici
                 }
             }
         }
-
     }
 }

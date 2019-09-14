@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,7 @@ namespace Pokloni.ba.WinUI
 {
     public static class ValidationHelper
     {
-        public static bool NotNull(TextBox[] model, ErrorProvider errorProvider)
+        public static bool NotNull(MaterialSingleLineTextField[] model, ErrorProvider errorProvider)
         {
             foreach (var item in model)
             {
@@ -26,7 +27,7 @@ namespace Pokloni.ba.WinUI
             return true;
         }
 
-        public static bool LengthCheck(TextBox[] model, ErrorProvider errorProvider, int min = 3, int max = 100)
+        public static bool LengthCheck(MaterialSingleLineTextField[] model, ErrorProvider errorProvider, int min = 3, int max = 100)
         {
             foreach (var item in model)
             {
@@ -48,7 +49,7 @@ namespace Pokloni.ba.WinUI
             return true;
         }
 
-        public static bool ValidateTextBoxes(TextBox[] temp, ErrorProvider errorProvider)
+        public static bool ValidateTextBoxes(MaterialSingleLineTextField[] temp, ErrorProvider errorProvider)
         {
             if (NotNull(temp, errorProvider) && LengthCheck(temp, errorProvider))
                 return true;

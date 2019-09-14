@@ -47,5 +47,13 @@ namespace Pokloni.ba.WinUI
 
             frm.Show();
         }
+
+        private void FrmIndex_Load(object sender, EventArgs e)
+        {
+            frmKorisnici frm = new frmKorisnici();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+        }
     }
 }
