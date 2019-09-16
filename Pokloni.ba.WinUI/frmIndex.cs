@@ -1,4 +1,5 @@
 ﻿using Pokloni.ba.WinUI.Korisnici;
+using Pokloni.ba.WinUI.Proizvodi;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -54,6 +55,27 @@ namespace Pokloni.ba.WinUI
             frm.MdiParent = this;
             frm.Dock = DockStyle.Fill;
             frm.Show();
+        }
+
+        private void PretražiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if ((Application.OpenForms["frmProizvodi"] as frmProizvodi) != null)
+            {
+                //Forma otvorena
+            }
+            else
+            {
+                foreach (Form fr in this.MdiChildren)
+                {
+                    fr.Dispose();
+                    fr.Close();
+                }
+
+                frmProizvodi frm = new frmProizvodi();
+                frm.MdiParent = this;
+                frm.Dock = DockStyle.Fill;
+                frm.Show();
+            }
         }
     }
 }

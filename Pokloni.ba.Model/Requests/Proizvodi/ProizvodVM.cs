@@ -6,6 +6,7 @@ namespace Pokloni.ba.Model.Requests.Proizvodi
 {
     public class ProizvodVM
     {
+        public int ProizvodId { get; set; }
         public int KategorijaId { get; set; }
         public int ProizvodacId { get; set; }
         public string Naziv { get; set; }

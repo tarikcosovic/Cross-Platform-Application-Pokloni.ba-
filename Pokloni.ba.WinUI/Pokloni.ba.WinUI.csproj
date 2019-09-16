@@ -106,6 +106,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="Proizvodi\frmProizvodi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proizvodi\frmProizvodi.Designer.cs">
+      <DependentUpon>frmProizvodi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proizvodi\frmProizvodiDetalji.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Korisnici\frmKorisniciInsert.resx">
       <DependentUpon>frmKorisniciInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proizvodi\frmProizvodi.resx">
+      <DependentUpon>frmProizvodi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proizvodi\frmProizvodiDetalji.resx">
       <DependentUpon>frmProizvodiDetalji.cs</DependentUpon>

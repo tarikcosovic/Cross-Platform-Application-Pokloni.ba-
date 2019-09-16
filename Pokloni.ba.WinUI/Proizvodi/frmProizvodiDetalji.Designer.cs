@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProizvodiDetalji));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Naziv = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.NazivProizvoda = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
@@ -39,14 +39,17 @@
             this.Kategorija = new System.Windows.Forms.ComboBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.StanjeNaLageru = new MaterialSkin.Controls.MaterialLabel();
-            this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.labelbraca = new MaterialSkin.Controls.MaterialLabel();
+            this.StanjeNaLageru = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.Cijena = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Opis = new System.Windows.Forms.TextBox();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.Sifra = new MaterialSkin.Controls.MaterialSingleLineTextField();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -64,22 +67,22 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // Naziv
+            // NazivProizvoda
             // 
-            this.Naziv.Depth = 0;
-            this.Naziv.Hint = "";
-            this.Naziv.Location = new System.Drawing.Point(445, 103);
-            this.Naziv.MaxLength = 32767;
-            this.Naziv.MouseState = MaterialSkin.MouseState.HOVER;
-            this.Naziv.Name = "Naziv";
-            this.Naziv.PasswordChar = '\0';
-            this.Naziv.SelectedText = "";
-            this.Naziv.SelectionLength = 0;
-            this.Naziv.SelectionStart = 0;
-            this.Naziv.Size = new System.Drawing.Size(205, 23);
-            this.Naziv.TabIndex = 1;
-            this.Naziv.TabStop = false;
-            this.Naziv.UseSystemPasswordChar = false;
+            this.NazivProizvoda.Depth = 0;
+            this.NazivProizvoda.Hint = "";
+            this.NazivProizvoda.Location = new System.Drawing.Point(445, 103);
+            this.NazivProizvoda.MaxLength = 32767;
+            this.NazivProizvoda.MouseState = MaterialSkin.MouseState.HOVER;
+            this.NazivProizvoda.Name = "NazivProizvoda";
+            this.NazivProizvoda.PasswordChar = '\0';
+            this.NazivProizvoda.SelectedText = "";
+            this.NazivProizvoda.SelectionLength = 0;
+            this.NazivProizvoda.SelectionStart = 0;
+            this.NazivProizvoda.Size = new System.Drawing.Size(205, 23);
+            this.NazivProizvoda.TabIndex = 1;
+            this.NazivProizvoda.TabStop = false;
+            this.NazivProizvoda.UseSystemPasswordChar = false;
             // 
             // materialLabel1
             // 
@@ -165,56 +168,58 @@
             this.pictureBox3.TabIndex = 11;
             this.pictureBox3.TabStop = false;
             // 
+            // labelbraca
+            // 
+            this.labelbraca.AutoSize = true;
+            this.labelbraca.Depth = 0;
+            this.labelbraca.Font = new System.Drawing.Font("Roboto", 11F);
+            this.labelbraca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelbraca.Location = new System.Drawing.Point(710, 184);
+            this.labelbraca.MouseState = MaterialSkin.MouseState.HOVER;
+            this.labelbraca.Name = "labelbraca";
+            this.labelbraca.Size = new System.Drawing.Size(116, 19);
+            this.labelbraca.TabIndex = 13;
+            this.labelbraca.Text = "Stanje na lageru";
+            // 
             // StanjeNaLageru
             // 
-            this.StanjeNaLageru.AutoSize = true;
             this.StanjeNaLageru.Depth = 0;
-            this.StanjeNaLageru.Font = new System.Drawing.Font("Roboto", 11F);
-            this.StanjeNaLageru.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.StanjeNaLageru.Location = new System.Drawing.Point(724, 155);
+            this.StanjeNaLageru.Hint = "";
+            this.StanjeNaLageru.Location = new System.Drawing.Point(714, 206);
+            this.StanjeNaLageru.MaxLength = 32767;
             this.StanjeNaLageru.MouseState = MaterialSkin.MouseState.HOVER;
             this.StanjeNaLageru.Name = "StanjeNaLageru";
-            this.StanjeNaLageru.Size = new System.Drawing.Size(116, 19);
-            this.StanjeNaLageru.TabIndex = 13;
-            this.StanjeNaLageru.Text = "Stanje na lageru";
-            // 
-            // materialSingleLineTextField1
-            // 
-            this.materialSingleLineTextField1.Depth = 0;
-            this.materialSingleLineTextField1.Hint = "";
-            this.materialSingleLineTextField1.Location = new System.Drawing.Point(728, 178);
-            this.materialSingleLineTextField1.MaxLength = 32767;
-            this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField1.Name = "materialSingleLineTextField1";
-            this.materialSingleLineTextField1.PasswordChar = '\0';
-            this.materialSingleLineTextField1.SelectedText = "";
-            this.materialSingleLineTextField1.SelectionLength = 0;
-            this.materialSingleLineTextField1.SelectionStart = 0;
-            this.materialSingleLineTextField1.Size = new System.Drawing.Size(112, 23);
-            this.materialSingleLineTextField1.TabIndex = 12;
-            this.materialSingleLineTextField1.TabStop = false;
-            this.materialSingleLineTextField1.Text = "23";
-            this.materialSingleLineTextField1.UseSystemPasswordChar = false;
+            this.StanjeNaLageru.PasswordChar = '\0';
+            this.StanjeNaLageru.SelectedText = "";
+            this.StanjeNaLageru.SelectionLength = 0;
+            this.StanjeNaLageru.SelectionStart = 0;
+            this.StanjeNaLageru.Size = new System.Drawing.Size(112, 23);
+            this.StanjeNaLageru.TabIndex = 12;
+            this.StanjeNaLageru.TabStop = false;
+            this.StanjeNaLageru.Text = "23";
+            this.StanjeNaLageru.UseSystemPasswordChar = false;
             // 
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(748, 207);
+            this.pictureBox4.Location = new System.Drawing.Point(737, 235);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(24, 26);
             this.pictureBox4.TabIndex = 14;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.PictureBox4_Click);
             // 
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(796, 207);
+            this.pictureBox5.Location = new System.Drawing.Point(767, 235);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(24, 26);
             this.pictureBox5.TabIndex = 15;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.PictureBox5_Click);
             // 
             // materialLabel5
             // 
@@ -222,7 +227,7 @@
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel5.Location = new System.Drawing.Point(724, 81);
+            this.materialLabel5.Location = new System.Drawing.Point(710, 132);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
             this.materialLabel5.Size = new System.Drawing.Size(51, 19);
@@ -233,7 +238,7 @@
             // 
             this.Cijena.Depth = 0;
             this.Cijena.Hint = "";
-            this.Cijena.Location = new System.Drawing.Point(728, 103);
+            this.Cijena.Location = new System.Drawing.Point(714, 154);
             this.Cijena.MaxLength = 32767;
             this.Cijena.MouseState = MaterialSkin.MouseState.HOVER;
             this.Cijena.Name = "Cijena";
@@ -246,16 +251,16 @@
             this.Cijena.TabStop = false;
             this.Cijena.UseSystemPasswordChar = false;
             // 
-            // textBox1
+            // Opis
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(206, 103);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(187, 139);
-            this.textBox1.TabIndex = 18;
-            this.textBox1.Text = resources.GetString("textBox1.Text");
+            this.Opis.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Opis.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Opis.Location = new System.Drawing.Point(206, 103);
+            this.Opis.Multiline = true;
+            this.Opis.Name = "Opis";
+            this.Opis.Size = new System.Drawing.Size(187, 139);
+            this.Opis.TabIndex = 18;
+            this.Opis.Text = resources.GetString("Opis.Text");
             // 
             // materialLabel6
             // 
@@ -270,19 +275,67 @@
             this.materialLabel6.TabIndex = 19;
             this.materialLabel6.Text = "Opis";
             // 
+            // materialRaisedButton1
+            // 
+            this.materialRaisedButton1.AutoSize = true;
+            this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton1.Depth = 0;
+            this.materialRaisedButton1.Icon = null;
+            this.materialRaisedButton1.Location = new System.Drawing.Point(877, 238);
+            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton1.Name = "materialRaisedButton1";
+            this.materialRaisedButton1.Primary = true;
+            this.materialRaisedButton1.Size = new System.Drawing.Size(82, 36);
+            this.materialRaisedButton1.TabIndex = 20;
+            this.materialRaisedButton1.Text = "Sačuvaj";
+            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            // 
+            // materialLabel4
+            // 
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel4.Location = new System.Drawing.Point(710, 81);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(38, 18);
+            this.materialLabel4.TabIndex = 22;
+            this.materialLabel4.Text = "Sifra";
+            // 
+            // Sifra
+            // 
+            this.Sifra.Depth = 0;
+            this.Sifra.Hint = "";
+            this.Sifra.Location = new System.Drawing.Point(714, 103);
+            this.Sifra.MaxLength = 32767;
+            this.Sifra.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Sifra.Name = "Sifra";
+            this.Sifra.PasswordChar = '\0';
+            this.Sifra.SelectedText = "";
+            this.Sifra.SelectionLength = 0;
+            this.Sifra.SelectionStart = 0;
+            this.Sifra.Size = new System.Drawing.Size(112, 23);
+            this.Sifra.TabIndex = 21;
+            this.Sifra.TabStop = false;
+            this.Sifra.UseSystemPasswordChar = false;
+            // 
             // frmProizvodiDetalji
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(994, 531);
+            this.Controls.Add(this.materialLabel4);
+            this.Controls.Add(this.Sifra);
+            this.Controls.Add(this.materialRaisedButton1);
             this.Controls.Add(this.materialLabel6);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Opis);
             this.Controls.Add(this.materialLabel5);
             this.Controls.Add(this.Cijena);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.labelbraca);
             this.Controls.Add(this.StanjeNaLageru);
-            this.Controls.Add(this.materialSingleLineTextField1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.Kategorija);
@@ -291,12 +344,13 @@
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.Naziv);
+            this.Controls.Add(this.NazivProizvoda);
             this.Controls.Add(this.pictureBox1);
             this.Name = "frmProizvodiDetalji";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalji proizvoda";
+            this.Load += new System.EventHandler(this.FrmProizvodiDetalji_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -311,7 +365,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private MaterialSkin.Controls.MaterialSingleLineTextField Naziv;
+        private MaterialSkin.Controls.MaterialSingleLineTextField NazivProizvoda;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
@@ -320,13 +374,16 @@
         private System.Windows.Forms.ComboBox Kategorija;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private MaterialSkin.Controls.MaterialLabel StanjeNaLageru;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
+        private MaterialSkin.Controls.MaterialLabel labelbraca;
+        private MaterialSkin.Controls.MaterialSingleLineTextField StanjeNaLageru;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialSingleLineTextField Cijena;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Opis;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private MaterialSkin.Controls.MaterialSingleLineTextField Sifra;
     }
 }

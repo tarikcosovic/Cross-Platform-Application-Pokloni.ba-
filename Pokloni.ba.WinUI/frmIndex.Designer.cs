@@ -42,6 +42,8 @@
             this.materialContextMenuStrip2 = new MaterialSkin.Controls.MaterialContextMenuStrip();
             this.testToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.test2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pretražiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.noviProizvodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.materialContextMenuStrip1.SuspendLayout();
             this.materialContextMenuStrip2.SuspendLayout();
@@ -95,6 +97,9 @@
             // productsToolStripMenuItem
             // 
             this.productsToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.productsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pretražiToolStripMenuItem,
+            this.noviProizvodToolStripMenuItem});
             this.productsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("productsToolStripMenuItem.Image")));
             this.productsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
@@ -153,6 +158,19 @@
             this.test2ToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.test2ToolStripMenuItem.Text = "test2";
             // 
+            // pretražiToolStripMenuItem
+            // 
+            this.pretražiToolStripMenuItem.Name = "pretražiToolStripMenuItem";
+            this.pretražiToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.pretražiToolStripMenuItem.Text = "Pretraži";
+            this.pretražiToolStripMenuItem.Click += new System.EventHandler(this.PretražiToolStripMenuItem_Click);
+            // 
+            // noviProizvodToolStripMenuItem
+            // 
+            this.noviProizvodToolStripMenuItem.Name = "noviProizvodToolStripMenuItem";
+            this.noviProizvodToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.noviProizvodToolStripMenuItem.Text = "Novi Proizvod";
+            // 
             // frmIndex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,6 +209,8 @@
         private MaterialSkin.Controls.MaterialContextMenuStrip materialContextMenuStrip2;
         private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem test2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pretražiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem noviProizvodToolStripMenuItem;
     }
 }
 

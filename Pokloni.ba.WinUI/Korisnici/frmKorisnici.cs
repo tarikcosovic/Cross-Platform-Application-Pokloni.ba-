@@ -19,16 +19,16 @@ namespace Pokloni.ba.WinUI.Korisnici
         private async void BtnPrikazi_Click(object sender, EventArgs e)
         {
             var queries = txtPretraga.Text;
-            var result = await _apiService.Get<IEnumerable<Model.Korisnik>>(queries);
+            var result = await _apiService.Get<IEnumerable<Model.Korisnik>>("Username", queries);
 
             listaKorisnika.Items.Clear();
             foreach (var item in result)
             {
                 ListViewItem temp = new ListViewItem();
-                temp.SubItems.Add(item.KorisnikDetailsId.ToString());
                 temp.SubItems.Add(item.Username);
                 temp.SubItems.Add(item.Email);
                 temp.SubItems.Add(item.Status.ToString());
+                temp.Tag = item.KorisnikDetailsId.ToString();
 
                 listaKorisnika.Items.Add(temp);
             }
@@ -36,7 +36,7 @@ namespace Pokloni.ba.WinUI.Korisnici
 
         private void ListaKorisnika_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            var id = listaKorisnika.SelectedItems[0].SubItems[1].Text;
+            var id = listaKorisnika.SelectedItems[0].Tag.ToString();
 
             frmKorisniciDetalji frm = new frmKorisniciDetalji(int.Parse(id));
             frm.Show();

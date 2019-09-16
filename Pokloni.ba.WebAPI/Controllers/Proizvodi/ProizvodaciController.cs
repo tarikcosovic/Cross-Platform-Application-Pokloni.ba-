@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using Microsoft.AspNet.OData;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿
 using Pokloni.ba.Model.Requests.Proizvodi;
 using Pokloni.ba.WebAPI.Services.Proizvodi;
 

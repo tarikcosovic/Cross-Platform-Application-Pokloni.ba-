@@ -32,7 +32,6 @@
             this.txtPretraga = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btnPrikazi = new MaterialSkin.Controls.MaterialRaisedButton();
             this.listaKorisnika = new MaterialSkin.Controls.MaterialListView();
-            this.UserDetailsID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.test1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.test2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.test3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -41,7 +40,7 @@
             // 
             // Dummy
             // 
-            Dummy.Text = "DummyCollumn";
+            Dummy.Text = "";
             Dummy.Width = 0;
             // 
             // txtPretraga
@@ -83,7 +82,6 @@
             this.listaKorisnika.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listaKorisnika.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             Dummy,
-            this.UserDetailsID,
             this.test1,
             this.test2,
             this.test3});
@@ -96,15 +94,11 @@
             this.listaKorisnika.MouseState = MaterialSkin.MouseState.OUT;
             this.listaKorisnika.Name = "listaKorisnika";
             this.listaKorisnika.OwnerDraw = true;
-            this.listaKorisnika.Size = new System.Drawing.Size(454, 182);
+            this.listaKorisnika.Size = new System.Drawing.Size(454, 263);
             this.listaKorisnika.TabIndex = 3;
             this.listaKorisnika.UseCompatibleStateImageBehavior = false;
             this.listaKorisnika.View = System.Windows.Forms.View.Details;
             this.listaKorisnika.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ListaKorisnika_MouseDoubleClick);
-            // 
-            // UserDetailsID
-            // 
-            this.UserDetailsID.Width = 0;
             // 
             // test1
             // 
@@ -150,6 +144,5 @@
         private System.Windows.Forms.ColumnHeader test1;
         private System.Windows.Forms.ColumnHeader test2;
         private System.Windows.Forms.ColumnHeader test3;
-        private System.Windows.Forms.ColumnHeader UserDetailsID;
     }
 }

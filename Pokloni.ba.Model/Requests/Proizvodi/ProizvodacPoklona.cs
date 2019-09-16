@@ -7,6 +7,7 @@ namespace Pokloni.ba.Model.Requests.Proizvodi
 {
     public class ProizvodacPoklona
     {
+        public int ProizvodacPoklonaId { get; set; }
         [Required]
         [MinLength(3), MaxLength(50)]
         public string Naziv { get; set; }

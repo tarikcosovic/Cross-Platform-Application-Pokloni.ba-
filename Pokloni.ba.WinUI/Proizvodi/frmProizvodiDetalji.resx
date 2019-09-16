@@ -283,16 +283,16 @@
   </data>
   <data name="pictureBox5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAE/SURBVEhL3ZRNTsMwEIUjJHoZllVstsRe81MVzsMOCkdgBS1wI0gLHALFYcGiZh4MsnAnxY5g
-        0096G2feizRjT7HZ+OOdQWPLE2fVnTOqJjlWjTN8Qw2X50HmUWPUC4X5dWqNen6r1BHbfsefFltkvIiD
-        EjSBl2O6cba8FMxpsuqcY2TQFtGYIWrZIcf9BMNCPyVTjjA3cfCft0Uw9FFj9JhjA86U91JxT804NkCH
-        i6jIv19fJSn2kWqODVD/m7gwldiHLI4N/OUPSK8cG6DDeVQktkNS7HOVfuTYgKvU7UphX1l1w7GBf7+m
-        fjjcbq16kgw56nxoAFtRMmVo2e7t7nOcDBX12aRfqvQZx3TD63qyYl6vJTZp0rr+BlsxcSaL1uoDtuWB
-        weNGUMgMdxuPkR/kgzN6im+o4fKNpCg+AEwFUR8BdET6AAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAT9JREFUSEvd
+        lE1OwzAQhSMkehmWVWy2xF7zUxXOww4KR2AFLXAjSAscAsVhwaJmHgyycCfFjmDTT3obZ96LNGNPsdn4
+        451BY8sTZ9WdM6omOVaNM3xDDZfnQeZRY9QLhfl1ao16fqvUEdt+x58WW2S8iIMSNIGXY7pxtrwUzGmy
+        6pxjZNAW0Zghatkhx/0Ew0I/JVOOMDdx8J+3RTD0UWP0mGMDzpT3UnFPzTg2QIeLqMi/X18lKfaRao4N
+        UP+buDCV2Icsjg385Q9IrxwboMN5VCS2Q1Lsc5V+5NiAq9TtSmFfWXXDsYF/v6Z+ONxurXqSDDnqfGgA
+        W1EyZWjZ7u3uc5wMFfXZpF+q9BnHdMPrerJiXq8lNmnSuv4GWzFxJovW6gO25YHB40ZQyAx3G4+RH+SD
+        M3qKb6jh8o2kKD4ATAVRHwF0RPoAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="textBox1.Text" xml:space="preserve">
+  <data name="Opis.Text" xml:space="preserve">
     <value>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin, arcu eget pellentesque lobortis, urna mi gravida justo, ac aliquam ex lorem quis elit. Cras tempus nibh nec eros suscipit tristique. Fusce a vehicula ex. Morbi tincidunt pellentesque nisi vel fermentum. Sed eu leo nec justo dictum pellentesque nec et tellus.</value>
   </data>
 </root>

@@ -17,16 +17,15 @@ namespace Pokloni.ba.WinUI
             _route = route;
         }
 
-        public async Task<T> Get<T>(string queries)
+        public async Task<T> Get<T>(string attribute="", string queries="")
         {
-            string filter ="";
-
+            var filter = "";
             if (!string.IsNullOrWhiteSpace(queries))
-                filter = "?$filter=username eq " + "'" + queries + "'";
-
-           // MessageBox.Show("Korisnik pod tim imenom ne postoji.", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                filter = "?$filter="+ attribute + " eq " + "'" + queries + "'";
 
             var result = await $"{Properties.Settings.Default.APIUrl}/{ _route}{filter}".GetJsonAsync<T>();
+            //if(result.Equals(new List<T>())) PROVJERITI STA VRACA RESULT KAD VRATA NISTA, TJ. PRAZNU LISTU
+               // MessageBox.Show("Korisnik pod tim imenom ne postoji.", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             return result;
         }
