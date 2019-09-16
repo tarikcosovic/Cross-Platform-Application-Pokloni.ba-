@@ -17,5 +17,8 @@ namespace Pokloni.ba.Model.Requests
 
         public string Password { get; set; }
         public string PasswordConfirmation { get; set; }
+
+        public int UlogaId { get; set; }
+        public bool Status { get; set; }
     }
 }

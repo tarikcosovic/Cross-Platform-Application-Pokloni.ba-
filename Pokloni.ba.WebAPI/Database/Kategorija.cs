@@ -13,8 +13,6 @@ namespace Pokloni.ba.WebAPI.Database
         public int KategorijaId { get; set; }
         public string Naziv { get; set; }
         public string Opis { get; set; }
-        public byte[] Slika { get; set; }
-        public byte[] SlikaMinimised { get; set; }
 
         public virtual ICollection<Proizvod> Proizvod { get; set; }
     }

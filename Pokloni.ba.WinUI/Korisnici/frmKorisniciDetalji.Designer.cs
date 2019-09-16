@@ -266,6 +266,7 @@
             // 
             // materialRaisedButton1
             // 
+            this.materialRaisedButton1.AutoSize = true;
             this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton1.Depth = 0;
             this.materialRaisedButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -274,7 +275,7 @@
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(95, 55);
+            this.materialRaisedButton1.Size = new System.Drawing.Size(82, 36);
             this.materialRaisedButton1.TabIndex = 34;
             this.materialRaisedButton1.Text = "Sačuvaj";
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
@@ -301,6 +302,7 @@
             this.Controls.Add(this.Prezime);
             this.Controls.Add(this.Ime);
             this.Name = "frmKorisniciDetalji";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalji korisnika";
             this.Load += new System.EventHandler(this.FrmKorisniciDetalji_Load);

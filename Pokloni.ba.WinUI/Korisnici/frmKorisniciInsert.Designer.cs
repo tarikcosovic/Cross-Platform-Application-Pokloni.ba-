@@ -28,49 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.UlogaBox = new System.Windows.Forms.ComboBox();
-            this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.components = new System.ComponentModel.Container();
+            this.Uloga = new System.Windows.Forms.ComboBox();
+            this.Username = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialSingleLineTextField2 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.Email = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialSingleLineTextField3 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.Password = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialSingleLineTextField4 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.PasswordConfirmation = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
-            // UlogaBox
+            // Uloga
             // 
-            this.UlogaBox.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UlogaBox.FormattingEnabled = true;
-            this.UlogaBox.Items.AddRange(new object[] {
+            this.Uloga.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Uloga.FormattingEnabled = true;
+            this.Uloga.Items.AddRange(new object[] {
             "Admin",
             "Korisnik",
             "Zaposlenik",
             "Dostavljać"});
-            this.UlogaBox.Location = new System.Drawing.Point(169, 364);
-            this.UlogaBox.Name = "UlogaBox";
-            this.UlogaBox.Size = new System.Drawing.Size(104, 27);
-            this.UlogaBox.TabIndex = 10;
+            this.Uloga.Location = new System.Drawing.Point(169, 364);
+            this.Uloga.Name = "Uloga";
+            this.Uloga.Size = new System.Drawing.Size(104, 27);
+            this.Uloga.TabIndex = 10;
             // 
-            // materialSingleLineTextField1
+            // Username
             // 
-            this.materialSingleLineTextField1.Depth = 0;
-            this.materialSingleLineTextField1.Hint = "";
-            this.materialSingleLineTextField1.Location = new System.Drawing.Point(169, 108);
-            this.materialSingleLineTextField1.MaxLength = 50;
-            this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField1.Name = "materialSingleLineTextField1";
-            this.materialSingleLineTextField1.PasswordChar = '\0';
-            this.materialSingleLineTextField1.SelectedText = "";
-            this.materialSingleLineTextField1.SelectionLength = 0;
-            this.materialSingleLineTextField1.SelectionStart = 0;
-            this.materialSingleLineTextField1.Size = new System.Drawing.Size(202, 23);
-            this.materialSingleLineTextField1.TabIndex = 12;
-            this.materialSingleLineTextField1.TabStop = false;
-            this.materialSingleLineTextField1.UseSystemPasswordChar = false;
+            this.Username.Depth = 0;
+            this.Username.Hint = "";
+            this.Username.Location = new System.Drawing.Point(169, 108);
+            this.Username.MaxLength = 50;
+            this.Username.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Username.Name = "Username";
+            this.Username.PasswordChar = '\0';
+            this.Username.SelectedText = "";
+            this.Username.SelectionLength = 0;
+            this.Username.SelectionStart = 0;
+            this.Username.Size = new System.Drawing.Size(202, 23);
+            this.Username.TabIndex = 12;
+            this.Username.TabStop = false;
+            this.Username.UseSystemPasswordChar = false;
             // 
             // materialLabel1
             // 
@@ -98,22 +101,22 @@
             this.materialLabel2.TabIndex = 15;
             this.materialLabel2.Text = "E-mail";
             // 
-            // materialSingleLineTextField2
+            // Email
             // 
-            this.materialSingleLineTextField2.Depth = 0;
-            this.materialSingleLineTextField2.Hint = "";
-            this.materialSingleLineTextField2.Location = new System.Drawing.Point(169, 171);
-            this.materialSingleLineTextField2.MaxLength = 100;
-            this.materialSingleLineTextField2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField2.Name = "materialSingleLineTextField2";
-            this.materialSingleLineTextField2.PasswordChar = '\0';
-            this.materialSingleLineTextField2.SelectedText = "";
-            this.materialSingleLineTextField2.SelectionLength = 0;
-            this.materialSingleLineTextField2.SelectionStart = 0;
-            this.materialSingleLineTextField2.Size = new System.Drawing.Size(202, 23);
-            this.materialSingleLineTextField2.TabIndex = 14;
-            this.materialSingleLineTextField2.TabStop = false;
-            this.materialSingleLineTextField2.UseSystemPasswordChar = false;
+            this.Email.Depth = 0;
+            this.Email.Hint = "";
+            this.Email.Location = new System.Drawing.Point(169, 171);
+            this.Email.MaxLength = 100;
+            this.Email.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Email.Name = "Email";
+            this.Email.PasswordChar = '\0';
+            this.Email.SelectedText = "";
+            this.Email.SelectionLength = 0;
+            this.Email.SelectionStart = 0;
+            this.Email.Size = new System.Drawing.Size(202, 23);
+            this.Email.TabIndex = 14;
+            this.Email.TabStop = false;
+            this.Email.UseSystemPasswordChar = false;
             // 
             // materialLabel3
             // 
@@ -128,22 +131,22 @@
             this.materialLabel3.TabIndex = 17;
             this.materialLabel3.Text = "Password";
             // 
-            // materialSingleLineTextField3
+            // Password
             // 
-            this.materialSingleLineTextField3.Depth = 0;
-            this.materialSingleLineTextField3.Hint = "";
-            this.materialSingleLineTextField3.Location = new System.Drawing.Point(169, 233);
-            this.materialSingleLineTextField3.MaxLength = 64;
-            this.materialSingleLineTextField3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField3.Name = "materialSingleLineTextField3";
-            this.materialSingleLineTextField3.PasswordChar = '♟';
-            this.materialSingleLineTextField3.SelectedText = "";
-            this.materialSingleLineTextField3.SelectionLength = 0;
-            this.materialSingleLineTextField3.SelectionStart = 0;
-            this.materialSingleLineTextField3.Size = new System.Drawing.Size(202, 23);
-            this.materialSingleLineTextField3.TabIndex = 16;
-            this.materialSingleLineTextField3.TabStop = false;
-            this.materialSingleLineTextField3.UseSystemPasswordChar = false;
+            this.Password.Depth = 0;
+            this.Password.Hint = "";
+            this.Password.Location = new System.Drawing.Point(169, 233);
+            this.Password.MaxLength = 64;
+            this.Password.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Password.Name = "Password";
+            this.Password.PasswordChar = '♟';
+            this.Password.SelectedText = "";
+            this.Password.SelectionLength = 0;
+            this.Password.SelectionStart = 0;
+            this.Password.Size = new System.Drawing.Size(202, 23);
+            this.Password.TabIndex = 16;
+            this.Password.TabStop = false;
+            this.Password.UseSystemPasswordChar = false;
             // 
             // materialLabel4
             // 
@@ -158,22 +161,22 @@
             this.materialLabel4.TabIndex = 19;
             this.materialLabel4.Text = "Confirm Password";
             // 
-            // materialSingleLineTextField4
+            // PasswordConfirmation
             // 
-            this.materialSingleLineTextField4.Depth = 0;
-            this.materialSingleLineTextField4.Hint = "";
-            this.materialSingleLineTextField4.Location = new System.Drawing.Point(169, 293);
-            this.materialSingleLineTextField4.MaxLength = 64;
-            this.materialSingleLineTextField4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField4.Name = "materialSingleLineTextField4";
-            this.materialSingleLineTextField4.PasswordChar = '♟';
-            this.materialSingleLineTextField4.SelectedText = "";
-            this.materialSingleLineTextField4.SelectionLength = 0;
-            this.materialSingleLineTextField4.SelectionStart = 0;
-            this.materialSingleLineTextField4.Size = new System.Drawing.Size(202, 23);
-            this.materialSingleLineTextField4.TabIndex = 18;
-            this.materialSingleLineTextField4.TabStop = false;
-            this.materialSingleLineTextField4.UseSystemPasswordChar = false;
+            this.PasswordConfirmation.Depth = 0;
+            this.PasswordConfirmation.Hint = "";
+            this.PasswordConfirmation.Location = new System.Drawing.Point(169, 293);
+            this.PasswordConfirmation.MaxLength = 64;
+            this.PasswordConfirmation.MouseState = MaterialSkin.MouseState.HOVER;
+            this.PasswordConfirmation.Name = "PasswordConfirmation";
+            this.PasswordConfirmation.PasswordChar = '♟';
+            this.PasswordConfirmation.SelectedText = "";
+            this.PasswordConfirmation.SelectionLength = 0;
+            this.PasswordConfirmation.SelectionStart = 0;
+            this.PasswordConfirmation.Size = new System.Drawing.Size(202, 23);
+            this.PasswordConfirmation.TabIndex = 18;
+            this.PasswordConfirmation.TabStop = false;
+            this.PasswordConfirmation.UseSystemPasswordChar = false;
             // 
             // materialLabel5
             // 
@@ -190,6 +193,7 @@
             // 
             // materialRaisedButton1
             // 
+            this.materialRaisedButton1.AutoSize = true;
             this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton1.Depth = 0;
             this.materialRaisedButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -198,10 +202,15 @@
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(90, 44);
+            this.materialRaisedButton1.Size = new System.Drawing.Size(82, 36);
             this.materialRaisedButton1.TabIndex = 22;
             this.materialRaisedButton1.Text = "Sačuvaj";
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.materialRaisedButton1.Click += new System.EventHandler(this.MaterialRaisedButton1_Click);
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
             // 
             // frmKorisniciInsert
             // 
@@ -211,33 +220,35 @@
             this.Controls.Add(this.materialRaisedButton1);
             this.Controls.Add(this.materialLabel5);
             this.Controls.Add(this.materialLabel4);
-            this.Controls.Add(this.materialSingleLineTextField4);
+            this.Controls.Add(this.PasswordConfirmation);
             this.Controls.Add(this.materialLabel3);
-            this.Controls.Add(this.materialSingleLineTextField3);
+            this.Controls.Add(this.Password);
             this.Controls.Add(this.materialLabel2);
-            this.Controls.Add(this.materialSingleLineTextField2);
+            this.Controls.Add(this.Email);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.materialSingleLineTextField1);
-            this.Controls.Add(this.UlogaBox);
+            this.Controls.Add(this.Username);
+            this.Controls.Add(this.Uloga);
             this.Name = "frmKorisniciInsert";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Unesite novog korisnika";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox UlogaBox;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
+        private System.Windows.Forms.ComboBox Uloga;
+        private MaterialSkin.Controls.MaterialSingleLineTextField Username;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField2;
+        private MaterialSkin.Controls.MaterialSingleLineTextField Email;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField3;
+        private MaterialSkin.Controls.MaterialSingleLineTextField Password;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField4;
+        private MaterialSkin.Controls.MaterialSingleLineTextField PasswordConfirmation;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

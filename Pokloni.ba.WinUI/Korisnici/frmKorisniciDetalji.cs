@@ -52,9 +52,9 @@ namespace Pokloni.ba.WinUI.Korisnici
 
                 if (_id.HasValue)
                 {
-                    var request = await _apiService.Update<Model.Requests.Korisnici.KorisniciDetailsGetRequest>(model, _id);
+                    await _apiService.Update<Model.Requests.Korisnici.KorisniciDetailsGetRequest>(model, _id);
 
-                    MessageBox.Show("Uspjeh!", "Uspješno ste ažurirali.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Uspješno ste ažurirali korisnika..", "Uspjeh!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
         }

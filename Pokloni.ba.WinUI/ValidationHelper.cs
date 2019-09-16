@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -47,6 +48,27 @@ namespace Pokloni.ba.WinUI
                 }
             }
             return true;
+        }
+        public static bool PasswordCheck(string first, string second,Control control, ErrorProvider errorProvider)
+        {
+            if (first.Equals(second))
+                return true;
+            else
+            {
+                errorProvider.SetError(control, "Lozinke nisu jednake");
+                return false;
+            }
+        }
+        public static bool EmailCheck(string email, Control control, ErrorProvider errorProvider)
+        {
+            bool isEmail = Regex.IsMatch(email, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
+            if (isEmail)
+                return true;
+            else
+            {
+                errorProvider.SetError(control, "Email adresa nije validna");
+                return false;
+            }
         }
 
         public static bool ValidateTextBoxes(MaterialSingleLineTextField[] temp, ErrorProvider errorProvider)

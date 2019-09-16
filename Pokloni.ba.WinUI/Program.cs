@@ -1,4 +1,5 @@
 ﻿using Pokloni.ba.WinUI.Korisnici;
+using Pokloni.ba.WinUI.Proizvodi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,15 +10,12 @@ namespace Pokloni.ba.WinUI
 {
     static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmIndex());
+            Application.Run(new frmProizvodiDetalji());
         }
     }
 }

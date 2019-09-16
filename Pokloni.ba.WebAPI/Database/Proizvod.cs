@@ -20,6 +20,7 @@ namespace Pokloni.ba.WebAPI.Database
         public int StanjeNaLageru { get; set; }
         public byte[] Slika { get; set; }
         public byte[] SlikaMinimised { get; set; }
+        public string Sifra { get; set; }
 
         public virtual Kategorija Kategorija { get; set; }
         public virtual ProizvodacPoklona Proizvodac { get; set; }
