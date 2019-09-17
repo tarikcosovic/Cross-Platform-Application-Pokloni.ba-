@@ -5,5 +5,23 @@
     <Setting Name="APIUrl" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://localhost:44315/api</Value>
     </Setting>
+    <Setting Name="RouteKorisnici" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Korisnici</Value>
+    </Setting>
+    <Setting Name="RouteProizvodi" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Proizvodi</Value>
+    </Setting>
+    <Setting Name="RouteProizvodaci" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Proizvodaci</Value>
+    </Setting>
+    <Setting Name="RouteUloge" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Uloge</Value>
+    </Setting>
+    <Setting Name="RouteKategorije" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Kategorije</Value>
+    </Setting>
+    <Setting Name="RouteNarudzbe" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Narudzbe</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

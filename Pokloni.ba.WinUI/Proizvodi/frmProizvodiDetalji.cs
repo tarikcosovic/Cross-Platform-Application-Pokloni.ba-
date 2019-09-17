@@ -13,9 +13,9 @@ namespace Pokloni.ba.WinUI.Proizvodi
 {
     public partial class frmProizvodiDetalji : MyMaterialForm
     {
-        private readonly APIService _APIService = new APIService("Proizvodi");
-        private readonly APIService _APIServiceProizvodaci = new APIService("Proizvodaci");
-        private readonly APIService _APIServiceKategorije = new APIService("Kategorije");
+        private readonly APIService _APIService = new APIService(Properties.Settings.Default.RouteProizvodi);
+        private readonly APIService _APIServiceProizvodaci = new APIService(Properties.Settings.Default.RouteProizvodaci);
+        private readonly APIService _APIServiceKategorije = new APIService(Properties.Settings.Default.RouteKategorije);
 
         private readonly int? _id = null;
         public frmProizvodiDetalji(int id)

@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Flurl.Http;
-using Flurl;
-using System.Windows.Forms;
 
 namespace Pokloni.ba.WinUI
 {
@@ -37,11 +31,11 @@ namespace Pokloni.ba.WinUI
             return result;
         }
 
-        public async Task<T> Inset<T>(object request)
+        public async Task<T> Insert<T>(object request)
         {
             var result = $"{Properties.Settings.Default.APIUrl}/{ _route}";
 
-            return await result.PostJsonAsync(result).ReceiveJson<T>();
+            return await result.PostJsonAsync(request).ReceiveJson<T>();
         }
 
         public async Task<T> Update<T>(object request, object id)
@@ -49,6 +43,11 @@ namespace Pokloni.ba.WinUI
             var result = $"{Properties.Settings.Default.APIUrl}/{ _route}/{id}";
 
             return await result.PutJsonAsync(request).ReceiveJson<T>();
+        }
+
+        public async Task Delete(int? id)
+        {
+            await $"{Properties.Settings.Default.APIUrl}/{ _route}/{id}".DeleteAsync();
         }
     }
 }

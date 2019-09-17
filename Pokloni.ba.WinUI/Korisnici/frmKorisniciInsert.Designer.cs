@@ -48,11 +48,6 @@
             // 
             this.Uloga.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Uloga.FormattingEnabled = true;
-            this.Uloga.Items.AddRange(new object[] {
-            "Admin",
-            "Korisnik",
-            "Zaposlenik",
-            "Dostavljać"});
             this.Uloga.Location = new System.Drawing.Point(169, 364);
             this.Uloga.Name = "Uloga";
             this.Uloga.Size = new System.Drawing.Size(104, 27);
@@ -231,6 +226,7 @@
             this.Name = "frmKorisniciInsert";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Unesite novog korisnika";
+            this.Load += new System.EventHandler(this.FrmKorisniciInsert_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

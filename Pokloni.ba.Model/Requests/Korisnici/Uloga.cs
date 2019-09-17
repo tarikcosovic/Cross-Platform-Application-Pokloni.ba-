@@ -7,6 +7,8 @@ namespace Pokloni.ba.Model.Requests.Korisnici
 {
     public class Uloga
     {
+        public int UlogaId { get; set; }
+
         [Required]
         [MinLength(3), MaxLength(50)]
         public string Naziv { get; set; }

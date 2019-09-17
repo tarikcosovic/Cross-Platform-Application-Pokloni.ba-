@@ -8,7 +8,7 @@ namespace Pokloni.ba.WinUI.Korisnici
 {
     public partial class frmKorisnici : MyMaterialForm
     {
-        private readonly APIService _apiService = new APIService("Korisnici");
+        private readonly APIService _apiService = new APIService(Properties.Settings.Default.RouteKorisnici);
         public frmKorisnici()
         {
             InitializeComponent();
@@ -27,7 +27,10 @@ namespace Pokloni.ba.WinUI.Korisnici
                 ListViewItem temp = new ListViewItem();
                 temp.SubItems.Add(item.Username);
                 temp.SubItems.Add(item.Email);
-                temp.SubItems.Add(item.Status.ToString());
+                if(item.Status)
+                    temp.SubItems.Add("Aktivan");
+                else
+                    temp.SubItems.Add("Neaktivan");
                 temp.Tag = item.KorisnikDetailsId.ToString();
 
                 listaKorisnika.Items.Add(temp);

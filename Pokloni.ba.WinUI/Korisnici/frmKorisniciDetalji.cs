@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using MaterialSkin.Controls;
@@ -8,6 +12,7 @@ namespace Pokloni.ba.WinUI.Korisnici
     public partial class frmKorisniciDetalji : MyMaterialForm
     {
         private readonly APIService _apiService = new APIService("KorisniciDetails");
+        private readonly APIService _apiServiceKorisnici = new APIService(Properties.Settings.Default.RouteKorisnici);
         private readonly int? _id = null;
         public frmKorisniciDetalji(int? korisnikId = null)
         {
@@ -56,6 +61,29 @@ namespace Pokloni.ba.WinUI.Korisnici
 
                     MessageBox.Show("Uspješno ste ažurirali korisnika..", "Uspjeh!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
+            }
+        }
+
+        private async void Button1_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Da li ste sigurni da želite izbrisati korisnika?", "Brisanje korisničkog računa", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                var result = await _apiServiceKorisnici.Get<List<Model.Korisnik>>();
+                int? korisnikId = result.Where(k => k.KorisnikDetailsId == _id).Select(x => x.KorisnikId).FirstOrDefault();
+
+                if(korisnikId.HasValue)
+                { 
+                    await _apiServiceKorisnici.Delete(korisnikId);
+                    this.Close();
+                    MessageBox.Show("Uspješno ste izbrisali korisnika..", "Uspjeh!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                    MessageBox.Show("Nepostojeći korisnik..", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (dialogResult == DialogResult.No)
+            {
             }
         }
     }

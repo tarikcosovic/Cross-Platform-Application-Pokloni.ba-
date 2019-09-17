@@ -57,7 +57,8 @@ namespace Pokloni.ba.WebAPI.Services
             _db.KorisnikDetails.Add(korisnikDetails);
             _db.SaveChanges();
 
-            temp.UlogaId = _db.Uloga.Where(x => x.Naziv == Roles.User).Select(y => y.UlogaId).FirstOrDefault();
+            //Automatski postavlja korisnicku ulogau, ukoliko nije drugacije specifirano od strane administratora
+            temp.UlogaId = (request.UlogaId != 0)? _db.Uloga.Where(x => x.Naziv == Roles.User).Select(y => y.UlogaId).FirstOrDefault() : request.UlogaId;
 
             temp.KorisnikDetailsId = korisnikDetails.KorisnikDetailsId;
             temp.LozinkaHash = "test";

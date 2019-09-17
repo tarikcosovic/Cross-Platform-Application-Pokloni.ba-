@@ -12,7 +12,7 @@ namespace Pokloni.ba.WinUI.Proizvodi
 {
     public partial class frmProizvodi : MyMaterialForm
     {
-        private readonly APIService _APIService = new APIService("Proizvodi");
+        private readonly APIService _APIService = new APIService(Properties.Settings.Default.RouteProizvodi);
         public frmProizvodi()
         {
             InitializeComponent();

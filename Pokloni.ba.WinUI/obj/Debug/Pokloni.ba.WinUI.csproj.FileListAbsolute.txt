@@ -25,3 +25,4 @@ C:\Users\tarik\source\repos\Pokloni.ba-Cross-platform-application\Pokloni.ba.Win
 C:\Users\tarik\source\repos\Pokloni.ba-Cross-platform-application\Pokloni.ba.WinUI\obj\Debug\Pokloni.ba.WinUI.csprojAssemblyReference.cache
 C:\Users\tarik\source\repos\Pokloni.ba-Cross-platform-application\Pokloni.ba.WinUI\obj\Debug\Pokloni.ba.WinUI.Proizvodi.frmProizvodiDetalji.resources
 C:\Users\tarik\source\repos\Pokloni.ba-Cross-platform-application\Pokloni.ba.WinUI\obj\Debug\Pokloni.ba.WinUI.Proizvodi.frmProizvodi.resources
+C:\Users\tarik\source\repos\Pokloni.ba-Cross-platform-application\Pokloni.ba.WinUI\obj\Debug\Pokloni.ba.WinUI.Proizvodi.frmProizvodiInsert.resources

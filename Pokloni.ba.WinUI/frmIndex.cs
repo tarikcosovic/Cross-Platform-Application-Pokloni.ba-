@@ -20,6 +20,14 @@ namespace Pokloni.ba.WinUI
 
             //InitialiseMyMaterialDesign(this);
         }
+        //Početna stranica
+        private void FrmIndex_Load(object sender, EventArgs e)
+        {
+            frmKorisnici frm = new frmKorisnici();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+        }
 
         private void PretragaToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -49,14 +57,6 @@ namespace Pokloni.ba.WinUI
             frm.Show();
         }
 
-        private void FrmIndex_Load(object sender, EventArgs e)
-        {
-            frmKorisnici frm = new frmKorisnici();
-            frm.MdiParent = this;
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
-        }
-
         private void PretražiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if ((Application.OpenForms["frmProizvodi"] as frmProizvodi) != null)
@@ -76,6 +76,13 @@ namespace Pokloni.ba.WinUI
                 frm.Dock = DockStyle.Fill;
                 frm.Show();
             }
+        }
+
+        private void NoviProizvodToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProizvodiInsert frm = new frmProizvodiInsert();
+
+            frm.Show();
         }
     }
 }

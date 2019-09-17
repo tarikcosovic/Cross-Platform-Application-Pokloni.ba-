@@ -34,5 +34,77 @@ namespace Pokloni.ba.WinUI.Properties {
                 this["APIUrl"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Korisnici")]
+        public string RouteKorisnici {
+            get {
+                return ((string)(this["RouteKorisnici"]));
+            }
+            set {
+                this["RouteKorisnici"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Proizvodi")]
+        public string RouteProizvodi {
+            get {
+                return ((string)(this["RouteProizvodi"]));
+            }
+            set {
+                this["RouteProizvodi"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Proizvodaci")]
+        public string RouteProizvodaci {
+            get {
+                return ((string)(this["RouteProizvodaci"]));
+            }
+            set {
+                this["RouteProizvodaci"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Uloge")]
+        public string RouteUloge {
+            get {
+                return ((string)(this["RouteUloge"]));
+            }
+            set {
+                this["RouteUloge"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Kategorije")]
+        public string RouteKategorije {
+            get {
+                return ((string)(this["RouteKategorije"]));
+            }
+            set {
+                this["RouteKategorije"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Narudzbe")]
+        public string RouteNarudzbe {
+            get {
+                return ((string)(this["RouteNarudzbe"]));
+            }
+            set {
+                this["RouteNarudzbe"] = value;
+            }
+        }
     }
 }
