@@ -106,5 +106,17 @@ namespace Pokloni.ba.WinUI.Properties {
                 this["RouteNarudzbe"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public byte DefaultImage {
+            get {
+                return ((byte)(this["DefaultImage"]));
+            }
+            set {
+                this["DefaultImage"] = value;
+            }
+        }
     }
 }

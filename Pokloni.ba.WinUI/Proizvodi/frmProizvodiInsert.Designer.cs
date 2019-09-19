@@ -49,13 +49,15 @@
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.Naziv = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnDodajSliku = new MaterialSkin.Controls.MaterialFlatButton();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -127,7 +129,7 @@
             this.Opis.Name = "Opis";
             this.Opis.Size = new System.Drawing.Size(187, 139);
             this.Opis.TabIndex = 38;
-            this.Opis.Text = "Upišite opis ovdje..";
+            this.Opis.Text = "Upišite vaš željeni opis ovdje..";
             // 
             // materialLabel5
             // 
@@ -304,24 +306,47 @@
             this.Naziv.TabStop = false;
             this.Naziv.UseSystemPasswordChar = false;
             // 
-            // pictureBox1
+            // pictureBox
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(34, 135);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(155, 153);
-            this.pictureBox1.TabIndex = 23;
-            this.pictureBox1.TabStop = false;
+            this.pictureBox.Image = global::Pokloni.ba.WinUI.Properties.Resources.DefaultProductsImage;
+            this.pictureBox.Location = new System.Drawing.Point(34, 135);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(155, 153);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox.TabIndex = 23;
+            this.pictureBox.TabStop = false;
             // 
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // btnDodajSliku
+            // 
+            this.btnDodajSliku.AutoSize = true;
+            this.btnDodajSliku.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnDodajSliku.Depth = 0;
+            this.btnDodajSliku.Icon = null;
+            this.btnDodajSliku.Location = new System.Drawing.Point(77, 297);
+            this.btnDodajSliku.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnDodajSliku.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnDodajSliku.Name = "btnDodajSliku";
+            this.btnDodajSliku.Primary = false;
+            this.btnDodajSliku.Size = new System.Drawing.Size(65, 36);
+            this.btnDodajSliku.TabIndex = 43;
+            this.btnDodajSliku.Text = "Dodaj";
+            this.btnDodajSliku.UseVisualStyleBackColor = true;
+            this.btnDodajSliku.Click += new System.EventHandler(this.BtnDodajSliku_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // frmProizvodiInsert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1026, 483);
+            this.ClientSize = new System.Drawing.Size(925, 424);
+            this.Controls.Add(this.btnDodajSliku);
             this.Controls.Add(this.materialLabel4);
             this.Controls.Add(this.Sifra);
             this.Controls.Add(this.materialRaisedButton1);
@@ -341,7 +366,7 @@
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.Naziv);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox);
             this.Name = "frmProizvodiInsert";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Novi Proizvod";
@@ -350,7 +375,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -378,7 +403,9 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialSingleLineTextField Naziv;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private MaterialSkin.Controls.MaterialFlatButton btnDodajSliku;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

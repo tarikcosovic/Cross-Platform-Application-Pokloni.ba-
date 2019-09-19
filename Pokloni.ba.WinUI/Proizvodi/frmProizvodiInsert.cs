@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,9 +15,10 @@ namespace Pokloni.ba.WinUI.Proizvodi
     public partial class frmProizvodiInsert : MyMaterialForm
     {
         private readonly APIService _apiServiceProizvodi = new APIService(Properties.Settings.Default.RouteProizvodi);
-
         private readonly APIService _apiServiceKategorije = new APIService(Properties.Settings.Default.RouteKategorije);
         private readonly APIService _apiServiceProizvodaci = new APIService(Properties.Settings.Default.RouteProizvodaci);
+
+        private byte[] _slika = null;
         public frmProizvodiInsert()
         {
             InitializeComponent();
@@ -38,7 +40,8 @@ namespace Pokloni.ba.WinUI.Proizvodi
                     Cijena = int.Parse(Cijena.Text),
                     StanjeNaLageru = int.Parse(StanjeNaLageru.Text),
                     KategorijaId = ((Model.Requests.Proizvodi.Kategorije)ComboBoxKategorija).KategorijaId,
-                    ProizvodacId = ((Model.Requests.Proizvodi.ProizvodacPoklona)ComboBoxProizvodac).ProizvodacPoklonaId
+                    ProizvodacId = ((Model.Requests.Proizvodi.ProizvodacPoklona)ComboBoxProizvodac).ProizvodacPoklonaId,
+                    Slika = _slika
                 };
 
                 await _apiServiceProizvodi.Insert<Model.Requests.Proizvodi.ProizvodVM>(model);
@@ -89,6 +92,23 @@ namespace Pokloni.ba.WinUI.Proizvodi
 
             StanjeNaLageru.Text = vrijednost.ToString();
 
+        }
+
+        private void BtnDodajSliku_Click(object sender, EventArgs e)
+        {
+            var result = openFileDialog1.ShowDialog();
+
+            if(result == DialogResult.OK)
+            {
+                var fileName = openFileDialog1.FileName;
+
+                var file = File.ReadAllBytes(fileName);
+                _slika = file;
+
+                Image image = Image.FromFile(fileName);
+                pictureBox.Image = image;
+
+            }
         }
     }
 }

@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProizvodiDetalji));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.NazivProizvoda = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.Naziv = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
@@ -50,39 +51,44 @@
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.Sifra = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.btnDodajSliku = new MaterialSkin.Controls.MaterialFlatButton();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::Pokloni.ba.WinUI.Properties.Resources.DefaultProductsImage;
             this.pictureBox1.Location = new System.Drawing.Point(30, 85);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(155, 153);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // NazivProizvoda
+            // Naziv
             // 
-            this.NazivProizvoda.Depth = 0;
-            this.NazivProizvoda.Hint = "";
-            this.NazivProizvoda.Location = new System.Drawing.Point(445, 103);
-            this.NazivProizvoda.MaxLength = 32767;
-            this.NazivProizvoda.MouseState = MaterialSkin.MouseState.HOVER;
-            this.NazivProizvoda.Name = "NazivProizvoda";
-            this.NazivProizvoda.PasswordChar = '\0';
-            this.NazivProizvoda.SelectedText = "";
-            this.NazivProizvoda.SelectionLength = 0;
-            this.NazivProizvoda.SelectionStart = 0;
-            this.NazivProizvoda.Size = new System.Drawing.Size(205, 23);
-            this.NazivProizvoda.TabIndex = 1;
-            this.NazivProizvoda.TabStop = false;
-            this.NazivProizvoda.UseSystemPasswordChar = false;
+            this.Naziv.Depth = 0;
+            this.Naziv.Hint = "";
+            this.Naziv.Location = new System.Drawing.Point(445, 103);
+            this.Naziv.MaxLength = 32767;
+            this.Naziv.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Naziv.Name = "Naziv";
+            this.Naziv.PasswordChar = '\0';
+            this.Naziv.SelectedText = "";
+            this.Naziv.SelectionLength = 0;
+            this.Naziv.SelectionStart = 0;
+            this.Naziv.Size = new System.Drawing.Size(205, 23);
+            this.Naziv.TabIndex = 1;
+            this.Naziv.TabStop = false;
+            this.Naziv.UseSystemPasswordChar = false;
             // 
             // materialLabel1
             // 
@@ -289,6 +295,7 @@
             this.materialRaisedButton1.TabIndex = 20;
             this.materialRaisedButton1.Text = "Sačuvaj";
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.materialRaisedButton1.Click += new System.EventHandler(this.MaterialRaisedButton1_Click);
             // 
             // materialLabel4
             // 
@@ -320,11 +327,36 @@
             this.Sifra.TabStop = false;
             this.Sifra.UseSystemPasswordChar = false;
             // 
+            // btnDodajSliku
+            // 
+            this.btnDodajSliku.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnDodajSliku.Depth = 0;
+            this.btnDodajSliku.Icon = null;
+            this.btnDodajSliku.Location = new System.Drawing.Point(79, 247);
+            this.btnDodajSliku.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnDodajSliku.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnDodajSliku.Name = "btnDodajSliku";
+            this.btnDodajSliku.Primary = false;
+            this.btnDodajSliku.Size = new System.Drawing.Size(60, 28);
+            this.btnDodajSliku.TabIndex = 44;
+            this.btnDodajSliku.Text = "Dodaj";
+            this.btnDodajSliku.UseVisualStyleBackColor = true;
+            this.btnDodajSliku.Click += new System.EventHandler(this.BtnDodajSliku_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmProizvodiDetalji
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(994, 531);
+            this.Controls.Add(this.btnDodajSliku);
             this.Controls.Add(this.materialLabel4);
             this.Controls.Add(this.Sifra);
             this.Controls.Add(this.materialRaisedButton1);
@@ -344,7 +376,7 @@
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.NazivProizvoda);
+            this.Controls.Add(this.Naziv);
             this.Controls.Add(this.pictureBox1);
             this.Name = "frmProizvodiDetalji";
             this.ShowIcon = false;
@@ -357,6 +389,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -365,7 +398,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private MaterialSkin.Controls.MaterialSingleLineTextField NazivProizvoda;
+        private MaterialSkin.Controls.MaterialSingleLineTextField Naziv;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
@@ -385,5 +418,8 @@
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialSingleLineTextField Sifra;
+        private MaterialSkin.Controls.MaterialFlatButton btnDodajSliku;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

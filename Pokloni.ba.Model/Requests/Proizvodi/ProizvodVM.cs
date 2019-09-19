@@ -14,5 +14,6 @@ namespace Pokloni.ba.Model.Requests.Proizvodi
         public string Opis { get; set; }
         public decimal Cijena { get; set; }
         public int StanjeNaLageru { get; set; }
+        public byte[] Slika { get; set; }
     }
 }

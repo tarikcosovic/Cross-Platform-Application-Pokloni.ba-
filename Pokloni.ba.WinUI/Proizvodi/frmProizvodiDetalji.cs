@@ -1,9 +1,11 @@
-﻿using Pokloni.ba.WinUI.Korisnici;
+﻿using MaterialSkin.Controls;
+using Pokloni.ba.WinUI.Korisnici;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +19,7 @@ namespace Pokloni.ba.WinUI.Proizvodi
         private readonly APIService _APIServiceProizvodaci = new APIService(Properties.Settings.Default.RouteProizvodaci);
         private readonly APIService _APIServiceKategorije = new APIService(Properties.Settings.Default.RouteKategorije);
 
+        private byte[] _slika;
         private readonly int? _id = null;
         public frmProizvodiDetalji(int id)
         {
@@ -33,11 +36,15 @@ namespace Pokloni.ba.WinUI.Proizvodi
             {
                 var result = await _APIService.GetbyId<Model.Requests.Proizvodi.ProizvodVM>(_id);
 
-                NazivProizvoda.Text = result.Naziv;
+                Naziv.Text = result.Naziv;
                 Sifra.Text = result.Sifra;
                 Opis.Text = result.Opis.ToString();
                 Cijena.Text = result.Cijena.ToString();
                 StanjeNaLageru.Text = result.StanjeNaLageru.ToString();
+
+                //POPRAVITI OVO I CITATI O STREAMS I BYTES AND STUFF
+                //pictureBox1.Image = File.ReadAllBytes(result.Slika.ToString());
+
 
                 await GetKategorije(result.KategorijaId);
                 await GetProizvodaci(result.ProizvodacId);
@@ -88,6 +95,49 @@ namespace Pokloni.ba.WinUI.Proizvodi
             --vrijednost;
 
             StanjeNaLageru.Text = vrijednost.ToString();
+        }
+
+        private void BtnDodajSliku_Click(object sender, EventArgs e)
+        {
+                var result = openFileDialog1.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    var fileName = openFileDialog1.FileName;
+
+                    var file = File.ReadAllBytes(fileName);
+                    _slika = file;
+
+                    Image image = Image.FromFile(fileName);
+                    pictureBox1.Image = image;
+
+                }
+         }
+
+        private async void MaterialRaisedButton1_Click(object sender, EventArgs e)
+        {
+            MaterialSingleLineTextField[] temp = new MaterialSingleLineTextField[2] { Naziv, Sifra };
+            if (ValidationHelper.ValidateTextBoxes(temp, errorProvider1))
+            {
+                var ComboBoxKategorija = Kategorija.SelectedItem;
+                var ComboBoxProizvodac = Proizvodac.SelectedItem;
+                var model = new Model.Requests.Proizvodi.ProizvodVM()
+                {
+                    Naziv = Naziv.Text,
+                    Sifra = Sifra.Text,
+                    Opis = Opis.Text,
+                    Cijena = int.Parse(Cijena.Text),
+                    StanjeNaLageru = int.Parse(StanjeNaLageru.Text),
+                    KategorijaId = ((Model.Requests.Proizvodi.Kategorije)ComboBoxKategorija).KategorijaId,
+                    ProizvodacId = ((Model.Requests.Proizvodi.ProizvodacPoklona)ComboBoxProizvodac).ProizvodacPoklonaId,
+                    Slika = _slika
+                };
+
+                await _APIService.Update<Model.Requests.Proizvodi.ProizvodVM>(model, _id);
+
+                MessageBox.Show("Uspješno ste ažurirali proizvod..", "Uspjeh!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                this.Close();
+            }
         }
     }
 }
