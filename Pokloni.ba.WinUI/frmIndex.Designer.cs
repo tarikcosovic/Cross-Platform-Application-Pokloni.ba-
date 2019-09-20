@@ -37,16 +37,14 @@
             this.productsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pretražiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.noviProizvodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.narudžbeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.proizvođačiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.unosNovogProizvođačaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kategorijeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.novaKategorijaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.materialContextMenuStrip1 = new MaterialSkin.Controls.MaterialContextMenuStrip();
-            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.materialContextMenuStrip2 = new MaterialSkin.Controls.MaterialContextMenuStrip();
-            this.testToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.test2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
-            this.materialContextMenuStrip1.SuspendLayout();
-            this.materialContextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -58,6 +56,7 @@
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.korisniciToolStripMenuItem,
             this.productsToolStripMenuItem,
+            this.toolStripMenuItem1,
             this.narudžbeToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.MdiWindowListItem = this.korisniciToolStripMenuItem;
@@ -100,6 +99,7 @@
             this.productsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pretražiToolStripMenuItem,
             this.noviProizvodToolStripMenuItem});
+            this.productsToolStripMenuItem.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.productsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("productsToolStripMenuItem.Image")));
             this.productsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
@@ -110,20 +110,38 @@
             // pretražiToolStripMenuItem
             // 
             this.pretražiToolStripMenuItem.Name = "pretražiToolStripMenuItem";
-            this.pretražiToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.pretražiToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
             this.pretražiToolStripMenuItem.Text = "Pretraži";
             this.pretražiToolStripMenuItem.Click += new System.EventHandler(this.PretražiToolStripMenuItem_Click);
             // 
             // noviProizvodToolStripMenuItem
             // 
             this.noviProizvodToolStripMenuItem.Name = "noviProizvodToolStripMenuItem";
-            this.noviProizvodToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.noviProizvodToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
             this.noviProizvodToolStripMenuItem.Text = "Novi Proizvod";
             this.noviProizvodToolStripMenuItem.Click += new System.EventHandler(this.NoviProizvodToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem1.ForeColor = System.Drawing.Color.White;
+            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
+            this.toolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Padding = new System.Windows.Forms.Padding(4, 0, 4, 30);
+            this.toolStripMenuItem1.ShowShortcutKeys = false;
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(128, 98);
+            this.toolStripMenuItem1.Text = "Narudžbe";
             // 
             // narudžbeToolStripMenuItem
             // 
             this.narudžbeToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.narudžbeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.proizvođačiToolStripMenuItem,
+            this.unosNovogProizvođačaToolStripMenuItem,
+            this.kategorijeToolStripMenuItem,
+            this.novaKategorijaToolStripMenuItem});
             this.narudžbeToolStripMenuItem.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.narudžbeToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.narudžbeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("narudžbeToolStripMenuItem.Image")));
@@ -133,44 +151,33 @@
             this.narudžbeToolStripMenuItem.Size = new System.Drawing.Size(128, 98);
             this.narudžbeToolStripMenuItem.Text = "Narudžbe";
             // 
-            // materialContextMenuStrip1
+            // proizvođačiToolStripMenuItem
             // 
-            this.materialContextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialContextMenuStrip1.Depth = 0;
-            this.materialContextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.testToolStripMenuItem});
-            this.materialContextMenuStrip1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialContextMenuStrip1.Name = "materialContextMenuStrip1";
-            this.materialContextMenuStrip1.Size = new System.Drawing.Size(96, 26);
+            this.proizvođačiToolStripMenuItem.Name = "proizvođačiToolStripMenuItem";
+            this.proizvođačiToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
+            this.proizvođačiToolStripMenuItem.Text = "Proizvođači";
+            this.proizvođačiToolStripMenuItem.Click += new System.EventHandler(this.ProizvođačiToolStripMenuItem_Click);
             // 
-            // testToolStripMenuItem
+            // unosNovogProizvođačaToolStripMenuItem
             // 
-            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-            this.testToolStripMenuItem.Size = new System.Drawing.Size(95, 22);
-            this.testToolStripMenuItem.Text = "Test";
+            this.unosNovogProizvođačaToolStripMenuItem.Name = "unosNovogProizvođačaToolStripMenuItem";
+            this.unosNovogProizvođačaToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
+            this.unosNovogProizvođačaToolStripMenuItem.Text = "Novi Proizvođač";
+            this.unosNovogProizvođačaToolStripMenuItem.Click += new System.EventHandler(this.UnosNovogProizvođačaToolStripMenuItem_Click);
             // 
-            // materialContextMenuStrip2
+            // kategorijeToolStripMenuItem
             // 
-            this.materialContextMenuStrip2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialContextMenuStrip2.Depth = 0;
-            this.materialContextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.testToolStripMenuItem1,
-            this.test2ToolStripMenuItem});
-            this.materialContextMenuStrip2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialContextMenuStrip2.Name = "materialContextMenuStrip2";
-            this.materialContextMenuStrip2.Size = new System.Drawing.Size(100, 48);
+            this.kategorijeToolStripMenuItem.Name = "kategorijeToolStripMenuItem";
+            this.kategorijeToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
+            this.kategorijeToolStripMenuItem.Text = "Kategorije";
+            this.kategorijeToolStripMenuItem.Click += new System.EventHandler(this.KategorijeToolStripMenuItem_Click);
             // 
-            // testToolStripMenuItem1
+            // novaKategorijaToolStripMenuItem
             // 
-            this.testToolStripMenuItem1.Name = "testToolStripMenuItem1";
-            this.testToolStripMenuItem1.Size = new System.Drawing.Size(99, 22);
-            this.testToolStripMenuItem1.Text = "Test";
-            // 
-            // test2ToolStripMenuItem
-            // 
-            this.test2ToolStripMenuItem.Name = "test2ToolStripMenuItem";
-            this.test2ToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
-            this.test2ToolStripMenuItem.Text = "test2";
+            this.novaKategorijaToolStripMenuItem.Name = "novaKategorijaToolStripMenuItem";
+            this.novaKategorijaToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
+            this.novaKategorijaToolStripMenuItem.Text = "Nova Kategorija";
+            this.novaKategorijaToolStripMenuItem.Click += new System.EventHandler(this.NovaKategorijaToolStripMenuItem_Click);
             // 
             // frmIndex
             // 
@@ -190,8 +197,6 @@
             this.Load += new System.EventHandler(this.FrmIndex_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
-            this.materialContextMenuStrip1.ResumeLayout(false);
-            this.materialContextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -205,13 +210,13 @@
         private System.Windows.Forms.ToolStripMenuItem noviKorisnikToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem narudžbeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productsToolStripMenuItem;
-        private MaterialSkin.Controls.MaterialContextMenuStrip materialContextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
-        private MaterialSkin.Controls.MaterialContextMenuStrip materialContextMenuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem test2ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pretražiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem noviProizvodToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem proizvođačiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem unosNovogProizvođačaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kategorijeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem novaKategorijaToolStripMenuItem;
     }
 }
 

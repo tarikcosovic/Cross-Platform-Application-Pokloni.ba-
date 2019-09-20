@@ -132,6 +132,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Korisnički Panel";
+            this.Load += new System.EventHandler(this.FrmKorisnici_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

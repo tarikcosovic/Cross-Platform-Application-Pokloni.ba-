@@ -85,6 +85,24 @@
       <DependentUpon>frmIndex.cs</DependentUpon>
     </Compile>
     <Compile Include="ImageHelper.cs" />
+    <Compile Include="Kategorije\frmKategorije.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kategorije\frmKategorije.Designer.cs">
+      <DependentUpon>frmKategorije.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kategorije\frmKategorijeDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kategorije\frmKategorijeDetails.Designer.cs">
+      <DependentUpon>frmKategorijeDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kategorije\frmKategorijeInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kategorije\frmKategorijeInsert.Designer.cs">
+      <DependentUpon>frmKategorijeInsert.cs</DependentUpon>
+    </Compile>
     <Compile Include="Korisnici\frmKorisnici.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +125,24 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="Proizvodaci\frmProizvodaci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proizvodaci\frmProizvodaci.Designer.cs">
+      <DependentUpon>frmProizvodaci.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proizvodaci\frmProizvodaciDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proizvodaci\frmProizvodaciDetails.Designer.cs">
+      <DependentUpon>frmProizvodaciDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proizvodaci\frmProizvodaciInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proizvodaci\frmProizvodaciInsert.Designer.cs">
+      <DependentUpon>frmProizvodaciInsert.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proizvodi\frmProizvodi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +166,15 @@
     <EmbeddedResource Include="frmIndex.resx">
       <DependentUpon>frmIndex.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Kategorije\frmKategorije.resx">
+      <DependentUpon>frmKategorije.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kategorije\frmKategorijeDetails.resx">
+      <DependentUpon>frmKategorijeDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kategorije\frmKategorijeInsert.resx">
+      <DependentUpon>frmKategorijeInsert.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Korisnici\frmKorisnici.resx">
       <DependentUpon>frmKorisnici.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +183,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Korisnici\frmKorisniciInsert.resx">
       <DependentUpon>frmKorisniciInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proizvodaci\frmProizvodaci.resx">
+      <DependentUpon>frmProizvodaci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proizvodaci\frmProizvodaciDetails.resx">
+      <DependentUpon>frmProizvodaciDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proizvodaci\frmProizvodaciInsert.resx">
+      <DependentUpon>frmProizvodaciInsert.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proizvodi\frmProizvodi.resx">
       <DependentUpon>frmProizvodi.cs</DependentUpon>
@@ -195,6 +249,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\orionthemes-featured-image-2-1-750x500.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconMinus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconPlus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

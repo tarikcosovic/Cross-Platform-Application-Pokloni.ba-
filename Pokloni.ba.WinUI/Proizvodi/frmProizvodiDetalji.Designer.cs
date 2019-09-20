@@ -48,12 +48,13 @@
             this.Cijena = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.Opis = new System.Windows.Forms.TextBox();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.Sacuvaj = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.Sifra = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btnDodajSliku = new MaterialSkin.Controls.MaterialFlatButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -65,8 +66,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Pokloni.ba.WinUI.Properties.Resources.DefaultProductsImage;
-            this.pictureBox1.Location = new System.Drawing.Point(30, 85);
+            this.pictureBox1.Location = new System.Drawing.Point(64, 97);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(155, 153);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -77,7 +77,7 @@
             // 
             this.Naziv.Depth = 0;
             this.Naziv.Hint = "";
-            this.Naziv.Location = new System.Drawing.Point(445, 103);
+            this.Naziv.Location = new System.Drawing.Point(479, 115);
             this.Naziv.MaxLength = 32767;
             this.Naziv.MouseState = MaterialSkin.MouseState.HOVER;
             this.Naziv.Name = "Naziv";
@@ -96,7 +96,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(441, 81);
+            this.materialLabel1.Location = new System.Drawing.Point(475, 93);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(46, 19);
@@ -109,7 +109,7 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(441, 134);
+            this.materialLabel2.Location = new System.Drawing.Point(475, 146);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(84, 19);
@@ -122,7 +122,7 @@
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(441, 184);
+            this.materialLabel3.Location = new System.Drawing.Point(475, 196);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(77, 19);
@@ -132,15 +132,15 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(30, 291);
+            this.dataGridView1.Location = new System.Drawing.Point(64, 391);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(929, 218);
+            this.dataGridView1.Size = new System.Drawing.Size(796, 262);
             this.dataGridView1.TabIndex = 7;
             // 
             // Proizvodac
             // 
             this.Proizvodac.FormattingEnabled = true;
-            this.Proizvodac.Location = new System.Drawing.Point(445, 156);
+            this.Proizvodac.Location = new System.Drawing.Point(479, 168);
             this.Proizvodac.Name = "Proizvodac";
             this.Proizvodac.Size = new System.Drawing.Size(205, 21);
             this.Proizvodac.TabIndex = 8;
@@ -148,7 +148,7 @@
             // Kategorija
             // 
             this.Kategorija.FormattingEnabled = true;
-            this.Kategorija.Location = new System.Drawing.Point(445, 208);
+            this.Kategorija.Location = new System.Drawing.Point(479, 220);
             this.Kategorija.Name = "Kategorija";
             this.Kategorija.Size = new System.Drawing.Size(205, 21);
             this.Kategorija.TabIndex = 9;
@@ -156,19 +156,18 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(656, 156);
+            this.pictureBox2.Image = global::Pokloni.ba.WinUI.Properties.Resources.iconPlus;
+            this.pictureBox2.Location = new System.Drawing.Point(699, 168);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(24, 26);
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.PictureBox2_Click);
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(656, 208);
+            this.pictureBox3.Image = global::Pokloni.ba.WinUI.Properties.Resources.iconPlus;
+            this.pictureBox3.Location = new System.Drawing.Point(699, 220);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(24, 25);
             this.pictureBox3.TabIndex = 11;
@@ -180,7 +179,7 @@
             this.labelbraca.Depth = 0;
             this.labelbraca.Font = new System.Drawing.Font("Roboto", 11F);
             this.labelbraca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelbraca.Location = new System.Drawing.Point(710, 184);
+            this.labelbraca.Location = new System.Drawing.Point(744, 196);
             this.labelbraca.MouseState = MaterialSkin.MouseState.HOVER;
             this.labelbraca.Name = "labelbraca";
             this.labelbraca.Size = new System.Drawing.Size(116, 19);
@@ -191,7 +190,7 @@
             // 
             this.StanjeNaLageru.Depth = 0;
             this.StanjeNaLageru.Hint = "";
-            this.StanjeNaLageru.Location = new System.Drawing.Point(714, 206);
+            this.StanjeNaLageru.Location = new System.Drawing.Point(748, 218);
             this.StanjeNaLageru.MaxLength = 32767;
             this.StanjeNaLageru.MouseState = MaterialSkin.MouseState.HOVER;
             this.StanjeNaLageru.Name = "StanjeNaLageru";
@@ -208,8 +207,8 @@
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(737, 235);
+            this.pictureBox4.Image = global::Pokloni.ba.WinUI.Properties.Resources.iconPlus;
+            this.pictureBox4.Location = new System.Drawing.Point(771, 247);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(24, 26);
             this.pictureBox4.TabIndex = 14;
@@ -219,8 +218,8 @@
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(767, 235);
+            this.pictureBox5.Image = global::Pokloni.ba.WinUI.Properties.Resources.iconMinus;
+            this.pictureBox5.Location = new System.Drawing.Point(801, 247);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(24, 26);
             this.pictureBox5.TabIndex = 15;
@@ -233,7 +232,7 @@
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel5.Location = new System.Drawing.Point(710, 132);
+            this.materialLabel5.Location = new System.Drawing.Point(744, 144);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
             this.materialLabel5.Size = new System.Drawing.Size(51, 19);
@@ -244,7 +243,7 @@
             // 
             this.Cijena.Depth = 0;
             this.Cijena.Hint = "";
-            this.Cijena.Location = new System.Drawing.Point(714, 154);
+            this.Cijena.Location = new System.Drawing.Point(748, 166);
             this.Cijena.MaxLength = 32767;
             this.Cijena.MouseState = MaterialSkin.MouseState.HOVER;
             this.Cijena.Name = "Cijena";
@@ -261,7 +260,7 @@
             // 
             this.Opis.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Opis.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Opis.Location = new System.Drawing.Point(206, 103);
+            this.Opis.Location = new System.Drawing.Point(240, 115);
             this.Opis.Multiline = true;
             this.Opis.Name = "Opis";
             this.Opis.Size = new System.Drawing.Size(187, 139);
@@ -274,28 +273,28 @@
             this.materialLabel6.Depth = 0;
             this.materialLabel6.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel6.Location = new System.Drawing.Point(202, 81);
+            this.materialLabel6.Location = new System.Drawing.Point(236, 93);
             this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel6.Name = "materialLabel6";
             this.materialLabel6.Size = new System.Drawing.Size(39, 19);
             this.materialLabel6.TabIndex = 19;
             this.materialLabel6.Text = "Opis";
             // 
-            // materialRaisedButton1
+            // Sacuvaj
             // 
-            this.materialRaisedButton1.AutoSize = true;
-            this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Icon = null;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(877, 238);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(82, 36);
-            this.materialRaisedButton1.TabIndex = 20;
-            this.materialRaisedButton1.Text = "Sačuvaj";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
-            this.materialRaisedButton1.Click += new System.EventHandler(this.MaterialRaisedButton1_Click);
+            this.Sacuvaj.AutoSize = true;
+            this.Sacuvaj.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Sacuvaj.Depth = 0;
+            this.Sacuvaj.Icon = null;
+            this.Sacuvaj.Location = new System.Drawing.Point(778, 312);
+            this.Sacuvaj.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Sacuvaj.Name = "Sacuvaj";
+            this.Sacuvaj.Primary = true;
+            this.Sacuvaj.Size = new System.Drawing.Size(82, 36);
+            this.Sacuvaj.TabIndex = 20;
+            this.Sacuvaj.Text = "Sačuvaj";
+            this.Sacuvaj.UseVisualStyleBackColor = true;
+            this.Sacuvaj.Click += new System.EventHandler(this.MaterialRaisedButton1_Click);
             // 
             // materialLabel4
             // 
@@ -303,7 +302,7 @@
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(710, 81);
+            this.materialLabel4.Location = new System.Drawing.Point(744, 93);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(40, 19);
@@ -314,7 +313,7 @@
             // 
             this.Sifra.Depth = 0;
             this.Sifra.Hint = "";
-            this.Sifra.Location = new System.Drawing.Point(714, 103);
+            this.Sifra.Location = new System.Drawing.Point(748, 115);
             this.Sifra.MaxLength = 32767;
             this.Sifra.MouseState = MaterialSkin.MouseState.HOVER;
             this.Sifra.Name = "Sifra";
@@ -329,15 +328,16 @@
             // 
             // btnDodajSliku
             // 
+            this.btnDodajSliku.AutoSize = true;
             this.btnDodajSliku.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnDodajSliku.Depth = 0;
             this.btnDodajSliku.Icon = null;
-            this.btnDodajSliku.Location = new System.Drawing.Point(79, 247);
+            this.btnDodajSliku.Location = new System.Drawing.Point(106, 259);
             this.btnDodajSliku.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnDodajSliku.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnDodajSliku.Name = "btnDodajSliku";
             this.btnDodajSliku.Primary = false;
-            this.btnDodajSliku.Size = new System.Drawing.Size(60, 28);
+            this.btnDodajSliku.Size = new System.Drawing.Size(65, 36);
             this.btnDodajSliku.TabIndex = 44;
             this.btnDodajSliku.Text = "Dodaj";
             this.btnDodajSliku.UseVisualStyleBackColor = true;
@@ -351,15 +351,31 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Brown;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Location = new System.Drawing.Point(64, 312);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 36);
+            this.button1.TabIndex = 45;
+            this.button1.Text = "Obriši proizvod";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
             // frmProizvodiDetalji
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(994, 531);
+            this.ClientSize = new System.Drawing.Size(944, 674);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnDodajSliku);
             this.Controls.Add(this.materialLabel4);
             this.Controls.Add(this.Sifra);
-            this.Controls.Add(this.materialRaisedButton1);
+            this.Controls.Add(this.Sacuvaj);
             this.Controls.Add(this.materialLabel6);
             this.Controls.Add(this.Opis);
             this.Controls.Add(this.materialLabel5);
@@ -415,11 +431,12 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField Cijena;
         private System.Windows.Forms.TextBox Opis;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private MaterialSkin.Controls.MaterialRaisedButton Sacuvaj;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialSingleLineTextField Sifra;
         private MaterialSkin.Controls.MaterialFlatButton btnDodajSliku;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProizvodiInsert));
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.Sifra = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.Sacuvaj = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.Opis = new System.Windows.Forms.TextBox();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
@@ -41,8 +40,6 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.labelbraca = new MaterialSkin.Controls.MaterialLabel();
             this.StanjeNaLageru = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Kategorija = new System.Windows.Forms.ComboBox();
             this.Proizvodac = new System.Windows.Forms.ComboBox();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
@@ -55,8 +52,6 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -91,21 +86,21 @@
             this.Sifra.TabStop = false;
             this.Sifra.UseSystemPasswordChar = false;
             // 
-            // materialRaisedButton1
+            // Sacuvaj
             // 
-            this.materialRaisedButton1.AutoSize = true;
-            this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Icon = null;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(748, 355);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(82, 36);
-            this.materialRaisedButton1.TabIndex = 40;
-            this.materialRaisedButton1.Text = "Sačuvaj";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
-            this.materialRaisedButton1.Click += new System.EventHandler(this.MaterialRaisedButton1_Click);
+            this.Sacuvaj.AutoSize = true;
+            this.Sacuvaj.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Sacuvaj.Depth = 0;
+            this.Sacuvaj.Icon = null;
+            this.Sacuvaj.Location = new System.Drawing.Point(748, 355);
+            this.Sacuvaj.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Sacuvaj.Name = "Sacuvaj";
+            this.Sacuvaj.Primary = true;
+            this.Sacuvaj.Size = new System.Drawing.Size(82, 36);
+            this.Sacuvaj.TabIndex = 40;
+            this.Sacuvaj.Text = "Sačuvaj";
+            this.Sacuvaj.UseVisualStyleBackColor = true;
+            this.Sacuvaj.Click += new System.EventHandler(this.MaterialRaisedButton1_Click);
             // 
             // materialLabel6
             // 
@@ -164,7 +159,7 @@
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Image = global::Pokloni.ba.WinUI.Properties.Resources.iconMinus;
             this.pictureBox5.Location = new System.Drawing.Point(771, 285);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(24, 26);
@@ -175,7 +170,7 @@
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Image = global::Pokloni.ba.WinUI.Properties.Resources.iconPlus;
             this.pictureBox4.Location = new System.Drawing.Point(741, 285);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(24, 26);
@@ -213,26 +208,6 @@
             this.StanjeNaLageru.TabStop = false;
             this.StanjeNaLageru.Text = "0";
             this.StanjeNaLageru.UseSystemPasswordChar = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(660, 258);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(24, 25);
-            this.pictureBox3.TabIndex = 31;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(660, 206);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(24, 26);
-            this.pictureBox2.TabIndex = 30;
-            this.pictureBox2.TabStop = false;
             // 
             // Kategorija
             // 
@@ -308,7 +283,6 @@
             // 
             // pictureBox
             // 
-            this.pictureBox.Image = global::Pokloni.ba.WinUI.Properties.Resources.DefaultProductsImage;
             this.pictureBox.Location = new System.Drawing.Point(34, 135);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(155, 153);
@@ -349,7 +323,7 @@
             this.Controls.Add(this.btnDodajSliku);
             this.Controls.Add(this.materialLabel4);
             this.Controls.Add(this.Sifra);
-            this.Controls.Add(this.materialRaisedButton1);
+            this.Controls.Add(this.Sacuvaj);
             this.Controls.Add(this.materialLabel6);
             this.Controls.Add(this.Opis);
             this.Controls.Add(this.materialLabel5);
@@ -358,8 +332,6 @@
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.labelbraca);
             this.Controls.Add(this.StanjeNaLageru);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.Kategorija);
             this.Controls.Add(this.Proizvodac);
             this.Controls.Add(this.materialLabel3);
@@ -373,8 +345,6 @@
             this.Load += new System.EventHandler(this.FrmProizvodiInsert_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
@@ -386,7 +356,7 @@
 
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialSingleLineTextField Sifra;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private MaterialSkin.Controls.MaterialRaisedButton Sacuvaj;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
         private System.Windows.Forms.TextBox Opis;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
@@ -395,8 +365,6 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private MaterialSkin.Controls.MaterialLabel labelbraca;
         private MaterialSkin.Controls.MaterialSingleLineTextField StanjeNaLageru;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ComboBox Kategorija;
         private System.Windows.Forms.ComboBox Proizvodac;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;

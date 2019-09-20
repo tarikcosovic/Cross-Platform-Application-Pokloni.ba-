@@ -27,7 +27,6 @@ namespace Pokloni.ba.WinUI
             }
             return true;
         }
-
         public static bool LengthCheck(MaterialSingleLineTextField[] model, ErrorProvider errorProvider, int min = 3, int max = 100)
         {
             foreach (var item in model)
@@ -49,7 +48,7 @@ namespace Pokloni.ba.WinUI
             }
             return true;
         }
-        public static bool PasswordCheck(string first, string second,Control control, ErrorProvider errorProvider)
+        public static bool PasswordCheck(string first, string second, Control control, ErrorProvider errorProvider)
         {
             if (first.Equals(second))
                 return true;
@@ -70,7 +69,36 @@ namespace Pokloni.ba.WinUI
                 return false;
             }
         }
-
+        public static bool IsValidInteger(MaterialSingleLineTextField temp, ErrorProvider errorProvider)
+        {
+                bool ok = int.TryParse(temp.Text, out var res);
+                if(!ok)
+                {
+                    errorProvider.SetError(temp, "Unesite numeričku vrijednost!");
+                    return false;
+                }
+            return true;
+        }
+        public static bool IsValidDecimal(MaterialSingleLineTextField temp, ErrorProvider errorProvider)
+        {
+                bool ok = decimal.TryParse(temp.Text, out var res);
+                if (!ok)
+                {
+                    errorProvider.SetError(temp, "Unesite numeričku vrijednost!");
+                    return false;
+                }
+            return true;
+        }
+        public static bool IsComboBoxSelected(ComboBox temp, ErrorProvider errorProvider)
+        {
+            bool ok = int.TryParse(temp.SelectedIndex.ToString(), out var res);
+            if(!ok || res==0)
+            {
+                errorProvider.SetError(temp, "Molimo odaberite kategoriju");
+                return false;
+            }
+            return true;
+        }
         public static bool ValidateTextBoxes(MaterialSingleLineTextField[] temp, ErrorProvider errorProvider)
         {
             if (NotNull(temp, errorProvider) && LengthCheck(temp, errorProvider))

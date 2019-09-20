@@ -26,3 +26,9 @@ C:\Users\tarik\source\repos\Pokloni.ba-Cross-platform-application\Pokloni.ba.Win
 C:\Users\tarik\source\repos\Pokloni.ba-Cross-platform-application\Pokloni.ba.WinUI\obj\Debug\Pokloni.ba.WinUI.Proizvodi.frmProizvodiDetalji.resources
 C:\Users\tarik\source\repos\Pokloni.ba-Cross-platform-application\Pokloni.ba.WinUI\obj\Debug\Pokloni.ba.WinUI.Proizvodi.frmProizvodi.resources
 C:\Users\tarik\source\repos\Pokloni.ba-Cross-platform-application\Pokloni.ba.WinUI\obj\Debug\Pokloni.ba.WinUI.Proizvodi.frmProizvodiInsert.resources
+C:\Users\tarik\source\repos\Pokloni.ba-Cross-platform-application\Pokloni.ba.WinUI\obj\Debug\Pokloni.ba.WinUI.Proizvodaci.frmProizvodaci.resources
+C:\Users\tarik\source\repos\Pokloni.ba-Cross-platform-application\Pokloni.ba.WinUI\obj\Debug\Pokloni.ba.WinUI.Proizvodaci.frmProizvodaciDetails.resources
+C:\Users\tarik\source\repos\Pokloni.ba-Cross-platform-application\Pokloni.ba.WinUI\obj\Debug\Pokloni.ba.WinUI.Proizvodaci.frmProizvodaciInsert.resources
+C:\Users\tarik\source\repos\Pokloni.ba-Cross-platform-application\Pokloni.ba.WinUI\obj\Debug\Pokloni.ba.WinUI.Kategorije.frmKategorije.resources
+C:\Users\tarik\source\repos\Pokloni.ba-Cross-platform-application\Pokloni.ba.WinUI\obj\Debug\Pokloni.ba.WinUI.Kategorije.frmKategorijeDetails.resources
+C:\Users\tarik\source\repos\Pokloni.ba-Cross-platform-application\Pokloni.ba.WinUI\obj\Debug\Pokloni.ba.WinUI.Kategorije.frmKategorijeInsert.resources

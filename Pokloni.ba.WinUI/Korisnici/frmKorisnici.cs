@@ -44,5 +44,10 @@ namespace Pokloni.ba.WinUI.Korisnici
             frmKorisniciDetalji frm = new frmKorisniciDetalji(int.Parse(id));
             frm.Show();
         }
+
+        private void FrmKorisnici_Load(object sender, EventArgs e)
+        {
+            BtnPrikazi_Click(null, null);
+        }
     }
 }

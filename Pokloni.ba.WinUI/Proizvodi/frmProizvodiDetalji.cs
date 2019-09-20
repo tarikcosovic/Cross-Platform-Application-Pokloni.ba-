@@ -41,21 +41,28 @@ namespace Pokloni.ba.WinUI.Proizvodi
                 Opis.Text = result.Opis.ToString();
                 Cijena.Text = result.Cijena.ToString();
                 StanjeNaLageru.Text = result.StanjeNaLageru.ToString();
-
-                //POPRAVITI OVO I CITATI O STREAMS I BYTES AND STUFF
-                //pictureBox1.Image = File.ReadAllBytes(result.Slika.ToString());
-
+                if(result.Slika != null && result.Slika.Length > 0)
+                {
+                    _slika = result.Slika;
+                    pictureBox1.Image = GetImage(_slika);
+                }
+                else
+                {
+                    _slika = frmProizvodiInsert.ImageToByte(Properties.Resources.DefaultProductsImage);
+                    pictureBox1.Image = Properties.Resources.DefaultProductsImage;
+                }
 
                 await GetKategorije(result.KategorijaId);
                 await GetProizvodaci(result.ProizvodacId);
             }
         }
 
-        private void PictureBox2_Click(object sender, EventArgs e)
+        private static Image GetImage(byte[] data)
         {
-            frmKorisnici frm = new frmKorisnici();
-
-            frm.Show();
+            using (MemoryStream ms = new MemoryStream(data))
+            {
+                return (Image.FromStream(ms));
+            }
         }
 
         private async Task GetProizvodaci(int selectedId)
@@ -68,7 +75,6 @@ namespace Pokloni.ba.WinUI.Proizvodi
             Proizvodac.ValueMember = "ProizvodacPoklonaId";
             Proizvodac.SelectedItem = model.Where(k => k.ProizvodacPoklonaId == selectedId).FirstOrDefault();
         }
-
 
         private async Task GetKategorije(int selectedId)
         {
@@ -116,17 +122,21 @@ namespace Pokloni.ba.WinUI.Proizvodi
 
         private async void MaterialRaisedButton1_Click(object sender, EventArgs e)
         {
-            MaterialSingleLineTextField[] temp = new MaterialSingleLineTextField[2] { Naziv, Sifra };
-            if (ValidationHelper.ValidateTextBoxes(temp, errorProvider1))
+            if (ValidationHelper.ValidateTextBoxes(new MaterialSingleLineTextField[2] { Naziv, Sifra }, errorProvider1) 
+                && ValidationHelper.IsValidInteger( StanjeNaLageru , errorProvider1) 
+                && ValidationHelper.IsValidDecimal(Cijena, errorProvider1)
+                && ValidationHelper.IsComboBoxSelected(Kategorija, errorProvider1)
+                && ValidationHelper.IsComboBoxSelected(Proizvodac, errorProvider1))
             {
                 var ComboBoxKategorija = Kategorija.SelectedItem;
                 var ComboBoxProizvodac = Proizvodac.SelectedItem;
                 var model = new Model.Requests.Proizvodi.ProizvodVM()
                 {
+                    ProizvodId = (int)_id,
                     Naziv = Naziv.Text,
                     Sifra = Sifra.Text,
                     Opis = Opis.Text,
-                    Cijena = int.Parse(Cijena.Text),
+                    Cijena = decimal.Parse(Cijena.Text),
                     StanjeNaLageru = int.Parse(StanjeNaLageru.Text),
                     KategorijaId = ((Model.Requests.Proizvodi.Kategorije)ComboBoxKategorija).KategorijaId,
                     ProizvodacId = ((Model.Requests.Proizvodi.ProizvodacPoklona)ComboBoxProizvodac).ProizvodacPoklonaId,
@@ -137,6 +147,26 @@ namespace Pokloni.ba.WinUI.Proizvodi
 
                 MessageBox.Show("Uspješno ste ažurirali proizvod..", "Uspjeh!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.Close();
+            }
+        }
+
+        private async void Button1_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Da li ste sigurni da želite izbrisati proizvod?", "Brisanje proizvoda", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                var result = await _APIService.Get<List<Model.Requests.Proizvodi.ProizvodVM>>();
+                int? proizvodId = result.Where(k => k.ProizvodId == _id).Select(x => x.ProizvodId).FirstOrDefault();
+
+                if (proizvodId.HasValue)
+                {
+                    await _APIService.Delete(proizvodId);
+                    this.Close();
+                    MessageBox.Show("Uspješno ste izbrisali proizvod..", "Uspjeh!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                    MessageBox.Show("Nepostojeći proizvod..", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
     }

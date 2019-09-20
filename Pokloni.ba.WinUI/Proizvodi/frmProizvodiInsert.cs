@@ -18,7 +18,7 @@ namespace Pokloni.ba.WinUI.Proizvodi
         private readonly APIService _apiServiceKategorije = new APIService(Properties.Settings.Default.RouteKategorije);
         private readonly APIService _apiServiceProizvodaci = new APIService(Properties.Settings.Default.RouteProizvodaci);
 
-        private byte[] _slika = null;
+        private byte[] _slika;
         public frmProizvodiInsert()
         {
             InitializeComponent();
@@ -28,7 +28,11 @@ namespace Pokloni.ba.WinUI.Proizvodi
         private async void MaterialRaisedButton1_Click(object sender, EventArgs e)
         {
             MaterialSingleLineTextField[] temp = new MaterialSingleLineTextField[2] { Naziv, Sifra};
-            if (ValidationHelper.ValidateTextBoxes(temp, errorProvider))
+            if (ValidationHelper.ValidateTextBoxes(temp, errorProvider)
+                && ValidationHelper.IsValidInteger(StanjeNaLageru, errorProvider)
+                && ValidationHelper.IsValidDecimal(Cijena, errorProvider)
+                && ValidationHelper.IsComboBoxSelected(Kategorija, errorProvider)
+                && ValidationHelper.IsComboBoxSelected(Proizvodac, errorProvider))
             {
                 var ComboBoxKategorija = Kategorija.SelectedItem;
                 var ComboBoxProizvodac = Proizvodac.SelectedItem;
@@ -37,7 +41,7 @@ namespace Pokloni.ba.WinUI.Proizvodi
                     Naziv = Naziv.Text,
                     Sifra = Sifra.Text,
                     Opis = Opis.Text,
-                    Cijena = int.Parse(Cijena.Text),
+                    Cijena = decimal.Parse(Cijena.Text),
                     StanjeNaLageru = int.Parse(StanjeNaLageru.Text),
                     KategorijaId = ((Model.Requests.Proizvodi.Kategorije)ComboBoxKategorija).KategorijaId,
                     ProizvodacId = ((Model.Requests.Proizvodi.ProizvodacPoklona)ComboBoxProizvodac).ProizvodacPoklonaId,
@@ -73,8 +77,19 @@ namespace Pokloni.ba.WinUI.Proizvodi
 
         private async void FrmProizvodiInsert_Load(object sender, EventArgs e)
         {
+            _slika = ImageToByte(Properties.Resources.DefaultProductsImage);
+            pictureBox.Image = Properties.Resources.DefaultProductsImage;
+            //TO DO HERE:
+            //POSTAVITI SLIKA VALUE DA JE PO DEFAULTU JEDNAKA ONOJ U PROPERTIES!
+
             await LoadKategorije();
             await LoadProizvodac();
+        }
+
+        public static byte[] ImageToByte(Image img)
+        {
+            ImageConverter converter = new ImageConverter();
+            return (byte[])converter.ConvertTo(img, typeof(byte[]));
         }
 
         private void PictureBox4_Click(object sender, EventArgs e)
@@ -110,5 +125,6 @@ namespace Pokloni.ba.WinUI.Proizvodi
 
             }
         }
+
     }
 }
