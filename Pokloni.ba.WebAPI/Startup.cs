@@ -75,13 +75,14 @@ namespace Pokloni.ba.WebAPI
             }
 
             app.UseHttpsRedirection();
+
+            app.UseAuthentication();
             app.UseMvc(routeBuilder => 
             {
                 routeBuilder.EnableDependencyInjection();
                 //Funkcionalnosi OData koje zelimo  koristiti
                 routeBuilder.Expand().Select().Count().OrderBy().Filter();
             });
-            app.UseAuthentication();
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {

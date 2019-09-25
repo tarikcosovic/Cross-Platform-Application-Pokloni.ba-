@@ -54,9 +54,11 @@ namespace Pokloni.ba.WinUI.Proizvodi
 
                 await GetKategorije(result.KategorijaId);
                 await GetProizvodaci(result.ProizvodacId);
+
+                //LoadImageListView();
             }
         }
-        //OVO NAMJESTITI
+        //OVO NAMJESTITI I IZNAD OTKOMENTARISAT
         private async void LoadImageListView()
         {
             var result2 = await _APIService.Get<IEnumerable<Model.Requests.Proizvodi.ProizvodVM>>();
@@ -68,18 +70,14 @@ namespace Pokloni.ba.WinUI.Proizvodi
                 {
                     Image img = GetImage(item.Slika);
                     if (img != null)
-                        test.Images.Add(img);
+                        test.Images.Add(item.Naziv, img);
+
+                    var listViewItem = imgList.Items.Add("Test");
+                    listViewItem.ImageKey = item.Naziv;
                 }
             }
-            test.ImageSize = new Size(64, 64);
-            materialListView1.View = View.LargeIcon;
-            materialListView1.SmallImageList = test;
-            for (int j = 0; j < test.Images.Count; j++)
-            {
-                ListViewItem item = new ListViewItem();
-                item.ImageIndex = j;
-                materialListView1.Items.Add(item);
-            }
+            imgList.View = View.LargeIcon;
+            imgList.LargeImageList = test;
         }
 
         private static Image GetImage(byte[] data)
