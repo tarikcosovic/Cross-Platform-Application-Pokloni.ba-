@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.ColumnHeader Dummy;
-            this.listaKorisnika = new MaterialSkin.Controls.MaterialListView();
+            this.listaKategorija = new MaterialSkin.Controls.MaterialListView();
             this.test1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.test2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnPrikazi = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -37,32 +37,33 @@
             Dummy = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
-            // listaKorisnika
-            // 
-            this.listaKorisnika.Activation = System.Windows.Forms.ItemActivation.TwoClick;
-            this.listaKorisnika.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listaKorisnika.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            Dummy,
-            this.test1,
-            this.test2});
-            this.listaKorisnika.Depth = 0;
-            this.listaKorisnika.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.listaKorisnika.FullRowSelect = true;
-            this.listaKorisnika.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listaKorisnika.Location = new System.Drawing.Point(56, 143);
-            this.listaKorisnika.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.listaKorisnika.MouseState = MaterialSkin.MouseState.OUT;
-            this.listaKorisnika.Name = "listaKorisnika";
-            this.listaKorisnika.OwnerDraw = true;
-            this.listaKorisnika.Size = new System.Drawing.Size(454, 295);
-            this.listaKorisnika.TabIndex = 9;
-            this.listaKorisnika.UseCompatibleStateImageBehavior = false;
-            this.listaKorisnika.View = System.Windows.Forms.View.Details;
-            // 
             // Dummy
             // 
             Dummy.Text = "";
             Dummy.Width = 0;
+            // 
+            // listaKategorija
+            // 
+            this.listaKategorija.Activation = System.Windows.Forms.ItemActivation.TwoClick;
+            this.listaKategorija.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listaKategorija.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            Dummy,
+            this.test1,
+            this.test2});
+            this.listaKategorija.Depth = 0;
+            this.listaKategorija.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.listaKategorija.FullRowSelect = true;
+            this.listaKategorija.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listaKategorija.Location = new System.Drawing.Point(56, 143);
+            this.listaKategorija.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.listaKategorija.MouseState = MaterialSkin.MouseState.OUT;
+            this.listaKategorija.Name = "listaKategorija";
+            this.listaKategorija.OwnerDraw = true;
+            this.listaKategorija.Size = new System.Drawing.Size(454, 295);
+            this.listaKategorija.TabIndex = 9;
+            this.listaKategorija.UseCompatibleStateImageBehavior = false;
+            this.listaKategorija.View = System.Windows.Forms.View.Details;
+            this.listaKategorija.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ListaKategorija_MouseDoubleClick);
             // 
             // test1
             // 
@@ -88,6 +89,7 @@
             this.btnPrikazi.TabIndex = 8;
             this.btnPrikazi.Text = "Pretraži";
             this.btnPrikazi.UseVisualStyleBackColor = true;
+            this.btnPrikazi.Click += new System.EventHandler(this.BtnPrikazi_Click_1);
             // 
             // txtPretraga
             // 
@@ -111,12 +113,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(927, 450);
-            this.Controls.Add(this.listaKorisnika);
+            this.Controls.Add(this.listaKategorija);
             this.Controls.Add(this.btnPrikazi);
             this.Controls.Add(this.txtPretraga);
             this.Name = "frmKategorije";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kategorije";
+            this.Load += new System.EventHandler(this.FrmKategorije_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,7 +127,7 @@
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialListView listaKorisnika;
+        private MaterialSkin.Controls.MaterialListView listaKategorija;
         private System.Windows.Forms.ColumnHeader test1;
         private System.Windows.Forms.ColumnHeader test2;
         private MaterialSkin.Controls.MaterialRaisedButton btnPrikazi;

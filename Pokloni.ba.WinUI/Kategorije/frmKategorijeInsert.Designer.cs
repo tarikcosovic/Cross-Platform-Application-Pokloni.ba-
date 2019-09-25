@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Sacuvaj = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.Opis = new System.Windows.Forms.TextBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.Naziv = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // Sacuvaj
@@ -49,6 +52,7 @@
             this.Sacuvaj.TabIndex = 49;
             this.Sacuvaj.Text = "Sačuvaj";
             this.Sacuvaj.UseVisualStyleBackColor = true;
+            this.Sacuvaj.Click += new System.EventHandler(this.Sacuvaj_Click);
             // 
             // materialLabel6
             // 
@@ -104,6 +108,10 @@
             this.Naziv.TabStop = false;
             this.Naziv.UseSystemPasswordChar = false;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmKategorijeInsert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -117,6 +125,7 @@
             this.Name = "frmKategorijeInsert";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Unos Nove Kategorije";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,5 +138,6 @@
         private System.Windows.Forms.TextBox Opis;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialSingleLineTextField Naziv;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNet.OData.Extensions;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -14,6 +15,7 @@ using Pokloni.ba.WebAPI.Services.Dostava;
 using Pokloni.ba.WebAPI.Services.Korisnici;
 using Pokloni.ba.WebAPI.Services.Narudzbe;
 using Pokloni.ba.WebAPI.Services.Proizvodi;
+using Poloni.ba.WebAPI.Security;
 
 namespace Pokloni.ba.WebAPI
 {
@@ -41,6 +43,10 @@ namespace Pokloni.ba.WebAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Pokloni.ba API", Version = "v1" });
             });
+
+            services.AddAuthentication("BasicAuthentication")
+            .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
+
 
             services.AddScoped<IKorisniciService, KorisniciService>();
             services.AddScoped<IKorisniciDetailsService, KorisniciDetailsService>();
@@ -75,7 +81,7 @@ namespace Pokloni.ba.WebAPI
                 //Funkcionalnosi OData koje zelimo  koristiti
                 routeBuilder.Expand().Select().Count().OrderBy().Filter();
             });
-
+            app.UseAuthentication();
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {

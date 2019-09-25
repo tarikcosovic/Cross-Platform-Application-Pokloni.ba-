@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.Opis = new System.Windows.Forms.TextBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.Naziv = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.Sacuvaj = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // materialLabel6
@@ -103,6 +106,11 @@
             this.Sacuvaj.TabIndex = 44;
             this.Sacuvaj.Text = "Sačuvaj";
             this.Sacuvaj.UseVisualStyleBackColor = true;
+            this.Sacuvaj.Click += new System.EventHandler(this.Sacuvaj_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmProizvodaciInsert
             // 
@@ -117,6 +125,7 @@
             this.Name = "frmProizvodaciInsert";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Unos Novog Proizvođača";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,5 +138,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialSingleLineTextField Naziv;
         private MaterialSkin.Controls.MaterialRaisedButton Sacuvaj;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

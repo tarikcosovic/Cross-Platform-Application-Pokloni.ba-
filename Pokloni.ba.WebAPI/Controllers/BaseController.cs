@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNet.OData;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Pokloni.ba.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class BaseController<T1, T2>: ControllerBase where T1:IBaseInterface<T2>
     {
         private readonly T1 _service;

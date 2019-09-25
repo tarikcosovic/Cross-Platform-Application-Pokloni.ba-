@@ -5,6 +5,9 @@ namespace Pokloni.ba.WinUI
 {
     public class APIService
     {
+        public static string Username { get; set; }
+        public static string Password { get; set; }
+
         private string _route = null;
         public APIService(string route)
         {
@@ -17,16 +20,14 @@ namespace Pokloni.ba.WinUI
             if (!string.IsNullOrWhiteSpace(queries))
                 filter = "?$filter="+ attribute + " eq " + "'" + queries + "'";
 
-            var result = await $"{Properties.Settings.Default.APIUrl}/{ _route}{filter}".GetJsonAsync<T>();
-            //if(result.Equals(new List<T>())) PROVJERITI STA VRACA RESULT KAD VRATA NISTA, TJ. PRAZNU LISTU
-               // MessageBox.Show("Korisnik pod tim imenom ne postoji.", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            var result = await $"{Properties.Settings.Default.APIUrl}/{ _route}{filter}".WithBasicAuth(Username, Password).GetJsonAsync<T>();
 
             return result;
         }
 
         public async Task<T> GetbyId<T>(int? id)
         {
-            var result = await $"{Properties.Settings.Default.APIUrl}/{ _route}/{id}".GetJsonAsync<T>();
+            var result = await $"{Properties.Settings.Default.APIUrl}/{ _route}/{id}".WithBasicAuth(Username, Password).GetJsonAsync<T>();
 
             return result;
         }
@@ -35,19 +36,19 @@ namespace Pokloni.ba.WinUI
         {
             var result = $"{Properties.Settings.Default.APIUrl}/{ _route}";
 
-            return await result.PostJsonAsync(request).ReceiveJson<T>();
+            return await result.WithBasicAuth(Username, Password).PostJsonAsync(request).ReceiveJson<T>();
         }
 
         public async Task<T> Update<T>(object request, object id)
         {
             var result = $"{Properties.Settings.Default.APIUrl}/{ _route}/{id}";
 
-            return await result.PutJsonAsync(request).ReceiveJson<T>();
+            return await result.WithBasicAuth(Username, Password).PutJsonAsync(request).ReceiveJson<T>();
         }
 
         public async Task Delete(int? id)
         {
-            await $"{Properties.Settings.Default.APIUrl}/{ _route}/{id}".DeleteAsync();
+            await $"{Properties.Settings.Default.APIUrl}/{ _route}/{id}".WithBasicAuth(Username, Password).DeleteAsync();
         }
     }
 }

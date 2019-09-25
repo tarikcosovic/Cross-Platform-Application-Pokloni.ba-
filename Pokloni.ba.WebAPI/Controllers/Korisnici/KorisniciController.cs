@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.OData;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Pokloni.ba.WebAPI.Database;
@@ -23,6 +24,7 @@ namespace Pokloni.ba.WebAPI.Controllers
 
         [HttpGet]
         [EnableQuery]
+        [Authorize]
         public ActionResult<IEnumerator<Model.Korisnik>> Get()
         {
             var korisnici = _service.Get();
@@ -31,12 +33,14 @@ namespace Pokloni.ba.WebAPI.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         public ActionResult<Model.Korisnik> GetById(int id)
         {
             return _service.GetById(id);
         }
 
         [HttpGet("[action]/{username}")]
+        [Authorize]
         public ActionResult<Model.Korisnik> GetByUsername(string username)
         {
             return _service.GetByUsername(username);
@@ -49,12 +53,14 @@ namespace Pokloni.ba.WebAPI.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize]
         public Model.Korisnik Update(Model.Requests.KorisniciUpdateRequest request, int id)
         {
             return _service.Update(request, id);
         }
 
         [HttpDelete("{id}")]
+        [Authorize]
         public ActionResult Delete(int id)
         {
             _service.Delete(id);

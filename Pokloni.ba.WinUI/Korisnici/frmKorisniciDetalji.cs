@@ -82,9 +82,6 @@ namespace Pokloni.ba.WinUI.Korisnici
                 else
                     MessageBox.Show("Nepostojeći korisnik..", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            else if (dialogResult == DialogResult.No)
-            {
-            }
         }
     }
 }

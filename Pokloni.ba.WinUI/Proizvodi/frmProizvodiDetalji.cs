@@ -56,6 +56,31 @@ namespace Pokloni.ba.WinUI.Proizvodi
                 await GetProizvodaci(result.ProizvodacId);
             }
         }
+        //OVO NAMJESTITI
+        private async void LoadImageListView()
+        {
+            var result2 = await _APIService.Get<IEnumerable<Model.Requests.Proizvodi.ProizvodVM>>();
+            ImageList test = new ImageList();
+
+            foreach (var item in result2)
+            {
+                if (item.Slika != null && item.Slika.Length > 3)
+                {
+                    Image img = GetImage(item.Slika);
+                    if (img != null)
+                        test.Images.Add(img);
+                }
+            }
+            test.ImageSize = new Size(64, 64);
+            materialListView1.View = View.LargeIcon;
+            materialListView1.SmallImageList = test;
+            for (int j = 0; j < test.Images.Count; j++)
+            {
+                ListViewItem item = new ListViewItem();
+                item.ImageIndex = j;
+                materialListView1.Items.Add(item);
+            }
+        }
 
         private static Image GetImage(byte[] data)
         {
