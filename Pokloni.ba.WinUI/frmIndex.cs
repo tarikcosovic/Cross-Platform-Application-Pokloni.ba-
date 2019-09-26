@@ -25,6 +25,10 @@ namespace Pokloni.ba.WinUI
         //Početna stranica
         private void FrmIndex_Load(object sender, EventArgs e)
         {
+            logiraniKorisnik.Text += APIService.Username;
+            logiraniKorisnik.ForeColor = Color.White;
+            btnOdjava.ForeColor = Color.White;
+
             frmKorisnici frm = new frmKorisnici();
             frm.MdiParent = this;
             frm.Dock = DockStyle.Fill;
@@ -140,6 +144,17 @@ namespace Pokloni.ba.WinUI
         {
             frmKategorijeInsert frm = new frmKategorijeInsert();
 
+            frm.Show();
+        }
+
+        private void BtnOdjava_Click(object sender, EventArgs e)
+        {
+            APIService.Username = "";
+            APIService.Password = "";
+
+            this.Close();
+
+            frmLogin frm = new frmLogin();
             frm.Show();
         }
     }

@@ -119,6 +119,7 @@
             this.materialRaisedButton1.Text = "Login";
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
             this.materialRaisedButton1.Click += new System.EventHandler(this.MaterialRaisedButton1_Click);
+            this.materialRaisedButton1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MaterialRaisedButton1_KeyDown);
             // 
             // linkLabel1
             // 
@@ -170,6 +171,7 @@
             // 
             // frmLogin
             // 
+            this.AcceptButton = this.materialRaisedButton1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1009, 556);
@@ -181,6 +183,7 @@
             this.Controls.Add(this.UsernameLabel);
             this.Controls.Add(this.Password);
             this.Controls.Add(this.Username);
+            this.KeyPreview = true;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pokloni.ba";

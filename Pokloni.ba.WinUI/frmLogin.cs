@@ -47,5 +47,11 @@ namespace Pokloni.ba.WinUI
                 errorProvider1.SetError(Password, "Username ili Password nisu tačni!" + ex.Message);
             }
         }
+
+        private void MaterialRaisedButton1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                MaterialRaisedButton1_Click(null, null);
+        }
     }
 }

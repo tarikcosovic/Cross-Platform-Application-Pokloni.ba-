@@ -44,6 +44,8 @@
             this.kategorijeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novaKategorijaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.logiraniKorisnik = new MaterialSkin.Controls.MaterialLabel();
+            this.btnOdjava = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -179,12 +181,45 @@
             this.novaKategorijaToolStripMenuItem.Text = "Nova Kategorija";
             this.novaKategorijaToolStripMenuItem.Click += new System.EventHandler(this.NovaKategorijaToolStripMenuItem_Click);
             // 
+            // logiraniKorisnik
+            // 
+            this.logiraniKorisnik.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.logiraniKorisnik.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(58)))), ((int)(((byte)(183)))));
+            this.logiraniKorisnik.Depth = 0;
+            this.logiraniKorisnik.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logiraniKorisnik.Font = new System.Drawing.Font("Roboto", 11F);
+            this.logiraniKorisnik.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.logiraniKorisnik.Location = new System.Drawing.Point(834, 42);
+            this.logiraniKorisnik.MouseState = MaterialSkin.MouseState.HOVER;
+            this.logiraniKorisnik.Name = "logiraniKorisnik";
+            this.logiraniKorisnik.Size = new System.Drawing.Size(180, 19);
+            this.logiraniKorisnik.TabIndex = 2;
+            this.logiraniKorisnik.Text = "Dobrodošli, ";
+            this.logiraniKorisnik.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnOdjava
+            // 
+            this.btnOdjava.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(58)))), ((int)(((byte)(183)))));
+            this.btnOdjava.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOdjava.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOdjava.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnOdjava.Location = new System.Drawing.Point(1020, 32);
+            this.btnOdjava.Name = "btnOdjava";
+            this.btnOdjava.Size = new System.Drawing.Size(69, 29);
+            this.btnOdjava.TabIndex = 3;
+            this.btnOdjava.Text = "Odjava";
+            this.btnOdjava.UseVisualStyleBackColor = false;
+            this.btnOdjava.Click += new System.EventHandler(this.BtnOdjava_Click);
+            // 
             // frmIndex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1117, 513);
+            this.Controls.Add(this.btnOdjava);
+            this.Controls.Add(this.logiraniKorisnik);
             this.Controls.Add(this.menuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.IsMdiContainer = true;
@@ -194,6 +229,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pokloni.ba";
+            this.TransparencyKey = System.Drawing.Color.Transparent;
             this.Load += new System.EventHandler(this.FrmIndex_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
@@ -217,6 +253,8 @@
         private System.Windows.Forms.ToolStripMenuItem unosNovogProizvođačaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kategorijeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem novaKategorijaToolStripMenuItem;
+        private MaterialSkin.Controls.MaterialLabel logiraniKorisnik;
+        private System.Windows.Forms.Button btnOdjava;
     }
 }
 
