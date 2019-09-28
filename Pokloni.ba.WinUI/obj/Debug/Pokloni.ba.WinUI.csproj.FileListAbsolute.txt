@@ -34,3 +34,4 @@ C:\Users\tarik\source\repos\Pokloni.ba-Cross-platform-application\Pokloni.ba.Win
 C:\Users\tarik\source\repos\Pokloni.ba-Cross-platform-application\Pokloni.ba.WinUI\obj\Debug\Pokloni.ba.WinUI.csproj.CopyComplete
 C:\Users\tarik\source\repos\Pokloni.ba-Cross-platform-application\Pokloni.ba.WinUI\obj\Debug\Pokloni.ba.WinUI.exe
 C:\Users\tarik\source\repos\Pokloni.ba-Cross-platform-application\Pokloni.ba.WinUI\obj\Debug\Pokloni.ba.WinUI.pdb
+C:\Users\tarik\source\repos\Pokloni.ba-Cross-platform-application\Pokloni.ba.WinUI\obj\Debug\Pokloni.ba.WinUI.Narudzbe.frmNarudzbe.resources

@@ -29,12 +29,15 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.ColumnHeader Dummy;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProizvodaci));
             this.listaProizvodaca = new MaterialSkin.Controls.MaterialListView();
             this.dsvNaziv = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dsvOpis = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnPrikazi = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtPretraga = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.loadingBar = new System.Windows.Forms.PictureBox();
             Dummy = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            ((System.ComponentModel.ISupportInitialize)(this.loadingBar)).BeginInit();
             this.SuspendLayout();
             // 
             // Dummy
@@ -108,11 +111,21 @@
             this.txtPretraga.TabStop = false;
             this.txtPretraga.UseSystemPasswordChar = false;
             // 
+            // loadingBar
+            // 
+            this.loadingBar.Image = ((System.Drawing.Image)(resources.GetObject("loadingBar.Image")));
+            this.loadingBar.Location = new System.Drawing.Point(239, 248);
+            this.loadingBar.Name = "loadingBar";
+            this.loadingBar.Size = new System.Drawing.Size(48, 46);
+            this.loadingBar.TabIndex = 7;
+            this.loadingBar.TabStop = false;
+            // 
             // frmProizvodaci
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(899, 450);
+            this.Controls.Add(this.loadingBar);
             this.Controls.Add(this.listaProizvodaca);
             this.Controls.Add(this.btnPrikazi);
             this.Controls.Add(this.txtPretraga);
@@ -120,6 +133,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Proizvodači";
             this.Load += new System.EventHandler(this.FrmProizvodaci_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.loadingBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,5 +146,6 @@
         private System.Windows.Forms.ColumnHeader dsvOpis;
         private MaterialSkin.Controls.MaterialRaisedButton btnPrikazi;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtPretraga;
+        private System.Windows.Forms.PictureBox loadingBar;
     }
 }

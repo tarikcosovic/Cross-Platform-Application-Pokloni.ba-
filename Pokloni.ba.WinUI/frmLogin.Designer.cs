@@ -39,8 +39,10 @@
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.loadingBar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loadingBar)).BeginInit();
             this.SuspendLayout();
             // 
             // Username
@@ -169,12 +171,23 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // loadingBar
+            // 
+            this.loadingBar.Image = ((System.Drawing.Image)(resources.GetObject("loadingBar.Image")));
+            this.loadingBar.Location = new System.Drawing.Point(467, 286);
+            this.loadingBar.Name = "loadingBar";
+            this.loadingBar.Size = new System.Drawing.Size(43, 49);
+            this.loadingBar.TabIndex = 10;
+            this.loadingBar.TabStop = false;
+            this.loadingBar.Visible = false;
+            // 
             // frmLogin
             // 
             this.AcceptButton = this.materialRaisedButton1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1009, 556);
+            this.Controls.Add(this.loadingBar);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.materialRaisedButton1);
@@ -189,6 +202,7 @@
             this.Text = "Pokloni.ba";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loadingBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,5 +219,6 @@
         private System.Windows.Forms.LinkLabel linkLabel2;
         private MaterialSkin.Controls.MaterialSingleLineTextField Password;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.PictureBox loadingBar;
     }
 }

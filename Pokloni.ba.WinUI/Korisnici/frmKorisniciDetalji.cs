@@ -75,9 +75,17 @@ namespace Pokloni.ba.WinUI.Korisnici
 
                 if(korisnikId.HasValue)
                 { 
-                    await _apiServiceKorisnici.Delete(korisnikId);
-                    this.Close();
-                    MessageBox.Show("Uspješno ste izbrisali korisnika..", "Uspjeh!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    try
+                    {
+                        await _apiServiceKorisnici.Delete(korisnikId);
+                        this.Close();
+                        MessageBox.Show("Uspješno ste izbrisali korisnika..", "Uspjeh!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    catch(Exception ex)
+                    {
+                        this.Close();
+                        MessageBox.Show("Nemate privilegije za brisanje korisnika..", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
                 else
                     MessageBox.Show("Nepostojeći korisnik..", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

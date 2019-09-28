@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pokloni.ba.Model.Requests.Korisnici;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -12,5 +13,7 @@ namespace Pokloni.ba.Model
         public string Username { get; set; }
         public string Email { get; set; }
         public bool Status { get; set; }
+
+        public Uloga Uloga { get; set; }
     }
 }

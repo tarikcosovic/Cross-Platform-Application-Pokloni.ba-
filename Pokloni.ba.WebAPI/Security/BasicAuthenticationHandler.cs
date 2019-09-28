@@ -53,6 +53,7 @@ namespace Poloni.ba.WebAPI.Security
             var claims = new List<Claim> {
                 new Claim(ClaimTypes.NameIdentifier, user.Username),
                 new Claim(ClaimTypes.Name, user.Username),
+                new Claim(ClaimTypes.Role, user.Uloga.Naziv)
             };
 
             var identity = new ClaimsIdentity(claims, Scheme.Name);

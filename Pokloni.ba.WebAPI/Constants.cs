@@ -10,5 +10,9 @@ namespace Pokloni.ba.WebAPI
         public static string NotFoundErrorMessage = "Nepostojeći element sa id: ";
 
         public static string AlreadyExistsErrorMessag = "Poslani element već postoji sa id: ";
+
+        public static string Administrator = "Admin";
+
+        public static string User = "User";
     }
 }

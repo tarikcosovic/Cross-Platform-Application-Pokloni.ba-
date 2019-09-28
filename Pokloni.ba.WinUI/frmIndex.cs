@@ -1,5 +1,6 @@
 ﻿using Pokloni.ba.WinUI.Kategorije;
 using Pokloni.ba.WinUI.Korisnici;
+using Pokloni.ba.WinUI.Narudzbe;
 using Pokloni.ba.WinUI.Proizvodaci;
 using Pokloni.ba.WinUI.Proizvodi;
 using System;
@@ -156,6 +157,27 @@ namespace Pokloni.ba.WinUI
 
             frmLogin frm = new frmLogin();
             frm.Show();
+        }
+
+        private void NarudžbeToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if ((Application.OpenForms["frmNarudzbe"] as frmNarudzbe) != null)
+            {
+                //Forma otvorena
+            }
+            else
+            {
+                foreach (Form fr in this.MdiChildren)
+                {
+                    fr.Dispose();
+                    fr.Close();
+                }
+
+                frmNarudzbe frm = new frmNarudzbe();
+                frm.MdiParent = this;
+                frm.Dock = DockStyle.Fill;
+                frm.Show();
+            }
         }
     }
 }

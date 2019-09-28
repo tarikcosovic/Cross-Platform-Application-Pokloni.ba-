@@ -136,6 +136,18 @@
     <Compile Include="MyMaterialForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Narudzbe\frmNarudzbe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Narudzbe\frmNarudzbe.Designer.cs">
+      <DependentUpon>frmNarudzbe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Narudzbe\frmNarudzbeDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Narudzbe\frmNarudzbeDetails.Designer.cs">
+      <DependentUpon>frmNarudzbeDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Proizvodaci\frmProizvodaci.cs">
       <SubType>Form</SubType>
@@ -201,6 +213,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Korisnici\frmKorisniciInsert.resx">
       <DependentUpon>frmKorisniciInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Narudzbe\frmNarudzbe.resx">
+      <DependentUpon>frmNarudzbe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Narudzbe\frmNarudzbeDetails.resx">
+      <DependentUpon>frmNarudzbeDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proizvodaci\frmProizvodaci.resx">
       <DependentUpon>frmProizvodaci.cs</DependentUpon>

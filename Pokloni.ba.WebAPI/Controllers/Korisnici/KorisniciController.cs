@@ -60,7 +60,7 @@ namespace Pokloni.ba.WebAPI.Controllers
         }
 
         [HttpDelete("{id}")]
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int id)
         {
             _service.Delete(id);

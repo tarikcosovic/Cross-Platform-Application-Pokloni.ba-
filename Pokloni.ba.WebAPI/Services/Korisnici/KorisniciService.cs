@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNet.OData;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
 using Pokloni.ba.Model;
 using Pokloni.ba.Model.Requests;
 using Pokloni.ba.WebAPI.Database;
@@ -123,7 +125,7 @@ namespace Pokloni.ba.WebAPI.Services
 
         public Model.Korisnik Authenticiraj(string username, string password)
         {
-            var model = _db.Korisnik.Where(k => k.Username == username).FirstOrDefault();
+            var model = _db.Korisnik.Include(c=>c.Uloga).Where(k => k.Username == username).FirstOrDefault();
 
             if(model != null)
             {

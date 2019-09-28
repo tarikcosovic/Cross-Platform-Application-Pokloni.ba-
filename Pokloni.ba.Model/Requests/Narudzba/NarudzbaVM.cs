@@ -6,6 +6,7 @@ namespace Pokloni.ba.Model.Requests.Narudzba
 {
     public class NarudzbaVM
     {
+        public int NarudzbaId { get; set; }
         public int KorisnikId { get; set; }
         public int? ZaposlenikId { get; set; }
         public int? DostavaId { get; set; }

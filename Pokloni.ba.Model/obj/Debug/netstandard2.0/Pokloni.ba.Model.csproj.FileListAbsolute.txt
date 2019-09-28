@@ -10,9 +10,9 @@ C:\Users\tarik\source\repos\Pokloni.ba\Pokloni.ba.Model\obj\Debug\netstandard2.0
 C:\Users\tarik\source\repos\Pokloni.ba-Cross-platform-application\Pokloni.ba.Model\bin\Debug\netstandard2.0\Pokloni.ba.Model.deps.json
 C:\Users\tarik\source\repos\Pokloni.ba-Cross-platform-application\Pokloni.ba.Model\bin\Debug\netstandard2.0\Pokloni.ba.Model.dll
 C:\Users\tarik\source\repos\Pokloni.ba-Cross-platform-application\Pokloni.ba.Model\bin\Debug\netstandard2.0\Pokloni.ba.Model.pdb
-C:\Users\tarik\source\repos\Pokloni.ba-Cross-platform-application\Pokloni.ba.Model\obj\Debug\netstandard2.0\Pokloni.ba.Model.csprojAssemblyReference.cache
 C:\Users\tarik\source\repos\Pokloni.ba-Cross-platform-application\Pokloni.ba.Model\obj\Debug\netstandard2.0\Pokloni.ba.Model.csproj.CoreCompileInputs.cache
 C:\Users\tarik\source\repos\Pokloni.ba-Cross-platform-application\Pokloni.ba.Model\obj\Debug\netstandard2.0\Pokloni.ba.Model.AssemblyInfoInputs.cache
 C:\Users\tarik\source\repos\Pokloni.ba-Cross-platform-application\Pokloni.ba.Model\obj\Debug\netstandard2.0\Pokloni.ba.Model.AssemblyInfo.cs
 C:\Users\tarik\source\repos\Pokloni.ba-Cross-platform-application\Pokloni.ba.Model\obj\Debug\netstandard2.0\Pokloni.ba.Model.dll
 C:\Users\tarik\source\repos\Pokloni.ba-Cross-platform-application\Pokloni.ba.Model\obj\Debug\netstandard2.0\Pokloni.ba.Model.pdb
+C:\Users\tarik\source\repos\Pokloni.ba-Cross-platform-application\Pokloni.ba.Model\obj\Debug\netstandard2.0\Pokloni.ba.Model.csprojAssemblyReference.cache

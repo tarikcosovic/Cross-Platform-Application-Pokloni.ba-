@@ -31,18 +31,19 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIndex));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.korisniciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pretragaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.noviKorisnikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.narudžbeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.productsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pretražiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.noviProizvodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.narudžbeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.proizvođačiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.unosNovogProizvođačaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kategorijeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novaKategorijaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.korisniciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pretragaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.noviKorisnikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.logiraniKorisnik = new MaterialSkin.Controls.MaterialLabel();
             this.btnOdjava = new System.Windows.Forms.Button();
@@ -56,44 +57,37 @@
             this.menuStrip.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuStrip.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.korisniciToolStripMenuItem,
-            this.productsToolStripMenuItem,
             this.toolStripMenuItem1,
-            this.narudžbeToolStripMenuItem});
+            this.productsToolStripMenuItem,
+            this.narudžbeToolStripMenuItem,
+            this.korisniciToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.MdiWindowListItem = this.korisniciToolStripMenuItem;
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(135, 513);
+            this.menuStrip.Size = new System.Drawing.Size(135, 548);
             this.menuStrip.TabIndex = 0;
             // 
-            // korisniciToolStripMenuItem
+            // toolStripMenuItem1
             // 
-            this.korisniciToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.korisniciToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pretragaToolStripMenuItem,
-            this.noviKorisnikToolStripMenuItem});
-            this.korisniciToolStripMenuItem.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.korisniciToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.korisniciToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("korisniciToolStripMenuItem.Image")));
-            this.korisniciToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.korisniciToolStripMenuItem.Name = "korisniciToolStripMenuItem";
-            this.korisniciToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 0, 4, 30);
-            this.korisniciToolStripMenuItem.Size = new System.Drawing.Size(128, 98);
-            this.korisniciToolStripMenuItem.Text = "Korisnici";
+            this.toolStripMenuItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.narudžbeToolStripMenuItem1});
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem1.ForeColor = System.Drawing.Color.White;
+            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
+            this.toolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Padding = new System.Windows.Forms.Padding(4, 0, 4, 30);
+            this.toolStripMenuItem1.ShowShortcutKeys = false;
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(128, 98);
+            this.toolStripMenuItem1.Text = "Narudžbe";
             // 
-            // pretragaToolStripMenuItem
+            // narudžbeToolStripMenuItem1
             // 
-            this.pretragaToolStripMenuItem.Name = "pretragaToolStripMenuItem";
-            this.pretragaToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
-            this.pretragaToolStripMenuItem.Text = "Pretraga";
-            this.pretragaToolStripMenuItem.Click += new System.EventHandler(this.PretragaToolStripMenuItem_Click);
-            // 
-            // noviKorisnikToolStripMenuItem
-            // 
-            this.noviKorisnikToolStripMenuItem.Name = "noviKorisnikToolStripMenuItem";
-            this.noviKorisnikToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
-            this.noviKorisnikToolStripMenuItem.Text = "Novi Korisnik";
-            this.noviKorisnikToolStripMenuItem.Click += new System.EventHandler(this.NoviKorisnikToolStripMenuItem_Click);
+            this.narudžbeToolStripMenuItem1.Name = "narudžbeToolStripMenuItem1";
+            this.narudžbeToolStripMenuItem1.Size = new System.Drawing.Size(163, 26);
+            this.narudžbeToolStripMenuItem1.Text = "Narudžbe";
+            this.narudžbeToolStripMenuItem1.Click += new System.EventHandler(this.NarudžbeToolStripMenuItem1_Click);
             // 
             // productsToolStripMenuItem
             // 
@@ -122,19 +116,6 @@
             this.noviProizvodToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
             this.noviProizvodToolStripMenuItem.Text = "Novi Proizvod";
             this.noviProizvodToolStripMenuItem.Click += new System.EventHandler(this.NoviProizvodToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripMenuItem1.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripMenuItem1.ForeColor = System.Drawing.Color.White;
-            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
-            this.toolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Padding = new System.Windows.Forms.Padding(4, 0, 4, 30);
-            this.toolStripMenuItem1.ShowShortcutKeys = false;
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(128, 98);
-            this.toolStripMenuItem1.Text = "Narudžbe";
             // 
             // narudžbeToolStripMenuItem
             // 
@@ -181,6 +162,35 @@
             this.novaKategorijaToolStripMenuItem.Text = "Nova Kategorija";
             this.novaKategorijaToolStripMenuItem.Click += new System.EventHandler(this.NovaKategorijaToolStripMenuItem_Click);
             // 
+            // korisniciToolStripMenuItem
+            // 
+            this.korisniciToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.korisniciToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pretragaToolStripMenuItem,
+            this.noviKorisnikToolStripMenuItem});
+            this.korisniciToolStripMenuItem.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.korisniciToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.korisniciToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("korisniciToolStripMenuItem.Image")));
+            this.korisniciToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.korisniciToolStripMenuItem.Name = "korisniciToolStripMenuItem";
+            this.korisniciToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 0, 4, 30);
+            this.korisniciToolStripMenuItem.Size = new System.Drawing.Size(128, 98);
+            this.korisniciToolStripMenuItem.Text = "Korisnici";
+            // 
+            // pretragaToolStripMenuItem
+            // 
+            this.pretragaToolStripMenuItem.Name = "pretragaToolStripMenuItem";
+            this.pretragaToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.pretragaToolStripMenuItem.Text = "Pretraga";
+            this.pretragaToolStripMenuItem.Click += new System.EventHandler(this.PretragaToolStripMenuItem_Click);
+            // 
+            // noviKorisnikToolStripMenuItem
+            // 
+            this.noviKorisnikToolStripMenuItem.Name = "noviKorisnikToolStripMenuItem";
+            this.noviKorisnikToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.noviKorisnikToolStripMenuItem.Text = "Novi Korisnik";
+            this.noviKorisnikToolStripMenuItem.Click += new System.EventHandler(this.NoviKorisnikToolStripMenuItem_Click);
+            // 
             // logiraniKorisnik
             // 
             this.logiraniKorisnik.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -189,7 +199,7 @@
             this.logiraniKorisnik.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logiraniKorisnik.Font = new System.Drawing.Font("Roboto", 11F);
             this.logiraniKorisnik.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.logiraniKorisnik.Location = new System.Drawing.Point(834, 42);
+            this.logiraniKorisnik.Location = new System.Drawing.Point(899, 42);
             this.logiraniKorisnik.MouseState = MaterialSkin.MouseState.HOVER;
             this.logiraniKorisnik.Name = "logiraniKorisnik";
             this.logiraniKorisnik.Size = new System.Drawing.Size(180, 19);
@@ -203,7 +213,7 @@
             this.btnOdjava.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOdjava.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOdjava.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnOdjava.Location = new System.Drawing.Point(1020, 32);
+            this.btnOdjava.Location = new System.Drawing.Point(1103, 32);
             this.btnOdjava.Name = "btnOdjava";
             this.btnOdjava.Size = new System.Drawing.Size(69, 29);
             this.btnOdjava.TabIndex = 3;
@@ -217,7 +227,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1117, 513);
+            this.ClientSize = new System.Drawing.Size(1184, 548);
             this.Controls.Add(this.btnOdjava);
             this.Controls.Add(this.logiraniKorisnik);
             this.Controls.Add(this.menuStrip);
@@ -255,6 +265,7 @@
         private System.Windows.Forms.ToolStripMenuItem novaKategorijaToolStripMenuItem;
         private MaterialSkin.Controls.MaterialLabel logiraniKorisnik;
         private System.Windows.Forms.Button btnOdjava;
+        private System.Windows.Forms.ToolStripMenuItem narudžbeToolStripMenuItem1;
     }
 }
 

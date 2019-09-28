@@ -12,7 +12,7 @@ namespace Pokloni.ba.WinUI
 {
     public partial class frmLogin : MyMaterialForm
     {
-        private readonly APIService _apiService = new APIService(Properties.Settings.Default.RouteUloge);
+        private readonly APIService _apiService = new APIService(Properties.Settings.Default.RouteProizvodi);
         public frmLogin()
         {
             InitializeComponent();
@@ -35,7 +35,9 @@ namespace Pokloni.ba.WinUI
                 APIService.Username = Username.Text;
                 APIService.Password = Password.Text;
 
+                loadingBar.Visible = true;
                 await _apiService.Get<dynamic>();
+                loadingBar.Visible = false;
 
                 frmIndex frm = new frmIndex();
                 frm.Show();

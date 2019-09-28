@@ -26,6 +26,8 @@ namespace Pokloni.ba.WinUI.Proizvodaci
 
         private async void BtnPrikazi_Click(object sender, EventArgs e)
         {
+            loadingBar.Visible = true;
+
             var queries = txtPretraga.Text;
             var result = await _apiService.Get<IEnumerable<Model.Requests.Proizvodi.ProizvodacPoklona>>("Naziv", queries);
 
@@ -40,6 +42,7 @@ namespace Pokloni.ba.WinUI.Proizvodaci
 
                 listaProizvodaca.Items.Add(temp);
             }
+            loadingBar.Visible = false;
         }
         private void ListaProizvodaca_MouseDoubleClick(object sender, MouseEventArgs e)
         {
