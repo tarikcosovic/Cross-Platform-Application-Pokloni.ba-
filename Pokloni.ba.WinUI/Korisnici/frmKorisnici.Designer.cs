@@ -35,6 +35,7 @@
             this.test1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.test2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.test3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             Dummy = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
@@ -84,7 +85,8 @@
             Dummy,
             this.test1,
             this.test2,
-            this.test3});
+            this.test3,
+            this.columnHeader1});
             this.listaKorisnika.Depth = 0;
             this.listaKorisnika.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.listaKorisnika.FullRowSelect = true;
@@ -94,7 +96,7 @@
             this.listaKorisnika.MouseState = MaterialSkin.MouseState.OUT;
             this.listaKorisnika.Name = "listaKorisnika";
             this.listaKorisnika.OwnerDraw = true;
-            this.listaKorisnika.Size = new System.Drawing.Size(454, 263);
+            this.listaKorisnika.Size = new System.Drawing.Size(561, 263);
             this.listaKorisnika.TabIndex = 3;
             this.listaKorisnika.UseCompatibleStateImageBehavior = false;
             this.listaKorisnika.View = System.Windows.Forms.View.Details;
@@ -114,6 +116,11 @@
             // 
             this.test3.Text = "Status";
             this.test3.Width = 100;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Uloga";
+            this.columnHeader1.Width = 100;
             // 
             // frmKorisnici
             // 
@@ -145,5 +152,6 @@
         private System.Windows.Forms.ColumnHeader test1;
         private System.Windows.Forms.ColumnHeader test2;
         private System.Windows.Forms.ColumnHeader test3;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }

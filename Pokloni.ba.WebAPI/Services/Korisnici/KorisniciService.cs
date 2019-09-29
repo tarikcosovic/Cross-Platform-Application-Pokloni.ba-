@@ -47,7 +47,7 @@ namespace Pokloni.ba.WebAPI.Services
 
         public IEnumerable<Model.Korisnik> Get()
         {
-            var list = _db.Korisnik.ToList();
+            var list = _db.Korisnik.Include(k=>k.Uloga).ToList();
 
             return _mapper.Map<IEnumerable<Model.Korisnik>>(list);
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pokloni.ba.Model.Requests.Proizvodi;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -12,5 +13,7 @@ namespace Pokloni.ba.Model.Requests.Narudzba
         public int? Kolicina { get; set; }
         public decimal? Popust { get; set; }
         public decimal? Ukupno { get; set; }
+
+        public virtual ProizvodVM Proizvod { get; set; }
     }
 }

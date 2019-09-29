@@ -40,6 +40,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.loadingBar = new System.Windows.Forms.PictureBox();
+            this.rememberCheckbox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loadingBar)).BeginInit();
@@ -112,7 +113,7 @@
             this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton1.Depth = 0;
             this.materialRaisedButton1.Icon = null;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(449, 392);
+            this.materialRaisedButton1.Location = new System.Drawing.Point(451, 420);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
@@ -131,7 +132,7 @@
             this.linkLabel1.LinkArea = new System.Windows.Forms.LinkArea(0, 13);
             this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel1.LinkColor = System.Drawing.SystemColors.MenuHighlight;
-            this.linkLabel1.Location = new System.Drawing.Point(432, 449);
+            this.linkLabel1.Location = new System.Drawing.Point(434, 477);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(91, 19);
             this.linkLabel1.TabIndex = 8;
@@ -147,7 +148,7 @@
             this.linkLabel2.LinkArea = new System.Windows.Forms.LinkArea(0, 18);
             this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel2.LinkColor = System.Drawing.SystemColors.MenuHighlight;
-            this.linkLabel2.Location = new System.Drawing.Point(414, 484);
+            this.linkLabel2.Location = new System.Drawing.Point(416, 512);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(135, 19);
             this.linkLabel2.TabIndex = 9;
@@ -181,12 +182,23 @@
             this.loadingBar.TabStop = false;
             this.loadingBar.Visible = false;
             // 
+            // rememberCheckbox
+            // 
+            this.rememberCheckbox.AutoSize = true;
+            this.rememberCheckbox.Location = new System.Drawing.Point(360, 383);
+            this.rememberCheckbox.Name = "rememberCheckbox";
+            this.rememberCheckbox.Size = new System.Drawing.Size(94, 17);
+            this.rememberCheckbox.TabIndex = 11;
+            this.rememberCheckbox.Text = "Remember me";
+            this.rememberCheckbox.UseVisualStyleBackColor = true;
+            // 
             // frmLogin
             // 
             this.AcceptButton = this.materialRaisedButton1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1009, 556);
+            this.Controls.Add(this.rememberCheckbox);
             this.Controls.Add(this.loadingBar);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
@@ -200,6 +212,7 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pokloni.ba";
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loadingBar)).EndInit();
@@ -220,5 +233,6 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField Password;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.PictureBox loadingBar;
+        private System.Windows.Forms.CheckBox rememberCheckbox;
     }
 }

@@ -18,7 +18,14 @@ namespace Pokloni.ba.WinUI
             InitializeComponent();
             InitialiseMyMaterialDesign(this);
         }
-
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.RememberMe != null && Properties.Settings.Default.RememberMe.Length > 3)
+            {
+                Username.Text = Properties.Settings.Default.RememberMe;
+                Properties.Settings.Default.Save();
+            }
+        }
         private void LinkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmRegister frm = new frmRegister();
@@ -38,6 +45,9 @@ namespace Pokloni.ba.WinUI
                 loadingBar.Visible = true;
                 await _apiService.Get<dynamic>();
                 loadingBar.Visible = false;
+
+                if(rememberCheckbox.Checked)
+                    Properties.Settings.Default.RememberMe = Username.Text;
 
                 frmIndex frm = new frmIndex();
                 frm.Show();

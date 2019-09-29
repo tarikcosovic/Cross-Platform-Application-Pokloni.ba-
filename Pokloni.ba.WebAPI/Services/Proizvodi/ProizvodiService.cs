@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Pokloni.ba.Model.Requests.Proizvodi;
 using Pokloni.ba.WebAPI.Database;
 using Pokloni.ba.WebAPI.Exceptions;
@@ -21,7 +22,7 @@ namespace Pokloni.ba.WebAPI.Services.Proizvodi
 
         public IEnumerable<ProizvodVM> Get()
         {
-            var temp = _db.Proizvod.ToList();
+            var temp = _db.Proizvod.Include(k=>k.Kategorija).Include(c=>c.Proizvodac).ToList();
 
             return _mapper.Map<IEnumerable<ProizvodVM>>(temp);
         }

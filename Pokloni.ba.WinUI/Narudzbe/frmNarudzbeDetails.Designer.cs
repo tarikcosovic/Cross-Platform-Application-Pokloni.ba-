@@ -31,14 +31,14 @@
             this.btnOdbij = new System.Windows.Forms.Button();
             this.btnPrihvati = new System.Windows.Forms.Button();
             this.btnKontakt = new System.Windows.Forms.Button();
-            this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
+            this.listaProizvoda = new MaterialSkin.Controls.MaterialListView();
             this.DUMMY = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // btnOdbij
@@ -83,28 +83,28 @@
             this.btnKontakt.Text = "Kontaktiraj Kupca";
             this.btnKontakt.UseVisualStyleBackColor = false;
             // 
-            // materialListView1
+            // listaProizvoda
             // 
-            this.materialListView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listaProizvoda.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listaProizvoda.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.DUMMY,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader1});
-            this.materialListView1.Depth = 0;
-            this.materialListView1.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialListView1.FullRowSelect = true;
-            this.materialListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.materialListView1.Location = new System.Drawing.Point(47, 118);
-            this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialListView1.Name = "materialListView1";
-            this.materialListView1.OwnerDraw = true;
-            this.materialListView1.Size = new System.Drawing.Size(683, 217);
-            this.materialListView1.TabIndex = 40;
-            this.materialListView1.UseCompatibleStateImageBehavior = false;
-            this.materialListView1.View = System.Windows.Forms.View.Details;
+            this.listaProizvoda.Depth = 0;
+            this.listaProizvoda.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.listaProizvoda.FullRowSelect = true;
+            this.listaProizvoda.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listaProizvoda.Location = new System.Drawing.Point(47, 118);
+            this.listaProizvoda.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.listaProizvoda.MouseState = MaterialSkin.MouseState.OUT;
+            this.listaProizvoda.Name = "listaProizvoda";
+            this.listaProizvoda.OwnerDraw = true;
+            this.listaProizvoda.Size = new System.Drawing.Size(683, 217);
+            this.listaProizvoda.TabIndex = 40;
+            this.listaProizvoda.UseCompatibleStateImageBehavior = false;
+            this.listaProizvoda.View = System.Windows.Forms.View.Details;
             // 
             // DUMMY
             // 
@@ -124,6 +124,11 @@
             // 
             this.columnHeader4.Text = "Popust";
             this.columnHeader4.Width = 150;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Ukupno";
+            this.columnHeader1.Width = 100;
             // 
             // materialLabel1
             // 
@@ -151,11 +156,6 @@
             this.materialLabel2.TabIndex = 42;
             this.materialLabel2.Text = "152.12$";
             // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Ukupno";
-            this.columnHeader1.Width = 100;
-            // 
             // frmNarudzbeDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,12 +163,14 @@
             this.ClientSize = new System.Drawing.Size(1054, 493);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.materialListView1);
+            this.Controls.Add(this.listaProizvoda);
             this.Controls.Add(this.btnKontakt);
             this.Controls.Add(this.btnPrihvati);
             this.Controls.Add(this.btnOdbij);
             this.Name = "frmNarudzbeDetails";
-            this.Text = "frmNarudzbeDetails";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Narudzba";
+            this.Load += new System.EventHandler(this.FrmNarudzbeDetails_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,7 +181,7 @@
         private System.Windows.Forms.Button btnOdbij;
         private System.Windows.Forms.Button btnPrihvati;
         private System.Windows.Forms.Button btnKontakt;
-        private MaterialSkin.Controls.MaterialListView materialListView1;
+        private MaterialSkin.Controls.MaterialListView listaProizvoda;
         private System.Windows.Forms.ColumnHeader DUMMY;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;

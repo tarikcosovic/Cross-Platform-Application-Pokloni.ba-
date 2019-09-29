@@ -15,5 +15,9 @@ namespace Pokloni.ba.Model.Requests.Proizvodi
         public decimal Cijena { get; set; }
         public int StanjeNaLageru { get; set; }
         public byte[] Slika { get; set; }
+
+        public Kategorije Kategorija { get; set; }
+        public ProizvodacPoklona Proizvodac { get; set; }
+        public ICollection<OcjenaVM> Ocjena { get; set; }
     }
 }

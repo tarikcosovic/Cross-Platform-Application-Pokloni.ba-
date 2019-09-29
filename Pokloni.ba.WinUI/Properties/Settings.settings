@@ -23,5 +23,14 @@
     <Setting Name="RouteNarudzbe" Type="System.String" Scope="User">
       <Value Profile="(Default)">Narudzbe</Value>
     </Setting>
+    <Setting Name="RouteNarudzbeDetails" Type="System.String" Scope="User">
+      <Value Profile="(Default)">NarudzbeDetails</Value>
+    </Setting>
+    <Setting Name="RouteKorisniciDetails" Type="System.String" Scope="User">
+      <Value Profile="(Default)">KorisniciDetails</Value>
+    </Setting>
+    <Setting Name="RememberMe" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

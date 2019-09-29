@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Pokloni.ba.Model.Requests.Narudzba;
 using Pokloni.ba.WebAPI.Database;
 using Pokloni.ba.WebAPI.Exceptions;
@@ -21,7 +22,7 @@ namespace Pokloni.ba.WebAPI.Services.Narudzbe
 
         public IEnumerable<NarudzbaVM> Get()
         {
-            var temp = _db.Narudzba.ToList();
+            var temp = _db.Narudzba.Include(k=>k.Korisnik).Include(c=>c.Zaposlenik).Include(l=>l.Dostava).ToList();
 
             return _mapper.Map<IEnumerable<NarudzbaVM>>(temp);
         }

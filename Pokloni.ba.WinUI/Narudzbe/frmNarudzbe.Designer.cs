@@ -72,6 +72,7 @@
             this.listaNarudzbi.TabIndex = 6;
             this.listaNarudzbi.UseCompatibleStateImageBehavior = false;
             this.listaNarudzbi.View = System.Windows.Forms.View.Details;
+            this.listaNarudzbi.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ListaNarudzbi_MouseDoubleClick);
             // 
             // lblIndex
             // 

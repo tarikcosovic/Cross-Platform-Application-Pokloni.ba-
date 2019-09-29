@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Pokloni.ba.Model.Requests.Narudzba;
 using Pokloni.ba.WebAPI.Database;
 using Pokloni.ba.WebAPI.Exceptions;
@@ -21,7 +22,7 @@ namespace Pokloni.ba.WebAPI.Services.Narudzbe
 
         public IEnumerable<NarudzbaDetailsVM> Get()
         {
-            var temp = _db.NarudzbaDetails.ToList();
+            var temp = _db.NarudzbaDetails.Include(k=>k.Proizvod).ToList();
 
             return _mapper.Map<IEnumerable<NarudzbaDetailsVM>>(temp);
         }

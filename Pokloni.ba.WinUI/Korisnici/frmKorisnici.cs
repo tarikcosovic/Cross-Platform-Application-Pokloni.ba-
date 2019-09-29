@@ -31,6 +31,7 @@ namespace Pokloni.ba.WinUI.Korisnici
                     temp.SubItems.Add("Aktivan");
                 else
                     temp.SubItems.Add("Neaktivan");
+                temp.SubItems.Add(item.Uloga.Naziv);
                 temp.Tag = item.KorisnikDetailsId.ToString();
 
                 listaKorisnika.Items.Add(temp);

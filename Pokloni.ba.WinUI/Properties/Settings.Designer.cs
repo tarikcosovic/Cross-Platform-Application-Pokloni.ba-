@@ -109,13 +109,37 @@ namespace Pokloni.ba.WinUI.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public byte DefaultImage {
+        [global::System.Configuration.DefaultSettingValueAttribute("NarudzbeDetails")]
+        public string RouteNarudzbeDetails {
             get {
-                return ((byte)(this["DefaultImage"]));
+                return ((string)(this["RouteNarudzbeDetails"]));
             }
             set {
-                this["DefaultImage"] = value;
+                this["RouteNarudzbeDetails"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("KorisniciDetails")]
+        public string RouteKorisniciDetails {
+            get {
+                return ((string)(this["RouteKorisniciDetails"]));
+            }
+            set {
+                this["RouteKorisniciDetails"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RememberMe {
+            get {
+                return ((string)(this["RememberMe"]));
+            }
+            set {
+                this["RememberMe"] = value;
             }
         }
     }

@@ -12,5 +12,9 @@ namespace Pokloni.ba.Model.Requests.Narudzba
         public int? DostavaId { get; set; }
         public string StatusPoruka { get; set; }
         public DateTime? DatumNarudzbe { get; set; }
+
+        public virtual Dostava.Dostava Dostava { get; set; }
+        public virtual Korisnik Korisnik { get; set; }
+        public virtual Korisnik Zaposlenik { get; set; }
     }
 }

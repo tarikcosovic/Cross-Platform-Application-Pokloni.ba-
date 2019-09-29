@@ -30,8 +30,8 @@ namespace Pokloni.ba.WinUI.Proizvodi
                 ListViewItem temp = new ListViewItem();
                 temp.SubItems.Add(item.Naziv);
                 temp.SubItems.Add(item.Sifra);
-                temp.SubItems.Add(item.KategorijaId.ToString());
-                temp.SubItems.Add(item.ProizvodacId.ToString());
+                temp.SubItems.Add(item.Kategorija.Naziv);
+                temp.SubItems.Add(item.Proizvodac.Naziv);
                 temp.SubItems.Add(item.Cijena.ToString());
                 temp.SubItems.Add(item.StanjeNaLageru.ToString());
                 temp.Tag = item.ProizvodId.ToString();
