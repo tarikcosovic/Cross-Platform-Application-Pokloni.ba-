@@ -26,21 +26,35 @@ namespace Pokloni.ba.WinUI.Narudzbe
         {
             var result = await _apiServiceNarudzbeDetails.Get<IEnumerable<Model.Requests.Narudzba.NarudzbaDetailsVM>>();
 
-            listaProizvoda.Items.Clear();
+            decimal? ukupno = 0;
 
+            listaProizvoda.Items.Clear();
             foreach(var item in result)
             {
                 if(item.NarudzbaId == _id)
                 {
                     ListViewItem temp = new ListViewItem();
+
+                    decimal? popust = 0;
+                    if (item.Popust != null)
+                        popust = (item.Proizvod.Cijena * (item.Popust/100));
+                    ukupno += (item.Proizvod.Cijena - popust) * item.Kolicina;
+                    Math.Round((double)ukupno, 2);
+
                     temp.SubItems.Add(item.Proizvod.Naziv);
                     temp.SubItems.Add(item.Kolicina.ToString());
-                    temp.SubItems.Add(item.Popust.ToString());
-                    temp.SubItems.Add(item.Ukupno.ToString());
+
+                    if (item.Popust == 0)
+                        temp.SubItems.Add("Nema");
+                    else
+                        temp.SubItems.Add(item.Popust.ToString() + "%");
+
+                    temp.SubItems.Add(((double)ukupno).ToString() + "$");
 
                     listaProizvoda.Items.Add(temp);
                 }
             }
+            UkupnaCijena.Text = ((double)ukupno).ToString() + "$";
         }
     }
 }

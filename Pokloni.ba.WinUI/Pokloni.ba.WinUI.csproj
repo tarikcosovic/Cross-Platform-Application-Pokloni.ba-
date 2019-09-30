@@ -292,5 +292,23 @@
   <ItemGroup>
     <None Include="Resources\iconPlus.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loadingIcon.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icnAdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icnOrders.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icnProducts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icnUsers.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -15,12 +15,12 @@ namespace Pokloni.ba.WebAPI.Database
         public int KategorijaId { get; set; }
         public int ProizvodacId { get; set; }
         public string Naziv { get; set; }
+        public string Sifra { get; set; }
         public string Opis { get; set; }
         public decimal Cijena { get; set; }
         public int StanjeNaLageru { get; set; }
         public byte[] Slika { get; set; }
         public byte[] SlikaMinimised { get; set; }
-        public string Sifra { get; set; }
 
         public virtual Kategorija Kategorija { get; set; }
         public virtual ProizvodacPoklona Proizvodac { get; set; }

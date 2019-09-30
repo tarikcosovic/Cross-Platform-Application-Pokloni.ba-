@@ -1,4 +1,5 @@
 ﻿using MaterialSkin.Controls;
+using Pokloni.ba.Model.Requests.Proizvodi;
 using Pokloni.ba.WinUI.Korisnici;
 using System;
 using System.Collections.Generic;
@@ -55,6 +56,7 @@ namespace Pokloni.ba.WinUI.Proizvodi
                 await GetKategorije(result.KategorijaId);
                 await GetProizvodaci(result.ProizvodacId);
 
+                //LoadFeedback(result.Ocjena);
                 //LoadImageListView();
             }
         }
@@ -80,6 +82,22 @@ namespace Pokloni.ba.WinUI.Proizvodi
             imgList.LargeImageList = test;
         }
 
+        private void LoadFeedback(ICollection<OcjenaVM> ocjene)
+        {
+            listaOcjena.Clear();
+            foreach(var ocjena in ocjene)
+            {
+                if(ocjena.ProizvodId == _id)
+                {
+                    ListViewItem item = new ListViewItem();
+                    item.SubItems.Add(ocjena.KorisnikId.ToString());
+                    item.SubItems.Add(ocjena.NumerickaOcjena.ToString());
+                    item.SubItems.Add(ocjena.Komentar);
+
+                    listaOcjena.Items.Add(item);
+                }
+            }
+        }
         private static Image GetImage(byte[] data)
         {
             using (MemoryStream ms = new MemoryStream(data))

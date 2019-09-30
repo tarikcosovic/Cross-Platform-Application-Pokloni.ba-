@@ -32,5 +32,8 @@
     <Setting Name="RememberMe" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="RouteOcjene" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Ocjene</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

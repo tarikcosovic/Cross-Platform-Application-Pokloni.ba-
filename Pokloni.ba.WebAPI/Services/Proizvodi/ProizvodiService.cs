@@ -22,7 +22,7 @@ namespace Pokloni.ba.WebAPI.Services.Proizvodi
 
         public IEnumerable<ProizvodVM> Get()
         {
-            var temp = _db.Proizvod.Include(k=>k.Kategorija).Include(c=>c.Proizvodac).ToList();
+            var temp = _db.Proizvod.Include(k=>k.Kategorija).Include(c=>c.Proizvodac).Include(l=>l.Ocjena).ToList();
 
             return _mapper.Map<IEnumerable<ProizvodVM>>(temp);
         }

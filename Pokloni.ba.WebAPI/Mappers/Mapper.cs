@@ -30,7 +30,7 @@ namespace Pokloni.ba.WebAPI.Mappers
 
             CreateMap<Database.Proizvod, ProizvodVM>().ReverseMap();
 
-            CreateMap<Database.Ocjena, Ocjena>().ReverseMap();
+            CreateMap<Database.Ocjena, OcjenaVM>().ReverseMap();
 
             #endregion
 

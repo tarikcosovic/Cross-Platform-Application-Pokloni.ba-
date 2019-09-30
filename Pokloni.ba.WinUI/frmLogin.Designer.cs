@@ -160,7 +160,7 @@
             // pictureBox1
             // 
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::Pokloni.ba.WinUI.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(385, 105);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(214, 127);
@@ -174,10 +174,10 @@
             // 
             // loadingBar
             // 
-            this.loadingBar.Image = ((System.Drawing.Image)(resources.GetObject("loadingBar.Image")));
+            this.loadingBar.Image = global::Pokloni.ba.WinUI.Properties.Resources.loadingIcon;
             this.loadingBar.Location = new System.Drawing.Point(467, 286);
             this.loadingBar.Name = "loadingBar";
-            this.loadingBar.Size = new System.Drawing.Size(43, 49);
+            this.loadingBar.Size = new System.Drawing.Size(45, 40);
             this.loadingBar.TabIndex = 10;
             this.loadingBar.TabStop = false;
             this.loadingBar.Visible = false;

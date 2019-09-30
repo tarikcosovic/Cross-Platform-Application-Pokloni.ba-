@@ -38,7 +38,7 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.UkupnaCijena = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
             // 
             // btnOdbij
@@ -113,17 +113,17 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Proizvod";
-            this.columnHeader2.Width = 150;
+            this.columnHeader2.Width = 250;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Količina";
-            this.columnHeader3.Width = 150;
+            this.columnHeader3.Width = 100;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Popust";
-            this.columnHeader4.Width = 150;
+            this.columnHeader4.Width = 100;
             // 
             // columnHeader1
             // 
@@ -143,25 +143,25 @@
             this.materialLabel1.TabIndex = 41;
             this.materialLabel1.Text = "Ukupno";
             // 
-            // materialLabel2
+            // UkupnaCijena
             // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(864, 316);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(61, 19);
-            this.materialLabel2.TabIndex = 42;
-            this.materialLabel2.Text = "152.12$";
+            this.UkupnaCijena.AutoSize = true;
+            this.UkupnaCijena.Depth = 0;
+            this.UkupnaCijena.Font = new System.Drawing.Font("Roboto", 11F);
+            this.UkupnaCijena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.UkupnaCijena.Location = new System.Drawing.Point(864, 316);
+            this.UkupnaCijena.MouseState = MaterialSkin.MouseState.HOVER;
+            this.UkupnaCijena.Name = "UkupnaCijena";
+            this.UkupnaCijena.Size = new System.Drawing.Size(61, 19);
+            this.UkupnaCijena.TabIndex = 42;
+            this.UkupnaCijena.Text = "152.12$";
             // 
             // frmNarudzbeDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1054, 493);
-            this.Controls.Add(this.materialLabel2);
+            this.Controls.Add(this.UkupnaCijena);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.listaProizvoda);
             this.Controls.Add(this.btnKontakt);
@@ -187,7 +187,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialLabel UkupnaCijena;
         private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }

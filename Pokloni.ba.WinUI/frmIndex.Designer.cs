@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIndex));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.narudžbeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,6 +46,7 @@
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.logiraniKorisnik = new MaterialSkin.Controls.MaterialLabel();
             this.btnOdjava = new System.Windows.Forms.Button();
+            this.završeneNarudžbeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,10 +71,11 @@
             // 
             this.toolStripMenuItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.narudžbeToolStripMenuItem1});
+            this.narudžbeToolStripMenuItem1,
+            this.završeneNarudžbeToolStripMenuItem});
             this.toolStripMenuItem1.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem1.ForeColor = System.Drawing.Color.White;
-            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
+            this.toolStripMenuItem1.Image = global::Pokloni.ba.WinUI.Properties.Resources.icnOrders;
             this.toolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Padding = new System.Windows.Forms.Padding(4, 0, 4, 30);
@@ -85,8 +86,8 @@
             // narudžbeToolStripMenuItem1
             // 
             this.narudžbeToolStripMenuItem1.Name = "narudžbeToolStripMenuItem1";
-            this.narudžbeToolStripMenuItem1.Size = new System.Drawing.Size(163, 26);
-            this.narudžbeToolStripMenuItem1.Text = "Narudžbe";
+            this.narudžbeToolStripMenuItem1.Size = new System.Drawing.Size(244, 26);
+            this.narudžbeToolStripMenuItem1.Text = "Aktivne Narudžbe";
             this.narudžbeToolStripMenuItem1.Click += new System.EventHandler(this.NarudžbeToolStripMenuItem1_Click);
             // 
             // productsToolStripMenuItem
@@ -96,7 +97,7 @@
             this.pretražiToolStripMenuItem,
             this.noviProizvodToolStripMenuItem});
             this.productsToolStripMenuItem.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("productsToolStripMenuItem.Image")));
+            this.productsToolStripMenuItem.Image = global::Pokloni.ba.WinUI.Properties.Resources.icnProducts;
             this.productsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
             this.productsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 0, 4, 30);
@@ -127,7 +128,7 @@
             this.novaKategorijaToolStripMenuItem});
             this.narudžbeToolStripMenuItem.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.narudžbeToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.narudžbeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("narudžbeToolStripMenuItem.Image")));
+            this.narudžbeToolStripMenuItem.Image = global::Pokloni.ba.WinUI.Properties.Resources.icnAdd;
             this.narudžbeToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.narudžbeToolStripMenuItem.Name = "narudžbeToolStripMenuItem";
             this.narudžbeToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 0, 4, 30);
@@ -170,7 +171,7 @@
             this.noviKorisnikToolStripMenuItem});
             this.korisniciToolStripMenuItem.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.korisniciToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.korisniciToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("korisniciToolStripMenuItem.Image")));
+            this.korisniciToolStripMenuItem.Image = global::Pokloni.ba.WinUI.Properties.Resources.icnUsers;
             this.korisniciToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.korisniciToolStripMenuItem.Name = "korisniciToolStripMenuItem";
             this.korisniciToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 0, 4, 30);
@@ -221,6 +222,12 @@
             this.btnOdjava.UseVisualStyleBackColor = false;
             this.btnOdjava.Click += new System.EventHandler(this.BtnOdjava_Click);
             // 
+            // završeneNarudžbeToolStripMenuItem
+            // 
+            this.završeneNarudžbeToolStripMenuItem.Name = "završeneNarudžbeToolStripMenuItem";
+            this.završeneNarudžbeToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.završeneNarudžbeToolStripMenuItem.Text = "Završene Narudžbe";
+            // 
             // frmIndex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -266,6 +273,7 @@
         private MaterialSkin.Controls.MaterialLabel logiraniKorisnik;
         private System.Windows.Forms.Button btnOdjava;
         private System.Windows.Forms.ToolStripMenuItem narudžbeToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem završeneNarudžbeToolStripMenuItem;
     }
 }
 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace Pokloni.ba.WinUI.Proizvodaci
     {
         private readonly APIService _apiService = new APIService(Properties.Settings.Default.RouteProizvodaci);
         private int? _id;
+        byte[] _slika;
         public frmProizvodaciDetails(int id)
         {
             InitializeComponent();
@@ -29,7 +31,19 @@ namespace Pokloni.ba.WinUI.Proizvodaci
 
             Naziv.Text = result.Naziv;
             Opis.Text = result.Opis;
+            _slika = result.Slika;
+
+            MemoryStream ms = new MemoryStream(_slika);
+            if(_slika != null && _slika.Length > 3)
+                pictureBox1.Image = Image.FromStream(ms);
         }
+
+        public static byte[] ImageToByte(Image img)
+        {
+            ImageConverter converter = new ImageConverter();
+            return (byte[])converter.ConvertTo(img, typeof(byte[]));
+        }
+
 
         private async void Button1_Click(object sender, EventArgs e)
         {
@@ -50,12 +64,30 @@ namespace Pokloni.ba.WinUI.Proizvodaci
                 {
                     ProizvodacPoklonaId = (int)_id,
                     Naziv = Naziv.Text,
-                    Opis = Opis.Text
+                    Opis = Opis.Text,
+                    Slika = _slika
                 };
 
                 await _apiService.Update<Model.Requests.Proizvodi.ProizvodacPoklona>(model, _id);
                 MessageBox.Show("Uspješno ste ažurirali proizvođača..", "Uspjeh!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.Close();
+            }
+        }
+
+        private void MaterialRaisedButton1_Click(object sender, EventArgs e)
+        {
+            var result = openFileDialog1.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                var fileName = openFileDialog1.FileName;
+
+                var file = File.ReadAllBytes(fileName);
+                _slika = file;
+
+                Image image = Image.FromFile(fileName);
+                pictureBox1.Image = image;
+
             }
         }
     }

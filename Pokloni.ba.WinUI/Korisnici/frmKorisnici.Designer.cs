@@ -110,7 +110,7 @@
             // test2
             // 
             this.test2.Text = "E-mail";
-            this.test2.Width = 150;
+            this.test2.Width = 200;
             // 
             // test3
             // 

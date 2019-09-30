@@ -6,7 +6,6 @@ using Microsoft.AspNet.OData;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Pokloni.ba.WebAPI.Database;
 using Pokloni.ba.WebAPI.Services;
 
 namespace Pokloni.ba.WebAPI.Controllers

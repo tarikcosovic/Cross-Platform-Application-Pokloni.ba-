@@ -27,6 +27,9 @@ namespace Pokloni.ba.WinUI.Korisnici
                 ListViewItem temp = new ListViewItem();
                 temp.SubItems.Add(item.Username);
                 temp.SubItems.Add(item.Email);
+                if (item.DatumZadnjegLogiranja != null && DateTime.Compare(DateTime.Now.AddMonths(-1), (DateTime)item.DatumZadnjegLogiranja) > 0)
+                    item.Status = false;
+                else item.Status = true;
                 if(item.Status)
                     temp.SubItems.Add("Aktivan");
                 else

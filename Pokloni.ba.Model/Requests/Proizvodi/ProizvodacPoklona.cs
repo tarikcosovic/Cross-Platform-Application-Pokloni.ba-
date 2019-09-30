@@ -13,5 +13,8 @@ namespace Pokloni.ba.Model.Requests.Proizvodi
         public string Naziv { get; set; }
         [MinLength(1), MaxLength(1000)]
         public string Opis { get; set; }
+        public byte[] Slika { get; set; }
+        public byte[] SlikaMinimised { get; set; }
+
     }
 }

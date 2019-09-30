@@ -13,6 +13,8 @@ namespace Pokloni.ba.Model
         public string Username { get; set; }
         public string Email { get; set; }
         public bool Status { get; set; }
+        public DateTime? DatumZadnjegLogiranja { get; set; }
+
 
         public Uloga Uloga { get; set; }
     }

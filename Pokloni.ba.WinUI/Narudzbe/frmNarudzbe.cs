@@ -21,7 +21,7 @@ namespace Pokloni.ba.WinUI.Narudzbe
 
         private void FrmNarudzbe_Load(object sender, EventArgs e)
         {
-           BtnPrikazi_Click(null, null);
+            BtnPrikazi_Click(null, null);
         }
 
         private async void BtnPrikazi_Click(object sender, EventArgs e)
@@ -30,7 +30,8 @@ namespace Pokloni.ba.WinUI.Narudzbe
 
             listaNarudzbi.Items.Clear();
             var counter = 1;
-            foreach(var item in result)
+            var brojNarudzbi = 0;
+            foreach (var item in result)
             {
                 ListViewItem temp = new ListViewItem();
                 temp.SubItems.Add($"#{ counter++.ToString()}");
@@ -39,7 +40,7 @@ namespace Pokloni.ba.WinUI.Narudzbe
                 if (item.Zaposlenik != null)
                     temp.SubItems.Add(item.Zaposlenik.Username);
                 else temp.SubItems.Add("");
-                if(item.Dostava != null)
+                if (item.Dostava != null)
                     temp.SubItems.Add(item.Dostava.AdresaDostave);
                 else temp.SubItems.Add("");
 
@@ -47,15 +48,24 @@ namespace Pokloni.ba.WinUI.Narudzbe
                 temp.SubItems.Add(item.DatumNarudzbe.ToString());
                 temp.Tag = item.NarudzbaId;
 
+                if (item.StatusPoruka == "Aktivno")
+                {
+                    brojNarudzbi++;
+                    //Ovo ne radi iz nekog razloga
+                    temp.BackColor = Color.Green;
+                }
+
                 listaNarudzbi.Items.Add(temp);
             }
+
+            NarudzbeCount.Text += brojNarudzbi.ToString();
         }
 
         private void ListaNarudzbi_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             var id = int.TryParse(listaNarudzbi.SelectedItems[0].Tag.ToString(), out int res);
 
-            if(id)
+            if (id)
             {
 
                 frmNarudzbeDetails frm = new frmNarudzbeDetails(res);

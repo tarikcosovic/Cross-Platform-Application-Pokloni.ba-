@@ -132,6 +132,10 @@ namespace Pokloni.ba.WebAPI.Services
                 var newHash = GenerateHash(model.LozinkaSalt, password);
                 if(newHash == model.LozinkaHash)
                 {
+                    model.DatumZadnjegLogiranja = DateTime.Now;
+                    model.Status = true;
+                    _db.Korisnik.Update(model);
+                    _db.SaveChanges();
                     return _mapper.Map<Model.Korisnik>(model);
                 }
             }

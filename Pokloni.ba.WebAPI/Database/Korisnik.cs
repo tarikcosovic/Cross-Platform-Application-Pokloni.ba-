@@ -21,6 +21,7 @@ namespace Pokloni.ba.WebAPI.Database
         public string LozinkaHash { get; set; }
         public string LozinkaSalt { get; set; }
         public bool? Status { get; set; }
+        public DateTime? DatumZadnjegLogiranja { get; set; }
 
         public virtual KorisnikDetails KorisnikDetails { get; set; }
         public virtual Uloga Uloga { get; set; }

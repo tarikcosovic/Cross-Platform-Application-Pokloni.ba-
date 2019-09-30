@@ -146,9 +146,9 @@
             this.NarudzbeCount.Location = new System.Drawing.Point(48, 448);
             this.NarudzbeCount.MouseState = MaterialSkin.MouseState.HOVER;
             this.NarudzbeCount.Name = "NarudzbeCount";
-            this.NarudzbeCount.Size = new System.Drawing.Size(142, 19);
+            this.NarudzbeCount.Size = new System.Drawing.Size(134, 19);
             this.NarudzbeCount.TabIndex = 7;
-            this.NarudzbeCount.Text = "Aktivnih Narudžbi: 6";
+            this.NarudzbeCount.Text = "Aktivnih Narudžbi: ";
             // 
             // frmNarudzbe
             // 

@@ -56,6 +56,11 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.imgList = new MaterialSkin.Controls.MaterialListView();
+            this.listaOcjena = new MaterialSkin.Controls.MaterialListView();
+            this.DUMMY = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -377,12 +382,55 @@
             this.imgList.Size = new System.Drawing.Size(796, 180);
             this.imgList.TabIndex = 46;
             this.imgList.UseCompatibleStateImageBehavior = false;
+            this.imgList.View = System.Windows.Forms.View.Details;
+            // 
+            // listaOcjena
+            // 
+            this.listaOcjena.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listaOcjena.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.DUMMY,
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.listaOcjena.Depth = 0;
+            this.listaOcjena.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.listaOcjena.FullRowSelect = true;
+            this.listaOcjena.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listaOcjena.Location = new System.Drawing.Point(64, 407);
+            this.listaOcjena.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.listaOcjena.MouseState = MaterialSkin.MouseState.OUT;
+            this.listaOcjena.Name = "listaOcjena";
+            this.listaOcjena.OwnerDraw = true;
+            this.listaOcjena.Size = new System.Drawing.Size(796, 238);
+            this.listaOcjena.TabIndex = 47;
+            this.listaOcjena.UseCompatibleStateImageBehavior = false;
+            this.listaOcjena.View = System.Windows.Forms.View.Details;
+            // 
+            // DUMMY
+            // 
+            this.DUMMY.Width = 0;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Korisnik";
+            this.columnHeader1.Width = 150;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Ocjena";
+            this.columnHeader2.Width = 150;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Komenar";
+            this.columnHeader3.Width = 300;
             // 
             // frmProizvodiDetalji
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 674);
+            this.Controls.Add(this.listaOcjena);
             this.Controls.Add(this.imgList);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnDodajSliku);
@@ -449,5 +497,10 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button button1;
         private MaterialSkin.Controls.MaterialListView imgList;
+        private MaterialSkin.Controls.MaterialListView listaOcjena;
+        private System.Windows.Forms.ColumnHeader DUMMY;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
     }
 }

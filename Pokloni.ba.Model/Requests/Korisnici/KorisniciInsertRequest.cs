@@ -15,7 +15,10 @@ namespace Pokloni.ba.Model.Requests
         [EmailAddress]
         public string Email { get; set; }
 
+        [Required]
+        [MinLength(3), MaxLength(50)]
         public string Password { get; set; }
+        [MinLength(3), MaxLength(50)]
         public string PasswordConfirmation { get; set; }
 
         public int UlogaId { get; set; }

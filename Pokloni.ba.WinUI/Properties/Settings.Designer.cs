@@ -142,5 +142,17 @@ namespace Pokloni.ba.WinUI.Properties {
                 this["RememberMe"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Ocjene")]
+        public string RouteOcjene {
+            get {
+                return ((string)(this["RouteOcjene"]));
+            }
+            set {
+                this["RouteOcjene"] = value;
+            }
+        }
     }
 }
