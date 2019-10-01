@@ -22,14 +22,14 @@ namespace Pokloni.ba.WebAPI.Services.Proizvodi
 
         public IEnumerable<ProizvodVM> Get()
         {
-            var temp = _db.Proizvod.Include(k=>k.Kategorija).Include(c=>c.Proizvodac).Include(l=>l.Ocjena).ToList();
+            var temp = _db.Proizvod.Include(k=>k.Kategorija).Include(c=>c.Proizvodac).ToList();
 
             return _mapper.Map<IEnumerable<ProizvodVM>>(temp);
         }
 
         public ProizvodVM GetById(int id)
         {
-            var temp = _db.Proizvod.Find(id) ?? throw new ServerException(Constants.NotFoundErrorMessage + id);
+            var temp = _db.Proizvod.Where(k => k.ProizvodId == id).Include(c => c.Ocjena).ThenInclude(s=>s.Korisnik).FirstOrDefault() ?? throw new ServerException(Constants.NotFoundErrorMessage + id);
 
             return _mapper.Map<ProizvodVM>(temp);
         }

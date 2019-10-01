@@ -26,9 +26,9 @@ namespace Pokloni.ba.WinUI.Narudzbe
 
         private async void BtnPrikazi_Click(object sender, EventArgs e)
         {
-            var result = await _apiService.Get<IEnumerable<Model.Requests.Narudzba.NarudzbaVM>>();
+            var result = await _apiService.GetAndSort<IEnumerable<Model.Requests.Narudzba.NarudzbaVM>>("statusPoruka");
 
-            listaNarudzbi.Items.Clear();
+            listView1.Items.Clear();
             var counter = 1;
             var brojNarudzbi = 0;
             foreach (var item in result)
@@ -52,18 +52,18 @@ namespace Pokloni.ba.WinUI.Narudzbe
                 {
                     brojNarudzbi++;
                     //Ovo ne radi iz nekog razloga
-                    temp.BackColor = Color.Green;
+                    temp.BackColor = Color.LightGreen;
                 }
 
-                listaNarudzbi.Items.Add(temp);
+                listView1.Items.Add(temp);
             }
-
             NarudzbeCount.Text += brojNarudzbi.ToString();
         }
 
-        private void ListaNarudzbi_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void ListView1_MouseClick(object sender, MouseEventArgs e)
         {
-            var id = int.TryParse(listaNarudzbi.SelectedItems[0].Tag.ToString(), out int res);
+
+            var id = int.TryParse(listView1.SelectedItems[0].Tag.ToString(), out int res);
 
             if (id)
             {

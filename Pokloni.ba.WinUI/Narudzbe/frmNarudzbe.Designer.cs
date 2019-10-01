@@ -28,81 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ColumnHeader Dummy;
-            this.listaNarudzbi = new MaterialSkin.Controls.MaterialListView();
-            this.lblIndex = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lblKorisnik = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lblZaposlenik = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lblDostavljac = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lblStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lblDatum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnPrikazi = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtPretraga = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.NarudzbeCount = new MaterialSkin.Controls.MaterialLabel();
-            Dummy = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
-            // 
-            // Dummy
-            // 
-            Dummy.Text = "";
-            Dummy.Width = 0;
-            // 
-            // listaNarudzbi
-            // 
-            this.listaNarudzbi.Activation = System.Windows.Forms.ItemActivation.TwoClick;
-            this.listaNarudzbi.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listaNarudzbi.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            Dummy,
-            this.lblIndex,
-            this.lblKorisnik,
-            this.lblZaposlenik,
-            this.lblDostavljac,
-            this.lblStatus,
-            this.lblDatum});
-            this.listaNarudzbi.Depth = 0;
-            this.listaNarudzbi.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.listaNarudzbi.FullRowSelect = true;
-            this.listaNarudzbi.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listaNarudzbi.Location = new System.Drawing.Point(52, 154);
-            this.listaNarudzbi.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.listaNarudzbi.MouseState = MaterialSkin.MouseState.OUT;
-            this.listaNarudzbi.Name = "listaNarudzbi";
-            this.listaNarudzbi.OwnerDraw = true;
-            this.listaNarudzbi.Size = new System.Drawing.Size(797, 279);
-            this.listaNarudzbi.TabIndex = 6;
-            this.listaNarudzbi.UseCompatibleStateImageBehavior = false;
-            this.listaNarudzbi.View = System.Windows.Forms.View.Details;
-            this.listaNarudzbi.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ListaNarudzbi_MouseDoubleClick);
-            // 
-            // lblIndex
-            // 
-            this.lblIndex.Text = "Narudžba";
-            this.lblIndex.Width = 100;
-            // 
-            // lblKorisnik
-            // 
-            this.lblKorisnik.Text = "Korisnik";
-            this.lblKorisnik.Width = 100;
-            // 
-            // lblZaposlenik
-            // 
-            this.lblZaposlenik.Text = "Zaposlenik";
-            this.lblZaposlenik.Width = 100;
-            // 
-            // lblDostavljac
-            // 
-            this.lblDostavljac.Text = "Dostavljač";
-            this.lblDostavljac.Width = 100;
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.Text = "Status";
-            this.lblStatus.Width = 120;
-            // 
-            // lblDatum
-            // 
-            this.lblDatum.Text = "Datum";
-            this.lblDatum.Width = 200;
             // 
             // btnPrikazi
             // 
@@ -143,20 +80,79 @@
             this.NarudzbeCount.Depth = 0;
             this.NarudzbeCount.Font = new System.Drawing.Font("Roboto", 11F);
             this.NarudzbeCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.NarudzbeCount.Location = new System.Drawing.Point(48, 448);
+            this.NarudzbeCount.Location = new System.Drawing.Point(48, 451);
             this.NarudzbeCount.MouseState = MaterialSkin.MouseState.HOVER;
             this.NarudzbeCount.Name = "NarudzbeCount";
             this.NarudzbeCount.Size = new System.Drawing.Size(134, 19);
             this.NarudzbeCount.TabIndex = 7;
             this.NarudzbeCount.Text = "Aktivnih Narudžbi: ";
             // 
+            // listView1
+            // 
+            this.listView1.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listView1.CausesValidation = false;
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7});
+            this.listView1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.listView1.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView1.FullRowSelect = true;
+            this.listView1.Location = new System.Drawing.Point(52, 167);
+            this.listView1.MultiSelect = false;
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(786, 266);
+            this.listView1.TabIndex = 8;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListView1_MouseClick);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Width = 0;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Narudžba";
+            this.columnHeader2.Width = 100;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Korisnik";
+            this.columnHeader3.Width = 100;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Zaposlenik";
+            this.columnHeader4.Width = 100;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Dostavljač";
+            this.columnHeader5.Width = 100;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Status";
+            this.columnHeader6.Width = 100;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Datum";
+            this.columnHeader7.Width = 250;
+            // 
             // frmNarudzbe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(899, 595);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.NarudzbeCount);
-            this.Controls.Add(this.listaNarudzbi);
             this.Controls.Add(this.btnPrikazi);
             this.Controls.Add(this.txtPretraga);
             this.Name = "frmNarudzbe";
@@ -169,16 +165,16 @@
         }
 
         #endregion
-
-        private MaterialSkin.Controls.MaterialListView listaNarudzbi;
-        private System.Windows.Forms.ColumnHeader lblKorisnik;
-        private System.Windows.Forms.ColumnHeader lblZaposlenik;
-        private System.Windows.Forms.ColumnHeader lblDostavljac;
         private MaterialSkin.Controls.MaterialRaisedButton btnPrikazi;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtPretraga;
-        private System.Windows.Forms.ColumnHeader lblStatus;
-        private System.Windows.Forms.ColumnHeader lblDatum;
         private MaterialSkin.Controls.MaterialLabel NarudzbeCount;
-        private System.Windows.Forms.ColumnHeader lblIndex;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }

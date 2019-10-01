@@ -26,6 +26,17 @@ namespace Pokloni.ba.WinUI
             return result;
         }
 
+        public async Task<T> GetAndSort<T>(string queries = "")
+        {
+            var filter = "";
+            if (!string.IsNullOrWhiteSpace(queries))
+                filter = "?$orderBy=" + queries;
+
+            var result = await $"{Properties.Settings.Default.APIUrl}/{ _route}{filter}".WithBasicAuth(Username, Password).GetJsonAsync<T>();
+
+            return result;
+        }
+
         public async Task<T> GetbyId<T>(int? id)
         {
             var result = await $"{Properties.Settings.Default.APIUrl}/{ _route}/{id}".WithBasicAuth(Username, Password).GetJsonAsync<T>();

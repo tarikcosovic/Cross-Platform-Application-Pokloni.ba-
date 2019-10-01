@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pokloni.ba.Model.Requests.Proizvodi;
+using System;
 using System.Collections.Generic;
 
 namespace Pokloni.ba.WebAPI.Database

@@ -22,6 +22,6 @@ namespace Pokloni.ba.Model.Requests.Proizvodi
 
         public Kategorije Kategorija { get; set; }
         public ProizvodacPoklona Proizvodac { get; set; }
-        public ICollection<OcjenaVM> Ocjena { get; set; }
+        public ICollection<Ocjena> Ocjena { get; set; }
     }
 }

@@ -56,7 +56,7 @@ namespace Pokloni.ba.WinUI.Proizvodi
                 await GetKategorije(result.KategorijaId);
                 await GetProizvodaci(result.ProizvodacId);
 
-                //LoadFeedback(result.Ocjena);
+                LoadFeedback(result.Ocjena);
                 //LoadImageListView();
             }
         }
@@ -80,24 +80,25 @@ namespace Pokloni.ba.WinUI.Proizvodi
             }
             imgList.View = View.LargeIcon;
             imgList.LargeImageList = test;
+
         }
 
-        private void LoadFeedback(ICollection<OcjenaVM> ocjene)
+        private void LoadFeedback(ICollection<Ocjena> ocjene)
         {
-            listaOcjena.Clear();
+            listaOcjena.Items.Clear();
             foreach(var ocjena in ocjene)
             {
                 if(ocjena.ProizvodId == _id)
                 {
                     ListViewItem item = new ListViewItem();
-                    item.SubItems.Add(ocjena.KorisnikId.ToString());
+                    item.SubItems.Add(ocjena.Korisnik.Username);
                     item.SubItems.Add(ocjena.NumerickaOcjena.ToString());
                     item.SubItems.Add(ocjena.Komentar);
 
                     listaOcjena.Items.Add(item);
                 }
             }
-        }
+        }   
         private static Image GetImage(byte[] data)
         {
             using (MemoryStream ms = new MemoryStream(data))
