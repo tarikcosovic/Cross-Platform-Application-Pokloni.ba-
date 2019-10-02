@@ -35,7 +35,7 @@ namespace Pokloni.ba.WebAPI
             services.AddAutoMapper(typeof(Startup));
             services.AddOData();
 
-
+            //var connection = @"Server=poklonibawebapi20191002100106dbserver.database.windows.net,1433;Initial Catalog=PoklonibaWebAPI20191002100106_db;Persist Security Info=False;User ID=tarikcosovic;Password=Partnership1;MultipleActiveResultSets=True;";
             var connection = @"Server=.;Database=Pokloni;Trusted_Connection=True;ConnectRetryCount=0";
             services.AddDbContext<PokloniContext>(options => options.UseSqlServer(connection));
 
@@ -74,7 +74,7 @@ namespace Pokloni.ba.WebAPI
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseAuthentication();
             app.UseMvc(routeBuilder => 

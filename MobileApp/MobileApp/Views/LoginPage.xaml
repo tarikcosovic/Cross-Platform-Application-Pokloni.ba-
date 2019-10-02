@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:MobileApp.ViewModels"
+             mc:Ignorable="d"
+             x:Class="MobileApp.Views.LoginPage">
+    <ContentPage.BindingContext>
+        <viewModels:LoginViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Padding="50" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+
+            <Image Source="xamarin_logo.png"></Image>
+
+            <Label HorizontalTextAlignment="Center" Margin="0, 50" TextColor="MediumPurple" FontSize="Large" Text="Dobrodošli na Pokloni.ba!"/>
+
+            <Label Text="Username"/>
+            <Entry Text="{Binding Username}" TextColor="Black"></Entry>
+
+            <Label Text="Password"/>
+            <Entry Text="{Binding Password}" TextColor="Black"></Entry>
+
+            <Button Command="{Binding LoginCommand}" HorizontalOptions="FillAndExpand" BackgroundColor="MediumPurple" TextColor="White" Margin="0, 35, 0, 0"  Text="Login"></Button>
+            <Label IsVisible="{Binding IsBusy}" Text="Working.."></Label>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

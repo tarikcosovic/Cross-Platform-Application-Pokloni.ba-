@@ -1,7 +1,6 @@
 C:\Pokloni.ba-Cross-platform-application\Pokloni.ba.Model\bin\Debug\netstandard2.0\Pokloni.ba.Model.deps.json
 C:\Pokloni.ba-Cross-platform-application\Pokloni.ba.Model\bin\Debug\netstandard2.0\Pokloni.ba.Model.dll
 C:\Pokloni.ba-Cross-platform-application\Pokloni.ba.Model\bin\Debug\netstandard2.0\Pokloni.ba.Model.pdb
-C:\Pokloni.ba-Cross-platform-application\Pokloni.ba.Model\obj\Debug\netstandard2.0\Pokloni.ba.Model.csprojAssemblyReference.cache
 C:\Pokloni.ba-Cross-platform-application\Pokloni.ba.Model\obj\Debug\netstandard2.0\Pokloni.ba.Model.csproj.CoreCompileInputs.cache
 C:\Pokloni.ba-Cross-platform-application\Pokloni.ba.Model\obj\Debug\netstandard2.0\Pokloni.ba.Model.AssemblyInfoInputs.cache
 C:\Pokloni.ba-Cross-platform-application\Pokloni.ba.Model\obj\Debug\netstandard2.0\Pokloni.ba.Model.AssemblyInfo.cs

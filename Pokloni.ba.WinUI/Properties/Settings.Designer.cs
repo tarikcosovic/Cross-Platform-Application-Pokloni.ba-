@@ -25,7 +25,7 @@ namespace Pokloni.ba.WinUI.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://localhost:44315/api")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:50302/api")]
         public string APIUrl {
             get {
                 return ((string)(this["APIUrl"]));
