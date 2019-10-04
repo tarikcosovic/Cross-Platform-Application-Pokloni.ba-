@@ -52,7 +52,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.0.0.425677" />
+    <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie">
+      <Version>3.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Rg.Plugins.Popup">
+      <Version>1.1.5.188</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="4.2.0.848062" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.1" />
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="28.0.0.1" />
     <PackageReference Include="Xamarin.Android.Support.v4" Version="28.0.0.1" />
@@ -68,6 +74,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\2023-particle-explosion.json" />
+    <AndroidAsset Include="Assets\4191-present-for-you.json" />
+    <AndroidAsset Include="Assets\2132-loader-and-success.json" />
+    <AndroidAsset Include="Assets\872-empty-list.json" />
+    <AndroidAsset Include="Assets\4386-connection-error.json" />
+    <AndroidAsset Include="Assets\4958-404-not-found.json" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />

@@ -4,15 +4,21 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="clr-namespace:MobileApp.ViewModels"
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
              mc:Ignorable="d"
              x:Class="MobileApp.Views.LoginPage">
-    <ContentPage.BindingContext>
-        <viewModels:LoginViewModel/>
-    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout Padding="50" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
 
-            <Image Source="xamarin_logo.png"></Image>
+            <forms:AnimationView 
+	x:Name="animationView" 
+	Animation="4191-present-for-you.json" 
+	Loop="True" 
+	AutoPlay="True"
+    HeightRequest="100"
+    WidthRequest="300"
+	VerticalOptions="CenterAndExpand" 
+	HorizontalOptions="CenterAndExpand" />
 
             <Label HorizontalTextAlignment="Center" Margin="0, 50" TextColor="MediumPurple" FontSize="Large" Text="Dobrodošli na Pokloni.ba!"/>
 
@@ -23,8 +29,7 @@
             <Entry Text="{Binding Password}" TextColor="Black"></Entry>
 
             <Button Command="{Binding LoginCommand}" HorizontalOptions="FillAndExpand" BackgroundColor="MediumPurple" TextColor="White" Margin="0, 35, 0, 0"  Text="Login"></Button>
-            <Label IsVisible="{Binding IsBusy}" Text="Working.."></Label>
-
+            <ActivityIndicator x:Name="ActivityIndicator" IsRunning="{Binding IsBusy}" VerticalOptions="Center" Color="Purple"></ActivityIndicator>
 
         </StackLayout>
     </ContentPage.Content>

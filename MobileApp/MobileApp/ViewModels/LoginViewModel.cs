@@ -1,5 +1,6 @@
 ﻿using Flurl.Http;
-using MobileApp.Views;
+using MobileApp.Views.Popups;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -29,7 +30,7 @@ namespace MobileApp.ViewModels
             set { SetProperty(ref _password, value); }
         }
 
-        public ICommand LoginCommand { get; set; }
+        public ICommand LoginCommand { get; }
 
         async Task Login()
         {
@@ -40,13 +41,18 @@ namespace MobileApp.ViewModels
 
             try
             {
-                await _apiService.Get<dynamic>();
-                Application.Current.MainPage = new MainPage();
+                //await _apiService.Get<dynamic>();
+                //Application.Current.MainPage = new MainPage();
+                await PopupNavigation.Instance.PushAsync(new SuccessPopupView());
             }
             catch(FlurlHttpException ex)
             {
                 if (ex.Call.HttpStatus == System.Net.HttpStatusCode.Unauthorized)
-                    await Application.Current.MainPage.DisplayAlert("Greška!", "Niste autentificirani..", "OK");
+                    await PopupNavigation.Instance.PushAsync(new NotAuthorisedPopupView());
+            }
+            finally
+            {
+                IsBusy = false;
             }
         }
     }

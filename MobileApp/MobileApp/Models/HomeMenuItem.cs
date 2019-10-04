@@ -7,7 +7,8 @@ namespace MobileApp.Models
     public enum MenuItemType
     {
         Browse,
-        About
+        About,
+        Proizvodi
     }
     public class HomeMenuItem
     {
