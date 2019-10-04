@@ -1,4 +1,5 @@
 ﻿using Flurl.Http;
+using MobileApp.Views;
 using MobileApp.Views.Popups;
 using Rg.Plugins.Popup.Services;
 using System;
@@ -14,6 +15,8 @@ namespace MobileApp.ViewModels
         public LoginViewModel()
         {
             LoginCommand = new Command(async () => await Login());
+
+            delHandler = ChangePage;
         }
 
         string _username = String.Empty;
@@ -42,18 +45,27 @@ namespace MobileApp.ViewModels
             try
             {
                 //await _apiService.Get<dynamic>();
-                //Application.Current.MainPage = new MainPage();
-                await PopupNavigation.Instance.PushAsync(new SuccessPopupView());
+                await PopupNavigation.Instance.PushAsync(new SuccessPopupView(delHandler));
             }
             catch(FlurlHttpException ex)
             {
                 if (ex.Call.HttpStatus == System.Net.HttpStatusCode.Unauthorized)
                     await PopupNavigation.Instance.PushAsync(new NotAuthorisedPopupView());
+                else
+                    await PopupNavigation.Instance.PushAsync(new Error404PopupView());
             }
             finally
             {
                 IsBusy = false;
             }
+        }
+
+        public delegate void SwitchToMainPageDelegate();
+        private readonly SwitchToMainPageDelegate delHandler;
+
+        void ChangePage()
+        {
+            Application.Current.MainPage = new MainPage();
         }
     }
 }

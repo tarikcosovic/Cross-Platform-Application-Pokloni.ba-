@@ -1,0 +1,25 @@
+﻿<pages:PopupPage
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    mc:Ignorable="d"
+             x:Class="MobileApp.Views.Popups.Error404PopupView">
+    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+
+        <forms:AnimationView 
+	x:Name="errorAnimation" 
+	Animation="4958-404-not-found.json" 
+	Loop="True" 
+	AutoPlay="True"
+    HeightRequest="50"
+    WidthRequest="100"
+	VerticalOptions="CenterAndExpand" 
+	HorizontalOptions="CenterAndExpand" />
+
+        <Label HorizontalTextAlignment="Center" Text="Error 404.." TextColor="White"></Label>
+
+
+    </StackLayout>
+</pages:PopupPage>
