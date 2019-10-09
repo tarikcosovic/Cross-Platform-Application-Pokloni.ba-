@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MobileApp.Views.PokloniPage">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <AbsoluteLayout>
+                <Image WidthRequest="100" HeightRequest="30" Source="iconFilter.png" AbsoluteLayout.LayoutBounds=".96,.7,.5,.6" AbsoluteLayout.LayoutFlags="All"></Image>
+                <Picker AbsoluteLayout.LayoutBounds=".96,1,.2,1" AbsoluteLayout.LayoutFlags="All" WidthRequest="100"></Picker>
+            </AbsoluteLayout>
+
+            <TableView x:Name="PokloniTable" Intent="Data">
+                <TableRoot>
+                    <TableSection Title="Pokloni">
+                        <ImageCell ImageSource="iconPng.png" Text="Naziv" Detail="Opis" Tapped="ImageCell_Tapped"></ImageCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

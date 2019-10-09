@@ -12,7 +12,7 @@
              
     <StackLayout VerticalOptions="FillAndExpand">
         <AbsoluteLayout HeightRequest="350">
-            <Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="1,1,1,1" Source="C:\Pokloni.ba-Cross-platform-application\MobileApp\MobileApp.Android\Resources\drawable\pokloni3.jpg" Aspect="AspectFill">
+            <Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="1,1,1,1" Source="pokloni3.jpg" Aspect="AspectFill">
         </Image>
             <Image HorizontalOptions="End" VerticalOptions="End" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".75,.7,.8,.6" Source="iconPng.jpg" Aspect="AspectFill">
             </Image>
