@@ -33,10 +33,22 @@ namespace MobileApp.Views
                     case (int)MenuItemType.Browse:
                         MenuPages.Add(id, new NavigationPage(new ItemsPage()));
                         break;
-                    case (int)MenuItemType.About:
-                        MenuPages.Add(id, new NavigationPage(new AboutPage()));
+                    case (int)MenuItemType.Pocetna:
+                        MenuPages.Add(id, new NavigationPage(new ProizvodiPage()));
                         break;
-                    case (int)MenuItemType.Proizvodi:
+                    case (int)MenuItemType.Pokloni:
+                        MenuPages.Add(id, new NavigationPage(new ProizvodiPage()));
+                        break;
+                    case (int)MenuItemType.Korpa:
+                        MenuPages.Add(id, new NavigationPage(new ProizvodiPage()));
+                        break;
+                    case (int)MenuItemType.Narudzbe:
+                        MenuPages.Add(id, new NavigationPage(new ProizvodiPage()));
+                        break;
+                    case (int)MenuItemType.Profil:
+                        MenuPages.Add(id, new NavigationPage(new ProizvodiPage()));
+                        break;
+                    case (int)MenuItemType.Odjava:
                         MenuPages.Add(id, new NavigationPage(new ProizvodiPage()));
                         break;
                 }

@@ -5,22 +5,33 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="MobileApp.Views.MenuPage"
-             Title="Menu">
+             Title="Menu"
+             BackgroundColor="Purple"
+             Opacity="1.0"
+             >
              
     <StackLayout VerticalOptions="FillAndExpand">
+        <AbsoluteLayout HeightRequest="350">
+            <Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="1,1,1,1" Source="C:\Pokloni.ba-Cross-platform-application\MobileApp\MobileApp.Android\Resources\drawable\pokloni3.jpg" Aspect="AspectFill">
+        </Image>
+            <Image HorizontalOptions="End" VerticalOptions="End" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".75,.7,.8,.6" Source="iconPng.jpg" Aspect="AspectFill">
+            </Image>
+            <Label HorizontalOptions="End" VerticalOptions="End" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".8,.9,.8,.9" FontSize="Large" Text="Pokloni.ba" TextColor="White"></Label>
+        </AbsoluteLayout>
         <ListView x:Name="ListViewMenu"
                     HasUnevenRows="True">
             <d:ListView.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
-                    <x:String>Item 1</x:String>
-                    <x:String>Item 2</x:String>
+                    <x:String>Početna stranica</x:String>
+                    <x:String>Pokloni</x:String>
                 </x:Array>
             </d:ListView.ItemsSource>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid Padding="10">
-                            <Label Text="{Binding Title}" d:Text="{Binding .}" FontSize="20"/>
+                        <Grid Padding="20">
+                            <Image HorizontalOptions="Start" WidthRequest="40" HeightRequest="30" d:Source="iconPng.png" Source="{Binding ItemIcon}" Aspect="AspectFit"></Image>
+                            <Label HorizontalOptions="Start" Margin="50,0,0,0" TextColor="White" Text="{Binding Title}" d:Text="{Binding .}" FontSize="20" FontFamily="Montserrat-Light.ttf"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

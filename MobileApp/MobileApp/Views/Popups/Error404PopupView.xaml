@@ -9,17 +9,15 @@
     <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
 
         <forms:AnimationView 
+    Scale="1.4"
 	x:Name="errorAnimation" 
 	Animation="4958-404-not-found.json" 
 	Loop="True" 
 	AutoPlay="True"
-    HeightRequest="50"
-    WidthRequest="100"
-	VerticalOptions="CenterAndExpand" 
-	HorizontalOptions="CenterAndExpand" />
-
-        <Label HorizontalTextAlignment="Center" Text="Error 404.." TextColor="White"></Label>
-
+    HeightRequest="400"
+    WidthRequest="300"
+	VerticalOptions="Center" 
+	HorizontalOptions="Center" />
 
     </StackLayout>
 </pages:PopupPage>

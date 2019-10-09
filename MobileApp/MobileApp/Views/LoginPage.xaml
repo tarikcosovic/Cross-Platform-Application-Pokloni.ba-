@@ -11,11 +11,12 @@
         <StackLayout Padding="50" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
 
             <forms:AnimationView 
+                Scale="2"
 	x:Name="animationView" 
 	Animation="4191-present-for-you.json" 
 	Loop="True" 
 	AutoPlay="True"
-    HeightRequest="100"
+    HeightRequest="120"
     WidthRequest="300"
 	VerticalOptions="CenterAndExpand" 
 	HorizontalOptions="CenterAndExpand" />

@@ -14,6 +14,7 @@ namespace MobileApp.ViewModels
         public string Opis { get; set; }
         public string Sifra { get; set; }
         public string Cijena { get; set; }
+        public byte[] Slika { get; set; }
 
     }
     public class ProizvodiViewModel

@@ -20,9 +20,12 @@ namespace MobileApp.Views
 
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
-                new HomeMenuItem {Id = MenuItemType.About, Title="About" },
-                new HomeMenuItem {Id = MenuItemType.Proizvodi, Title="Proizvodi" },
+                new HomeMenuItem {Id = MenuItemType.Pocetna, Title="Početna stranica", ItemIcon = "iconHome.png" },
+                new HomeMenuItem {Id = MenuItemType.Pokloni, Title="Pokloni", ItemIcon = "iconGift.png" },
+                new HomeMenuItem {Id = MenuItemType.Korpa, Title="Korpa", ItemIcon = "iconCart.png" },
+                new HomeMenuItem {Id = MenuItemType.Narudzbe, Title="Narudžbe", ItemIcon = "iconOrder.png" },
+                new HomeMenuItem {Id = MenuItemType.Profil, Title="Korisnički profil", ItemIcon = "iconProfile.png" },
+                new HomeMenuItem {Id = MenuItemType.Odjava, Title="Odjava", ItemIcon = "iconLogout.png" },
             };
 
             ListViewMenu.ItemsSource = menuItems;
