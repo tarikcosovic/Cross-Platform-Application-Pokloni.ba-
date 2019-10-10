@@ -1,9 +1,6 @@
 ﻿using MobileApp.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Pokloni.ba.Model.Requests.Proizvodi;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -23,11 +20,15 @@ namespace MobileApp.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            model.LoadList(PokloniTable);
+            model.LoadList(proizvodiListView, KategorijePicker);
         }
-        private void ImageCell_Tapped(int id)
+
+        protected void Picker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            if(KategorijePicker.SelectedItem != null)
+            {
+                model.LoadFilteredList(proizvodiListView, (KategorijePicker.SelectedItem as Kategorije).KategorijaId); 
+            }
         }
     }
 }

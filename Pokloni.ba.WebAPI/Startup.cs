@@ -35,7 +35,7 @@ namespace Pokloni.ba.WebAPI
             services.AddAutoMapper(typeof(Startup));
             services.AddOData();
 
-            //var connection = @"Server=poklonibawebapi20191002100106dbserver.database.windows.net,1433;Initial Catalog=PoklonibaWebAPI20191002100106_db;Persist Security Info=False;User ID=tarikcosovic;Password=Partnership1;MultipleActiveResultSets=True;";
+            //Connection string not hidden due to a part of an assignment in the project
             var connection = @"Server=app.fit.ba,1431;Database=pokloni;User ID=tarikcosovic;Password=Partnership1;";
             services.AddDbContext<PokloniContext>(options => options.UseSqlServer(connection));
 

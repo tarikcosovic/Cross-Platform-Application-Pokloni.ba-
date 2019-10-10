@@ -11,7 +11,7 @@
              >
              
     <StackLayout VerticalOptions="FillAndExpand">
-        <AbsoluteLayout HeightRequest="350">
+        <AbsoluteLayout HeightRequest="300">
             <Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="1,1,1,1" Source="pokloni3.jpg" Aspect="AspectFill">
         </Image>
             <Image HorizontalOptions="End" VerticalOptions="End" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".75,.7,.8,.6" Source="iconPng.jpg" Aspect="AspectFill">
@@ -29,9 +29,9 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid Padding="20">
+                        <Grid Padding="15">
                             <Image HorizontalOptions="Start" WidthRequest="40" HeightRequest="30" d:Source="iconPng.png" Source="{Binding ItemIcon}" Aspect="AspectFit"></Image>
-                            <Label HorizontalOptions="Start" Margin="50,0,0,0" TextColor="White" Text="{Binding Title}" d:Text="{Binding .}" FontSize="20" FontFamily="Montserrat-Light.ttf"/>
+                            <Label HorizontalOptions="Start" Margin="50,0,0,0" TextColor="White" Text="{Binding Title}" d:Text="{Binding .}" FontSize="17" FontFamily="Montserrat-Light.ttf"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

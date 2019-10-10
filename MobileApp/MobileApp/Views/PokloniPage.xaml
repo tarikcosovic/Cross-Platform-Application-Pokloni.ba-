@@ -3,24 +3,71 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:MobileApp.Converters"
              mc:Ignorable="d"
              x:Class="MobileApp.Views.PokloniPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:ImageConverter x:Key="imgConv"></local:ImageConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="30" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
 
-            <AbsoluteLayout>
-                <Image WidthRequest="100" HeightRequest="30" Source="iconFilter.png" AbsoluteLayout.LayoutBounds=".96,.7,.5,.6" AbsoluteLayout.LayoutFlags="All"></Image>
-                <Picker AbsoluteLayout.LayoutBounds=".96,1,.2,1" AbsoluteLayout.LayoutFlags="All" WidthRequest="100"></Picker>
-            </AbsoluteLayout>
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <Picker x:Name="KategorijePicker" Title="Odaberite Kategoriju" WidthRequest="350" SelectedIndexChanged="Picker_SelectedIndexChanged"></Picker>
+            </StackLayout>
 
-            <TableView Intent="Data">
-                <TableRoot>
-                    <TableSection Title="Pokloni" x:Name="PokloniTable">
-                        <ImageCell ImageSource="iconPng.png" Text="Naziv" Detail="Opis"></ImageCell>
-                    </TableSection>
-                </TableRoot>
-            </TableView>
+            <ActivityIndicator IsRunning="{Binding IsBusy}" VerticalOptions="Center" Color="Purple"></ActivityIndicator>
 
+            <!--<ListView x:Name="proizvodiListView">
+                <d:ListView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Početna stranica</x:String>
+                        <x:String>Pokloni</x:String>
+                    </x:Array>
+                </d:ListView.ItemsSource>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            --><!--<AbsoluteLayout>
+                                <Image HeightRequest="100" x:Name="img2" Source="{Binding Slika, Converter={StaticResource imgConv}}"></Image>
+
+                                <Label Text="{Binding Naziv}" FontAttributes="Bold"></Label>
+                                <Label Text="{Binding Opis}" FontAttributes="Italic"></Label>
+                                <Label Text="{Binding Cijena, StringFormat='{0} KM'}"></Label>
+                            </AbsoluteLayout>--><!--
+
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+
+
+            <ListView x:Name="proizvodiListView"
+                    HasUnevenRows="True">
+                <d:ListView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Početna stranica</x:String>
+                        <x:String>Pokloni</x:String>
+                    </x:Array>
+                </d:ListView.ItemsSource>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="0, 0, 0, 20">
+                                <Image HorizontalOptions="Start" WidthRequest="60" HeightRequest="90" d:Source="iconPng.png" Source="{Binding Slika, Converter={StaticResource imgConv}}" Aspect="AspectFit"></Image>
+                                <Label HorizontalOptions="Start" Margin="80,10,0,0" TextColor="Black" Text="{Binding Naziv}" d:Text="Central Perk Lego Igračka" WidthRequest="205" FontSize="17" LineBreakMode="NoWrap"  FontFamily="Montserrat-Light.ttf"/>
+                                <Label HorizontalOptions="Start" Margin="80,35,0,0" TextColor="Gray" Text="{Binding Opis}" d:Text="TESTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTttttTT" LineBreakMode="NoWrap" FontSize="15" FontAttributes="Italic" WidthRequest="200" FontFamily="Montserrat-Light.ttf"/>
+                                <Label HorizontalOptions="Start" Margin="180,55,0,0" TextColor="ForestGreen" Text="{Binding Cijena}" d:Text="15$" FontSize="19" FontFamily="Montserrat-Light.ttf"/>
+                                <Label HorizontalOptions="Start" Margin="80,55,0,0" TextColor="ForestGreen" Text="★★★★★" d:Text="★★★★★" FontSize="19" FontFamily="Montserrat-Light.ttf"/>
+                                <Image HorizontalOptions="End" Margin="0,0,0,0" WidthRequest="40" HeightRequest="40" d:Source="iconBuy1.png" Source="{Binding ItemIcon}" Aspect="AspectFit"></Image>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
