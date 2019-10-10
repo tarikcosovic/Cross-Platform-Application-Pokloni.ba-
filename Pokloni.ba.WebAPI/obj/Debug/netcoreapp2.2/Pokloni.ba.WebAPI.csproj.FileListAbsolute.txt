@@ -15,3 +15,5 @@ C:\Pokloni.ba-Cross-platform-application\Pokloni.ba.WebAPI\obj\Debug\netcoreapp2
 C:\Pokloni.ba-Cross-platform-application\Pokloni.ba.WebAPI\obj\Debug\netcoreapp2.2\Pokloni.ba.WebAPI.csproj.CopyComplete
 C:\Pokloni.ba-Cross-platform-application\Pokloni.ba.WebAPI\obj\Debug\netcoreapp2.2\Pokloni.ba.WebAPI.dll
 C:\Pokloni.ba-Cross-platform-application\Pokloni.ba.WebAPI\obj\Debug\netcoreapp2.2\Pokloni.ba.WebAPI.pdb
+C:\Pokloni.ba-Cross-platform-application\Pokloni.ba.WebAPI\obj\Debug\netcoreapp2.2\Pokloni.ba.WebAPI.Properties.Resources.resources
+C:\Pokloni.ba-Cross-platform-application\Pokloni.ba.WebAPI\obj\Debug\netcoreapp2.2\Pokloni.ba.WebAPI.csproj.GenerateResource.cache

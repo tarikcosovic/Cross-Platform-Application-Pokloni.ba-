@@ -1,4 +1,4 @@
-﻿using Flurl.Http;
+﻿ using Flurl.Http;
 using MobileApp.Views;
 using MobileApp.Views.Popups;
 using Rg.Plugins.Popup.Services;
@@ -44,7 +44,7 @@ namespace MobileApp.ViewModels
 
             try
             {
-                //await _apiService.Get<dynamic>();
+                await _apiService.Get<dynamic>();
                 await PopupNavigation.Instance.PushAsync(new SuccessPopupView(delHandler));
             }
             catch(FlurlHttpException ex)

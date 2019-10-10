@@ -20,9 +20,14 @@ namespace MobileApp.Views
             BindingContext = model = new PokloniViewModel();
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            model.LoadList(PokloniTable);
+        }
         private void ImageCell_Tapped(int id)
         {
-
+            
         }
     }
 }

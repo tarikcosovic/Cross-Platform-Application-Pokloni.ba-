@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="APIUrl" Type="System.String" Scope="User">
-      <Value Profile="(Default)">http://localhost:50302/api</Value>
+      <Value Profile="(Default)">https://pokloniwebapi.azurewebsites.net/api</Value>
     </Setting>
     <Setting Name="RouteKorisnici" Type="System.String" Scope="User">
       <Value Profile="(Default)">Korisnici</Value>

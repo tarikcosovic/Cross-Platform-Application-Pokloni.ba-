@@ -12,12 +12,8 @@ namespace MobileApp
         public static string Username { get; set; }
         public static string Password { get; set; }
 
-#if DEBUG
-        const string apiUrl = "http://localhost:50302/api";
-#endif
-#if RELEASE
-        const string apiUrl = "http://localhost:50302/api";
-#endif
+        const string apiUrl = "https://pokloniwebapi.azurewebsites.net/api";
+
 
         private string _route = null;
         public APIService(string route)

@@ -23,6 +23,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Pokloni.ba.Model\Pokloni.ba.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Views\Pocetna.xaml.cs">
       <DependentUpon>Pocetna.xaml</DependentUpon>
     </Compile>

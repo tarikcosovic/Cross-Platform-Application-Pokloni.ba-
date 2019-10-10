@@ -13,10 +13,10 @@
                 <Picker AbsoluteLayout.LayoutBounds=".96,1,.2,1" AbsoluteLayout.LayoutFlags="All" WidthRequest="100"></Picker>
             </AbsoluteLayout>
 
-            <TableView x:Name="PokloniTable" Intent="Data">
+            <TableView Intent="Data">
                 <TableRoot>
-                    <TableSection Title="Pokloni">
-                        <ImageCell ImageSource="iconPng.png" Text="Naziv" Detail="Opis" Tapped="ImageCell_Tapped"></ImageCell>
+                    <TableSection Title="Pokloni" x:Name="PokloniTable">
+                        <ImageCell ImageSource="iconPng.png" Text="Naziv" Detail="Opis"></ImageCell>
                     </TableSection>
                 </TableRoot>
             </TableView>

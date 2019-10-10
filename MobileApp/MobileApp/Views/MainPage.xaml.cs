@@ -30,14 +30,11 @@ namespace MobileApp.Views
             {
                 switch (id)
                 {
-                    case (int)MenuItemType.Browse:
-                        MenuPages.Add(id, new NavigationPage(new ItemsPage()));
-                        break;
                     case (int)MenuItemType.Pocetna:
                         MenuPages.Add(id, new NavigationPage(new ProizvodiPage()));
                         break;
                     case (int)MenuItemType.Pokloni:
-                        MenuPages.Add(id, new NavigationPage(new ProizvodiPage()));
+                        MenuPages.Add(id, new NavigationPage(new PokloniPage()));
                         break;
                     case (int)MenuItemType.Korpa:
                         MenuPages.Add(id, new NavigationPage(new ProizvodiPage()));
