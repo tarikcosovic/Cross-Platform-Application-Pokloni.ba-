@@ -12,7 +12,8 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout Padding="30" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <ScrollView Orientation="Vertical">
+            <StackLayout Padding="30" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
 
             <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
                 <Picker x:Name="KategorijePicker" Title="Odaberite Kategoriju" WidthRequest="350" SelectedIndexChanged="Picker_SelectedIndexChanged"></Picker>
@@ -44,5 +45,6 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

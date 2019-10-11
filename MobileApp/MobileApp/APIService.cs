@@ -1,4 +1,6 @@
 ﻿using Flurl.Http;
+using MobileApp.Views.Popups;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -37,7 +39,7 @@ namespace MobileApp
             {
                 if(ex.Call.HttpStatus == System.Net.HttpStatusCode.Unauthorized)
                 {
-                    await Application.Current.MainPage.DisplayAlert("Greška!", "Niste autentificirani..", "OK");
+                    await PopupNavigation.Instance.PushAsync(new NotAuthorisedPopupView());
                 }
                 throw;
             }

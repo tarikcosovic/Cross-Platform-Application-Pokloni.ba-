@@ -15,7 +15,13 @@ namespace MobileApp.Views
         {
             InitializeComponent();
 
-            BindingContext = model = new PokloniDetailsViewModel(poklon);
+            BindingContext = model = new PokloniDetailsViewModel(poklon, RatingLayout, productFeedback);
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            await model.LoadOcjene();
         }
     }
 }

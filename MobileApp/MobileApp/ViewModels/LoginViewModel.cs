@@ -49,9 +49,7 @@ namespace MobileApp.ViewModels
             }
             catch(FlurlHttpException ex)
             {
-                if (ex.Call.HttpStatus == System.Net.HttpStatusCode.Unauthorized)
-                    await PopupNavigation.Instance.PushAsync(new NotAuthorisedPopupView());
-                else
+                if (ex.Call.HttpStatus != System.Net.HttpStatusCode.Unauthorized)
                     await PopupNavigation.Instance.PushAsync(new Error404PopupView());
             }
             finally
