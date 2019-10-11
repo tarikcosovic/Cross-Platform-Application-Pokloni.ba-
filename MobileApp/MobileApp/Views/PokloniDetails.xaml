@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:MobileApp.Converters"
+             mc:Ignorable="d"
+             x:Class="MobileApp.Views.PokloniDetails">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:ImageConverter x:Key="imgConv"></local:ImageConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+
+            <Image Aspect="AspectFit" Source="{Binding Slika, Converter={StaticResource imgConv}}" d:Source="pokloni3.jpg" WidthRequest="400" HeightRequest="220"></Image>
+            <Label HorizontalOptions="Center" d:Text="★★★★★" Text="★★★★★" LineBreakMode="NoWrap" FontSize="Large" FontAttributes="Bold"></Label>
+            <Label HorizontalOptions="Center" d:Text="Central Perk Lego from F.R.I.E.N.D.S." Text="{Binding Naziv}" LineBreakMode="NoWrap" FontSize="Large" FontAttributes="Bold"></Label>
+            <Label Margin="0,10,0,0" VerticalOptions="FillAndExpand"  HorizontalOptions="Start" Text="{Binding Opis}" d:Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tristique ultrices massa, non vehicula lectus luctus et. Morbi aliquam erat quis lectus consectetur convallis. Fusce suscipit arcu sed ipsum finibus, et lobortis eros egestas. Aenean finibus et elit et maximus. Donec vel nulla id elit commodo pretium maximus sit amet ex. " FontSize="Medium" FontAttributes="Italic"></Label>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

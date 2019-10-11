@@ -20,33 +20,8 @@
 
             <ActivityIndicator IsRunning="{Binding IsBusy}" VerticalOptions="Center" Color="Purple"></ActivityIndicator>
 
-            <!--<ListView x:Name="proizvodiListView">
-                <d:ListView.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>Početna stranica</x:String>
-                        <x:String>Pokloni</x:String>
-                    </x:Array>
-                </d:ListView.ItemsSource>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            --><!--<AbsoluteLayout>
-                                <Image HeightRequest="100" x:Name="img2" Source="{Binding Slika, Converter={StaticResource imgConv}}"></Image>
-
-                                <Label Text="{Binding Naziv}" FontAttributes="Bold"></Label>
-                                <Label Text="{Binding Opis}" FontAttributes="Italic"></Label>
-                                <Label Text="{Binding Cijena, StringFormat='{0} KM'}"></Label>
-                            </AbsoluteLayout>--><!--
-
-
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>-->
-
-
             <ListView x:Name="proizvodiListView"
-                    HasUnevenRows="True">
+                    HasUnevenRows="True" ItemTapped="ProizvodiListView_ItemTapped">
                 <d:ListView.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Početna stranica</x:String>

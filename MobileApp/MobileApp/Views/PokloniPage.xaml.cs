@@ -30,5 +30,14 @@ namespace MobileApp.Views
                 model.LoadFilteredList(proizvodiListView, (KategorijePicker.SelectedItem as Kategorije).KategorijaId); 
             }
         }
+
+        private void ProizvodiListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            if(e.Item != null)
+            {
+                this.Navigation.PushAsync(new PokloniDetails(e.Item as ProizvodVM));
+            }
+
+        }
     }
 }
