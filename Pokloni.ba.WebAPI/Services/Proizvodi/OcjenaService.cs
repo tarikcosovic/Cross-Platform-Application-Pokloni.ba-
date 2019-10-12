@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Pokloni.ba.Model.Requests.Proizvodi;
 using Pokloni.ba.WebAPI.Database;
 using Pokloni.ba.WebAPI.Exceptions;
@@ -21,7 +22,7 @@ namespace Pokloni.ba.WebAPI.Services.Proizvodi
 
         public IEnumerable<OcjenaVM> Get()
         {
-            var temp = _db.Ocjena.ToList();
+            var temp = _db.Ocjena.Include(x=>x.Korisnik).ToList();
 
             return _mapper.Map<IEnumerable<OcjenaVM>>(temp);
         }
@@ -31,6 +32,13 @@ namespace Pokloni.ba.WebAPI.Services.Proizvodi
             var temp = _db.Ocjena.Find(id) ?? throw new ServerException(Constants.NotFoundErrorMessage + id);
 
             return _mapper.Map<OcjenaVM>(temp);
+        }
+
+        public int GetByKorisnik(int id)
+        {
+            var temp = _db.Ocjena.Where(x => x.KorisnikId == id).FirstOrDefault();
+
+            return temp.NumerickaOcjena;
         }
 
         public OcjenaVM Insert(OcjenaVM request)

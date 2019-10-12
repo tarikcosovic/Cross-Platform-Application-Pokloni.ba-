@@ -10,5 +10,6 @@ namespace Pokloni.ba.WebAPI.Services.Proizvodi
 {
     public interface IOcjenaService : IBaseInterface<OcjenaVM>
     {
+        int GetByKorisnik(int id);
     }
 }

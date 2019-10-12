@@ -26,7 +26,7 @@ namespace MobileApp.Droid
             AnimationViewRenderer.Init();
 
             LoadApplication(new App());
-            Window.SetStatusBarColor(Android.Graphics.Color.MediumPurple);
+            Window.SetStatusBarColor(Android.Graphics.Color.Argb(255, 245, 60, 108));
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

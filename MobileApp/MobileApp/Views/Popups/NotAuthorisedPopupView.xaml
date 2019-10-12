@@ -19,7 +19,7 @@
 	VerticalOptions="CenterAndExpand" 
 	HorizontalOptions="CenterAndExpand" />
 
-        <Label HorizontalTextAlignment="Center" Text="Invalid username or password!" TextColor="White"></Label>
+        <Label x:Name="labelaPoruke" HorizontalTextAlignment="Center" TextColor="White"></Label>
 
     </StackLayout>
 </pages:PopupPage>

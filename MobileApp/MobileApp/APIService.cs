@@ -39,8 +39,10 @@ namespace MobileApp
             {
                 if(ex.Call.HttpStatus == System.Net.HttpStatusCode.Unauthorized)
                 {
-                    await PopupNavigation.Instance.PushAsync(new NotAuthorisedPopupView());
+                    await PopupNavigation.Instance.PushAsync(new NotAuthorisedPopupView("Invalid Username or Password!"));
                 }
+                else
+                    await PopupNavigation.Instance.PushAsync(new Error404PopupView());
                 throw;
             }
         }
@@ -59,6 +61,13 @@ namespace MobileApp
         public async Task<T> GetbyId<T>(int? id)
         {
             var result = await $"{apiUrl}/{ _route}/{id}".WithBasicAuth(Username, Password).GetJsonAsync<T>();
+
+            return result;
+        }
+
+        public async Task<int> GetProizvodOcjena(int? id)
+        {
+            var result = await $"{apiUrl}/{ _route}/GetProizvodOcjena/{id}".WithBasicAuth(Username, Password).GetJsonAsync<int>();
 
             return result;
         }

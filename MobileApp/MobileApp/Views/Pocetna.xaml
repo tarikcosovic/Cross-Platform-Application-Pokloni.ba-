@@ -8,9 +8,6 @@
              mc:Ignorable="d"
              x:Class="MobileApp.Views.ProizvodiPage"
              Title="Početna">
-    <ContentPage.BindingContext>
-        <viewModels:ProizvodiViewModel/>
-    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
             <Grid RowSpacing="10" ColumnSpacing="10">

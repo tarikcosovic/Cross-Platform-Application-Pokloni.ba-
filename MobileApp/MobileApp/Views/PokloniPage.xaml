@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:MobileApp.Converters"
              mc:Ignorable="d"
+             x:Name="PokloniPageName"
              x:Class="MobileApp.Views.PokloniPage">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -33,12 +34,17 @@
                     <DataTemplate>
                         <ViewCell>
                             <Grid Padding="0, 0, 0, 20">
-                                <Image HorizontalOptions="Start" WidthRequest="60" HeightRequest="90" d:Source="iconPng.png" Source="{Binding Slika, Converter={StaticResource imgConv}}" Aspect="AspectFit"></Image>
+                                    <Image HorizontalOptions="Start" WidthRequest="60" HeightRequest="90" d:Source="iconPng.png" Source="{Binding Slika, Converter={StaticResource imgConv}}" Aspect="AspectFit"></Image>
                                 <Label HorizontalOptions="Start" Margin="80,10,0,0" TextColor="Black" Text="{Binding Naziv}" d:Text="Central Perk Lego Igračka" WidthRequest="205" FontSize="17" LineBreakMode="NoWrap"  FontFamily="Montserrat-Light.ttf"/>
                                 <Label HorizontalOptions="Start" Margin="80,35,0,0" TextColor="Gray" Text="{Binding Opis}" d:Text="TESTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTttttTT" LineBreakMode="NoWrap" FontSize="15" FontAttributes="Italic" WidthRequest="200" FontFamily="Montserrat-Light.ttf"/>
-                                <Label HorizontalOptions="Start" Margin="180,55,0,0" TextColor="ForestGreen" Text="{Binding Cijena}" d:Text="15$" FontSize="19" FontFamily="Montserrat-Light.ttf"/>
-                                <Label HorizontalOptions="Start" Margin="80,55,0,0" TextColor="ForestGreen" Text="★★★★★" d:Text="★★★★★" FontSize="19" FontFamily="Montserrat-Light.ttf"/>
-                                <Image HorizontalOptions="End" Margin="0,0,0,0" WidthRequest="40" HeightRequest="40" d:Source="iconBuy1.png" Source="{Binding ItemIcon}" Aspect="AspectFit"></Image>
+                                    <Label HorizontalOptions="Start" Margin="180,55,0,0" TextColor="#F53C6C" Text="{Binding Cijena, StringFormat='{0} KM'}" d:Text="15$" FontSize="19" FontFamily="Montserrat-Light.ttf"/>
+                                    <Label HorizontalOptions="Start" Margin="80,55,0,0" TextColor="LightPink" Text="★★★★★" d:Text="★★★★★" FontSize="19" FontFamily="Montserrat-Light.ttf"/>
+                                    <Image HorizontalOptions="End" Margin="0,0,0,0" WidthRequest="40" HeightRequest="40" Source="iconAdd.png" d:Source="iconAdd.png" Aspect="AspectFit">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Source={x:Reference PokloniPageName}, Path=BindingContext.AddToCardCommand}">
+                                            </TapGestureRecognizer>
+                                        </Image.GestureRecognizers>
+                                    </Image>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

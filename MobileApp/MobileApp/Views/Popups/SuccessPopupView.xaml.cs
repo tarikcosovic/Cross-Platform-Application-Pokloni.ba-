@@ -14,22 +14,23 @@ namespace MobileApp.Views.Popups
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SuccessPopupView
     {
-        SwitchToMainPageDelegate del = null;
-        public SuccessPopupView(SwitchToMainPageDelegate temp = null)
+        private Page _page;
+        public SuccessPopupView(Page temp)
         {
             InitializeComponent();
-            del = temp;
+            _page = temp;
         }
 
         private async void AnimationView_OnFinish(object sender, EventArgs e)
         {
             await PopupNavigation.Instance.PopAsync();
 
-            del?.Invoke();
+            //del?.Invoke();
 
             //if(del != null)
             //    del();
 
+            Application.Current.MainPage = _page;
         }
     }
 }

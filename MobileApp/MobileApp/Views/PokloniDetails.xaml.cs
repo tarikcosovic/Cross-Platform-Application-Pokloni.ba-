@@ -1,6 +1,7 @@
 ﻿using MobileApp.Converters;
 using MobileApp.ViewModels;
 using Pokloni.ba.Model.Requests.Proizvodi;
+using System.Collections.Generic;
 using System.IO;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -15,13 +16,14 @@ namespace MobileApp.Views
         {
             InitializeComponent();
 
-            BindingContext = model = new PokloniDetailsViewModel(poklon, RatingLayout, productFeedback);
+            BindingContext = model = new PokloniDetailsViewModel(poklon, RatingLayout);
+
         }
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            await model.LoadOcjene();
+            await model.LoadOcjene(productFeedback);
         }
     }
 }

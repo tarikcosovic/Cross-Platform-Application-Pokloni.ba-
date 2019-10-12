@@ -5,12 +5,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:MobileApp.Converters"
              mc:Ignorable="d"
-             x:Class="MobileApp.Views.PokloniDetails">
+             x:Class="MobileApp.Views.PokloniDetails"
+             xmlns:viewModels="clr-namespace:MobileApp.ViewModels">
     <ContentPage.Resources>
         <ResourceDictionary>
             <local:ImageConverter x:Key="imgConv"></local:ImageConverter>
         </ResourceDictionary>
     </ContentPage.Resources>
+
+    <ContentPage.BindingContext>
+        <viewModels:PokloniDetailsViewModel/>
+    </ContentPage.BindingContext>
     
     <ContentPage.Content>
         <StackLayout>
@@ -30,7 +35,7 @@
             <Button TextColor="White" BackgroundColor="#F53C6C" HorizontalOptions="CenterAndExpand" WidthRequest="120" HeightRequest="35" VerticalOptions="CenterAndExpand" Text="OSTAVITE DOJAM" FontSize="12"></Button>
             <!--Product feedback-->
             <StackLayout>
-                <ListView x:Name="productFeedback">
+                <ListView x:Name="productFeedback" ItemsSource="{Binding ListaFeedbacka}">  
                     <d:ListView.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String></x:String>
@@ -41,8 +46,17 @@
                         <DataTemplate>
                             <ViewCell>
                                 <StackLayout Padding="10,0,0,0">
-                                    <Label TextColor="DarkSlateGray" FontAttributes="Bold" d:Text="Korisnik99" Text="{Binding KorisnikId}"></Label>
-                                    <Label d:Text="Proizvod je mnogo dobar" FontAttributes="Italic" Text="{Binding Komentar}"></Label>
+
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label TextColor="DarkSlateGray" FontAttributes="Bold" d:Text="Korisnikdoc99" Text="{Binding Ocjena.Korisnik.Username}" LineBreakMode="NoWrap"></Label>
+                                        <Image Opacity="{Binding rating1}" Aspect="AspectFit" Source="iconStar.png" HeightRequest="10" WidthRequest="10"></Image>
+                                        <Image Opacity="{Binding rating2}" Aspect="AspectFit" Source="iconStar.png" HeightRequest="10" WidthRequest="10"></Image>
+                                        <Image Opacity="{Binding rating3}" Aspect="AspectFit" Source="iconStar.png" HeightRequest="10" WidthRequest="10"></Image>
+                                        <Image Opacity="{Binding rating4}" Aspect="AspectFit" Source="iconStar.png" HeightRequest="10" WidthRequest="10"></Image>
+                                        <Image Opacity="{Binding rating5}" Aspect="AspectFit" Source="iconStar.png" HeightRequest="10" WidthRequest="10"></Image>
+                                    </StackLayout>
+                                    <Label d:Text="Proizvod je mnogo dobar" FontAttributes="Italic" Text="{Binding Ocjena.Komentar}"></Label>
+
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>
@@ -61,8 +75,8 @@
                 </Grid.ColumnDefinitions>
 
                 <ActivityIndicator x:Name="ActivityIndicator" IsRunning="{Binding IsBusy}" VerticalOptions="Center" Color="Purple"></ActivityIndicator>
-                <Button Grid.Column="0" d:Text="59.00 $" Text="{Binding Cijena, StringFormat='{0} $'}" TextColor="#F53C6C" BackgroundColor="#D8D3D5" FontSize="25"></Button>
-                <Button ImageSource="iconPng.png" Grid.Column="1" Text="ADD TO CART" TextColor="White" BackgroundColor="#F53C6C" FontSize="16"></Button>
+                <Button CornerRadius="0" Grid.Column="0" d:Text="59.00 $" Text="{Binding Cijena, StringFormat='{0} $'}" TextColor="#F53C6C" BackgroundColor="#342A29" FontSize="25"></Button>
+                <Button CornerRadius="0" ImageSource="iconPng.png" Grid.Column="1" Text="ADD TO CART" TextColor="White" BackgroundColor="#F53C6C" FontSize="16"></Button>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

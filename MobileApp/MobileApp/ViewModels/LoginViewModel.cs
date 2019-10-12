@@ -15,8 +15,6 @@ namespace MobileApp.ViewModels
         public LoginViewModel()
         {
             LoginCommand = new Command(async () => await Login());
-
-            delHandler = ChangePage;
         }
 
         string _username = String.Empty;
@@ -45,25 +43,15 @@ namespace MobileApp.ViewModels
             try
             {
                 await _apiService.Get<dynamic>();
-                await PopupNavigation.Instance.PushAsync(new SuccessPopupView(delHandler));
+                await PopupNavigation.Instance.PushAsync(new SuccessPopupView(new MainPage()));
             }
             catch(FlurlHttpException ex)
             {
-                if (ex.Call.HttpStatus != System.Net.HttpStatusCode.Unauthorized)
-                    await PopupNavigation.Instance.PushAsync(new Error404PopupView());
             }
             finally
             {
                 IsBusy = false;
             }
-        }
-
-        public delegate void SwitchToMainPageDelegate();
-        private readonly SwitchToMainPageDelegate delHandler;
-
-        void ChangePage()
-        {
-            Application.Current.MainPage = new MainPage();
         }
     }
 }

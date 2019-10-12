@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             mc:Ignorable="d"
+             x:Class="MobileApp.Views.RegistrationPage"
+             xmlns:viewModels="clr-namespace:MobileApp.ViewModels">
+    <ContentPage.BindingContext>
+        <viewModels:RegistrationViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Padding="50" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+
+            <Label HorizontalTextAlignment="Center" Margin="0, 50" TextColor="#F53C6C" FontSize="Large" Text="Registracija"/>
+
+            <Label Text="Username"/>
+            <Entry Text="{Binding Username}" TextColor="Black"></Entry>
+
+            <Label Text="Email"/>
+            <Entry Text="{Binding Email}" TextColor="Black"></Entry>
+
+            <Label Text="Password" />
+            <Entry IsPassword="True" Text="{Binding Password}" TextColor="Black"></Entry>
+
+            <Label Text="PasswordConfirmation" />
+            <Entry IsPassword="True" Text="{Binding PasswordConfirmation}" TextColor="Black"></Entry>
+
+            <Button Command="{Binding RegisterCommand}" HorizontalOptions="FillAndExpand" BackgroundColor="#F53C6C" TextColor="White" Margin="0, 35, 0, 0"  Text="Submit"></Button>
+            <ActivityIndicator x:Name="ActivityIndicator" IsRunning="{Binding IsBusy}" VerticalOptions="Center" Color="#F53C6C"></ActivityIndicator>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

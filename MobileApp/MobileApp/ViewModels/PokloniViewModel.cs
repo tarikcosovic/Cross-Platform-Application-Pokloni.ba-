@@ -8,6 +8,8 @@ using Pokloni.ba.Model.Requests.Proizvodi;
 using Rg.Plugins.Popup.Services;
 using MobileApp.Views.Popups;
 using MobileApp.Converters;
+using System.Windows.Input;
+using System.Threading.Tasks;
 
 namespace MobileApp.ViewModels
 {
@@ -18,11 +20,17 @@ namespace MobileApp.ViewModels
 
         private ObservableCollection<ProizvodVM> _listaProizvoda = new ObservableCollection<ProizvodVM>();
         private ObservableCollection<Kategorije> _listaKategorija = new ObservableCollection<Kategorije>();
+        public ICommand AddToCardCommand { get;}
+        
         public PokloniViewModel()
+        {
+            AddToCardCommand = new Command(async () => await DodajUKorpu());
+
+        }
+        public async Task DodajUKorpu()
         {
 
         }
-
         public async void LoadList(ListView listView, Picker picker)
         {
             try

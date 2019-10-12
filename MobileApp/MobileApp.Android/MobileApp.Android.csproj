@@ -169,10 +169,7 @@
     <AndroidResource Include="Resources\drawable\iconFilter.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\iconBuy1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\iconBuy2.png" />
+    <AndroidResource Include="Resources\drawable\iconAdd.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\iconStar.png" />

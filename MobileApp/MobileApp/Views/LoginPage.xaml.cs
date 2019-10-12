@@ -19,5 +19,10 @@ namespace MobileApp.Views
             InitializeComponent();
             BindingContext = model = new LoginViewModel();
         }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new RegistrationPage());
+        }
     }
 }

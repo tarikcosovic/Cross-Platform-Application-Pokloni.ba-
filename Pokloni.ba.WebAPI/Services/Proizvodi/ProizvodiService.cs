@@ -33,6 +33,20 @@ namespace Pokloni.ba.WebAPI.Services.Proizvodi
 
             return _mapper.Map<ProizvodVM>(temp);
         }
+        public int GetProizvodOcjena(int id)
+        {
+            var ocjene = _db.Ocjena.Where(x => x.ProizvodId == id).ToList();
+
+            int prosjcnaOcjena = 0;
+            foreach(var ocjena in ocjene)
+            {
+                prosjcnaOcjena += ocjena.NumerickaOcjena;
+            }
+            if (ocjene.Count == 0)
+                return 0;
+
+            return prosjcnaOcjena / ocjene.Count();
+        }
 
         public ProizvodVM Insert(ProizvodVM request)
         {

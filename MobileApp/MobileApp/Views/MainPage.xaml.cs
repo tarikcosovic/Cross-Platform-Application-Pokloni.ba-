@@ -46,7 +46,9 @@ namespace MobileApp.Views
                         MenuPages.Add(id, new NavigationPage(new ProizvodiPage()));
                         break;
                     case (int)MenuItemType.Odjava:
-                        MenuPages.Add(id, new NavigationPage(new ProizvodiPage()));
+                        Application.Current.MainPage = new LoginPage();
+                        APIService.Username = "";
+                        APIService.Password = "";
                         break;
                 }
             }
