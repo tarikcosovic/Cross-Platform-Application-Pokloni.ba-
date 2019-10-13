@@ -25,7 +25,6 @@ namespace MobileApp.Views
                 new HomeMenuItem {Id = MenuItemType.Korpa, Title="Korpa", ItemIcon = "iconCart.png" },
                 new HomeMenuItem {Id = MenuItemType.Narudzbe, Title="Narudžbe", ItemIcon = "iconOrder.png" },
                 new HomeMenuItem {Id = MenuItemType.Profil, Title="Korisnički profil", ItemIcon = "iconProfile.png" },
-                new HomeMenuItem {Id = MenuItemType.Odjava, Title="Odjava", ItemIcon = "iconLogout.png" },
             };
 
             ListViewMenu.ItemsSource = menuItems;

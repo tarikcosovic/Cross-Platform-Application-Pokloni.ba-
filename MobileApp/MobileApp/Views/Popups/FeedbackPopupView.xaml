@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    mc:Ignorable="d"
+             x:Class="MobileApp.Views.Popups.FeedbackPopupView"
+    BackgroundColor="#D9000000"
+    CloseWhenBackgroundIsClicked="True">
+
+    <StackLayout Padding="50" HorizontalOptions="FillAndExpand">
+
+        <forms:AnimationView 
+    Scale="1.4"
+	x:Name="errorAnimation" 
+	Animation="8977-ratings.json" 
+	Loop="True" 
+	AutoPlay="True"
+    HeightRequest="100"
+    WidthRequest="200"
+	VerticalOptions="Center" 
+	HorizontalOptions="Center" />
+
+
+        <StackLayout VerticalOptions="EndAndExpand">
+            <Label Text="{Binding Ocjena}" d:Text="4" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" FontSize="45" d:TextColor="Black" TextColor="White"></Label>
+            <Slider VerticalOptions="EndAndExpand" ThumbColor="White" Maximum="5" Minimum="1" Value="{Binding Ocjena}" BackgroundColor="#F53C6C"></Slider>
+        </StackLayout>
+        
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Label HorizontalTextAlignment="Center" Text="Vaš komentar:" d:TextColor="Black" TextColor="White"></Label>
+            <Label Text="{Binding Komentar}" VerticalOptions="Center" d:TextColor="Black" TextColor="White" FontAttributes="Italic" HeightRequest="70" d:Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer condimentum viverra sem a ultricies. Integer quis vestibulum turpis. Quisque sed porta augue. Nullam condimentum pellentesque lectus vel viverra."></Label>
+        </StackLayout>
+
+
+        <Entry Text="{Binding Komentar}" VerticalOptions="EndAndExpand" PlaceholderColor="White" d:PlaceholderColor="Black" d:TextColor="Black" TextColor="White" Placeholder="Comment here.." Margin="0,0,0,0"></Entry>
+        <Button VerticalOptions="EndAndExpand" BackgroundColor="#F53C6C" TextColor="White" Text="Submit"></Button>
+    </StackLayout>
+
+</pages:PopupPage>

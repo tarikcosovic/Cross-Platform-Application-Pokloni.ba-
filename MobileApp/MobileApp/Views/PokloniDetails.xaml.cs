@@ -1,6 +1,8 @@
 ﻿using MobileApp.Converters;
 using MobileApp.ViewModels;
+using MobileApp.Views.Popups;
 using Pokloni.ba.Model.Requests.Proizvodi;
+using Rg.Plugins.Popup.Services;
 using System.Collections.Generic;
 using System.IO;
 using Xamarin.Forms;
@@ -24,6 +26,11 @@ namespace MobileApp.Views
         {
             base.OnAppearing();
             await model.LoadOcjene(productFeedback);
+        }
+
+        private async void Button_Clicked(object sender, System.EventArgs e)
+        {
+            await PopupNavigation.Instance.PushAsync(new FeedbackPopupView());
         }
     }
 }

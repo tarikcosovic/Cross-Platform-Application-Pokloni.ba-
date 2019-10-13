@@ -12,10 +12,84 @@ namespace MobileApp.ViewModels
 {
     public class PokloniDetailsViewModel : BaseViewModel
     {
+        private readonly APIService _apiService = new APIService("Ocjene");
+        private readonly APIService _apiServiceProizvodi = new APIService("Proizvodi");
+        private StackLayout _ratingLayout = null;
+        private readonly int _poklonId;
 
-        public PokloniDetailsViewModel()
+        public ObservableCollection<UserFeedback> ListaFeedbacka { get; set; } = new ObservableCollection<UserFeedback>();
+        public PokloniDetailsViewModel(ProizvodVM proizvod, StackLayout ratingLayout)
         {
+            _naziv = proizvod.Naziv;
+            _opis = proizvod.Opis;
+            _slika = proizvod.Slika;
+            _cijena = proizvod.Cijena;
 
+            _ratingLayout = ratingLayout;
+            _poklonId = proizvod.ProizvodId;
+        }
+
+        public async Task LoadOcjene(ListView feedbackListView)
+        {
+            try
+            {
+                IsBusy = true;
+                var listaOcjena = await _apiService.Get<IEnumerable<OcjenaVM>>();
+                var prosjecnaOcjena = await _apiServiceProizvodi.GetProizvodOcjena(_poklonId);
+
+                if (prosjecnaOcjena == 0)
+                {
+                    _ratingLayout.Children.Add(new Label() { Text = "Poklon još nije ocjenjen!" });
+                    return;
+                }
+
+                ListaFeedbacka.Clear();
+                foreach (var ocjena in listaOcjena)
+                {
+                    if(ocjena.ProizvodId == _poklonId)
+                    {
+                        if (ocjena.NumerickaOcjena <= 0) continue;
+                        UserFeedback temp = new UserFeedback(ocjena.Korisnik.Username, ocjena.Komentar);
+
+                        for(int i = ocjena.NumerickaOcjena - 1; i >=0; i--)
+                            temp.ratings[i] = 1.0m;
+
+                        ListaFeedbacka.Add(temp);
+                    }
+                }
+                for(int i = 0; i < 5; i++)
+                {
+                    Image img = new Image();
+                    img.Source = "iconStar.png";
+                    img.Aspect = Aspect.AspectFit;
+                    if (--prosjecnaOcjena >= 0)
+                        img.Opacity = 1;
+                    else img.Opacity = 0.3;
+
+                    _ratingLayout.Children.Add(img);
+                }
+            }
+            catch(Exception e)
+            {
+                await PopupNavigation.Instance.PushAsync(new Error404PopupView());
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+        public class UserFeedback
+        {
+            public decimal[] ratings { get; set; } = new decimal[5] { 0.3m, 0.3m, 0.3m, 0.3m, 0.3m };
+            public string NazivKorisnika { get; set; }
+            public string KomentarKorisnika { get; set; }
+
+            public UserFeedback(string korisnik, string komentar)
+            {
+                NazivKorisnika = korisnik;
+                KomentarKorisnika = komentar;
+            }
         }
 
         string _naziv = String.Empty;
@@ -46,112 +120,5 @@ namespace MobileApp.ViewModels
             set { SetProperty(ref _cijena, value); }
         }
 
-        private readonly APIService _apiService = new APIService("Ocjene");
-        private readonly APIService _apiServiceProizvodi = new APIService("Proizvodi");
-        private StackLayout _ratingLayout = null;
-        private readonly int _poklonId;
-
-        public ObservableCollection<UserFeedback> ListaFeedbacka = new ObservableCollection<UserFeedback>();
-        public PokloniDetailsViewModel(ProizvodVM proizvod, StackLayout ratingLayout)
-        {
-            _naziv = proizvod.Naziv;
-            _opis = proizvod.Opis;
-            _slika = proizvod.Slika;
-            _cijena = proizvod.Cijena;
-
-            _ratingLayout = ratingLayout;
-            _poklonId = proizvod.ProizvodId;
-        }
-
-        public async Task LoadOcjene(ListView feedbackListView)
-        {
-            try
-            {
-                IsBusy = true;
-                var listaOcjena = await _apiService.Get<IEnumerable<OcjenaVM>>();
-                var prosjecnaOcjena = await _apiServiceProizvodi.GetProizvodOcjena(_poklonId);
-
-                if (prosjecnaOcjena == 0)
-                {
-                    _ratingLayout.Children.Add(new Label() { Text = "Poklon još nije ocjenjen!" });
-                    return;
-                }
-
-                foreach (var ocjena in listaOcjena)
-                {
-                    if(ocjena.ProizvodId == _poklonId)
-                    {
-                        UserFeedback temp = new UserFeedback(ocjena);
-                        if (ocjena.NumerickaOcjena <= 0) continue;
-
-                        var prosjek = ocjena.NumerickaOcjena;
-
-                        if(prosjek > 0)
-                        {
-                            temp.rating1 = 1;
-                            prosjek--;
-                        }
-                        if(prosjek>0)
-                        {
-                            temp.rating2 = 1;
-                            prosjek--;
-                        }
-                        if (prosjek > 0)
-                        {
-                            temp.rating3 = 1;
-                            prosjek--;
-                        }
-                        if (prosjek > 0)
-                        {
-                            temp.rating4 = 1;
-                            prosjek--;
-                        }
-                        if (prosjek > 0)
-                            temp.rating5 = 1;
-
-                        ListaFeedbacka.Add(temp);
-                    }
-                }
-
-                feedbackListView.ItemsSource = null;
-                feedbackListView.ItemsSource = ListaFeedbacka;
-
-                for(int i = 0; i < 5; i++)
-                {
-                    Image img = new Image();
-                    img.Source = "iconStar.png";
-                    img.Aspect = Aspect.AspectFit;
-                    if (--prosjecnaOcjena >= 0)
-                        img.Opacity = 1;
-                    else img.Opacity = 0.3;
-
-                    _ratingLayout.Children.Add(img);
-                }
-            }
-            catch(Exception e)
-            {
-                await PopupNavigation.Instance.PushAsync(new Error404PopupView());
-            }
-            finally
-            {
-                IsBusy = false;
-            }
-        }
-
-        public class UserFeedback
-        {
-            public double rating1 = 0.3;
-            public double rating2 = 0.3;
-            public double rating3 = 0.3;
-            public double rating4 = 0.3;
-            public double rating5 = 0.3;
-
-            public OcjenaVM Ocjena = null;
-
-            public UserFeedback(OcjenaVM ocjena)
-            {
-                this.Ocjena = ocjena;
-            }
-        }
     }
 }

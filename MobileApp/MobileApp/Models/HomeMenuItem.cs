@@ -13,7 +13,6 @@ namespace MobileApp.Models
         Korpa,
         Narudzbe,
         Profil,
-        Odjava
     }
     public class HomeMenuItem
     {

@@ -12,10 +12,6 @@
             <local:ImageConverter x:Key="imgConv"></local:ImageConverter>
         </ResourceDictionary>
     </ContentPage.Resources>
-
-    <ContentPage.BindingContext>
-        <viewModels:PokloniDetailsViewModel/>
-    </ContentPage.BindingContext>
     
     <ContentPage.Content>
         <StackLayout>
@@ -32,7 +28,7 @@
             
             <Label HorizontalOptions="Center"  TextColor="DarkSlateGray" d:Text="Central Perk Lego from F.R.I.E.N.D.S." Text="{Binding Naziv}" LineBreakMode="NoWrap" FontSize="Large" FontAttributes="Bold"></Label>
             <Label Margin="30,10,0,10" VerticalOptions="FillAndExpand"  HorizontalOptions="Start" Text="{Binding Opis}" d:Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tristique ultrices massa, non vehicula lectus luctus et. Morbi aliquam erat quis lectus consectetur convallis. Fusce suscipit arcu sed ipsum finibus, et lobortis eros egestas. Aenean finibus et elit et maximus. Donec vel nulla id elit commodo pretium maximus sit amet ex. " FontSize="Medium" FontAttributes="Italic"></Label>
-            <Button TextColor="White" BackgroundColor="#F53C6C" HorizontalOptions="CenterAndExpand" WidthRequest="120" HeightRequest="35" VerticalOptions="CenterAndExpand" Text="OSTAVITE DOJAM" FontSize="12"></Button>
+            <Button TextColor="White" BackgroundColor="#F53C6C" HorizontalOptions="CenterAndExpand" WidthRequest="120" HeightRequest="35" VerticalOptions="CenterAndExpand" Text="OSTAVITE DOJAM" FontSize="12" Clicked="Button_Clicked"></Button>
             <!--Product feedback-->
             <StackLayout>
                 <ListView x:Name="productFeedback" ItemsSource="{Binding ListaFeedbacka}">  
@@ -45,19 +41,21 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <StackLayout Padding="10,0,0,0">
+                                <ScrollView>
+                                    <StackLayout Padding="10,0,0,0">
 
-                                    <StackLayout Orientation="Horizontal">
-                                        <Label TextColor="DarkSlateGray" FontAttributes="Bold" d:Text="Korisnikdoc99" Text="{Binding Ocjena.Korisnik.Username}" LineBreakMode="NoWrap"></Label>
-                                        <Image Opacity="{Binding rating1}" Aspect="AspectFit" Source="iconStar.png" HeightRequest="10" WidthRequest="10"></Image>
-                                        <Image Opacity="{Binding rating2}" Aspect="AspectFit" Source="iconStar.png" HeightRequest="10" WidthRequest="10"></Image>
-                                        <Image Opacity="{Binding rating3}" Aspect="AspectFit" Source="iconStar.png" HeightRequest="10" WidthRequest="10"></Image>
-                                        <Image Opacity="{Binding rating4}" Aspect="AspectFit" Source="iconStar.png" HeightRequest="10" WidthRequest="10"></Image>
-                                        <Image Opacity="{Binding rating5}" Aspect="AspectFit" Source="iconStar.png" HeightRequest="10" WidthRequest="10"></Image>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label TextColor="DarkSlateGray" FontAttributes="Bold" d:Text="Korisnikdoc99" Text="{Binding NazivKorisnika}" LineBreakMode="NoWrap"></Label>
+                                            <Image Opacity="{Binding ratings[0]}" Aspect="AspectFit" Source="iconStar.png" HeightRequest="10" WidthRequest="10"></Image>
+                                            <Image Opacity="{Binding ratings[1]}" Aspect="AspectFit" Source="iconStar.png" HeightRequest="10" WidthRequest="10"></Image>
+                                            <Image Opacity="{Binding ratings[2]}" Aspect="AspectFit" Source="iconStar.png" HeightRequest="10" WidthRequest="10"></Image>
+                                            <Image Opacity="{Binding ratings[3]}" Aspect="AspectFit" Source="iconStar.png" HeightRequest="10" WidthRequest="10"></Image>
+                                            <Image Opacity="{Binding ratings[4]}" Aspect="AspectFit" Source="iconStar.png" HeightRequest="10" WidthRequest="10"></Image>
+                                        </StackLayout>
+                                        <Label d:Text="Proizvod je mnogo dobar" FontAttributes="Italic" Text="{Binding KomentarKorisnika}"></Label>
+
                                     </StackLayout>
-                                    <Label d:Text="Proizvod je mnogo dobar" FontAttributes="Italic" Text="{Binding Ocjena.Komentar}"></Label>
-
-                                </StackLayout>
+                                </ScrollView>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>

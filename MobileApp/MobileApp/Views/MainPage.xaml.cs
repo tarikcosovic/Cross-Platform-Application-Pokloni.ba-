@@ -6,6 +6,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using MobileApp.Models;
+using Xamarin.Forms.PlatformConfiguration;
 
 namespace MobileApp.Views
 {
@@ -44,11 +45,6 @@ namespace MobileApp.Views
                         break;
                     case (int)MenuItemType.Profil:
                         MenuPages.Add(id, new NavigationPage(new ProizvodiPage()));
-                        break;
-                    case (int)MenuItemType.Odjava:
-                        Application.Current.MainPage = new LoginPage();
-                        APIService.Username = "";
-                        APIService.Password = "";
                         break;
                 }
             }
