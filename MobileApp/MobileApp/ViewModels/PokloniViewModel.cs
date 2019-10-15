@@ -20,8 +20,8 @@ namespace MobileApp.ViewModels
 
         private ObservableCollection<ProizvodVM> _listaProizvoda = new ObservableCollection<ProizvodVM>();
         private ObservableCollection<Kategorije> _listaKategorija = new ObservableCollection<Kategorije>();
-        public ICommand AddToCardCommand { get;}
-        
+        public ICommand AddToCardCommand { get; }
+
         public PokloniViewModel()
         {
             AddToCardCommand = new Command(async () => await DodajUKorpu());
@@ -39,7 +39,7 @@ namespace MobileApp.ViewModels
                 _listaProizvoda = await _apiService.Get<ObservableCollection<ProizvodVM>>();
                 _listaKategorija = await _apiServiceKategorije.Get<ObservableCollection<Kategorije>>();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 await PopupNavigation.Instance.PushAsync(new Error404PopupView());
             }
@@ -51,13 +51,30 @@ namespace MobileApp.ViewModels
             picker.ItemsSource = _listaKategorija;
             picker.ItemDisplayBinding = new Binding("Naziv");
 
+            foreach (var item in _listaProizvoda)
+            {
+                item.Sifra = string.Empty;
+                try
+                {
+                    var ocjena = await _apiService.GetProizvodOcjena(item.ProizvodId);
+                    for (int i = 0; i < ocjena; i++)
+                    {
+                        item.Sifra += "★";
+                    }
+                }
+                catch (Exception e)
+                {
+
+                }
+
+            }
             listView.ItemsSource = _listaProizvoda;
         }
 
         public void LoadFilteredList(ListView listView, int kategorijaID)
         {
             List<ProizvodVM> _filtriranaLista = new List<ProizvodVM>();
-            foreach(var item in _listaProizvoda)
+            foreach (var item in _listaProizvoda)
                 _filtriranaLista.Add(item);
 
             for (int i = _filtriranaLista.Count - 1; i >= 0; i--)

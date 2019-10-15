@@ -17,7 +17,7 @@
         <StackLayout>
 
             <!--Product Details-->
-                <Image Aspect="AspectFit" Source="{Binding Slika, Converter={StaticResource imgConv}}" d:Source="pokloni3.jpg"></Image>
+                <Image Aspect="AspectFit" Source="{Binding Slika, Converter={StaticResource imgConv}}" HeightRequest="200" WidthRequest="400" d:Source="pokloni3.jpg"></Image>
                 <StackLayout x:Name="RatingLayout" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" HeightRequest="25">
                 <d:Image Aspect="AspectFit" Source="iconStar.png"></d:Image>
                 <d:Image Aspect="AspectFit" Source="iconStar.png"></d:Image>
@@ -30,6 +30,8 @@
             <Label Margin="30,10,0,10" VerticalOptions="FillAndExpand"  HorizontalOptions="Start" Text="{Binding Opis}" d:Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tristique ultrices massa, non vehicula lectus luctus et. Morbi aliquam erat quis lectus consectetur convallis. Fusce suscipit arcu sed ipsum finibus, et lobortis eros egestas. Aenean finibus et elit et maximus. Donec vel nulla id elit commodo pretium maximus sit amet ex. " FontSize="Medium" FontAttributes="Italic"></Label>
             <Button TextColor="White" BackgroundColor="#F53C6C" HorizontalOptions="CenterAndExpand" WidthRequest="120" HeightRequest="35" VerticalOptions="CenterAndExpand" Text="OSTAVITE DOJAM" FontSize="12" Clicked="Button_Clicked"></Button>
             <!--Product feedback-->
+            <ActivityIndicator x:Name="ActivityIndicator" IsRunning="{Binding IsBusy}" VerticalOptions="Center" Color="#F53C6C"></ActivityIndicator>
+
             <StackLayout>
                 <ListView x:Name="productFeedback" ItemsSource="{Binding ListaFeedbacka}">  
                     <d:ListView.ItemsSource>
@@ -41,7 +43,7 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <ScrollView>
+                                <ScrollView HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never">
                                     <StackLayout Padding="10,0,0,0">
 
                                         <StackLayout Orientation="Horizontal">
@@ -72,7 +74,6 @@
                     <ColumnDefinition Width="60*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <ActivityIndicator x:Name="ActivityIndicator" IsRunning="{Binding IsBusy}" VerticalOptions="Center" Color="Purple"></ActivityIndicator>
                 <Button CornerRadius="0" Grid.Column="0" d:Text="59.00 $" Text="{Binding Cijena, StringFormat='{0} $'}" TextColor="#F53C6C" BackgroundColor="#342A29" FontSize="25"></Button>
                 <Button CornerRadius="0" ImageSource="iconPng.png" Grid.Column="1" Text="ADD TO CART" TextColor="White" BackgroundColor="#F53C6C" FontSize="16"></Button>
             </Grid>

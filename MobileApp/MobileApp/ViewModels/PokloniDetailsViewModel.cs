@@ -15,7 +15,7 @@ namespace MobileApp.ViewModels
         private readonly APIService _apiService = new APIService("Ocjene");
         private readonly APIService _apiServiceProizvodi = new APIService("Proizvodi");
         private StackLayout _ratingLayout = null;
-        private readonly int _poklonId;
+        public readonly int _poklonId;
 
         public ObservableCollection<UserFeedback> ListaFeedbacka { get; set; } = new ObservableCollection<UserFeedback>();
         public PokloniDetailsViewModel(ProizvodVM proizvod, StackLayout ratingLayout)
@@ -78,7 +78,6 @@ namespace MobileApp.ViewModels
                 IsBusy = false;
             }
         }
-
         public class UserFeedback
         {
             public decimal[] ratings { get; set; } = new decimal[5] { 0.3m, 0.3m, 0.3m, 0.3m, 0.3m };

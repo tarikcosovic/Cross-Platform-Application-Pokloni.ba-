@@ -15,7 +15,7 @@ namespace MobileApp.Views.Popups
     public partial class SuccessPopupView
     {
         private Page _page;
-        public SuccessPopupView(Page temp)
+        public SuccessPopupView(Page temp = null)
         {
             InitializeComponent();
             _page = temp;
@@ -30,7 +30,8 @@ namespace MobileApp.Views.Popups
             //if(del != null)
             //    del();
 
-            Application.Current.MainPage = _page;
+            if(_page != null)
+                Application.Current.MainPage = _page;
         }
     }
 }

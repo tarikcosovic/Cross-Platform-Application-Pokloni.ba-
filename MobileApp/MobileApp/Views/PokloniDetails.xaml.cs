@@ -30,7 +30,7 @@ namespace MobileApp.Views
 
         private async void Button_Clicked(object sender, System.EventArgs e)
         {
-            await PopupNavigation.Instance.PushAsync(new FeedbackPopupView());
+            await PopupNavigation.Instance.PushAsync(new FeedbackPopupView(model._poklonId));
         }
     }
 }

@@ -54,6 +54,7 @@
             this.btnOdbij.TabIndex = 37;
             this.btnOdbij.Text = "Odbij ";
             this.btnOdbij.UseVisualStyleBackColor = false;
+            this.btnOdbij.Click += new System.EventHandler(this.BtnOdbij_Click);
             // 
             // btnPrihvati
             // 
@@ -68,6 +69,7 @@
             this.btnPrihvati.TabIndex = 38;
             this.btnPrihvati.Text = "Prihvati";
             this.btnPrihvati.UseVisualStyleBackColor = false;
+            this.btnPrihvati.Click += new System.EventHandler(this.BtnPrihvati_Click);
             // 
             // btnKontakt
             // 

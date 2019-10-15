@@ -6,12 +6,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
     mc:Ignorable="d"
+    xmlns:local="clr-namespace:MobileApp.CustomRenderers"
              x:Class="MobileApp.Views.Popups.FeedbackPopupView"
     BackgroundColor="#D9000000"
     CloseWhenBackgroundIsClicked="True">
 
     <StackLayout Padding="50" HorizontalOptions="FillAndExpand">
 
+        <Button Margin="-20,-20,0,0" BackgroundColor="#F53C6C" TextColor="White" WidthRequest="60" HeightRequest="40" Text="X" HorizontalOptions="Start" Clicked="Button_Clicked_1"></Button>
         <forms:AnimationView 
     Scale="1.4"
 	x:Name="errorAnimation" 
@@ -35,8 +37,8 @@
         </StackLayout>
 
 
-        <Entry Text="{Binding Komentar}" VerticalOptions="EndAndExpand" PlaceholderColor="White" d:PlaceholderColor="Black" d:TextColor="Black" TextColor="White" Placeholder="Comment here.." Margin="0,0,0,0"></Entry>
-        <Button VerticalOptions="EndAndExpand" BackgroundColor="#F53C6C" TextColor="White" Text="Submit"></Button>
+        <local:WhiteEntry Text="{Binding Komentar}" VerticalOptions="EndAndExpand" PlaceholderColor="White" TextColor="White" Placeholder="Comment here.." Margin="0,0,0,0"></local:WhiteEntry>
+        <Button VerticalOptions="EndAndExpand" BackgroundColor="#F53C6C" TextColor="White" Text="Submit" Clicked="Button_Clicked"></Button>
     </StackLayout>
 
 </pages:PopupPage>

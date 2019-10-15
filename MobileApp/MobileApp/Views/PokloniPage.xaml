@@ -13,7 +13,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <ScrollView Orientation="Vertical">
+        <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never">
             <StackLayout Padding="30" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
 
             <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
@@ -23,7 +23,7 @@
             <ActivityIndicator IsRunning="{Binding IsBusy}" VerticalOptions="Center" Color="Purple"></ActivityIndicator>
 
             <ListView x:Name="proizvodiListView"
-                    HasUnevenRows="True" ItemTapped="ProizvodiListView_ItemTapped">
+                    HasUnevenRows="True" ItemTapped="ProizvodiListView_ItemTapped" HeightRequest="500">
                 <d:ListView.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Početna stranica</x:String>
@@ -38,7 +38,7 @@
                                 <Label HorizontalOptions="Start" Margin="80,10,0,0" TextColor="Black" Text="{Binding Naziv}" d:Text="Central Perk Lego Igračka" WidthRequest="205" FontSize="17" LineBreakMode="NoWrap"  FontFamily="Montserrat-Light.ttf"/>
                                 <Label HorizontalOptions="Start" Margin="80,35,0,0" TextColor="Gray" Text="{Binding Opis}" d:Text="TESTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTttttTT" LineBreakMode="NoWrap" FontSize="15" FontAttributes="Italic" WidthRequest="200" FontFamily="Montserrat-Light.ttf"/>
                                     <Label HorizontalOptions="Start" Margin="180,55,0,0" TextColor="#F53C6C" Text="{Binding Cijena, StringFormat='{0} KM'}" d:Text="15$" FontSize="19" FontFamily="Montserrat-Light.ttf"/>
-                                    <Label HorizontalOptions="Start" Margin="80,55,0,0" TextColor="LightPink" Text="★★★★★" d:Text="★★★★★" FontSize="19" FontFamily="Montserrat-Light.ttf"/>
+                                    <Label HorizontalOptions="Start" Margin="80,55,0,0" TextColor="LightPink" Text="{Binding Sifra}" d:Text="★★★★★" FontSize="19" FontFamily="Montserrat-Light.ttf"/>
                                     <Image HorizontalOptions="End" Margin="0,0,0,0" WidthRequest="40" HeightRequest="40" Source="iconAdd.png" d:Source="iconAdd.png" Aspect="AspectFit">
                                         <Image.GestureRecognizers>
                                             <TapGestureRecognizer Command="{Binding Source={x:Reference PokloniPageName}, Path=BindingContext.AddToCardCommand}">

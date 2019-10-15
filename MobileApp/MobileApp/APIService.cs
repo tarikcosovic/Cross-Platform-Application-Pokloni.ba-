@@ -65,6 +65,13 @@ namespace MobileApp
             return result;
         }
 
+        public async Task<T> GetUserByUsername<T>(string id)
+        {
+            var result = await $"{apiUrl}/{ _route}/GetByUsername/{id}".WithBasicAuth(Username, Password).GetJsonAsync<T>();
+
+            return result;
+        }
+
         public async Task<int> GetProizvodOcjena(int? id)
         {
             var result = await $"{apiUrl}/{ _route}/GetProizvodOcjena/{id}".WithBasicAuth(Username, Password).GetJsonAsync<int>();

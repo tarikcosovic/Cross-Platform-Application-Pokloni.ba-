@@ -422,7 +422,7 @@
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Komenar";
+            this.columnHeader3.Text = "Komentar";
             this.columnHeader3.Width = 300;
             // 
             // frmProizvodiDetalji
