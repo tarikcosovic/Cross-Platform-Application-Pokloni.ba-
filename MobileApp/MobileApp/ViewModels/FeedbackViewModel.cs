@@ -3,6 +3,7 @@ using Pokloni.ba.Model.Requests.Proizvodi;
 using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -40,7 +41,7 @@ namespace MobileApp.ViewModels
                 await PopupNavigation.Instance.PopAsync();
                 await PopupNavigation.Instance.PushAsync(new SuccessPopupView());
             }
-            catch(Exception e)
+            catch(AmbiguousMatchException)
             {
                 await PopupNavigation.Instance.PushAsync(new NotAuthorisedPopupView("Već ste ocjenili ovaj poklon!"));
             }

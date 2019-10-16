@@ -11,6 +11,7 @@ namespace MobileApp.Views
     public partial class PokloniPage : ContentPage
     {
         private PokloniViewModel model = null;
+        private bool OpenedOnce = false;
         public PokloniPage()
         {
             InitializeComponent();
@@ -20,7 +21,11 @@ namespace MobileApp.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            model.LoadList(proizvodiListView, KategorijePicker);
+            if(!OpenedOnce)
+            {
+                model.LoadList(proizvodiListView, KategorijePicker);
+                OpenedOnce = true;
+            }
         }
 
         protected void Picker_SelectedIndexChanged(object sender, EventArgs e)
@@ -38,6 +43,12 @@ namespace MobileApp.Views
                 this.Navigation.PushAsync(new PokloniDetails(e.Item as ProizvodVM));
             }
 
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            var clicked = e as TappedEventArgs;
+            model.DodajUKorpu(clicked.Parameter as ProizvodVM);
         }
     }
 }

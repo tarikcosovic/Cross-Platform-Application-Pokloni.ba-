@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:MobileApp.ViewModels"
+             xmlns:local="clr-namespace:MobileApp.Converters"
+             mc:Ignorable="d"
+             x:Class="MobileApp.Views.KorpaPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:ImageConverter x:Key="imgConv"></local:ImageConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Text="Korpa" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="35" TextColor="DarkSlateGray"></Label>
+            <ActivityIndicator IsRunning="{Binding IsBusy}" VerticalOptions="Center" Color="Purple"></ActivityIndicator>
+
+            <ScrollView>
+                <ListView x:Name="korpalw" SelectionMode="None"
+                    HasUnevenRows="True" HeightRequest="500">
+                    <d:ListView.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Početna stranica</x:String>
+                            <x:String>Pokloni</x:String>
+                        </x:Array>
+                    </d:ListView.ItemsSource>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="20, 0, 0, 20">
+                                    <Image HorizontalOptions="Start" WidthRequest="60" HeightRequest="90" d:Source="iconPng.png" Source="{Binding Proizvod.Slika, Converter={StaticResource imgConv}}" Aspect="AspectFit"></Image>
+                                    <Label HorizontalOptions="Start" Margin="80,20,0,0" TextColor="Black" Text="{Binding Proizvod.Naziv}" d:Text="Central Perk Lego Igračka" WidthRequest="205" FontSize="17" LineBreakMode="NoWrap"  FontFamily="Montserrat-Light.ttf"/>
+                                    <Label HorizontalOptions="Start" Margin="80,45,0,0" TextColor="Gray" Text="{Binding Proizvod.Opis}" d:Text="TESTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTttttTT" LineBreakMode="NoWrap" FontSize="15" FontAttributes="Italic" WidthRequest="200" FontFamily="Montserrat-Light.ttf"/>
+                                    <Entry HorizontalOptions="End" VerticalOptions="Center" HorizontalTextAlignment="Center" Margin="0,0,20,0" TextColor="#F53C6C" Text="{Binding Narudzba.Kolicina}" d:Text="1" FontSize="19" WidthRequest="50" FontFamily="Montserrat-Light.ttf"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+
+            <Label x:Name="Total" Margin="0,0,30,20" TextColor="DarkSlateGray" FontSize="35" HorizontalOptions="End" VerticalOptions="End" Text=""></Label>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

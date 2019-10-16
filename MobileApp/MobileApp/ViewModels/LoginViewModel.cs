@@ -3,6 +3,7 @@ using MobileApp.Views;
 using MobileApp.Views.Popups;
 using Rg.Plugins.Popup.Services;
 using System;
+using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -45,7 +46,7 @@ namespace MobileApp.ViewModels
                 await _apiService.Get<dynamic>();
                 await PopupNavigation.Instance.PushAsync(new SuccessPopupView(new MainPage()));
             }
-            catch(FlurlHttpException ex)
+            catch(AmbiguousMatchException)
             {
             }
             finally

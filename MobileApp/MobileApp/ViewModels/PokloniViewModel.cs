@@ -10,6 +10,8 @@ using MobileApp.Views.Popups;
 using MobileApp.Converters;
 using System.Windows.Input;
 using System.Threading.Tasks;
+using Pokloni.ba.Model.Requests.Narudzba;
+using System.Reflection;
 
 namespace MobileApp.ViewModels
 {
@@ -24,13 +26,23 @@ namespace MobileApp.ViewModels
 
         public PokloniViewModel()
         {
-            AddToCardCommand = new Command(async () => await DodajUKorpu());
-
+            AddToCardCommand = new Command((() => DodajUKorpu()));
         }
-        public async Task DodajUKorpu()
+        public void DodajUKorpu(ProizvodVM model = null)
         {
+            if (model == null)
+                return;
+
+            NarudzbaDetailsVM temp = new NarudzbaDetailsVM()
+            {
+                Kolicina = 1,
+                ProizvodId = model.ProizvodId,
+            };
+
+            KorpaViewModel.AddToCart(temp, model);
 
         }
+
         public async void LoadList(ListView listView, Picker picker)
         {
             try
@@ -39,7 +51,7 @@ namespace MobileApp.ViewModels
                 _listaProizvoda = await _apiService.Get<ObservableCollection<ProizvodVM>>();
                 _listaKategorija = await _apiServiceKategorije.Get<ObservableCollection<Kategorije>>();
             }
-            catch (Exception e)
+            catch (AmbiguousMatchException)
             {
                 await PopupNavigation.Instance.PushAsync(new Error404PopupView());
             }
@@ -62,7 +74,7 @@ namespace MobileApp.ViewModels
                         item.Sifra += "★";
                     }
                 }
-                catch (Exception e)
+                catch (AmbiguousMatchException)
                 {
 
                 }

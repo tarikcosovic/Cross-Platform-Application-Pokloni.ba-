@@ -41,7 +41,7 @@
                                     <Label HorizontalOptions="Start" Margin="80,55,0,0" TextColor="LightPink" Text="{Binding Sifra}" d:Text="★★★★★" FontSize="19" FontFamily="Montserrat-Light.ttf"/>
                                     <Image HorizontalOptions="End" Margin="0,0,0,0" WidthRequest="40" HeightRequest="40" Source="iconAdd.png" d:Source="iconAdd.png" Aspect="AspectFit">
                                         <Image.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding Source={x:Reference PokloniPageName}, Path=BindingContext.AddToCardCommand}">
+                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="{Binding .}">
                                             </TapGestureRecognizer>
                                         </Image.GestureRecognizers>
                                     </Image>

@@ -4,6 +4,7 @@ using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -69,7 +70,7 @@ namespace MobileApp.ViewModels
                     _ratingLayout.Children.Add(img);
                 }
             }
-            catch(Exception e)
+            catch(AmbiguousMatchException)
             {
                 await PopupNavigation.Instance.PushAsync(new Error404PopupView());
             }

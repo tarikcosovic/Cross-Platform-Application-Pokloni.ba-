@@ -6,6 +6,7 @@ using Pokloni.ba.Model.Requests;
 using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -74,7 +75,7 @@ namespace MobileApp.ViewModels
                 await _apiService.Insert<KorisniciInsertRequest>(korisnik);
                 await PopupNavigation.Instance.PushAsync(new SuccessPopupView(new LoginPage()));
             }
-            catch (FlurlHttpException ex)
+            catch (AmbiguousMatchException)
             {
             }
             finally
