@@ -9,7 +9,7 @@ namespace MobileApp.ViewModels
 {
     public class KorpaViewModel : BaseViewModel
     {
-        private static List<KorpaModel> ListaKorpe { get; set; } = new List<KorpaModel>();
+        public static List<KorpaModel> ListaKorpe { get; set; } = new List<KorpaModel>();
 
         public static void AddToCart(NarudzbaDetailsVM model, ProizvodVM poklon)
         {
@@ -30,6 +30,7 @@ namespace MobileApp.ViewModels
 
         public void LoadItems(ListView lw)
         {
+            lw.ItemsSource = null;
             lw.ItemsSource = ListaKorpe;
         }
 

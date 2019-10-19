@@ -32,5 +32,11 @@ namespace MobileApp.Views
         {
             await PopupNavigation.Instance.PushAsync(new FeedbackPopupView(model._poklonId));
         }
+
+        private void Button_Clicked_1(object sender, System.EventArgs e)
+        {
+            model.AddTocart();
+            DisplayAlert("Uspjeh!", "Uspješno ste dodali " + model.Naziv + " u vašu korpu!", "ok");
+        }
     }
 }

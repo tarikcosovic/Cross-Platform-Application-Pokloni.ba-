@@ -17,6 +17,13 @@ namespace MobileApp.ViewModels
 {
     public class PokloniViewModel : BaseViewModel
     {
+        string counter = KorpaViewModel.ListaKorpe.Count.ToString();
+        public string PoklonCounter
+        {
+            get { return counter; }
+            set { SetProperty(ref counter, value); }
+        }
+
         private readonly APIService _apiService = new APIService("Proizvodi");
         private readonly APIService _apiServiceKategorije = new APIService("Kategorije");
 
@@ -26,6 +33,7 @@ namespace MobileApp.ViewModels
 
         public PokloniViewModel()
         {
+            counter = KorpaViewModel.ListaKorpe.Count.ToString();
             AddToCardCommand = new Command((() => DodajUKorpu()));
         }
         public void DodajUKorpu(ProizvodVM model = null)
@@ -40,7 +48,7 @@ namespace MobileApp.ViewModels
             };
 
             KorpaViewModel.AddToCart(temp, model);
-
+            counter = KorpaViewModel.ListaKorpe.Count.ToString();
         }
 
         public async void LoadList(ListView listView, Picker picker)

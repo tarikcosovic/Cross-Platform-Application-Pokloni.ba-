@@ -1,4 +1,5 @@
 ﻿using MobileApp.Views.Popups;
+using Pokloni.ba.Model.Requests.Narudzba;
 using Pokloni.ba.Model.Requests.Proizvodi;
 using Rg.Plugins.Popup.Services;
 using System;
@@ -17,6 +18,7 @@ namespace MobileApp.ViewModels
         private readonly APIService _apiServiceProizvodi = new APIService("Proizvodi");
         private StackLayout _ratingLayout = null;
         public readonly int _poklonId;
+        private ProizvodVM proizvodCart = null;
 
         public ObservableCollection<UserFeedback> ListaFeedbacka { get; set; } = new ObservableCollection<UserFeedback>();
         public PokloniDetailsViewModel(ProizvodVM proizvod, StackLayout ratingLayout)
@@ -25,6 +27,7 @@ namespace MobileApp.ViewModels
             _opis = proizvod.Opis;
             _slika = proizvod.Slika;
             _cijena = proizvod.Cijena;
+            proizvodCart = proizvod;
 
             _ratingLayout = ratingLayout;
             _poklonId = proizvod.ProizvodId;
@@ -90,6 +93,17 @@ namespace MobileApp.ViewModels
                 NazivKorisnika = korisnik;
                 KomentarKorisnika = komentar;
             }
+        }
+
+        public void AddTocart()
+        {
+            NarudzbaDetailsVM narudzba = new NarudzbaDetailsVM()
+            {
+                Kolicina = 1,
+                ProizvodId = _poklonId
+            };
+
+            KorpaViewModel.AddToCart(narudzba, proizvodCart);
         }
 
         string _naziv = String.Empty;

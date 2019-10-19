@@ -7,6 +7,10 @@
              mc:Ignorable="d"
              x:Name="PokloniPageName"
              x:Class="MobileApp.Views.PokloniPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="iconCart.png" Clicked="ToolbarItem_Clicked"/>
+        <ToolbarItem Text="{Binding PoklonCounter}" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>
             <local:ImageConverter x:Key="imgConv"></local:ImageConverter>

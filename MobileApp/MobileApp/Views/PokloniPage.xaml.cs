@@ -49,6 +49,12 @@ namespace MobileApp.Views
         {
             var clicked = e as TappedEventArgs;
             model.DodajUKorpu(clicked.Parameter as ProizvodVM);
+            DisplayAlert("Uspjeh!", "Uspješno ste dodali " + ((ProizvodVM)(clicked.Parameter)).Naziv + " u vašu korpu!", "ok");
+        }
+
+        private void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new KorpaPage());
         }
     }
 }

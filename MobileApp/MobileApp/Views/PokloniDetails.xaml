@@ -75,7 +75,7 @@
                 </Grid.ColumnDefinitions>
 
                 <Button CornerRadius="0" Grid.Column="0" d:Text="59.00 $" Text="{Binding Cijena, StringFormat='{0} $'}" TextColor="#F53C6C" BackgroundColor="#342A29" FontSize="25"></Button>
-                <Button CornerRadius="0" ImageSource="iconPng.png" Grid.Column="1" Text="ADD TO CART" TextColor="White" BackgroundColor="#F53C6C" FontSize="16"></Button>
+                <Button Clicked="Button_Clicked_1" CornerRadius="0" ImageSource="iconPng.png" Grid.Column="1" Text="ADD TO CART" TextColor="White" BackgroundColor="#F53C6C" FontSize="16"></Button>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
