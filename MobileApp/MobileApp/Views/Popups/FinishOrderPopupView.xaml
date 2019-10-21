@@ -23,7 +23,7 @@
 	HorizontalOptions="CenterAndExpand" />
 
 
-        <Label Margin="0,30,0,0," Text="Hvala vam na narudžbi!" HorizontalTextAlignment="Center" TextColor="White" FontSize="22"></Label>
+        <Label Margin="0,30,0,0" Text="Hvala vam na narudžbi!" HorizontalTextAlignment="Center" TextColor="White" FontSize="22"></Label>
         <Label Text="Uspješno ste postavili narudžbu.." HorizontalTextAlignment="Center" TextColor="White" FontSize="18"></Label>
 
     </StackLayout>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MobileApp.Views.NarudzbePage">
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never">
+            <StackLayout Padding="30" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+
+                <Label Margin="0,10,0,20" HorizontalOptions="Center" FontSize="25" TextColor="#F53C6C" Text="Lista Vaših Narudžbi"></Label>
+                <ListView x:Name="proizvodiListView"
+                    HasUnevenRows="True" ItemTapped="ProizvodiListView_ItemTapped"  HeightRequest="400">
+                    <d:ListView.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Početna stranica</x:String>
+                            <x:String>Pokloni</x:String>
+                        </x:Array>
+                    </d:ListView.ItemsSource>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="0, 0, 0, 20">
+                                    <Image HorizontalOptions="Start" WidthRequest="60" HeightRequest="90" d:Source="iconOrder.png" Source="iconOrder.png" Aspect="AspectFit"></Image>
+                                    <Label HorizontalOptions="Start" Margin="80,10,0,0" TextColor="Black" Text="{Binding NarudzbaId}" d:Text="Central Perk Lego Igračka" WidthRequest="175" FontSize="17" LineBreakMode="NoWrap"  FontFamily="Montserrat-Light.ttf"/>
+                                    <Label HorizontalOptions="Start" Margin="80,35,0,0" TextColor="Gray" Text="{Binding StatusPoruka}" d:Text="TESTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTttttTT" LineBreakMode="NoWrap" FontSize="15" FontAttributes="Italic" WidthRequest="170" FontFamily="Montserrat-Light.ttf"/>
+                                    <Label HorizontalOptions="Start" Margin="80,55,0,0" TextColor="#F53C6C" Text="{Binding DatumNarudzbe}" d:Text="29.15.2019" FontSize="19" FontFamily="Montserrat-Light.ttf"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <ActivityIndicator IsRunning="{Binding IsBusy}" VerticalOptions="Center" Color="Purple"></ActivityIndicator>
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

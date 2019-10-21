@@ -41,10 +41,10 @@ namespace MobileApp.Views
                         MenuPages.Add(id, new NavigationPage(new KorpaPage()));
                         break;
                     case (int)MenuItemType.Narudzbe:
-                        MenuPages.Add(id, new NavigationPage(new ProizvodiPage()));
+                        MenuPages.Add(id, new NavigationPage(new NarudzbePage()));
                         break;
                     case (int)MenuItemType.Profil:
-                        MenuPages.Add(id, new NavigationPage(new ProizvodiPage()));
+                        MenuPages.Add(id, new NavigationPage(new ProfilPage()));
                         break;
                 }
             }
