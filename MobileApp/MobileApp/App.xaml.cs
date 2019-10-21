@@ -1,7 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using MobileApp.Services;
 using MobileApp.Views;
 
 namespace MobileApp
@@ -12,8 +11,6 @@ namespace MobileApp
         public App()
         {
             InitializeComponent();
-
-            DependencyService.Register<MockDataStore>();
             MainPage = new NavigationPage(new LoginPage());
         }
 

@@ -26,6 +26,7 @@ namespace MobileApp.Views
                 model.LoadList(proizvodiListView, KategorijePicker);
                 OpenedOnce = true;
             }
+            KorpaCounter.Text = KorpaViewModel.ListaKorpe.Count.ToString();
         }
 
         protected void Picker_SelectedIndexChanged(object sender, EventArgs e)
@@ -42,15 +43,15 @@ namespace MobileApp.Views
             {
                 this.Navigation.PushAsync(new PokloniDetails(e.Item as ProizvodVM));
             }
-
         }
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
             var clicked = e as TappedEventArgs;
             model.DodajUKorpu(clicked.Parameter as ProizvodVM);
-            DisplayAlert("Uspjeh!", "Uspješno ste dodali " + ((ProizvodVM)(clicked.Parameter)).Naziv + " u vašu korpu!", "ok");
-        }
+            DisplayAlert("Hvala!", "Uspješno ste dodali " + ((ProizvodVM)(clicked.Parameter)).Naziv + " u vašu korpu!", "ok");
+            KorpaCounter.Text = KorpaViewModel.ListaKorpe.Count.ToString();
+         }
 
         private void ToolbarItem_Clicked(object sender, EventArgs e)
         {

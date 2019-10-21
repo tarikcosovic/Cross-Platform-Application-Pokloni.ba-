@@ -25,7 +25,14 @@ namespace MobileApp.Views
             base.OnAppearing();
 
             model.LoadItems(korpalw);
+            model.UpdateUkupnaCijena(UkupnaCijena);
 
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            model.Zavrsi();
+            korpalw.ItemsSource = null;
         }
     }
 }

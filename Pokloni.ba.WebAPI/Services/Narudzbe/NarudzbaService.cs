@@ -38,9 +38,10 @@ namespace Pokloni.ba.WebAPI.Services.Narudzbe
         {
             var temp = _mapper.Map<Database.Narudzba>(request);
 
-            _db.Narudzba.Add(temp);
+            var test = _db.Narudzba.Add(temp);
             _db.SaveChanges();
 
+            request.NarudzbaId = test.Entity.NarudzbaId;
             return request;
         }
 

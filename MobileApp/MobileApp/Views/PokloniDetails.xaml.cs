@@ -36,7 +36,7 @@ namespace MobileApp.Views
         private void Button_Clicked_1(object sender, System.EventArgs e)
         {
             model.AddTocart();
-            DisplayAlert("Uspjeh!", "Uspješno ste dodali " + model.Naziv + " u vašu korpu!", "ok");
+            DisplayAlert("Hvala!", "Uspješno ste dodali " + model.Naziv + " u vašu korpu!", "ok");
         }
     }
 }

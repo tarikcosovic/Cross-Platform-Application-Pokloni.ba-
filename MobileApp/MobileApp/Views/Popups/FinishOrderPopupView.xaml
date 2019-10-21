@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    
+<pages:PopupPage
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    mc:Ignorable="d"
+             x:Class="MobileApp.Views.Popups.FinishOrderPopupView">
+    <StackLayout Padding="50" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+
+
+        <forms:AnimationView
+            Scale="2.0"
+	x:Name="animationView" 
+	Animation="10530-heart-animation.json" 
+	Loop="True" 
+	AutoPlay="True"
+    HeightRequest="100"
+    WidthRequest="300"
+	VerticalOptions="CenterAndExpand" 
+	HorizontalOptions="CenterAndExpand" />
+
+
+        <Label Margin="0,30,0,0," Text="Hvala vam na narudžbi!" HorizontalTextAlignment="Center" TextColor="White" FontSize="22"></Label>
+        <Label Text="Uspješno ste postavili narudžbu.." HorizontalTextAlignment="Center" TextColor="White" FontSize="18"></Label>
+
+    </StackLayout>
+    </pages:PopupPage>
