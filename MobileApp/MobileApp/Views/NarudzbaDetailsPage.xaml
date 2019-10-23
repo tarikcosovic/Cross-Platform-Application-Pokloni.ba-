@@ -21,7 +21,7 @@
 
             <ScrollView>
                 <ListView x:Name="korpalw" SelectionMode="None"
-                    HasUnevenRows="True" HeightRequest="500">
+                    HasUnevenRows="True" HeightRequest="500" ItemTapped="Korpalw_ItemTapped">
                     <d:ListView.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>Početna stranica</x:String>

@@ -14,7 +14,7 @@ namespace MobileApp.Views.Popups
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SuccessPopupView
     {
-        private Page _page;
+        private readonly Page _page;
         public SuccessPopupView(Page temp = null)
         {
             InitializeComponent();

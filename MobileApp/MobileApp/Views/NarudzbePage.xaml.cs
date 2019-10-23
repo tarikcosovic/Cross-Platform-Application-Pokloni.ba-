@@ -27,13 +27,5 @@ namespace MobileApp.Views
             base.OnAppearing();
             model.LoadList();
         }
-
-        private void ProizvodiListView_ItemTapped(object sender, ItemTappedEventArgs e)
-        {
-            if (e.Item != null)
-            {
-                this.Navigation.PushAsync(new NarudzbaDetailsPage((e.Item as NarudzbaVM).NarudzbaId));
-            }
-        }
     }
 }

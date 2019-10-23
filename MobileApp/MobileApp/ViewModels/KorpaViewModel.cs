@@ -8,14 +8,15 @@ using Xamarin.Forms;
 using Rg.Plugins.Popup.Services;
 using MobileApp.Views.Popups;
 using Flurl.Http;
+using System.Reflection;
 
 namespace MobileApp.ViewModels
 {
     public class KorpaViewModel : BaseViewModel
     {
-        private APIService _apiServiceKorisnici = new APIService("Korisnici");
-        private APIService _apiServiceNarudzbe = new APIService("Narudzbe");
-        private APIService _apiServiceNarudzbeDetalji = new APIService("NarudzbeDetails");
+        private readonly APIService _apiServiceKorisnici = new APIService("Korisnici");
+        private readonly APIService _apiServiceNarudzbe = new APIService("Narudzbe");
+        private readonly APIService _apiServiceNarudzbeDetalji = new APIService("NarudzbeDetails");
 
         public static List<KorpaModel> ListaKorpe { get; set; } = new List<KorpaModel>();
 
@@ -100,7 +101,7 @@ namespace MobileApp.ViewModels
                 ListaKorpe.Clear();
                 await PopupNavigation.Instance.PushAsync(new FinishOrderPopupView());
             }
-            catch (FlurlHttpException e)
+            catch (AmbiguousMatchException)
             {
 
             }

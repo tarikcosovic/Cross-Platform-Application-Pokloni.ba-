@@ -17,7 +17,7 @@ namespace MobileApp
         const string apiUrl = "https://pokloniwebapi.azurewebsites.net/api";
 
 
-        private string _route = null;
+        private readonly string _route = null;
         public APIService(string route)
         {
             _route = route;

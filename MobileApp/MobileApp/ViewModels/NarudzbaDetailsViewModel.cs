@@ -1,6 +1,7 @@
 ﻿using Pokloni.ba.Model.Requests.Narudzba;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 using Xamarin.Forms;
 
@@ -11,7 +12,7 @@ namespace MobileApp.ViewModels
         private readonly APIService _apiServiceNarudzbaDetails = new APIService("NarudzbeDetails");
         private readonly int NarudzbaId = 0;
 
-        private List<NarudzbaDetailsVM> ListaDetalja = new List<NarudzbaDetailsVM>();
+        private readonly List<NarudzbaDetailsVM> ListaDetalja = new List<NarudzbaDetailsVM>();
 
         public NarudzbaDetailsViewModel(int id)
         {
@@ -38,7 +39,7 @@ namespace MobileApp.ViewModels
                     suma += item.Ukupno;
                 ukupno.Text = suma.ToString() + " $";
             }
-            catch(Exception e)
+            catch(AmbiguousMatchException)
             {
 
             }

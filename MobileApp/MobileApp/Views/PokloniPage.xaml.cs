@@ -10,7 +10,7 @@ namespace MobileApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PokloniPage : ContentPage
     {
-        private PokloniViewModel model = null;
+        private readonly PokloniViewModel model = null;
         private bool OpenedOnce = false;
         public PokloniPage()
         {

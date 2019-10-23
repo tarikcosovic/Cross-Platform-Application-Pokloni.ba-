@@ -1,4 +1,5 @@
 ﻿using MobileApp.ViewModels;
+using Pokloni.ba.Model.Requests.Proizvodi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,14 @@ namespace MobileApp.Views
             base.OnAppearing();
 
             model.LoadNarudzba(korpalw, ukupniracun);
+        }
+
+        private void Korpalw_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            if (e.Item != null)
+            {
+                this.Navigation.PushAsync(new PokloniDetails(e.Item as ProizvodVM));
+            }
         }
     }
 }

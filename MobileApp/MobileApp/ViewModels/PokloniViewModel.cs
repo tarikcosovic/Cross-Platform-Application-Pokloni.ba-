@@ -49,6 +49,7 @@ namespace MobileApp.ViewModels
                 IsBusy = true;
                 _listaProizvoda = await _apiService.Get<ObservableCollection<ProizvodVM>>();
                 _listaKategorija = await _apiServiceKategorije.Get<ObservableCollection<Kategorije>>();
+                _listaKategorija.Add(new Kategorije() { KategorijaId = 007, Naziv = "Svi proizvodi" });
             }
             catch (AmbiguousMatchException)
             {
@@ -87,6 +88,12 @@ namespace MobileApp.ViewModels
             List<ProizvodVM> _filtriranaLista = new List<ProizvodVM>();
             foreach (var item in _listaProizvoda)
                 _filtriranaLista.Add(item);
+
+            if(kategorijaID == 007)
+            {
+                listView.ItemsSource = _filtriranaLista;
+                return;
+            }
 
             for (int i = _filtriranaLista.Count - 1; i >= 0; i--)
             {

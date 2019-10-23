@@ -7,14 +7,15 @@
              xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
              mc:Ignorable="d"
              x:Class="MobileApp.Views.ProizvodiPage"
-             Title="Početna">
+             Title="Početna"
+             BackgroundImageSource="bg1.jpg">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="20">
             <Grid RowSpacing="10" ColumnSpacing="10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="100"></RowDefinition>
                     <RowDefinition Height="120"></RowDefinition>
-                    <RowDefinition Height="150"></RowDefinition>
+                    <RowDefinition Height="200"></RowDefinition>
                     <RowDefinition Height="120"></RowDefinition>
 
                 </Grid.RowDefinitions>
@@ -28,12 +29,12 @@
                 <StackLayout Grid.Row="0" Grid.ColumnSpan="2" VerticalOptions="CenterAndExpand">
 
                     <Image WidthRequest="100"  HeightRequest="50" Aspect="AspectFit" Source="iconPng.png" VerticalOptions="Center"></Image>
-                    <Label FontFamily="\Pokloni.ba-Cross-platform-application\MobileApp\MobileApp.Android\Assets\Montserrat-LightItalic.ttf" HorizontalTextAlignment="Center" FontSize="Default">Pokloni.ba</Label>
+                    <Label FontFamily="\Pokloni.ba-Cross-platform-application\MobileApp\MobileApp.Android\Assets\Montserrat-LightItalic.ttf" HorizontalTextAlignment="Center" FontSize="Default" TextColor="White">Pokloni.ba</Label>
                 </StackLayout>
 
                 <!--Prvi Red-->
 
-                <StackLayout BackgroundColor="#FBC1BC" Grid.Row="1" Grid.Column="0" Margin="10,0,0,0">
+                <StackLayout BackgroundColor="#50FBC1BC" Grid.Row="1" Grid.Column="0">
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer></TapGestureRecognizer>
                     </StackLayout.GestureRecognizers>
@@ -53,7 +54,7 @@
                     <Label  FontFamily="\Pokloni.ba-Cross-platform-application\MobileApp\MobileApp.Android\Assets\Montserrat-LightItalic.ttf" TextColor="White" Text="Igračke za sve uzraste" HorizontalTextAlignment="Center" FontAttributes="Italic" FontSize="Caption"></Label>
                 </StackLayout>
 
-                <StackLayout BackgroundColor="#B6E6BD" Grid.Row="1" Grid.Column="1"  Margin="0,0,10,0">
+                <StackLayout BackgroundColor="#50FBC1BC" Grid.Row="1" Grid.Column="1">
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer></TapGestureRecognizer>
                     </StackLayout.GestureRecognizers>
@@ -74,30 +75,31 @@
 
                 <!--Glavni red-->
 
-                <StackLayout Grid.ColumnSpan="2" Grid.Row="2" BackgroundColor="#FC7FB2" Margin="10, 0, 10, 0">
+                <StackLayout Grid.ColumnSpan="2" Grid.Row="2" BackgroundColor="#50FBC1BC" Orientation="Horizontal" HorizontalOptions="Center">
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer></TapGestureRecognizer>
                     </StackLayout.GestureRecognizers>
-                    
-                    
-                    <forms:AnimationView
-                        Scale="0.6"
-	x:Name="categoyPopular" 
-	Animation="2086-wow.json" 
-	Loop="True" 
-	AutoPlay="True"
-    HeightRequest="100"
-    WidthRequest="100"
-	VerticalOptions="Center" 
-	HorizontalOptions="Center" />
 
-                    <Label FontFamily="\Pokloni.ba-Cross-platform-application\MobileApp\MobileApp.Android\Assets\Montserrat-Bold.ttf"   TextColor="White" Text="Najpopularniji pokloni" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Large"></Label>
+                    <StackLayout WidthRequest="200" HorizontalOptions="Center" Margin="10,10,0,0">
+                        <Image HeightRequest="130" WidthRequest="60" Source="bg1.jpg" Aspect="AspectFill"></Image>
+                        <Label TextColor="White" HorizontalTextAlignment="Center" Text="Central Perk Lego from F.R.I.E.N.D.S."></Label>
+                    </StackLayout>
+
+                    <StackLayout WidthRequest="200" Margin="10,10,0,0">
+                        <Image HeightRequest="130" WidthRequest="60" Source="pokloni3.jpg" Aspect="AspectFill"></Image>
+                        <Label TextColor="White" HorizontalTextAlignment="Center" Text="Central Perk Lego from F.R.I.E.N.D.S."></Label>
+                    </StackLayout>
+
+                    <StackLayout WidthRequest="200" Margin="10,10,10,0">
+                        <Image HeightRequest="130" WidthRequest="60" Source="bg1.jpg" Aspect="AspectFill"></Image>
+                        <Label TextColor="White" HorizontalTextAlignment="Center" Text="Central Perk Lego from F.R.I.E.N.D.S."></Label>
+                    </StackLayout>
 
                 </StackLayout>
 
                 <!--Treći red-->
 
-                <StackLayout BackgroundColor="#B1E8ED" Grid.Row="3" Grid.Column="0" Margin="10,0,0,0">
+                <StackLayout BackgroundColor="#50FBC1BC" Grid.Row="3" Grid.Column="0">
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer></TapGestureRecognizer>
                     </StackLayout.GestureRecognizers>
@@ -118,7 +120,7 @@
                 </StackLayout>
 
 
-                <StackLayout BackgroundColor="#F1BC31" Grid.Row="3" Grid.Column="1" Margin="0,0,10,0">
+                <StackLayout BackgroundColor="#50FBC1BC" Grid.Row="3" Grid.Column="1">
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer></TapGestureRecognizer>
                     </StackLayout.GestureRecognizers>
@@ -139,28 +141,7 @@
                     <Label FontFamily="\Pokloni.ba-Cross-platform-application\MobileApp\MobileApp.Android\Assets\Montserrat-LightItalic.ttf"  TextColor="White" Text="Ženski i muški nakit" HorizontalTextAlignment="Center" FontAttributes="Italic" FontSize="Caption"></Label>
                 </StackLayout>
 
-                <!--Četvrti red-->
 
-                <!--<StackLayout Grid.ColumnSpan="2" Grid.Row="4" BackgroundColor="#F2F5F9">
-                    <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
-                    </StackLayout.GestureRecognizers>
-
-                    <forms:AnimationView
-                        Scale="0.8"
-	x:Name="location" 
-	Animation="location.json" 
-	Loop="True" 
-	AutoPlay="True"
-    HeightRequest="100"
-    WidthRequest="100"
-    Margin="10,0,0,0"                    />
-
-                    
-
-                </StackLayout>-->
-
-                
             </Grid>
         </StackLayout>
     </ContentPage.Content>
