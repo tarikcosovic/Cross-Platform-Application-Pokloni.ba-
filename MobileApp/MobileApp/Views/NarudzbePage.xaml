@@ -12,7 +12,7 @@
 
                 <Label Margin="0,10,0,20" HorizontalOptions="Center" FontSize="25" TextColor="#F53C6C" Text="Lista Vaših Narudžbi"></Label>
                 <ListView x:Name="proizvodiListView"
-                    HasUnevenRows="True" HeightRequest="400">
+                    HasUnevenRows="True" HeightRequest="400" ItemTapped="ProizvodiListView_ItemTapped">
                     <d:ListView.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>Početna stranica</x:String>

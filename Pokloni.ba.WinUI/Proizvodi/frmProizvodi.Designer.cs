@@ -68,7 +68,7 @@
             this.listaProizvoda.MultiSelect = false;
             this.listaProizvoda.Name = "listaProizvoda";
             this.listaProizvoda.OwnerDraw = true;
-            this.listaProizvoda.Size = new System.Drawing.Size(561, 284);
+            this.listaProizvoda.Size = new System.Drawing.Size(869, 436);
             this.listaProizvoda.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listaProizvoda.TabIndex = 6;
             this.listaProizvoda.UseCompatibleStateImageBehavior = false;
@@ -142,7 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1133, 604);
             this.Controls.Add(this.listaProizvoda);
             this.Controls.Add(this.btnPrikazi);
             this.Controls.Add(this.txtPretraga);

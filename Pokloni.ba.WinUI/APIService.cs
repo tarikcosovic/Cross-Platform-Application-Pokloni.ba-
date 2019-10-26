@@ -44,6 +44,13 @@ namespace Pokloni.ba.WinUI
             return result;
         }
 
+        public async Task<T> GetUserByUsername<T>(string id)
+        {
+            var result = await $"{Properties.Settings.Default.APIUrl}/{ _route}/GetByUsername/{id}".WithBasicAuth(Username, Password).GetJsonAsync<T>();
+
+            return result;
+        }
+
         public async Task<T> Insert<T>(object request)
         {
             var result = $"{Properties.Settings.Default.APIUrl}/{ _route}";

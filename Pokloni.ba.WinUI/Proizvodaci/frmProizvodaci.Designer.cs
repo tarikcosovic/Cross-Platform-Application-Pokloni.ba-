@@ -62,7 +62,7 @@
             this.listaProizvodaca.MouseState = MaterialSkin.MouseState.OUT;
             this.listaProizvodaca.Name = "listaProizvodaca";
             this.listaProizvodaca.OwnerDraw = true;
-            this.listaProizvodaca.Size = new System.Drawing.Size(454, 295);
+            this.listaProizvodaca.Size = new System.Drawing.Size(519, 434);
             this.listaProizvodaca.TabIndex = 6;
             this.listaProizvodaca.UseCompatibleStateImageBehavior = false;
             this.listaProizvodaca.View = System.Windows.Forms.View.Details;
@@ -124,7 +124,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(899, 450);
+            this.ClientSize = new System.Drawing.Size(1050, 589);
             this.Controls.Add(this.loadingBar);
             this.Controls.Add(this.listaProizvodaca);
             this.Controls.Add(this.btnPrikazi);

@@ -51,13 +51,16 @@ namespace Pokloni.ba.WinUI.Narudzbe
                 if (item.StatusPoruka == "Aktivno")
                 {
                     brojNarudzbi++;
-                    //Ovo ne radi iz nekog razloga
                     temp.BackColor = Color.LightGreen;
                 }
+                if (item.StatusPoruka == "Prihvaćeno")
+                    temp.BackColor = Color.AliceBlue;
+                if(item.StatusPoruka == "Odbijeno")
+                    temp.BackColor = Color.IndianRed;
 
                 listView1.Items.Add(temp);
             }
-            NarudzbeCount.Text += brojNarudzbi.ToString();
+            NarudzbeCount.Text = "Aktivnih Narudžbi:" + brojNarudzbi.ToString();
         }
 
         private void ListView1_MouseClick(object sender, MouseEventArgs e)

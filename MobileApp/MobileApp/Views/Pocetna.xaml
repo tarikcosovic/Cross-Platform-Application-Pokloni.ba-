@@ -10,19 +10,18 @@
              Title="Početna"
              BackgroundImageSource="bg1.jpg">
     <ContentPage.Content>
-        <StackLayout Padding="20">
+        <StackLayout Padding="10">
             <Grid RowSpacing="10" ColumnSpacing="10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="100"></RowDefinition>
                     <RowDefinition Height="120"></RowDefinition>
-                    <RowDefinition Height="200"></RowDefinition>
                     <RowDefinition Height="120"></RowDefinition>
-
+                    <RowDefinition Height="25"></RowDefinition>
+                    <RowDefinition Height="200"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="50*"></ColumnDefinition>
                     <ColumnDefinition Width="50*"></ColumnDefinition>
-
                 </Grid.ColumnDefinitions>
                 
                 <!--Početna poruka-->
@@ -34,52 +33,36 @@
 
                 <!--Prvi Red-->
 
-                <StackLayout BackgroundColor="#50FBC1BC" Grid.Row="1" Grid.Column="0">
+                <BoxView BackgroundColor="#50FBC1BC" Grid.Row="1" Grid.Column="0"></BoxView>
+                <StackLayout Grid.Row="1" Grid.Column="0" VerticalOptions="Center">
                     <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer></TapGestureRecognizer>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
                     </StackLayout.GestureRecognizers>
-                    
-                    <forms:AnimationView
-                        Scale="1.4"
-	x:Name="categoryToys" 
-	Animation="ctgrToys.json" 
-	Loop="True" 
-	AutoPlay="True"
-    HeightRequest="50"
-    WidthRequest="100"
-	VerticalOptions="Center" 
-	HorizontalOptions="Center" />
 
-                    <Label FontFamily="\Pokloni.ba-Cross-platform-application\MobileApp\MobileApp.Android\Assets\Montserrat-Bold.ttf"   TextColor="White" Text="Igračke" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Large"></Label>
-                    <Label  FontFamily="\Pokloni.ba-Cross-platform-application\MobileApp\MobileApp.Android\Assets\Montserrat-LightItalic.ttf" TextColor="White" Text="Igračke za sve uzraste" HorizontalTextAlignment="Center" FontAttributes="Italic" FontSize="Caption"></Label>
+                    <Label VerticalTextAlignment="Center" FontFamily="\Pokloni.ba-Cross-platform-application\MobileApp\MobileApp.Android\Assets\Montserrat-Bold.ttf"   TextColor="White" Text="Igračke" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Large"></Label>
+                    <Label VerticalTextAlignment="Center" FontFamily="\Pokloni.ba-Cross-platform-application\MobileApp\MobileApp.Android\Assets\Montserrat-LightItalic.ttf" TextColor="White" Text="Igračke za sve uzraste" HorizontalTextAlignment="Center" FontAttributes="Italic" FontSize="Caption"></Label>
                 </StackLayout>
 
-                <StackLayout BackgroundColor="#50FBC1BC" Grid.Row="1" Grid.Column="1">
+                <BoxView  BackgroundColor="#50FBC1BC" Grid.Row="1" Grid.Column="1"></BoxView>
+                <StackLayout Grid.Row="1" Grid.Column="1" VerticalOptions="Center">
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer></TapGestureRecognizer>
                     </StackLayout.GestureRecognizers>
-                    <forms:AnimationView
-                        Scale="1.3"
-	x:Name="categoyClohes" 
-	Animation="ctgrClothes.json" 
-	Loop="True" 
-	AutoPlay="True"
-    HeightRequest="50"
-    WidthRequest="100"
-	VerticalOptions="Center" 
-	HorizontalOptions="Center" />
 
                     <Label FontFamily="\Pokloni.ba-Cross-platform-application\MobileApp\MobileApp.Android\Assets\Montserrat-Bold.ttf"   TextColor="White" Text="Odjeća" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Large"></Label>
                     <Label  FontFamily="\Pokloni.ba-Cross-platform-application\MobileApp\MobileApp.Android\Assets\Montserrat-LightItalic.ttf" TextColor="White" Text="Nike, Addidas, Lacoste" HorizontalTextAlignment="Center" FontAttributes="Italic" FontSize="Caption"></Label>
                 </StackLayout>
 
+                <!--Glavni red poruka-->
+                <StackLayout Grid.ColumnSpan="2" Grid.Row="3" Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label TextColor="White" Text="Preporučeni pokloni za vas" FontSize="20"></Label>
+                </StackLayout>
                 <!--Glavni red-->
-
-                <StackLayout Grid.ColumnSpan="2" Grid.Row="2" BackgroundColor="#50FBC1BC" Orientation="Horizontal" HorizontalOptions="Center">
+                <StackLayout Grid.ColumnSpan="2" Grid.Row="4" Orientation="Horizontal" HorizontalOptions="Center">
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer></TapGestureRecognizer>
                     </StackLayout.GestureRecognizers>
-
+                    
                     <StackLayout WidthRequest="200" HorizontalOptions="Center" Margin="10,10,0,0">
                         <Image HeightRequest="130" WidthRequest="60" Source="bg1.jpg" Aspect="AspectFill"></Image>
                         <Label TextColor="White" HorizontalTextAlignment="Center" Text="Central Perk Lego from F.R.I.E.N.D.S."></Label>
@@ -99,48 +82,25 @@
 
                 <!--Treći red-->
 
-                <StackLayout BackgroundColor="#50FBC1BC" Grid.Row="3" Grid.Column="0">
+                <BoxView  BackgroundColor="#50FBC1BC" Grid.Row="2" Grid.Column="0"></BoxView>
+                <StackLayout Grid.Row="2" Grid.Column="0" VerticalOptions="Center">
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer></TapGestureRecognizer>
                     </StackLayout.GestureRecognizers>
-
-                    <forms:AnimationView
-                        Scale="0.9"
-	x:Name="categoyTech" 
-	Animation="ctgrTech.json" 
-	Loop="True" 
-	AutoPlay="True"
-    HeightRequest="50"
-    WidthRequest="100"
-	VerticalOptions="Center" 
-	HorizontalOptions="Center" />
 
                     <Label FontFamily="\Pokloni.ba-Cross-platform-application\MobileApp\MobileApp.Android\Assets\Montserrat-Bold.ttf"  TextColor="White" Text="Tehnologija" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Large"></Label>
                     <Label FontFamily="\Pokloni.ba-Cross-platform-application\MobileApp\MobileApp.Android\Assets\Montserrat-LightItalic.ttf"  TextColor="White" Text="Samsung, Apple, Microsoft" HorizontalTextAlignment="Center" FontAttributes="Italic" FontSize="Caption"></Label>
                 </StackLayout>
 
-
-                <StackLayout BackgroundColor="#50FBC1BC" Grid.Row="3" Grid.Column="1">
+                <BoxView  BackgroundColor="#50FBC1BC" Grid.Row="2" Grid.Column="1"></BoxView>
+                <StackLayout Grid.Row="2" Grid.Column="1" VerticalOptions="Center">
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer></TapGestureRecognizer>
                     </StackLayout.GestureRecognizers>
 
-                    <forms:AnimationView
-                        Scale="0.7"
-	x:Name="categoyJewelry" 
-	Animation="ctgrJewelry.json" 
-	Loop="True" 
-	AutoPlay="True"
-    HeightRequest="50"
-    WidthRequest="100"
-	VerticalOptions="Center" 
-	HorizontalOptions="Center" />
-
-
                     <Label FontFamily="\Pokloni.ba-Cross-platform-application\MobileApp\MobileApp.Android\Assets\Montserrat-Bold.ttf" TextColor="White" Text="Nakit" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Large"></Label>
                     <Label FontFamily="\Pokloni.ba-Cross-platform-application\MobileApp\MobileApp.Android\Assets\Montserrat-LightItalic.ttf"  TextColor="White" Text="Ženski i muški nakit" HorizontalTextAlignment="Center" FontAttributes="Italic" FontSize="Caption"></Label>
                 </StackLayout>
-
 
             </Grid>
         </StackLayout>

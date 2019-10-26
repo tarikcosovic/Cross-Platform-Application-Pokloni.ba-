@@ -59,7 +59,7 @@
             this.listaKategorija.MouseState = MaterialSkin.MouseState.OUT;
             this.listaKategorija.Name = "listaKategorija";
             this.listaKategorija.OwnerDraw = true;
-            this.listaKategorija.Size = new System.Drawing.Size(454, 295);
+            this.listaKategorija.Size = new System.Drawing.Size(722, 411);
             this.listaKategorija.TabIndex = 9;
             this.listaKategorija.UseCompatibleStateImageBehavior = false;
             this.listaKategorija.View = System.Windows.Forms.View.Details;
@@ -112,7 +112,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(927, 450);
+            this.ClientSize = new System.Drawing.Size(1020, 566);
             this.Controls.Add(this.listaKategorija);
             this.Controls.Add(this.btnPrikazi);
             this.Controls.Add(this.txtPretraga);

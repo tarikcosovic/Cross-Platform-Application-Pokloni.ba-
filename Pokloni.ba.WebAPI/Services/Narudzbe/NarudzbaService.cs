@@ -50,7 +50,7 @@ namespace Pokloni.ba.WebAPI.Services.Narudzbe
             var temp = _db.Narudzba.Find(id) ?? throw new ServerException(Constants.NotFoundErrorMessage + id);
 
             _mapper.Map(request, temp);
-
+            _db.Entry(temp).Property(k=>k.NarudzbaId).IsModified = false;
             _db.Narudzba.Update(temp);
             _db.SaveChanges();
 

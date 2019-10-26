@@ -12,10 +12,12 @@ namespace MobileApp.Views
     {
         private readonly PokloniViewModel model = null;
         private bool OpenedOnce = false;
-        public PokloniPage()
+        private int _kategorija = 0;
+        public PokloniPage(int kategorija = 0)
         {
             InitializeComponent();
             BindingContext = model = new PokloniViewModel();
+            _kategorija = kategorija;
         }
 
         protected override void OnAppearing()
@@ -27,6 +29,16 @@ namespace MobileApp.Views
                 OpenedOnce = true;
             }
             KorpaCounter.Text = KorpaViewModel.ListaKorpe.Count.ToString();
+            LoadKategorija();
+        }
+
+        private void LoadKategorija()
+        {
+            if (_kategorija != 0)
+            {
+                model.LoadFilteredList(proizvodiListView, _kategorija);
+                _kategorija = 0;
+            }
         }
 
         protected void Picker_SelectedIndexChanged(object sender, EventArgs e)

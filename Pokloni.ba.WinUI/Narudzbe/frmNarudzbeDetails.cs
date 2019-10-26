@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using Pokloni.ba.Model.Requests.Narudzba;
 using System.Windows.Forms;
+using Pokloni.ba.Model;
+using Flurl.Http;
 
 namespace Pokloni.ba.WinUI.Narudzbe
 {
@@ -9,6 +11,7 @@ namespace Pokloni.ba.WinUI.Narudzbe
     {
         private readonly APIService _apiServiceNarudzbeDetails = new APIService(Properties.Settings.Default.RouteNarudzbeDetails);
         private readonly APIService _apiServiceNarudzbe = new APIService(Properties.Settings.Default.RouteNarudzbe);
+        private readonly APIService _apiServiceKorisnici = new APIService(Properties.Settings.Default.RouteKorisnici);
         private readonly int _id;
         public frmNarudzbeDetails(int id)
         {
@@ -62,18 +65,18 @@ namespace Pokloni.ba.WinUI.Narudzbe
             {
                 try
                 {
+                    var korisnik = await _apiServiceKorisnici.GetUserByUsername<Korisnik>(APIService.Username);
+
                     var temp = await _apiServiceNarudzbe.GetbyId<NarudzbaVM>(_id);
                     temp.StatusPoruka = "Odbijeno";
-
+                    temp.ZaposlenikId = korisnik.KorisnikId;
+                   
                     await _apiServiceNarudzbe.Update<NarudzbaVM>(temp, _id);
+                    MessageBox.Show("Uspješno ste odbili narudžbu..", "Uspjeh!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show("Dogodila se greška nad dobavljanjem narudžbe sa servera..", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                finally
-                {
-                    MessageBox.Show("Uspješno ste odbili narudžbu..", "Uspjeh!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -86,18 +89,18 @@ namespace Pokloni.ba.WinUI.Narudzbe
             {
                 try
                 {
+                    var korisnik = await _apiServiceKorisnici.GetUserByUsername<Korisnik>(APIService.Username);
+
                     var temp = await _apiServiceNarudzbe.GetbyId<NarudzbaVM>(_id);
                     temp.StatusPoruka = "Prihvaćeno";
+                    temp.ZaposlenikId = korisnik.KorisnikId;
 
                     await _apiServiceNarudzbe.Update<NarudzbaVM>(temp, _id);
+                    MessageBox.Show("Uspješno ste prihvatili narudžbu..", "Uspjeh!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch (Exception ex)
+                catch (FlurlHttpException ex)
                 {
                     MessageBox.Show("Dogodila se greška nad dobavljanjem narudžbe sa servera..", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                finally
-                {
-                    MessageBox.Show("Uspješno ste prihvatili narudžbu..", "Uspjeh!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }

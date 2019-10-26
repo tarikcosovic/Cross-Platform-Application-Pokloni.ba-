@@ -96,7 +96,7 @@
             this.listaKorisnika.MouseState = MaterialSkin.MouseState.OUT;
             this.listaKorisnika.Name = "listaKorisnika";
             this.listaKorisnika.OwnerDraw = true;
-            this.listaKorisnika.Size = new System.Drawing.Size(561, 263);
+            this.listaKorisnika.Size = new System.Drawing.Size(752, 369);
             this.listaKorisnika.TabIndex = 3;
             this.listaKorisnika.UseCompatibleStateImageBehavior = false;
             this.listaKorisnika.View = System.Windows.Forms.View.Details;
@@ -128,7 +128,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.ClientSize = new System.Drawing.Size(721, 413);
+            this.ClientSize = new System.Drawing.Size(1007, 521);
             this.ControlBox = false;
             this.Controls.Add(this.listaKorisnika);
             this.Controls.Add(this.btnPrikazi);

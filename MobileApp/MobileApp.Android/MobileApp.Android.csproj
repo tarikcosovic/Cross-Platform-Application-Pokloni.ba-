@@ -92,7 +92,6 @@
     <AndroidAsset Include="Assets\Montserrat-Bold.ttf" />
     <AndroidAsset Include="Assets\Montserrat-Light.ttf" />
     <AndroidAsset Include="Assets\1055-world-locations.json" />
-    <AndroidAsset Include="Assets\2086-wow.json" />
     <AndroidAsset Include="Assets\8977-ratings.json" />
     <AndroidAsset Include="Assets\5756-like-5x.json" />
     <AndroidAsset Include="Assets\10530-heart-animation.json" />
