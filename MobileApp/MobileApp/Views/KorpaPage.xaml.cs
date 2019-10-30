@@ -1,4 +1,5 @@
 ﻿using MobileApp.ViewModels;
+using Pokloni.ba.Model.Requests.Narudzba;
 using Pokloni.ba.Model.Requests.Proizvodi;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using static MobileApp.ViewModels.KorpaViewModel;
 
 namespace MobileApp.Views
 {
@@ -34,6 +36,24 @@ namespace MobileApp.Views
         {
             model.Zavrsi();
             korpalw.ItemsSource = null;
+        }
+
+        private void Korpalw_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            if (e.Item != null)
+            {
+                var temp = e.Item as KorpaModel;
+
+                ProizvodVM model = new ProizvodVM();
+
+                model.ProizvodId = temp.Proizvod.ProizvodId;
+                model.Naziv = temp.Proizvod.Naziv;
+                model.Slika = temp.Proizvod.Slika;
+                model.Opis = temp.Proizvod.Opis;
+                model.Cijena = temp.Proizvod.Cijena;
+
+                this.Navigation.PushAsync(new PokloniDetails(model));
+            }
         }
     }
 }

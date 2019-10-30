@@ -1,4 +1,5 @@
-﻿using MobileApp.Views.Popups;
+﻿using Flurl.Http;
+using MobileApp.Views.Popups;
 using Pokloni.ba.Model.Requests.Narudzba;
 using Pokloni.ba.Model.Requests.Proizvodi;
 using Rg.Plugins.Popup.Services;
@@ -73,7 +74,7 @@ namespace MobileApp.ViewModels
                     _ratingLayout.Children.Add(img);
                 }
             }
-            catch(AmbiguousMatchException)
+            catch(FlurlHttpException ex)
             {
                 await PopupNavigation.Instance.PushAsync(new Error404PopupView());
             }

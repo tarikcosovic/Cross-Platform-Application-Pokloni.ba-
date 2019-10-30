@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Threading.Tasks;
 using Pokloni.ba.Model.Requests.Narudzba;
 using System.Reflection;
+using Flurl.Http;
 
 namespace MobileApp.ViewModels
 {
@@ -42,7 +43,7 @@ namespace MobileApp.ViewModels
             KorpaViewModel.AddToCart(temp, model);
         }
 
-        public async void LoadList(ListView listView, Picker picker)
+        public async void LoadList(ListView listView, Picker picker, int _kategorija = 0)
         {
             try
             {
@@ -51,7 +52,7 @@ namespace MobileApp.ViewModels
                 _listaKategorija = await _apiServiceKategorije.Get<ObservableCollection<Kategorije>>();
                 _listaKategorija.Add(new Kategorije() { KategorijaId = 007, Naziv = "Svi proizvodi" });
             }
-            catch (AmbiguousMatchException)
+            catch (FlurlHttpException ex)
             {
                 await PopupNavigation.Instance.PushAsync(new Error404PopupView());
             }
@@ -81,6 +82,13 @@ namespace MobileApp.ViewModels
 
             }
             listView.ItemsSource = _listaProizvoda;
+
+            //Filtrianje kategorije sa pocetne stranice
+            if (_kategorija != 0)
+            {
+                LoadFilteredList(listView, _kategorija);
+                _kategorija = 0;
+            }
         }
 
         public void LoadFilteredList(ListView listView, int kategorijaID)

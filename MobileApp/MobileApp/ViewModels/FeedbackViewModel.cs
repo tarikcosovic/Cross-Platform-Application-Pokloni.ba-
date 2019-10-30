@@ -1,4 +1,5 @@
-﻿using MobileApp.Views.Popups;
+﻿using Flurl.Http;
+using MobileApp.Views.Popups;
 using Pokloni.ba.Model.Requests.Proizvodi;
 using Rg.Plugins.Popup.Services;
 using System;
@@ -41,7 +42,7 @@ namespace MobileApp.ViewModels
                 await PopupNavigation.Instance.PopAsync();
                 await PopupNavigation.Instance.PushAsync(new SuccessPopupView());
             }
-            catch(AmbiguousMatchException)
+            catch(FlurlHttpException ex)
             {
                 await PopupNavigation.Instance.PushAsync(new NotAuthorisedPopupView("Već ste ocjenili ovaj poklon!"));
             }

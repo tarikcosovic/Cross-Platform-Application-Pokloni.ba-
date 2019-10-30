@@ -22,23 +22,13 @@ namespace MobileApp.Views
 
         protected override void OnAppearing()
         {
-            base.OnAppearing();
             if(!OpenedOnce)
             {
-                model.LoadList(proizvodiListView, KategorijePicker);
+                model.LoadList(proizvodiListView, KategorijePicker, _kategorija);
                 OpenedOnce = true;
             }
             KorpaCounter.Text = KorpaViewModel.ListaKorpe.Count.ToString();
-            LoadKategorija();
-        }
-
-        private void LoadKategorija()
-        {
-            if (_kategorija != 0)
-            {
-                model.LoadFilteredList(proizvodiListView, _kategorija);
-                _kategorija = 0;
-            }
+            base.OnAppearing();
         }
 
         protected void Picker_SelectedIndexChanged(object sender, EventArgs e)

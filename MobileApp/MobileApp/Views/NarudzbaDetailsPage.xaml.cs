@@ -1,4 +1,5 @@
 ﻿using MobileApp.ViewModels;
+using Pokloni.ba.Model.Requests.Narudzba;
 using Pokloni.ba.Model.Requests.Proizvodi;
 using System;
 using System.Collections.Generic;
@@ -33,7 +34,17 @@ namespace MobileApp.Views
         {
             if (e.Item != null)
             {
-                this.Navigation.PushAsync(new PokloniDetails(e.Item as ProizvodVM));
+                var temp = e.Item as NarudzbaDetailsVM;
+
+                ProizvodVM model = new ProizvodVM();
+
+                model.ProizvodId = temp.ProizvodId;
+                model.Naziv = temp.Proizvod.Naziv;
+                model.Slika = temp.Proizvod.Slika;
+                model.Opis = temp.Proizvod.Opis;
+                model.Cijena = temp.Proizvod.Cijena;
+
+                this.Navigation.PushAsync(new PokloniDetails(model));
             }
         }
     }

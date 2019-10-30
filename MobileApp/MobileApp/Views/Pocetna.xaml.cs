@@ -22,5 +22,20 @@ namespace MobileApp.Views
         {
             Navigation.PushAsync((new PokloniPage(2)));
         }
+
+        private void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
+        {
+            Navigation.PushAsync((new PokloniPage(1)));
+        }
+
+        private void TapGestureRecognizer_Tapped_2(object sender, EventArgs e)
+        {
+            Navigation.PushAsync((new PokloniPage(5)));
+        }
+
+        private void TapGestureRecognizer_Tapped_3(object sender, EventArgs e)
+        {
+            Navigation.PushAsync((new PokloniPage(3)));
+        }
     }
 }

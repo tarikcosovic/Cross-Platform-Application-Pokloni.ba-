@@ -46,7 +46,7 @@
                 <BoxView  BackgroundColor="#50FBC1BC" Grid.Row="1" Grid.Column="1"></BoxView>
                 <StackLayout Grid.Row="1" Grid.Column="1" VerticalOptions="Center">
                     <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer></TapGestureRecognizer>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"></TapGestureRecognizer>
                     </StackLayout.GestureRecognizers>
 
                     <Label FontFamily="\Pokloni.ba-Cross-platform-application\MobileApp\MobileApp.Android\Assets\Montserrat-Bold.ttf"   TextColor="White" Text="Odjeća" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Large"></Label>
@@ -85,7 +85,7 @@
                 <BoxView  BackgroundColor="#50FBC1BC" Grid.Row="2" Grid.Column="0"></BoxView>
                 <StackLayout Grid.Row="2" Grid.Column="0" VerticalOptions="Center">
                     <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer></TapGestureRecognizer>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_2"></TapGestureRecognizer>
                     </StackLayout.GestureRecognizers>
 
                     <Label FontFamily="\Pokloni.ba-Cross-platform-application\MobileApp\MobileApp.Android\Assets\Montserrat-Bold.ttf"  TextColor="White" Text="Tehnologija" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Large"></Label>
@@ -95,7 +95,7 @@
                 <BoxView  BackgroundColor="#50FBC1BC" Grid.Row="2" Grid.Column="1"></BoxView>
                 <StackLayout Grid.Row="2" Grid.Column="1" VerticalOptions="Center">
                     <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer></TapGestureRecognizer>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_3"></TapGestureRecognizer>
                     </StackLayout.GestureRecognizers>
 
                     <Label FontFamily="\Pokloni.ba-Cross-platform-application\MobileApp\MobileApp.Android\Assets\Montserrat-Bold.ttf" TextColor="White" Text="Nakit" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Large"></Label>
