@@ -141,5 +141,12 @@ namespace Pokloni.ba.WebAPI.Services
             }
             return null;
         }
+
+        public void ResetPassword(string email)
+        {
+            var user = _db.Korisnik.Where(k => k.Email == email).FirstOrDefault()?? throw new ServerException(Constants.NotFoundErrorMessage + email);
+
+
+        }
     }
 }

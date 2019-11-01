@@ -18,5 +18,7 @@ namespace Pokloni.ba.WebAPI.Services
         void Delete(int id);
 
         Model.Korisnik Authenticiraj(string username, string password);
+
+        void ResetPassword(string email);
     }
 }

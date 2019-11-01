@@ -62,7 +62,7 @@
             this.listaProizvodaca.MouseState = MaterialSkin.MouseState.OUT;
             this.listaProizvodaca.Name = "listaProizvodaca";
             this.listaProizvodaca.OwnerDraw = true;
-            this.listaProizvodaca.Size = new System.Drawing.Size(519, 434);
+            this.listaProizvodaca.Size = new System.Drawing.Size(908, 434);
             this.listaProizvodaca.TabIndex = 6;
             this.listaProizvodaca.UseCompatibleStateImageBehavior = false;
             this.listaProizvodaca.View = System.Windows.Forms.View.Details;
@@ -71,12 +71,12 @@
             // dsvNaziv
             // 
             this.dsvNaziv.Text = "Naziv";
-            this.dsvNaziv.Width = 146;
+            this.dsvNaziv.Width = 200;
             // 
             // dsvOpis
             // 
             this.dsvOpis.Text = "Opis";
-            this.dsvOpis.Width = 303;
+            this.dsvOpis.Width = 700;
             // 
             // btnPrikazi
             // 

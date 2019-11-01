@@ -39,6 +39,7 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.filterNarudzbi = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnPrikazi
@@ -146,11 +147,27 @@
             this.columnHeader7.Text = "Datum";
             this.columnHeader7.Width = 250;
             // 
+            // filterNarudzbi
+            // 
+            this.filterNarudzbi.FormattingEnabled = true;
+            this.filterNarudzbi.Items.AddRange(new object[] {
+            "Aktivno",
+            "Prihvaćeno",
+            "Završeno",
+            "Odbijeno",
+            "Sve"});
+            this.filterNarudzbi.Location = new System.Drawing.Point(682, 115);
+            this.filterNarudzbi.Name = "filterNarudzbi";
+            this.filterNarudzbi.Size = new System.Drawing.Size(121, 21);
+            this.filterNarudzbi.TabIndex = 9;
+            this.filterNarudzbi.SelectedIndexChanged += new System.EventHandler(this.FilterNarudzbi_SelectedIndexChanged);
+            // 
             // frmNarudzbe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(899, 595);
+            this.Controls.Add(this.filterNarudzbi);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.NarudzbeCount);
             this.Controls.Add(this.btnPrikazi);
@@ -176,5 +193,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ComboBox filterNarudzbi;
     }
 }

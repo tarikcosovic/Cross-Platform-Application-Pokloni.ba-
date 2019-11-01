@@ -38,6 +38,10 @@
             this.listStanje = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnPrikazi = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtPretraga = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.Kategorija = new System.Windows.Forms.ComboBox();
+            this.Proizvodac = new System.Windows.Forms.ComboBox();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             Dummy = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
@@ -68,7 +72,7 @@
             this.listaProizvoda.MultiSelect = false;
             this.listaProizvoda.Name = "listaProizvoda";
             this.listaProizvoda.OwnerDraw = true;
-            this.listaProizvoda.Size = new System.Drawing.Size(869, 436);
+            this.listaProizvoda.Size = new System.Drawing.Size(964, 436);
             this.listaProizvoda.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listaProizvoda.TabIndex = 6;
             this.listaProizvoda.UseCompatibleStateImageBehavior = false;
@@ -78,7 +82,7 @@
             // listNaziv
             // 
             this.listNaziv.Text = "Naziv";
-            this.listNaziv.Width = 96;
+            this.listNaziv.Width = 200;
             // 
             // listSifra
             // 
@@ -138,11 +142,59 @@
             this.txtPretraga.TabStop = false;
             this.txtPretraga.UseSystemPasswordChar = false;
             // 
+            // Kategorija
+            // 
+            this.Kategorija.FormattingEnabled = true;
+            this.Kategorija.Location = new System.Drawing.Point(777, 154);
+            this.Kategorija.Name = "Kategorija";
+            this.Kategorija.Size = new System.Drawing.Size(205, 21);
+            this.Kategorija.TabIndex = 33;
+            this.Kategorija.SelectedIndexChanged += new System.EventHandler(this.Kategorija_SelectedIndexChanged);
+            // 
+            // Proizvodac
+            // 
+            this.Proizvodac.FormattingEnabled = true;
+            this.Proizvodac.Location = new System.Drawing.Point(777, 104);
+            this.Proizvodac.Name = "Proizvodac";
+            this.Proizvodac.Size = new System.Drawing.Size(205, 21);
+            this.Proizvodac.TabIndex = 32;
+            this.Proizvodac.SelectedIndexChanged += new System.EventHandler(this.Proizvodac_SelectedIndexChanged);
+            // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel3.Location = new System.Drawing.Point(773, 132);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(77, 19);
+            this.materialLabel3.TabIndex = 31;
+            this.materialLabel3.Text = "Kategorija";
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(773, 82);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(84, 19);
+            this.materialLabel2.TabIndex = 30;
+            this.materialLabel2.Text = "Proizvođač";
+            // 
             // frmProizvodi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1133, 604);
+            this.Controls.Add(this.Kategorija);
+            this.Controls.Add(this.Proizvodac);
+            this.Controls.Add(this.materialLabel3);
+            this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.listaProizvoda);
             this.Controls.Add(this.btnPrikazi);
             this.Controls.Add(this.txtPretraga);
@@ -164,5 +216,9 @@
         private System.Windows.Forms.ColumnHeader listCijena;
         private System.Windows.Forms.ColumnHeader listStanje;
         private MaterialSkin.Controls.MaterialListView listaProizvoda;
+        private System.Windows.Forms.ComboBox Kategorija;
+        private System.Windows.Forms.ComboBox Proizvodac;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
     }
 }

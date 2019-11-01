@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pokloni.ba.Model.Requests.Narudzba;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ namespace Pokloni.ba.WinUI.Narudzbe
     public partial class frmNarudzbe : MyMaterialForm
     {
         private readonly APIService _apiService = new APIService(Properties.Settings.Default.RouteNarudzbe);
+        private List<NarudzbaVM> listaNarudzbi = new List<NarudzbaVM>();
         public frmNarudzbe()
         {
             InitializeComponent();
@@ -59,6 +61,7 @@ namespace Pokloni.ba.WinUI.Narudzbe
                     temp.BackColor = Color.IndianRed;
 
                 listView1.Items.Add(temp);
+                listaNarudzbi.Add(item);
             }
             NarudzbeCount.Text = "Aktivnih Narudžbi:" + brojNarudzbi.ToString();
         }
@@ -78,6 +81,41 @@ namespace Pokloni.ba.WinUI.Narudzbe
             else
             {
                 MessageBox.Show("Birana narudžba nije pronađena..", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void FilterNarudzbi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listView1.Items.Clear();
+            foreach(var item in listaNarudzbi)
+            {
+                if(item.StatusPoruka.Equals(filterNarudzbi.SelectedItem) || item.StatusPoruka.Equals("Sve"))
+                {
+                    ListViewItem temp = new ListViewItem();
+                    temp.SubItems.Add(item.Korisnik.Username);
+
+                    if (item.Zaposlenik != null)
+                        temp.SubItems.Add(item.Zaposlenik.Username);
+                    else temp.SubItems.Add("");
+                    if (item.Dostava != null)
+                        temp.SubItems.Add(item.Dostava.AdresaDostave);
+                    else temp.SubItems.Add("");
+
+                    temp.SubItems.Add(item.StatusPoruka.ToString());
+                    temp.SubItems.Add(item.DatumNarudzbe.ToString());
+                    temp.Tag = item.NarudzbaId;
+
+                    if (item.StatusPoruka == "Aktivno")
+                    {
+                        temp.BackColor = Color.LightGreen;
+                    }
+                    if (item.StatusPoruka == "Prihvaćeno")
+                        temp.BackColor = Color.AliceBlue;
+                    if (item.StatusPoruka == "Odbijeno")
+                        temp.BackColor = Color.IndianRed;
+
+                    listView1.Items.Add(temp);
+                }
             }
         }
     }
