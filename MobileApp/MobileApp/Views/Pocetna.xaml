@@ -5,10 +5,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="clr-namespace:MobileApp.ViewModels"
              xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             xmlns:local="clr-namespace:MobileApp.Converters"
              mc:Ignorable="d"
              x:Class="MobileApp.Views.ProizvodiPage"
              Title="Početna"
              BackgroundImageSource="bg1.jpg">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:ImageConverter x:Key="imgConv"></local:ImageConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout Padding="10">
             <Grid RowSpacing="10" ColumnSpacing="10">
@@ -54,30 +60,39 @@
                 </StackLayout>
 
                 <!--Glavni red poruka-->
-                <StackLayout Grid.ColumnSpan="2" Grid.Row="3" Orientation="Horizontal" HorizontalOptions="Center">
+                <StackLayout Grid.ColumnSpan="2" Grid.Row="3" HorizontalOptions="Center">
                     <Label TextColor="White" Text="Preporučeni pokloni za vas" FontSize="20"></Label>
+                    <ActivityIndicator x:Name="ActivityIndicator" IsRunning="{Binding IsBusy}" VerticalOptions="Center" Color="#F53C6C"></ActivityIndicator>
                 </StackLayout>
                 <!--Glavni red-->
                 <StackLayout Grid.ColumnSpan="2" Grid.Row="4" Orientation="Horizontal" HorizontalOptions="Center">
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer></TapGestureRecognizer>
                     </StackLayout.GestureRecognizers>
-                    
-                    <StackLayout WidthRequest="200" HorizontalOptions="Center" Margin="10,10,0,0">
-                        <Image HeightRequest="130" WidthRequest="60" Source="bg1.jpg" Aspect="AspectFill"></Image>
-                        <Label TextColor="White" HorizontalTextAlignment="Center" Text="Central Perk Lego from F.R.I.E.N.D.S."></Label>
-                    </StackLayout>
 
-                    <StackLayout WidthRequest="200" Margin="10,10,0,0">
-                        <Image HeightRequest="130" WidthRequest="60" Source="pokloni3.jpg" Aspect="AspectFill"></Image>
-                        <Label TextColor="White" HorizontalTextAlignment="Center" Text="Central Perk Lego from F.R.I.E.N.D.S."></Label>
-                    </StackLayout>
-
-                    <StackLayout WidthRequest="200" Margin="10,10,10,0">
-                        <Image HeightRequest="130" WidthRequest="60" Source="bg1.jpg" Aspect="AspectFill"></Image>
-                        <Label TextColor="White" HorizontalTextAlignment="Center" Text="Central Perk Lego from F.R.I.E.N.D.S."></Label>
-                    </StackLayout>
-
+                    <ContentView>
+                        <CarouselView x:Name="carouselList" ItemsSource="{Binding listaPreporucenih}">
+                            <d:CarouselView.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Početna stranica</x:String>
+                                    <x:String>Pokloni</x:String>
+                                    <x:String>Pokloni</x:String>
+                                </x:Array>
+                            </d:CarouselView.ItemsSource>
+                            <CarouselView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout Padding="17,20,0,0" WidthRequest="100">
+                                        <Image HorizontalOptions="CenterAndExpand" WidthRequest="60" HeightRequest="90" d:Source="iconPng.png" Source="{Binding Slika, Converter={StaticResource imgConv}}" Aspect="AspectFit"></Image>
+                                        <Label Margin="0,10,0,0" HorizontalTextAlignment="Center" TextColor="White" d:Text="Central Perk Lego from F.R.I.E.N.D.S." Text="{Binding Naziv}"></Label>
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_4" CommandParameter="{Binding .}">
+                                            </TapGestureRecognizer>
+                                        </StackLayout.GestureRecognizers>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CarouselView.ItemTemplate>
+                        </CarouselView>
+                    </ContentView>
                 </StackLayout>
 
                 <!--Treći red-->

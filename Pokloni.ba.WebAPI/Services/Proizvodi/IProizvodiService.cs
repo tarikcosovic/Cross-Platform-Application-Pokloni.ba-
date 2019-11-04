@@ -10,5 +10,7 @@ namespace Pokloni.ba.WebAPI.Services.Proizvodi
     public interface IProizvodiService : IBaseInterface<ProizvodVM>
     {
         int GetProizvodOcjena(int id);
+
+        List<ProizvodVM> GetPreporuceniProizvodi(int KorisnikId);
     }
 }

@@ -77,5 +77,90 @@ namespace Pokloni.ba.WebAPI.Services.Proizvodi
             _db.Proizvod.Remove(temp);
             _db.SaveChanges();
         }
+
+        public List<ProizvodVM> GetPreporuceniProizvodi(int ProizvodId)
+        {
+            //Liste u koju cemo popuniti proizvode, te njihove koeficijente slicnosti sa nasim proizvodom
+            List<ProizvodVM> listaProizvoda = new List<ProizvodVM>();
+            List<double> listaKoeficijenata = new List<double>();
+            List<decimal> listaKoeficijentaSlicnosti = new List<decimal>();
+
+            var model = _db.Proizvod.Find(ProizvodId) ?? throw new UserException(Constants.NotFoundErrorMessage + ProizvodId);
+            var proizvodi = _db.Proizvod.ToList();
+            var korisnici = _db.Korisnik.ToList();
+
+            foreach (var item in proizvodi)
+            {
+                //Ukoliko je upoređeni proizvod, zahtjevani proizvod neka preskace iteraciju
+                if (item.ProizvodId == ProizvodId)
+                    continue;
+
+                //Ocjene prvog proizvoda
+                List<int> OcjenePrvogProizvoda = new List<int>();
+
+                //Ocjene drugog proizvoda
+                List<int> OcjeneDrugogProizvoda = new List<int>();
+
+                //Dobavljamo ocjene proizvoda1,2 s tim da ih je ocjenio isti korisnik
+                bool postoji = false;
+                foreach(var korisnik in korisnici)
+                {
+                    var ocjena1 = _db.Ocjena.Where(k => k.KorisnikId == korisnik.KorisnikId && k.ProizvodId == ProizvodId).FirstOrDefault();
+                    var ocjena2 = _db.Ocjena.Where(k => k.KorisnikId == korisnik.KorisnikId && k.ProizvodId == item.ProizvodId).FirstOrDefault();
+
+                    if(ocjena1 != null && ocjena2 != null)
+                    {
+                        OcjenePrvogProizvoda.Add(ocjena1.NumerickaOcjena);
+                        OcjeneDrugogProizvoda.Add(ocjena2.NumerickaOcjena);
+                        postoji = true;
+                    }
+                }
+                if (!postoji) continue;
+
+                //Formula koef = (A * B) / (|A| * |B|)
+                //Racunamo A * B
+                double brojnik = 0;
+
+                for (int i = 0; i < OcjenePrvogProizvoda.Count; i++)
+                    brojnik += OcjenePrvogProizvoda[i] * OcjeneDrugogProizvoda[i];
+
+                //Racunamo |A| i |B|
+                double a = 0;
+                double b = 0;
+                for (int i = 0; i < OcjenePrvogProizvoda.Count; i++)
+                {
+                    a += Math.Pow(OcjenePrvogProizvoda[i], 2);
+                    b += Math.Pow(OcjeneDrugogProizvoda[i], 2);
+                }
+                a = Math.Sqrt(a);
+                b = Math.Sqrt(b);
+
+                var nazivnik = a * b;
+                //Racunamo koeficijent slicnosti
+                var koeficijentSlicnosti = brojnik / nazivnik;
+
+                listaKoeficijenata.Add(koeficijentSlicnosti);
+                listaProizvoda.Add(_mapper.Map<ProizvodVM>(item));
+            }
+
+            //Sortiramo proizvode sa najvecim koeficijentom slicnosti na vrh
+            for(int i = 0; i < listaKoeficijenata.Count; i++)
+            {
+                for(int c = i; c< listaKoeficijenata.Count; c++)
+                {
+                    if(listaKoeficijenata[c] > listaKoeficijenata[i])
+                    {
+                        var temp = listaKoeficijenata[i];
+                        listaKoeficijenata[i] = listaKoeficijenata[c];
+                        listaKoeficijenata[c] = temp;
+
+                        var temp2 = listaProizvoda[i];
+                        listaProizvoda[i] = listaProizvoda[c];
+                        listaProizvoda[c] = temp2;
+                    }
+                }
+            }
+            return listaProizvoda;
+        }
     }
 }

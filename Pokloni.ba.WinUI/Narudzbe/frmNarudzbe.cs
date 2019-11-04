@@ -89,7 +89,7 @@ namespace Pokloni.ba.WinUI.Narudzbe
             listView1.Items.Clear();
             foreach(var item in listaNarudzbi)
             {
-                if(item.StatusPoruka.Equals(filterNarudzbi.SelectedItem) || item.StatusPoruka.Equals("Sve"))
+                if(item.StatusPoruka.Equals(filterNarudzbi.SelectedItem) || filterNarudzbi.SelectedItem.Equals("Sve"))
                 {
                     ListViewItem temp = new ListViewItem();
                     temp.SubItems.Add(item.Korisnik.Username);

@@ -26,5 +26,11 @@ namespace Pokloni.ba.WebAPI.Controllers.Proizvodi
         {
             return _service.GetProizvodOcjena(id);
         }
+
+        [HttpGet("[action]/{id}")]
+        public List<ProizvodVM> GetPreporuceni(int id)
+        {
+            return _service.GetPreporuceniProizvodi(id);
+        }
     }
 }
