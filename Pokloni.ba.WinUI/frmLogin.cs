@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pokloni.ba.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ namespace Pokloni.ba.WinUI
 {
     public partial class frmLogin : MyMaterialForm
     {
-        private readonly APIService _apiService = new APIService(Properties.Settings.Default.RouteProizvodi);
+        private readonly APIService _apiService = new APIService(Properties.Settings.Default.RouteKorisnici);
         public frmLogin()
         {
             InitializeComponent();
@@ -21,10 +22,7 @@ namespace Pokloni.ba.WinUI
         private void FrmLogin_Load(object sender, EventArgs e)
         {
             if (Properties.Settings.Default.RememberMe != null && Properties.Settings.Default.RememberMe.Length > 3)
-            {
                 Username.Text = Properties.Settings.Default.RememberMe;
-                Properties.Settings.Default.Save();
-            }
         }
         private void LinkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -43,11 +41,16 @@ namespace Pokloni.ba.WinUI
                 APIService.Password = Password.Text;
 
                 loadingBar.Visible = true;
-                await _apiService.Get<dynamic>();
+                var model = await _apiService.GetUserByUsername<Korisnik>(Username.Text);
                 loadingBar.Visible = false;
 
+                APIService.UserId = model.KorisnikId;
+
                 if(rememberCheckbox.Checked)
+                {
                     Properties.Settings.Default.RememberMe = Username.Text;
+                    Properties.Settings.Default.Save();
+                }
 
                 frmIndex frm = new frmIndex();
                 frm.Show();

@@ -1,11 +1,7 @@
 ﻿using Flurl.Http;
 using MobileApp.Views.Popups;
 using Rg.Plugins.Popup.Services;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms;
 
 namespace MobileApp
 {
@@ -13,6 +9,9 @@ namespace MobileApp
     {
         public static string Username { get; set; }
         public static string Password { get; set; }
+        public static string Email { get; set; }
+        public static int UserId { get; set; }
+        public static int UserDetailsId { get; set; }
 
         const string apiUrl = "https://pokloniwebapi.azurewebsites.net/api";
 
@@ -32,19 +31,19 @@ namespace MobileApp
             try
             {
                 var result = await $"{apiUrl}/{ _route}{filter}".WithBasicAuth(Username, Password).GetJsonAsync<T>();
-
                 return result;
             }
-            catch(FlurlHttpException ex)
+            catch (FlurlHttpException ex)
             {
-                if(ex.Call.HttpStatus == System.Net.HttpStatusCode.Unauthorized)
+                if (ex.Call.HttpStatus == System.Net.HttpStatusCode.Unauthorized)
                 {
                     await PopupNavigation.Instance.PushAsync(new NotAuthorisedPopupView("Invalid Username or Password!"));
                 }
                 else
                     await PopupNavigation.Instance.PushAsync(new Error404PopupView());
-                throw;
             }
+            var result2 = await $"{apiUrl}/{ _route}{filter}".WithBasicAuth(Username, Password).GetJsonAsync<T>();
+            return result2; // veoma loš temporary fix
         }
 
         public async Task<T> GetAndSort<T>(string queries = "")
@@ -67,8 +66,8 @@ namespace MobileApp
 
         public async Task<T> GetUserByUsername<T>(string id)
         {
-            var result = await $"{apiUrl}/{ _route}/GetByUsername/{id}".WithBasicAuth(Username, Password).GetJsonAsync<T>();
 
+            var result = await $"{apiUrl}/{ _route}/GetByUsername/{id}".WithBasicAuth(Username, Password).GetJsonAsync<T>();
             return result;
         }
 

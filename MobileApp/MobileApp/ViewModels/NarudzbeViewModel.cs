@@ -11,7 +11,6 @@ namespace MobileApp.ViewModels
     public class NarudzbeViewModel : BaseViewModel
     {
         private APIService _apiService = new APIService("Narudzbe");
-        private APIService _apiServiceKorisnici = new APIService("Korisnici");
         private ListView PageListView { get; set; } = null;
 
         private List<NarudzbaVM> listaKorisnikovihNarudzbi = new List<NarudzbaVM>();
@@ -28,11 +27,10 @@ namespace MobileApp.ViewModels
                 IsBusy = true;
                 
                 var ListaNarudzbi = await _apiService.Get<IEnumerable<NarudzbaVM>>();
-                var korisnik = await _apiServiceKorisnici.GetUserByUsername<Korisnik>(APIService.Username);
 
                 foreach(var item in ListaNarudzbi)
                 {
-                    if (item.KorisnikId == korisnik.KorisnikId)
+                    if (item.KorisnikId == APIService.UserId)
                         listaKorisnikovihNarudzbi.Add(item);
                 }
                 PageListView.ItemsSource = listaKorisnikovihNarudzbi;

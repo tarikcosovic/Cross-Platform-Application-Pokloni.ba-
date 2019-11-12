@@ -38,5 +38,10 @@ namespace MobileApp.Views
             model.AddTocart();
             DisplayAlert("Hvala!", "Uspješno ste dodali " + model.Naziv + " u vašu korpu!", "ok");
         }
+
+        private void Button_Clicked_2(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new KorpaPage());
+        }
     }
 }

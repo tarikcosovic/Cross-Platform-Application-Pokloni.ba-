@@ -27,9 +27,7 @@ namespace MobileApp.Views
         {
             base.OnAppearing();
 
-            model.LoadItems(korpalw);
             model.UpdateUkupnaCijena(UkupnaCijena);
-
         }
 
         private void Button_Clicked(object sender, EventArgs e)
@@ -53,6 +51,18 @@ namespace MobileApp.Views
                 model.Cijena = temp.Proizvod.Cijena;
 
                 this.Navigation.PushAsync(new PokloniDetails(model));
+            }
+        }
+
+        private void Entry_Unfocused(object sender, FocusEventArgs e)
+        {
+            Entry entry = sender as Entry;
+
+            if(entry != null && int.TryParse(entry.ClassId, out int id) && int.TryParse(entry.Text, out int kolicina))
+            {
+                model.RefreshKolicina(id, kolicina);
+                model.UpdateUkupnaCijena(UkupnaCijena);
+                model.UpdateList(korpalw);
             }
         }
     }

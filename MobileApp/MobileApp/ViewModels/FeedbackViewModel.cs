@@ -12,9 +12,7 @@ namespace MobileApp.ViewModels
 {
     public class FeedbackViewModel : BaseViewModel
     {
-        private APIService _apiServiceKorisnika = new APIService("Korisnici");
         private readonly APIService _apiService = new APIService("Ocjene");
-
 
         int _ocjena = 3;
         public int Ocjena
@@ -32,11 +30,9 @@ namespace MobileApp.ViewModels
 
         public async Task SaveOcjena(int poklonId)
         {
-            var korisnik = await _apiServiceKorisnika.GetUserByUsername<Pokloni.ba.Model.Korisnik>(APIService.Username);
-
             try
             {
-                OcjenaVM temp = new OcjenaVM() { ProizvodId = poklonId, KorisnikId = korisnik.KorisnikId, NumerickaOcjena = Ocjena, Komentar = Komentar };
+                OcjenaVM temp = new OcjenaVM() { ProizvodId = poklonId, KorisnikId = APIService.UserId, NumerickaOcjena = Ocjena, Komentar = Komentar };
                 await _apiService.Insert<OcjenaVM>(temp);
 
                 await PopupNavigation.Instance.PopAsync();
@@ -44,7 +40,8 @@ namespace MobileApp.ViewModels
             }
             catch(FlurlHttpException ex)
             {
-                await PopupNavigation.Instance.PushAsync(new NotAuthorisedPopupView("Već ste ocjenili ovaj poklon!"));
+                if(ex!=null)
+                    await PopupNavigation.Instance.PushAsync(new NotAuthorisedPopupView("Već ste ocjenili ovaj poklon!"));
             }
         }
 

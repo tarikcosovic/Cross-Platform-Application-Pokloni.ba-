@@ -20,10 +20,7 @@ namespace Pokloni.ba.WinUI
         public frmIndex()
         {
             InitializeComponent();
-
-            //InitialiseMyMaterialDesign(this);
         }
-        //Početna stranica
         private void FrmIndex_Load(object sender, EventArgs e)
         {
             logiraniKorisnik.Text += APIService.Username;
@@ -152,6 +149,7 @@ namespace Pokloni.ba.WinUI
         {
             APIService.Username = "";
             APIService.Password = "";
+            APIService.UserId = 0;
 
             this.Close();
 

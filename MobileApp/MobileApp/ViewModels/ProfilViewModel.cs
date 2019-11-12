@@ -11,7 +11,6 @@ namespace MobileApp.ViewModels
 {
     public class ProfilViewModel : INotifyPropertyChanged
     {
-        private readonly APIService _apiService = new APIService("Korisnici");
         private readonly APIService _apiServiceKorisniciDetails = new APIService("KorisniciDetails");
         private int KorisnikId;
 
@@ -96,12 +95,11 @@ namespace MobileApp.ViewModels
         {
             try
             {
-                var user = await _apiService.GetUserByUsername<Korisnik>(APIService.Username);
-                var userDetails = await _apiServiceKorisniciDetails.GetbyId<KorisniciDetailsGetRequest>(user.KorisnikDetailsId);
+                var userDetails = await _apiServiceKorisniciDetails.GetbyId<KorisniciDetailsGetRequest>(APIService.UserDetailsId);
 
-                KorisnikId = user.KorisnikId;
-                Username = user.Username;
-                Email = user.Email;
+                KorisnikId = APIService.UserId;
+                Username = APIService.Username;
+                Email = APIService.Email;
                 Ime = userDetails.Ime;
                 Prezime = userDetails.Prezime;
                 Telefon = userDetails.BrojTelefona;

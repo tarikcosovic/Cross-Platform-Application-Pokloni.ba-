@@ -8,6 +8,7 @@ namespace Pokloni.ba.WinUI
     {
         public static string Username { get; set; }
         public static string Password { get; set; }
+        public static int UserId { get; set; }
 
         private string _route = null;
         public APIService(string route)

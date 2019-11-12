@@ -21,7 +21,7 @@
             <ActivityIndicator IsRunning="{Binding IsBusy}" VerticalOptions="Center" Color="Purple"></ActivityIndicator>
 
             <ScrollView>
-                <ListView x:Name="korpalw" SelectionMode="None"
+                <ListView x:Name="korpalw" SelectionMode="None" ItemsSource="{Binding _ListaKorpe}"
                     HasUnevenRows="True" HeightRequest="500" ItemTapped="Korpalw_ItemTapped">
                     <d:ListView.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
@@ -36,7 +36,7 @@
                                     <Image HorizontalOptions="Start" WidthRequest="60" HeightRequest="90" d:Source="iconPng.png" Source="{Binding Proizvod.Slika, Converter={StaticResource imgConv}}" Aspect="AspectFit"></Image>
                                     <Label HorizontalOptions="Start" Margin="80,30,0,0" TextColor="Black" Text="{Binding Proizvod.Naziv}" d:Text="Central Perk Lego Igračka" WidthRequest="205" FontSize="17" LineBreakMode="NoWrap"  FontFamily="Montserrat-Light.ttf"/>
                                     <Label HorizontalOptions="End" Margin="0,55,0,0" TextColor="Green" Text="{Binding CijenaProizvoda, StringFormat='{0} $'}" d:Text="45.00$" LineBreakMode="NoWrap" FontSize="15" FontAttributes="Italic" WidthRequest="140" FontFamily="Montserrat-Light.ttf"/>
-                                    <Entry HorizontalOptions="End" VerticalOptions="Center" HorizontalTextAlignment="Center" Margin="0,0,20,0" TextColor="#F53C6C" Text="{Binding Narudzba.Kolicina}" d:Text="1" FontSize="19" WidthRequest="50" FontFamily="Montserrat-Light.ttf"/>
+                                    <Entry MaxLength="3" ClassId="{Binding Proizvod.ProizvodId}" Unfocused="Entry_Unfocused" HorizontalOptions="End" VerticalOptions="Center" HorizontalTextAlignment="Center" Margin="0,0,20,0" TextColor="#F53C6C" Text="{Binding Narudzba.Kolicina}" d:Text="1" FontSize="19" WidthRequest="50" FontFamily="Montserrat-Light.ttf"/>
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>

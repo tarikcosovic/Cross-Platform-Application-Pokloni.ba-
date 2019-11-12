@@ -1,6 +1,7 @@
 ﻿ using Flurl.Http;
 using MobileApp.Views;
 using MobileApp.Views.Popups;
+using Pokloni.ba.Model;
 using Rg.Plugins.Popup.Services;
 using System;
 using System.Reflection;
@@ -12,7 +13,7 @@ namespace MobileApp.ViewModels
 {
     public class LoginViewModel : BaseViewModel
     {
-        private readonly APIService _apiService = new APIService("Uloge");
+        private readonly APIService _apiService = new APIService("Korisnici");
         public LoginViewModel()
         {
             LoginCommand = new Command(async () => await Login());
@@ -43,11 +44,22 @@ namespace MobileApp.ViewModels
 
             try
             {
-                await _apiService.Get<dynamic>();
+                var model = await _apiService.GetUserByUsername<Korisnik>(_username);
+
+                APIService.UserId = model.KorisnikId;
+                APIService.UserDetailsId = model.KorisnikDetailsId;
+                APIService.Email = model.Email;
+
                 await PopupNavigation.Instance.PushAsync(new SuccessPopupView(new MainPage()));
             }
-            catch(AmbiguousMatchException)
+            catch (FlurlHttpException ex)
             {
+                if (ex.Call.HttpStatus == System.Net.HttpStatusCode.Unauthorized)
+                {
+                    await PopupNavigation.Instance.PushAsync(new NotAuthorisedPopupView("Invalid Username or Password!"));
+                }
+                else
+                    await PopupNavigation.Instance.PushAsync(new Error404PopupView());
             }
             finally
             {
