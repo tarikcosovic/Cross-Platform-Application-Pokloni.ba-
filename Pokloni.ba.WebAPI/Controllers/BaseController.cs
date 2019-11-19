@@ -42,7 +42,7 @@ namespace Pokloni.ba.WebAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        public ActionResult<T2> Update(T2 request, int id)
+        public ActionResult<T2> Update([FromBody]T2 request, int id)
         {
             var temp = _service.Update(request, id);
 

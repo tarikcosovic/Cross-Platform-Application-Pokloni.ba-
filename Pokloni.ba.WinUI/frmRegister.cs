@@ -32,7 +32,7 @@ namespace Pokloni.ba.WinUI
                     Email = Email.Text,
                     Password = Password.Text,
                     PasswordConfirmation = PasswordConfirmation.Text,
-                    UlogaId = 0,
+                    UlogaId = 3,
                     Status = true,
                 };
 

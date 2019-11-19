@@ -66,13 +66,13 @@ namespace MobileApp.ViewModels
 
             foreach (var item in _listaProizvoda)
             {
-                item.Sifra = string.Empty;
+                item.Kategorija.Naziv = string.Empty;
                 try
                 {
                     var ocjena = await _apiService.GetProizvodOcjena(item.ProizvodId);
                     for (int i = 0; i < ocjena; i++)
                     {
-                        item.Sifra += "★";
+                        item.Kategorija.Naziv += "★";
                     }
                 }
                 catch (AmbiguousMatchException)

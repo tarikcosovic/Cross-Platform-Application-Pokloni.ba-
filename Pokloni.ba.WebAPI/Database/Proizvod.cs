@@ -8,8 +8,8 @@ namespace Pokloni.ba.WebAPI.Database
     {
         public Proizvod()
         {
-            NarudzbaDetails = new HashSet<NarudzbaDetails>();
             Ocjena = new HashSet<Ocjena>();
+            NarudzbaDetails = new HashSet<NarudzbaDetails>();
         }
 
         public int ProizvodId { get; set; }
@@ -25,7 +25,7 @@ namespace Pokloni.ba.WebAPI.Database
 
         public virtual Kategorija Kategorija { get; set; }
         public virtual ProizvodacPoklona Proizvodac { get; set; }
-        public virtual ICollection<NarudzbaDetails> NarudzbaDetails { get; set; }
         public virtual ICollection<Ocjena> Ocjena { get; set; }
+        public virtual ICollection<NarudzbaDetails> NarudzbaDetails { get; set; }
     }
 }

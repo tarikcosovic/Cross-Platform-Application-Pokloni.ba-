@@ -37,9 +37,10 @@ namespace Pokloni.ba.WebAPI.Services.Dostava
         {
             var temp = _mapper.Map<Database.Dostava>(request);
 
-            _db.Dostava.Add(temp);
+            var test = _db.Dostava.Add(temp);
             _db.SaveChanges();
 
+            request.DostavaId = test.Entity.DostavaId;
             return request;
         }
 

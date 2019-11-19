@@ -6,8 +6,10 @@ namespace Pokloni.ba.Model.Requests.Dostava
 {
     public class Dostava
     {
+        public int DostavaId { get; set; }
         public int? DostavljacId { get; set; }
         public string DrzavaDostave { get; set; }
+        public string TipDostave { get; set; }
         public string GradDostave { get; set; }
         public string PostalCode { get; set; }
         public string AdresaDostave { get; set; }

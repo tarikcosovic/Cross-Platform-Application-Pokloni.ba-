@@ -1,6 +1,11 @@
 ﻿using Flurl.Http;
 using MobileApp.Views.Popups;
+using Newtonsoft.Json;
 using Rg.Plugins.Popup.Services;
+using System;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace MobileApp
@@ -85,12 +90,21 @@ namespace MobileApp
             return await result.WithBasicAuth(Username, Password).PostJsonAsync(request).ReceiveJson<T>();
         }
 
-        public async Task<T> Update<T>(object request, object id)
+        public async Task<T> Update<T>(object request, int? id)
         {
             var result = $"{apiUrl}/{ _route}/{id}";
 
             return await result.WithBasicAuth(Username, Password).PutJsonAsync(request).ReceiveJson<T>();
         }
+
+        public async Task<T> ProizvodUpdateInStock<T>(object request, int? id)
+        {
+            var result = $"{apiUrl}/{ _route}/UpdateProductInStock/{id}";
+
+            return await result.WithBasicAuth(Username, Password).PutJsonAsync(request).ReceiveJson<T>();
+        }
+
+
 
         public async Task Delete(int? id)
         {

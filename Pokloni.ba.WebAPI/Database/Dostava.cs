@@ -16,6 +16,7 @@ namespace Pokloni.ba.WebAPI.Database
         public string GradDostave { get; set; }
         public string PostalCode { get; set; }
         public string AdresaDostave { get; set; }
+        public string TipDostave { get; set; }
         public string KontaktTelefon { get; set; }
         public DateTime? DatumSlanja { get; set; }
         public DateTime? DatumPreuzimanja { get; set; }

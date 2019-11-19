@@ -59,7 +59,7 @@ namespace Pokloni.ba.WinUI
             return await result.WithBasicAuth(Username, Password).PostJsonAsync(request).ReceiveJson<T>();
         }
 
-        public async Task<T> Update<T>(object request, object id)
+        public async Task<T> Update<T>(object request, int? id)
         {
             var result = $"{Properties.Settings.Default.APIUrl}/{ _route}/{id}";
 

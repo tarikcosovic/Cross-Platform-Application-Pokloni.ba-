@@ -9,7 +9,7 @@
              x:Class="MobileApp.Views.LoginPage"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <StackLayout Padding="50" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+        <StackLayout Padding="50,0,50,0" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
 
             <forms:AnimationView 
                 Scale="2"
@@ -17,12 +17,12 @@
 	Animation="4191-present-for-you.json" 
 	Loop="True" 
 	AutoPlay="True"
-    HeightRequest="120"
+    HeightRequest="80"
     WidthRequest="300"
 	VerticalOptions="CenterAndExpand" 
 	HorizontalOptions="CenterAndExpand" />
 
-            <Label HorizontalTextAlignment="Center" Margin="0, 50" TextColor="#F53C6C" FontSize="Large" Text="Dobrodošli na Pokloni.ba!"/>
+            <Label HorizontalTextAlignment="Center" Margin="0,20" TextColor="#F53C6C" FontSize="Large" Text="Dobrodošli na Pokloni.ba!"/>
 
             <Label Text="Username"/>
             <Entry Text="{Binding Username}" TextColor="Black"></Entry>
@@ -37,7 +37,15 @@
                 </Label.GestureRecognizers>
             </Label>
 
+            <Image WidthRequest="200" HeightRequest="100" Source="facebook.png" Aspect="AspectFit">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+
             <ActivityIndicator x:Name="ActivityIndicator" IsRunning="{Binding IsBusy}" VerticalOptions="Center" Color="#F53C6C"></ActivityIndicator>
+
+           
 
         </StackLayout>
     </ContentPage.Content>

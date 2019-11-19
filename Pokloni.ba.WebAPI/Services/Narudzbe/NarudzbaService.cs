@@ -36,6 +36,10 @@ namespace Pokloni.ba.WebAPI.Services.Narudzbe
 
         public NarudzbaVM Insert(NarudzbaVM request)
         {
+            request.Dostava = null;
+            request.Korisnik = null;
+            request.Zaposlenik = null;
+
             var temp = _mapper.Map<Database.Narudzba>(request);
 
             var test = _db.Narudzba.Add(temp);
@@ -47,10 +51,13 @@ namespace Pokloni.ba.WebAPI.Services.Narudzbe
 
         public NarudzbaVM Update(NarudzbaVM request, int id)
         {
+            request.Dostava = null;
+            request.Korisnik = null;
+            request.Zaposlenik = null;
+
             var temp = _db.Narudzba.Find(id) ?? throw new ServerException(Constants.NotFoundErrorMessage + id);
 
             _mapper.Map(request, temp);
-            _db.Entry(temp).Property(k=>k.NarudzbaId).IsModified = false;
             _db.Narudzba.Update(temp);
             _db.SaveChanges();
 

@@ -42,7 +42,7 @@
                                 <Label HorizontalOptions="Start" Margin="80,10,0,0" TextColor="Black" Text="{Binding Naziv}" d:Text="Central Perk Lego Igračka" WidthRequest="200" FontSize="17" LineBreakMode="TailTruncation"  FontFamily="Montserrat-Light.ttf"/>
                                 <Label HorizontalOptions="Start" Margin="80,35,0,0" TextColor="Gray" Text="{Binding Opis}" d:Text="TESTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTttttTT" LineBreakMode="TailTruncation" FontSize="15" FontAttributes="Italic" WidthRequest="200" FontFamily="Montserrat-Light.ttf"/>
                                     <Label HorizontalOptions="Start" Margin="180,55,0,0" TextColor="#F53C6C" Text="{Binding Cijena, StringFormat='{0} KM'}" d:Text="15$" FontSize="19" FontFamily="Montserrat-Light.ttf"/>
-                                    <Label HorizontalOptions="Start" Margin="80,55,0,0" TextColor="LightPink" Text="{Binding Sifra}" d:Text="★★★★★" FontSize="19" FontFamily="Montserrat-Light.ttf"/>
+                                    <Label HorizontalOptions="Start" Margin="80,55,0,0" TextColor="LightPink" Text="{Binding Kategorija.Naziv}" d:Text="★★★★★" FontSize="19" FontFamily="Montserrat-Light.ttf"/>
                                     <Image HorizontalOptions="End" Margin="0,0,0,0" WidthRequest="40" HeightRequest="40" Source="iconAdd.png" d:Source="iconAdd.png" Aspect="AspectFit">
                                         <Image.GestureRecognizers>
                                             <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="{Binding .}">

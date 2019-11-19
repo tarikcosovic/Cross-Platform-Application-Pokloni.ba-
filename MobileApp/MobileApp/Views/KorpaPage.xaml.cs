@@ -33,7 +33,6 @@ namespace MobileApp.Views
         private void Button_Clicked(object sender, EventArgs e)
         {
             model.Zavrsi();
-            korpalw.ItemsSource = null;
         }
 
         private void Korpalw_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -64,6 +63,31 @@ namespace MobileApp.Views
                 model.UpdateUkupnaCijena(UkupnaCijena);
                 model.UpdateList(korpalw);
             }
+        }
+
+        private void Picker_Unfocused(object sender, FocusEventArgs e)
+        {
+            Picker temp = sender as Picker;
+
+            switch(temp.SelectedIndex)
+            {
+                case 0:
+                    {
+                        model.UpdateDostava(0);
+                        break;
+                    }
+                case 1:
+                    {
+                        model.UpdateDostava(5);
+                        break;
+                    }
+                case 2:
+                    {
+                        model.UpdateDostava(10);
+                        break;
+                    }
+            }
+            model.UpdateUkupnaCijena(UkupnaCijena);
         }
     }
 }

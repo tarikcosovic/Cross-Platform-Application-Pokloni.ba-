@@ -31,6 +31,7 @@ namespace Pokloni.ba.WinUI.Narudzbe
             var result = await _apiService.GetAndSort<IEnumerable<Model.Requests.Narudzba.NarudzbaVM>>("statusPoruka");
 
             listView1.Items.Clear();
+            listaNarudzbi.Clear();
             var counter = 1;
             var brojNarudzbi = 0;
             foreach (var item in result)
@@ -41,9 +42,6 @@ namespace Pokloni.ba.WinUI.Narudzbe
 
                 if (item.Zaposlenik != null)
                     temp.SubItems.Add(item.Zaposlenik.Username);
-                else temp.SubItems.Add("");
-                if (item.Dostava != null)
-                    temp.SubItems.Add(item.Dostava.AdresaDostave);
                 else temp.SubItems.Add("");
 
                 temp.SubItems.Add(item.StatusPoruka.ToString());
@@ -87,11 +85,13 @@ namespace Pokloni.ba.WinUI.Narudzbe
         private void FilterNarudzbi_SelectedIndexChanged(object sender, EventArgs e)
         {
             listView1.Items.Clear();
-            foreach(var item in listaNarudzbi)
+            var counter = 1;
+            foreach (var item in listaNarudzbi)
             {
                 if(item.StatusPoruka.Equals(filterNarudzbi.SelectedItem) || filterNarudzbi.SelectedItem.Equals("Sve"))
                 {
                     ListViewItem temp = new ListViewItem();
+                    temp.SubItems.Add($"#{ counter++.ToString()}");
                     temp.SubItems.Add(item.Korisnik.Username);
 
                     if (item.Zaposlenik != null)

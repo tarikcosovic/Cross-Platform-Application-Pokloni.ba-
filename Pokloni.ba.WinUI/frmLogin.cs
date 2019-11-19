@@ -44,6 +44,12 @@ namespace Pokloni.ba.WinUI
                 var model = await _apiService.GetUserByUsername<Korisnik>(Username.Text);
                 loadingBar.Visible = false;
 
+                if (model.UlogaId != 1 && model.UlogaId != 3)
+                {
+                    errorProvider1.SetError(Username, "Nemate privilegije za pristup ovoj aplikaciji!");
+                    return;
+                }
+
                 APIService.UserId = model.KorisnikId;
 
                 if(rememberCheckbox.Checked)
@@ -59,7 +65,7 @@ namespace Pokloni.ba.WinUI
             }
             catch(Exception ex)
             {
-                errorProvider1.SetError(Password, "Username ili Password nisu tačni!" + ex.Message);
+                errorProvider1.SetError(Password, "Username ili Password nisu tačni!");
             }
         }
 

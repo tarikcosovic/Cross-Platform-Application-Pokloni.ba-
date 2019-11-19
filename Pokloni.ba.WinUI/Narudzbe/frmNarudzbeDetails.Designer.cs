@@ -37,8 +37,12 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.UkupnaCijena = new MaterialSkin.Controls.MaterialLabel();
+            this.status = new MaterialSkin.Controls.MaterialLabel();
+            this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnOdbij
@@ -63,9 +67,9 @@
             this.btnPrihvati.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrihvati.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrihvati.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnPrihvati.Location = new System.Drawing.Point(816, 400);
+            this.btnPrihvati.Location = new System.Drawing.Point(869, 400);
             this.btnPrihvati.Name = "btnPrihvati";
-            this.btnPrihvati.Size = new System.Drawing.Size(109, 36);
+            this.btnPrihvati.Size = new System.Drawing.Size(133, 36);
             this.btnPrihvati.TabIndex = 38;
             this.btnPrihvati.Text = "Prihvati";
             this.btnPrihvati.UseVisualStyleBackColor = false;
@@ -84,6 +88,7 @@
             this.btnKontakt.TabIndex = 39;
             this.btnKontakt.Text = "Kontaktiraj Kupca";
             this.btnKontakt.UseVisualStyleBackColor = false;
+            this.btnKontakt.Click += new System.EventHandler(this.BtnKontakt_Click);
             // 
             // listaProizvoda
             // 
@@ -103,7 +108,7 @@
             this.listaProizvoda.MouseState = MaterialSkin.MouseState.OUT;
             this.listaProizvoda.Name = "listaProizvoda";
             this.listaProizvoda.OwnerDraw = true;
-            this.listaProizvoda.Size = new System.Drawing.Size(683, 217);
+            this.listaProizvoda.Size = new System.Drawing.Size(579, 217);
             this.listaProizvoda.TabIndex = 40;
             this.listaProizvoda.UseCompatibleStateImageBehavior = false;
             this.listaProizvoda.View = System.Windows.Forms.View.Details;
@@ -132,39 +137,85 @@
             this.columnHeader1.Text = "Ukupno";
             this.columnHeader1.Width = 100;
             // 
-            // materialLabel1
-            // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(865, 285);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(60, 19);
-            this.materialLabel1.TabIndex = 41;
-            this.materialLabel1.Text = "Ukupno";
-            // 
             // UkupnaCijena
             // 
             this.UkupnaCijena.AutoSize = true;
             this.UkupnaCijena.Depth = 0;
             this.UkupnaCijena.Font = new System.Drawing.Font("Roboto", 11F);
             this.UkupnaCijena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.UkupnaCijena.Location = new System.Drawing.Point(864, 316);
+            this.UkupnaCijena.Location = new System.Drawing.Point(687, 298);
             this.UkupnaCijena.MouseState = MaterialSkin.MouseState.HOVER;
             this.UkupnaCijena.Name = "UkupnaCijena";
-            this.UkupnaCijena.Size = new System.Drawing.Size(61, 19);
+            this.UkupnaCijena.Size = new System.Drawing.Size(25, 19);
             this.UkupnaCijena.TabIndex = 42;
-            this.UkupnaCijena.Text = "152.12$";
+            this.UkupnaCijena.Text = "0$";
+            // 
+            // status
+            // 
+            this.status.AutoSize = true;
+            this.status.Depth = 0;
+            this.status.Font = new System.Drawing.Font("Roboto", 11F);
+            this.status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.status.Location = new System.Drawing.Point(687, 221);
+            this.status.MouseState = MaterialSkin.MouseState.HOVER;
+            this.status.Name = "status";
+            this.status.Size = new System.Drawing.Size(138, 19);
+            this.status.TabIndex = 44;
+            this.status.Text = "Evaluacija u tijeku..";
+            // 
+            // materialDivider1
+            // 
+            this.materialDivider1.BackColor = System.Drawing.Color.DarkGray;
+            this.materialDivider1.Depth = 0;
+            this.materialDivider1.Location = new System.Drawing.Point(648, 118);
+            this.materialDivider1.Margin = new System.Windows.Forms.Padding(0);
+            this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider1.Name = "materialDivider1";
+            this.materialDivider1.Size = new System.Drawing.Size(2, 318);
+            this.materialDivider1.TabIndex = 45;
+            this.materialDivider1.Text = "materialDivider1";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(687, 182);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 22);
+            this.label1.TabIndex = 47;
+            this.label1.Text = "Status:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(687, 261);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 22);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "Ukupno:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(686, 118);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(278, 25);
+            this.label3.TabIndex = 49;
+            this.label3.Text = "Generalni podaci narudžbe:";
             // 
             // frmNarudzbeDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1054, 493);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.materialDivider1);
+            this.Controls.Add(this.status);
             this.Controls.Add(this.UkupnaCijena);
-            this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.listaProizvoda);
             this.Controls.Add(this.btnKontakt);
             this.Controls.Add(this.btnPrihvati);
@@ -188,8 +239,12 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel UkupnaCijena;
         private System.Windows.Forms.ColumnHeader columnHeader1;
+        private MaterialSkin.Controls.MaterialLabel status;
+        private MaterialSkin.Controls.MaterialDivider materialDivider1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

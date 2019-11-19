@@ -60,6 +60,10 @@ namespace Pokloni.ba.WebAPI.Services.Proizvodi
 
         public ProizvodVM Update(ProizvodVM request, int id)
         {
+            request.Kategorija = null;
+            request.Proizvodac = null;
+            request.Ocjena = null;
+
             var temp = _db.Proizvod.Find(id) ?? throw new ServerException(Constants.NotFoundErrorMessage + id);
 
             _mapper.Map(request, temp);

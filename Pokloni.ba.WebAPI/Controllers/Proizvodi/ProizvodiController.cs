@@ -32,5 +32,11 @@ namespace Pokloni.ba.WebAPI.Controllers.Proizvodi
         {
             return _service.GetPreporuceniProizvodi(id);
         }
+
+        [HttpPut("[action]/{id}")]
+        public ActionResult<ProizvodVM> UpdateProductInStock(int id, [FromBody]ProizvodVM request)
+        {
+            return Ok(_service.Update(request, id));
+        }
     }
 }

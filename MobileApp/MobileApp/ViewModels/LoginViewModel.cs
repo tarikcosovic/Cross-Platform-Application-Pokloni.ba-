@@ -1,9 +1,11 @@
 ﻿ using Flurl.Http;
 using MobileApp.Views;
 using MobileApp.Views.Popups;
+using Newtonsoft.Json;
 using Pokloni.ba.Model;
 using Rg.Plugins.Popup.Services;
 using System;
+using System.Net.Http;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -66,5 +68,6 @@ namespace MobileApp.ViewModels
                 IsBusy = false;
             }
         }
+       
     }
 }
