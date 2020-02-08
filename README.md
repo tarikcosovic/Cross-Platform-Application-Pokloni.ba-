@@ -4,8 +4,6 @@
 The application is a university project, a solution for local giftshop businesses.
 
 
-## Live Demo - *[Pokloni.ba](https://photogo.azurewebsites.net/)*
-
 ## Development Tools
 
 - IDE - Visual Studio 2019 Enterprise
